@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="#c5851e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Shield with scales of justice -->
+  <path d="M24 4L8 12v10c0 10.5 6.8 20.3 16 22.8 9.2-2.5 16-12.3 16-22.8V12L24 4z"/>
+  <!-- Balance/scales -->
+  <path d="M24 14v16"/>
+  <path d="M16 18h16"/>
+  <!-- Left pan -->
+  <path d="M14 18l2 8h0a4 4 0 0 0 4-4l-2-4"/>
+  <!-- Right pan -->
+  <path d="M34 18l-2 8h0a4 4 0 0 1-4-4l2-4"/>
+</svg>

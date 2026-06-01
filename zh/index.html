@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>德扬集团 Bird & Yang — 融汇法税财保，守护安居乐业</title>
+<meta name="description" content="德扬律师事务所（Bird & Yang）提供一站式法务、会计与咨询服务，为跨境客户融贯西东、化繁为简。">
+<link rel="canonical" href="https://birdyang.pages.dev/zh/index.html">
+<link rel="alternate" hreflang="zh" href="https://birdyang.pages.dev/zh/index.html">
+<link rel="alternate" hreflang="en" href="https://birdyang.pages.dev/index.html">
+<link rel="alternate" hreflang="x-default" href="https://birdyang.pages.dev/index.html">
+<link rel="stylesheet" href="../style.css">
+<style>
+body{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",Verdana,Geneva,sans-serif}
+#hero{position:relative;height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,var(--navy-deep) 0%,var(--blue) 100%);overflow:hidden}
+.hero-content{position:relative;z-index:2;text-align:center;padding:0 20px;width:100%}
+.hero-icons{position:relative;width:min(620px,85vw);height:min(540px,75vh);margin:0 auto}
+.hero-icons .center-text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center}
+.hero-icons .center-text h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:700;color:var(--white);letter-spacing:.2em}
+.hero-icons .center-text p{font-size:clamp(.75rem,1.2vw,.9rem);color:var(--gold-light);font-style:italic;margin-top:8px}
+.hero-icons .center-text .cn{font-size:.85rem;color:rgba(255,255,255,.55);font-style:normal;margin-top:4px}
+.icon-node{position:absolute;width:64px;height:64px;display:flex;flex-direction:column;align-items:center;transform:translate(-50%,-50%)}
+.icon-node .icon-circle{width:56px;height:56px;border-radius:50%;border:1px solid rgba(197,133,30,.4);display:flex;align-items:center;justify-content:center;background:rgba(7,14,26,.5);transition:all .3s}
+.icon-node .icon-circle img{width:28px;height:28px}
+.icon-node .icon-label{font-size:.55rem;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.1em;margin-top:6px;white-space:nowrap}
+.icon-node:hover .icon-circle{border-color:var(--gold);background:rgba(197,133,30,.1);transform:translateY(-3px)}
+.icon-node:nth-child(1){top:14%;left:50%}
+.icon-node:nth-child(2){top:34%;left:92%}
+.icon-node:nth-child(3){top:78%;left:80%}
+.icon-node:nth-child(4){top:78%;left:20%}
+.icon-node:nth-child(5){top:34%;left:8%}
+@media(max-width:600px){
+  .hero-icons{width:100%;height:auto;display:flex;flex-wrap:wrap;justify-content:center;gap:16px;padding:20px}
+  .hero-icons .center-text{position:relative;top:auto;left:auto;transform:none;width:100%;margin-bottom:24px}
+  .icon-node{position:relative;top:auto!important;left:auto!important;transform:none;width:auto}
+}
+#about{background:var(--cream);text-align:center;padding:80px 5%}
+.about-text{max-width:800px;margin:0 auto;font-size:.9rem;color:var(--charcoal);line-height:1.85}
+#expertise{background:var(--white);padding:80px 5%}
+.expertise-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;max-width:1100px;margin:0 auto}
+.expertise-card{border-radius:var(--radius);overflow:hidden;background:var(--white);box-shadow:0 2px 8px rgba(0,0,0,.06);transition:transform .3s,box-shadow .3s;cursor:pointer}
+.expertise-card:hover{transform:translateY(-8px);box-shadow:0 12px 32px rgba(1,48,138,.12)}
+.expertise-card .card-header{background:linear-gradient(135deg,var(--blue),var(--navy-mid));height:180px;display:flex;align-items:center;justify-content:center}
+.expertise-card .card-header .card-icon{width:72px;height:72px;border-radius:50%;border:1px solid rgba(197,133,30,.5);display:flex;align-items:center;justify-content:center;background:rgba(7,14,26,.4)}
+.expertise-card .card-header .card-icon img{width:36px;height:36px}
+.expertise-card .card-body{padding:28px 24px}
+.expertise-card .card-body h3{font-size:1.1rem;font-weight:700;color:var(--blue);margin-bottom:10px}
+.expertise-card .card-body p{font-size:.85rem;color:var(--muted);line-height:1.7;margin-bottom:16px}
+.expertise-card .card-body a{font-size:.8rem;color:var(--gold);text-decoration:none;font-weight:600}
+#why{background:var(--cream);padding:80px 5%}
+.steps{display:flex;align-items:flex-start;justify-content:center;max-width:900px;margin:0 auto;position:relative}
+.steps::before{content:'';position:absolute;top:36px;left:25%;right:25%;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.step{flex:1;text-align:center;padding:0 16px;position:relative}
+.step-number{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--navy-mid));display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:1.5rem;font-weight:700;color:var(--gold);position:relative;z-index:2}
+.step-number::after{content:'';position:absolute;inset:-4px;border-radius:50%;border:1px solid rgba(197,133,30,.3)}
+.step h3{font-size:1rem;font-weight:700;color:var(--blue);margin-bottom:8px}
+.step p{font-size:.82rem;color:var(--muted);line-height:1.7}
+@media(max-width:768px){.steps{flex-direction:column;gap:32px}.steps::before{display:none}}
+#cta{background:linear-gradient(135deg,var(--navy-deep),var(--blue));text-align:center;padding:100px 5%;position:relative;overflow:hidden}
+#cta::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(197,133,30,.08) 0%,transparent 70%);pointer-events:none}
+#cta h2{font-size:clamp(1.2rem,2.5vw,1.6rem);font-weight:700;color:var(--white);letter-spacing:.04em;margin-bottom:24px;position:relative}
+#cta .cta-btn{position:relative}
+.section-label{font-size:.65rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);text-align:center;margin-bottom:10px}
+.section-title{font-size:clamp(1.4rem,3vw,1.8rem);font-weight:700;color:var(--blue);text-align:center;letter-spacing:.06em;margin-bottom:32px}
+nav .nav-extras{display:flex;align-items:center;gap:12px;margin-left:20px;padding-left:20px;border-left:1px solid rgba(255,255,255,.2)}
+nav .nav-extras .lang-toggle{font-size:.7rem;color:rgba(255,255,255,.7);letter-spacing:.05em}
+nav .nav-extras .lang-toggle a{color:rgba(255,255,255,.7);text-decoration:none;transition:color .2s}
+nav .nav-extras .lang-toggle a.active-lang{color:var(--white);font-weight:600}
+nav .nav-extras .search-icon{cursor:pointer;opacity:.7;transition:opacity .2s}
+nav .nav-extras .search-icon svg{width:16px;height:16px;stroke:var(--white);fill:none}
+@media(max-width:768px){nav .nav-extras{display:none!important}}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<div id="site-nav"></div>
+<script src="/components/nav.js"></script>
+<script>renderNav({active:"home",lang:"zh",transparent:true})</script>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-content">
+    <div class="hero-icons">
+      <div class="icon-node">
+        <div class="icon-circle"><img src="../assets/svg/icon-legal.svg" alt="法务"></div>
+        <span class="icon-label">法务</span>
+      </div>
+      <div class="icon-node">
+        <div class="icon-circle"><img src="../assets/svg/icon-accounting.svg" alt="会计"></div>
+        <span class="icon-label">会计</span>
+      </div>
+      <div class="icon-node">
+        <div class="icon-circle"><img src="../assets/svg/icon-immigration.svg" alt="移民"></div>
+        <span class="icon-label">移民</span>
+      </div>
+      <div class="icon-node">
+        <div class="icon-circle"><img src="../assets/svg/icon-insurance.svg" alt="保险"></div>
+        <span class="icon-label">保险</span>
+      </div>
+      <div class="icon-node">
+        <div class="icon-circle"><img src="../assets/svg/icon-hr.svg" alt="人力资源"></div>
+        <span class="icon-label">人力资源</span>
+      </div>
+      <div class="center-text">
+        <h1>德 扬</h1>
+        <p>法务 | 会计 | 咨询</p>
+        <p class="cn">融汇法税财保，守护安居乐业</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="reveal">
+  <div class="section-label">关于德扬</div>
+  <h2 class="section-title">德扬法务——融贯西东，化繁为简</h2>
+  <div class="about-text">
+    <p>德扬律师事务所（Bird &amp; Yang）由新西兰资深大律师Marshall Bird，与商务及房产投资律师Aimee Yang 于2022年联合在奥克兰创办。致力于成为连接中国与新西兰两国法律实践的桥梁——让跨境客户的事务能够以更高的效率、更深的文化理解和更少的沟通成本完成。</p>
+    <br>
+    <p>两位创始人深知中国与新西兰法律体系之间的差异，也理解客户关注的不仅是结果，更是每一步的拆解、合规与沟通的质量。Marshall在新西兰执业超过40年，从本地商法、房产开发到跨境交易均有深入实践。Aimee拥有中国背景与香港国际律师事务所的企业融资及并购经验，在新西兰主攻企业法、商业地产和投资移民领域。</p>
+  </div>
+</section>
+
+<!-- EXPERTISE -->
+<section id="expertise" class="reveal">
+  <div class="section-label">我们的专业</div>
+  <h2 class="section-title">专业服务范围</h2>
+  <div class="expertise-grid">
+    <div class="expertise-card">
+      <div class="card-header">
+        <div class="card-icon"><img src="../assets/svg/icon-legal.svg" alt="法务"></div>
+      </div>
+      <div class="card-body">
+        <h3>法务</h3>
+        <p>移民事务、房产与开发、商业法务、家庭与雇佣、诉讼与争议解决、中国业务/跨境服务</p>
+        <a href="legal.html">了解更多 &rarr;</a>
+      </div>
+    </div>
+    <div class="expertise-card">
+      <div class="card-header">
+        <div class="card-icon"><img src="../assets/svg/icon-accounting.svg" alt="会计"></div>
+      </div>
+      <div class="card-body">
+        <h3>会计</h3>
+        <p>年度与月度账目、税务、预算与预测、现金流管理、商业计划、资产管理、信托会计</p>
+        <a href="../accounting.html">了解更多 &rarr;</a>
+      </div>
+    </div>
+    <div class="expertise-card">
+      <div class="card-header">
+        <div class="card-icon"><img src="../assets/svg/icon-immigration.svg" alt="咨询"></div>
+      </div>
+      <div class="card-body">
+        <h3>咨询</h3>
+        <p>保险、人力资源、移民咨询</p>
+        <a href="../consulting.html">了解更多 &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY BIRD & YANG -->
+<section id="why" class="reveal">
+  <div class="section-label">我们的方法</div>
+  <h2 class="section-title">为什么选择德扬</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="step-number">1</div>
+      <h3>以专业整合复杂</h3>
+      <p>德扬如何把多领域问题整合为一条清晰路径</p>
+    </div>
+    <div class="step">
+      <div class="step-number">2</div>
+      <h3>以透明降低不确定</h3>
+      <p>降低不确定，增强信心</p>
+    </div>
+    <div class="step">
+      <div class="step-number">3</div>
+      <h3>以协同实现结果</h3>
+      <p>整合法务、财税与咨询，为客户提供完整的跨领域支持</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <h2>凡是与客户安居乐业相关的事务，德扬都愿鼎力相助。</h2>
+  <a href="contact.html" class="cta-btn">预约咨询</a>
+</section>
+
+<!-- FOOTER -->
+<div id="site-footer"></div>
+<script src="/components/footer.js"></script>
+<script>renderFooter({lang:"zh"})</script>
+
+<script>
+// Nav scroll effect
+const nav = document.querySelector('nav');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 60) {
+    nav.classList.add('scrolled');
+    nav.classList.remove('transparent');
+  } else {
+    nav.classList.remove('scrolled');
+    nav.classList.add('transparent');
+  }
+});
+
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.15 });
+reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

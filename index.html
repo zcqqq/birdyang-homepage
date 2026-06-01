@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bird & Yang | Auckland Lawyers, Accountants & Consultants</title>
+<meta name="description" content="Bird & Yang provides integrated Legal, Accounting, and Consulting expertise for individuals, families, and businesses navigating complex decisions.">
+<link rel="canonical" href="https://birdyang.pages.dev/index.html">
+<link rel="alternate" hreflang="en" href="https://birdyang.pages.dev/index.html">
+<link rel="alternate" hreflang="zh" href="https://birdyang.pages.dev/zh/index.html">
+<link rel="alternate" hreflang="x-default" href="https://birdyang.pages.dev/index.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Bird & Yang",
+  "url": "https://birdyang.pages.dev",
+  "logo": "https://birdyang.pages.dev/assets/svg/logo.svg",
+  "description": "Integrated Legal, Accounting, and Consulting expertise for individuals, families, and businesses.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "520 Mt Albert Road",
+    "addressLocality": "Three Kings",
+    "addressRegion": "Auckland",
+    "postalCode": "1042",
+    "addressCountry": "NZ"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -36.8997,
+    "longitude": 174.7376
+  },
+  "telephone": "+64 9 217 6231",
+  "email": "info@birdyang.co.nz",
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+    "opens": "09:00",
+    "closes": "17:00"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Auckland"
+  },
+  "serviceType": ["Legal Services", "Accounting Services", "Consulting Services"]
+}
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --blue:#01308a;
+  --gold:#c5851e;
+  --gold-light:#e4cc9c;
+  --navy-deep:#070e1a;
+  --navy-mid:#142238;
+  --cream:#f8f5f0;
+  --white:#ffffff;
+  --charcoal:#1a1a2e;
+  --muted:#5a5a6e;
+  --radius:2px;
+  --font:Verdana,Geneva,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);color:var(--charcoal);line-height:1.75;background:var(--cream)}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:20px 5%;transition:all .3s ease}
+nav.scrolled{background:rgba(7,14,26,.92);backdrop-filter:blur(12px);padding:12px 5%;box-shadow:0 2px 20px rgba(0,0,0,.3)}
+nav .logo img{height:28px}
+nav .nav-links{display:flex;gap:28px;align-items:center}
+nav .nav-links a{color:var(--white);text-decoration:none;font-size:.75rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;opacity:.85;transition:opacity .2s,color .2s}
+nav .nav-links a:hover{opacity:1;color:var(--gold-light)}
+nav .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
+nav .hamburger span{width:22px;height:2px;background:var(--white);transition:transform .3s}
+.mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(7,14,26,.97);flex-direction:column;align-items:center;justify-content:center;gap:32px;z-index:1001}
+.mobile-menu.open{display:flex}
+.mobile-menu a{color:var(--white);text-decoration:none;font-size:1.1rem;letter-spacing:.1em;text-transform:uppercase}
+.mobile-menu .mobile-close{position:absolute;top:20px;right:24px;color:var(--white);font-size:2rem;cursor:pointer;background:none;border:none}
+
+@media(max-width:768px){
+  nav .nav-links{display:none}
+  nav .nav-extras{display:none!important}
+  nav .hamburger{display:flex}
+}
+
+/* HERO */
+#hero{position:relative;height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,var(--navy-deep) 0%,var(--blue) 100%);overflow:hidden}
+#hero canvas{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none}
+.hero-content{position:relative;z-index:2;text-align:center;padding:0 20px;width:100%}
+.hero-title{font-size:clamp(2rem,5vw,3.5rem);font-weight:700;color:var(--white);letter-spacing:.08em;margin-bottom:12px}
+.hero-subtitle{font-size:clamp(.85rem,1.5vw,1rem);color:var(--gold-light);font-style:italic;margin-bottom:8px;letter-spacing:.02em}
+.hero-subtitle-cn{font-size:.9rem;color:rgba(255,255,255,.6);margin-bottom:48px}
+
+/* HERO ICONS ORBIT */
+.hero-icons{position:relative;width:min(620px,85vw);height:min(540px,75vh);margin:0 auto}
+.hero-icons .center-text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center}
+.hero-icons .center-text h1{font-size:clamp(1.6rem,4vw,2.8rem);font-weight:700;color:var(--white);letter-spacing:.08em;white-space:nowrap}
+.hero-icons .center-text p{font-size:clamp(.75rem,1.2vw,.9rem);color:var(--gold-light);font-style:italic;margin-top:8px}
+.hero-icons .center-text .cn{font-size:.8rem;color:rgba(255,255,255,.55);font-style:normal;margin-top:4px}
+
+.icon-node{position:absolute;width:64px;height:64px;display:flex;flex-direction:column;align-items:center;transform:translate(-50%,-50%)}
+.icon-node .icon-circle{width:56px;height:56px;border-radius:50%;border:1px solid rgba(197,133,30,.4);display:flex;align-items:center;justify-content:center;background:rgba(7,14,26,.5);transition:all .3s}
+.icon-node .icon-circle img{width:28px;height:28px}
+.icon-node .icon-label{font-size:.55rem;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.1em;margin-top:6px;white-space:nowrap}
+.icon-node:hover .icon-circle{border-color:var(--gold);background:rgba(197,133,30,.1);transform:translateY(-3px)}
+
+/* Icon positions (5 around circle) */
+.icon-node:nth-child(1){top:14%;left:50%}
+.icon-node:nth-child(2){top:34%;left:92%}
+.icon-node:nth-child(3){top:78%;left:80%}
+.icon-node:nth-child(4){top:78%;left:20%}
+.icon-node:nth-child(5){top:34%;left:8%}
+
+/* Nav extras (lang toggle + search) */
+nav .nav-extras{display:flex;align-items:center;gap:12px;margin-left:20px;padding-left:20px;border-left:1px solid rgba(255,255,255,.2)}
+nav .nav-extras .lang-toggle{font-size:.7rem;color:rgba(255,255,255,.7);letter-spacing:.05em}
+nav .nav-extras .lang-toggle a{color:rgba(255,255,255,.7);text-decoration:none;transition:color .2s}
+nav .nav-extras .lang-toggle a.active-lang{color:var(--white);font-weight:600}
+nav .nav-extras .lang-toggle a:hover{color:var(--gold-light)}
+nav .nav-extras .search-icon{cursor:pointer;opacity:.7;transition:opacity .2s}
+nav .nav-extras .search-icon:hover{opacity:1}
+nav .nav-extras .search-icon svg{width:16px;height:16px;stroke:var(--white);fill:none}
+
+@media(max-width:600px){
+  .hero-icons{width:100%;height:auto;display:flex;flex-wrap:wrap;justify-content:center;gap:16px;padding:20px}
+  .hero-icons .center-text{position:relative;top:auto;left:auto;transform:none;width:100%;margin-bottom:24px}
+  .icon-node{position:relative;top:auto!important;left:auto!important;transform:none;width:auto}
+}
+
+/* SECTIONS */
+section{padding:80px 5%}
+.section-label{font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);text-align:center;margin-bottom:12px}
+.section-title{font-size:clamp(1.5rem,3vw,2rem);font-weight:700;color:var(--blue);text-align:center;letter-spacing:.04em;margin-bottom:40px}
+
+/* ABOUT */
+#about{background:var(--cream);text-align:center}
+#about .about-text{max-width:800px;margin:0 auto;font-size:.95rem;color:var(--charcoal);line-height:1.85}
+
+/* EXPERTISE */
+#expertise{background:var(--white)}
+.expertise-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;max-width:1100px;margin:0 auto}
+.expertise-card{border-radius:var(--radius);overflow:hidden;background:var(--white);box-shadow:0 2px 8px rgba(0,0,0,.06);transition:transform .3s,box-shadow .3s;cursor:pointer}
+.expertise-card:hover{transform:translateY(-8px);box-shadow:0 12px 32px rgba(1,48,138,.12)}
+.expertise-card .card-header{background:linear-gradient(135deg,var(--blue),var(--navy-mid));height:180px;display:flex;align-items:center;justify-content:center}
+.expertise-card .card-header .card-icon{width:72px;height:72px;border-radius:50%;border:1px solid rgba(197,133,30,.5);display:flex;align-items:center;justify-content:center;background:rgba(7,14,26,.4)}
+.expertise-card .card-header .card-icon img{width:36px;height:36px}
+.expertise-card .card-body{padding:28px 24px}
+.expertise-card .card-body h3{font-size:1.1rem;font-weight:700;color:var(--blue);margin-bottom:10px;letter-spacing:.02em}
+.expertise-card .card-body p{font-size:.85rem;color:var(--muted);line-height:1.7;margin-bottom:16px}
+.expertise-card .card-body a{font-size:.8rem;color:var(--gold);text-decoration:none;font-weight:600;letter-spacing:.02em;transition:color .2s}
+.expertise-card .card-body a:hover{color:#a06d12}
+
+/* WHY SECTION */
+#why{background:var(--cream)}
+.steps{display:flex;align-items:flex-start;justify-content:center;gap:0;max-width:900px;margin:0 auto;position:relative}
+.steps::before{content:'';position:absolute;top:36px;left:25%;right:25%;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.step{flex:1;text-align:center;padding:0 16px;position:relative}
+.step-number{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--navy-mid));display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:1.5rem;font-weight:700;color:var(--gold);position:relative;z-index:2}
+.step-number::after{content:'';position:absolute;inset:-4px;border-radius:50%;border:1px solid rgba(197,133,30,.3)}
+.step h3{font-size:.95rem;font-weight:700;color:var(--blue);margin-bottom:8px}
+.step p{font-size:.82rem;color:var(--muted);line-height:1.7}
+
+@media(max-width:768px){
+  .steps{flex-direction:column;gap:32px}
+  .steps::before{display:none}
+}
+
+/* CTA */
+#cta{background:linear-gradient(135deg,var(--navy-deep),var(--blue));text-align:center;padding:100px 5%;position:relative;overflow:hidden}
+#cta::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(197,133,30,.08) 0%,transparent 70%);pointer-events:none}
+#cta h2{font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:var(--white);letter-spacing:.04em;margin-bottom:16px;position:relative}
+#cta p{font-size:.9rem;color:rgba(255,255,255,.6);max-width:500px;margin:0 auto 32px;position:relative}
+#cta .cta-btn{display:inline-block;padding:14px 40px;border:1px solid var(--gold);color:var(--gold);text-decoration:none;font-size:.8rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;border-radius:var(--radius);transition:all .3s;position:relative}
+#cta .cta-btn:hover{background:var(--gold);color:var(--navy-deep);transform:translateY(-2px);box-shadow:0 8px 24px rgba(197,133,30,.3)}
+
+/* FOOTER */
+footer{background:var(--navy-deep);color:rgba(255,255,255,.7);padding:60px 5% 24px}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px;max-width:1100px;margin:0 auto 40px}
+.footer-col h4{font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold-light);margin-bottom:16px}
+.footer-col p,.footer-col a{font-size:.82rem;color:rgba(255,255,255,.6);line-height:1.8;text-decoration:none}
+.footer-col a:hover{color:var(--gold-light)}
+.footer-col .brand-text{font-size:1.1rem;font-weight:700;color:var(--white);letter-spacing:.06em;margin-bottom:8px}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;max-width:1100px;margin:0 auto;font-size:.72rem;color:rgba(255,255,255,.4)}
+
+/* SCROLL REVEAL */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* REDUCED MOTION */
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  *{transition-duration:0s!important;animation-duration:0s!important}
+}
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<div id="site-nav"></div>
+<script src="/components/nav.js"></script>
+<script>renderNav({active:"home",lang:"en",transparent:true})</script>
+
+<!-- HERO -->
+<section id="hero">
+  <canvas id="worldmap"></canvas>
+  <div class="hero-content">
+    <div class="hero-icons">
+      <div class="icon-node">
+        <div class="icon-circle"><img src="assets/svg/icon-legal.svg" alt="Legal"></div>
+        <span class="icon-label">Legal</span>
+      </div>
+      <div class="icon-node">
+        <div class="icon-circle"><img src="assets/svg/icon-accounting.svg" alt="Accounting"></div>
+        <span class="icon-label">Accounting</span>
+      </div>
+      <div class="icon-node">
+        <div class="icon-circle"><img src="assets/svg/icon-immigration.svg" alt="Immigration"></div>
+        <span class="icon-label">Immigration</span>
+      </div>
+      <div class="icon-node">
+        <div class="icon-circle"><img src="assets/svg/icon-insurance.svg" alt="Insurance"></div>
+        <span class="icon-label">Insurance</span>
+      </div>
+      <div class="icon-node">
+        <div class="icon-circle"><img src="assets/svg/icon-hr.svg" alt="HR"></div>
+        <span class="icon-label">HR</span>
+      </div>
+      <div class="center-text">
+        <h1>BIRD &amp; YANG</h1>
+        <p>Integrated in Expertise, Together for Growth</p>
+        <p class="cn">融汇法税财保，守护安居乐业。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="reveal">
+  <div class="section-label">About Us</div>
+  <h2 class="section-title">BIRD &amp; YANG</h2>
+  <div class="about-text">
+    <p>At Bird &amp; Yang, we support the matters that shape how people live, settle, work, and grow.</p>
+    <br>
+    <p>By integrating Legal, Accounting, and Consulting expertise under one roof, we provide coordinated support for individuals, families, and businesses navigating important decisions in life and commerce. From legal structure and financial clarity to tax compliance, immigration pathways, insurance protection, and advisory support, our goal is to make complex matters clearer and more manageable.</p>
+    <br>
+    <p><em>Integrated in Expertise, Together for Growth</em> means that when our clients seek stability, opportunity, and long-term prosperity, Bird &amp; Yang is ready to stand with you.</p>
+  </div>
+</section>
+
+<!-- EXPERTISE -->
+<section id="expertise" class="reveal">
+  <div class="section-label">What We Do</div>
+  <h2 class="section-title">OUR EXPERTISE</h2>
+  <div class="expertise-grid">
+    <div class="expertise-card">
+      <div class="card-header">
+        <div class="card-icon"><img src="assets/svg/icon-legal.svg" alt="Legal Practice"></div>
+      </div>
+      <div class="card-body">
+        <h3>LEGAL PRACTICE</h3>
+        <p>Guiding What Matters with Clarity</p>
+        <a href="legal.html">Learn More &rarr;</a>
+      </div>
+    </div>
+    <div class="expertise-card">
+      <div class="card-header">
+        <div class="card-icon"><img src="assets/svg/icon-accounting.svg" alt="Accounting Solutions"></div>
+      </div>
+      <div class="card-body">
+        <h3>ACCOUNTING SOLUTIONS</h3>
+        <p>Building Wealth through Better Numbers</p>
+        <a href="accounting.html">Learn More &rarr;</a>
+      </div>
+    </div>
+    <div class="expertise-card">
+      <div class="card-header">
+        <div class="card-icon"><img src="assets/svg/icon-immigration.svg" alt="Consulting Services"></div>
+      </div>
+      <div class="card-body">
+        <h3>CONSULTING SERVICES</h3>
+        <p>Helping You Move Forward with Confidence</p>
+        <a href="consulting.html">Learn More &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY BIRD & YANG -->
+<section id="why" class="reveal">
+  <div class="section-label">Our Approach</div>
+  <h2 class="section-title">WHY BIRD &amp; YANG</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="step-number">1</div>
+      <h3>Integrated Expertise</h3>
+      <p>We bring legal, accounting, and consulting expertise together to help clients address complex matters with greater clarity and coordination.</p>
+    </div>
+    <div class="step">
+      <div class="step-number">2</div>
+      <h3>Transparent Process</h3>
+      <p>We reduce uncertainty through clear communication, structured workflows, and practical guidance at every step.</p>
+    </div>
+    <div class="step">
+      <div class="step-number">3</div>
+      <h3>Collaborative Results</h3>
+      <p>We coordinate across disciplines to provide more complete support and more practical outcomes.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <h2>Ready to Take the Next Step?</h2>
+  <p>Let's discuss how Bird &amp; Yang can support your journey with integrated expertise.</p>
+  <a href="contact.html#book" class="cta-btn">Book a Consultation</a>
+</section>
+
+<!-- FOOTER -->
+<div id="site-footer"></div>
+<script src="/components/footer.js"></script>
+<script>renderFooter({lang:"en"})</script>
+
+<script>
+// Nav scroll effect
+const nav = document.querySelector('nav');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 60) {
+    nav.classList.add('scrolled');
+    nav.classList.remove('transparent');
+  } else {
+    nav.classList.remove('scrolled');
+    nav.classList.add('transparent');
+  }
+});
+
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.15 });
+reveals.forEach(el => observer.observe(el));
+
+// World map canvas animation
+(function() {
+  const canvas = document.getElementById('worldmap');
+  const ctx = canvas.getContext('2d');
+  let W, H, particles, animId;
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Simplified world map coordinates (normalized 0-1)
+  const mapPoints = [
+    // North America
+    [.12,.28],[.14,.32],[.16,.30],[.18,.28],[.20,.26],[.22,.28],[.24,.30],[.15,.35],[.17,.38],[.20,.35],
+    [.22,.33],[.13,.40],[.16,.42],[.19,.40],[.22,.38],[.24,.36],[.14,.45],[.16,.48],[.18,.46],
+    // South America
+    [.22,.55],[.24,.58],[.25,.62],[.26,.65],[.24,.68],[.23,.72],[.22,.75],[.21,.78],[.20,.80],[.23,.60],
+    // Europe
+    [.44,.24],[.46,.26],[.48,.24],[.50,.26],[.52,.24],[.45,.28],[.47,.30],[.49,.28],[.51,.30],[.53,.28],
+    [.46,.32],[.48,.34],[.50,.32],[.44,.34],
+    // Africa
+    [.46,.42],[.48,.44],[.50,.42],[.47,.48],[.49,.50],[.51,.48],[.48,.54],[.50,.56],[.52,.54],
+    [.49,.60],[.51,.62],[.50,.66],[.48,.58],
+    // Asia
+    [.56,.24],[.58,.26],[.60,.24],[.62,.26],[.64,.24],[.66,.26],[.68,.24],[.70,.26],[.72,.24],
+    [.58,.30],[.60,.32],[.62,.30],[.64,.32],[.66,.30],[.68,.32],[.70,.30],[.72,.32],
+    [.60,.36],[.62,.38],[.64,.36],[.66,.38],[.68,.36],[.70,.38],[.74,.28],[.76,.30],
+    [.62,.42],[.64,.40],[.66,.42],[.68,.44],[.70,.42],[.72,.40],
+    // Australia
+    [.74,.60],[.76,.58],[.78,.60],[.80,.62],[.76,.64],[.78,.66],[.80,.64],[.82,.60],[.75,.62],
+    // Middle East
+    [.54,.36],[.56,.38],[.58,.36],[.54,.40],[.56,.42],
+  ];
+
+  function resize() {
+    W = canvas.width = canvas.offsetWidth;
+    H = canvas.height = canvas.offsetHeight;
+    particles = mapPoints.map(([x, y]) => ({
+      x: x * W,
+      y: y * H,
+      ox: x * W,
+      oy: y * H,
+      vx: (Math.random() - .5) * .3,
+      vy: (Math.random() - .5) * .3,
+      r: 1.5 + Math.random() * 1.5,
+      phase: Math.random() * Math.PI * 2
+    }));
+  }
+
+  function draw(t) {
+    ctx.clearRect(0, 0, W, H);
+    const time = t * .001;
+
+    // Draw connections
+    ctx.strokeStyle = 'rgba(197,133,30,0.12)';
+    ctx.lineWidth = .6;
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        const threshold = W * .08;
+        if (dist < threshold) {
+          const alpha = (1 - dist / threshold) * .15;
+          ctx.strokeStyle = `rgba(197,133,30,${alpha})`;
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.stroke();
+        }
+      }
+    }
+
+    // Draw particles
+    particles.forEach(p => {
+      if (!reducedMotion) {
+        p.x = p.ox + Math.sin(time + p.phase) * 2;
+        p.y = p.oy + Math.cos(time * .8 + p.phase) * 1.5;
+      }
+      const pulse = .6 + Math.sin(time * 2 + p.phase) * .4;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r * pulse, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(197,133,30,${.25 + pulse * .15})`;
+      ctx.fill();
+    });
+
+    if (!reducedMotion) {
+      animId = requestAnimationFrame(draw);
+    }
+  }
+
+  resize();
+  if (reducedMotion) {
+    draw(0);
+  } else {
+    draw(0);
+  }
+
+  window.addEventListener('resize', () => {
+    resize();
+    if (reducedMotion) draw(0);
+  });
+})();
+</script>
+</body>
+</html>

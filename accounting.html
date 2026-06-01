@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auckland Accounting Services | Tax, Business & Trust Accounting | Bird & Yang</title>
+<meta name="description" content="Bird & Yang Accounting Services — Building Wealth Through Better Numbers. Annual accounts, taxation, budgeting, cash flow, business plans, asset management, and trust accounting.">
+<link rel="canonical" href="https://birdyang.pages.dev/accounting.html">
+<link rel="alternate" hreflang="en" href="https://birdyang.pages.dev/accounting.html">
+<link rel="alternate" hreflang="zh" href="https://birdyang.pages.dev/zh/accounting.html">
+<link rel="alternate" hreflang="x-default" href="https://birdyang.pages.dev/accounting.html">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<div id="site-nav"></div>
+<script src="/components/nav.js"></script>
+<script>renderNav({active:"accounting",lang:"en"})</script>
+
+<main id="app"></main>
+
+<script>
+(function(){
+
+/* ─── Hash Router ─── */
+function route(){
+  var hash = location.hash.slice(1) || 'home';
+  var html = '';
+  switch(hash){
+    case 'home': html = pageHome(); break;
+    case 'annual-accounts': html = pageAnnualAccounts(); break;
+    case 'taxation': html = pageTaxation(); break;
+    case 'budget-forecast': html = pageBudgetForecast(); break;
+    case 'cash-flow': html = pageCashFlow(); break;
+    case 'business-plans': html = pageBusinessPlans(); break;
+    case 'asset-management': html = pageAssetManagement(); break;
+    case 'trust-accounting': html = pageTrustAccounting(); break;
+    case 'team/heather-chao': html = pageHeatherChao(); break;
+    case 'team/ming-lu': html = pageMingLu(); break;
+    case 'team/ally-liao': html = pageAllyLiao(); break;
+    default: html = pageHome();
+  }
+  document.getElementById('app').innerHTML = html;
+  window.scrollTo(0,0);
+  initAccordions();
+  initReveal();
+}
+
+window.addEventListener('hashchange', route);
+window.addEventListener('DOMContentLoaded', route);
+
+/* ─── Accordion Toggle ─── */
+function initAccordions(){
+  document.querySelectorAll('.accordion-header').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var body = this.nextElementSibling;
+      var open = this.classList.contains('active');
+      this.classList.toggle('active', !open);
+      body.classList.toggle('active', !open);
+    });
+  });
+}
+
+/* ─── Reveal on Scroll ─── */
+function initReveal(){
+  var els = document.querySelectorAll('.reveal');
+  if(!els.length) return;
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('visible'); }
+    });
+  }, {threshold:0.15});
+  els.forEach(function(el){ observer.observe(el); });
+}
+
+/* ─── Nav Scroll Effect ─── */
+window.addEventListener('scroll', function(){
+  var nav = document.querySelector('nav, .site-nav, #site-nav');
+  if(!nav) return;
+  if(window.scrollY > 60){
+    nav.classList.add('scrolled');
+    nav.classList.remove('transparent');
+  } else {
+    nav.classList.remove('scrolled');
+    nav.classList.add('transparent');
+  }
+});
+
+/* ─── Helper: Service Detail Page ─── */
+function serviceDetail(opts){
+  var accordionHTML = '';
+  opts.accordions.forEach(function(item){
+    accordionHTML += '<div class="accordion reveal"><div class="accordion-header">'+item+'</div><div class="accordion-body"><p>Our team provides expert guidance and hands-on support for '+item.toLowerCase()+' tailored to your specific situation.</p></div></div>';
+  });
+  var whyHTML = '';
+  opts.sidebar.forEach(function(w){
+    whyHTML += '<div class="why-item">'+w+'</div>';
+  });
+  return '<section class="hero-banner"><div class="container"><div class="breadcrumb"><a href="#home">Accounting</a> &rsaquo; '+opts.title+'</div><h1 >'+opts.title+'</h1></div></section>'
+    + '<section class="container"><a href="#home" class="back-link">&larr; Back to Accounting Services</a>'
+    + '<div class="two-col"><div class="main-content"><p class="about-text reveal">'+opts.intro+'</p>'
+    + accordionHTML
+    + '</div><aside class="sidebar"><div class="sidebar-card reveal">'
+    + whyHTML
+    + '<a href="mailto:heather@birdyang.co.nz" class="cta-btn">Get in Touch</a></div></aside></div></section>';
+}
+
+/* ─── Helper: Team Profile ─── */
+function profilePage(opts){
+  var badges = '';
+  opts.expertise.forEach(function(b){ badges += '<span class="badge">'+b+'</span>'; });
+  var highlights = '';
+  opts.highlights.forEach(function(h){ highlights += '<div class="highlight">'+h+'</div>'; });
+  return '<section class="hero-banner"><div class="container"><div class="breadcrumb"><a href="#home">Accounting</a> &rsaquo; Team &rsaquo; '+opts.name+'</div><h1 class="hero-label">'+opts.name+'</h1><p class="hero-sub">'+opts.role+'</p></div></section>'
+    + '<section class="container"><a href="#home" class="back-link">&larr; Back to Accounting Services</a>'
+    + '<div class="profile-layout reveal"><div class="profile-photo"><img src="'+opts.photo+'" alt="'+opts.name+'"></div>'
+    + '<div class="profile-info"><h2 class="profile-name">'+opts.name+'</h2><p class="profile-role">'+opts.role+'</p>'
+    + '<p class="profile-bio">'+opts.bio+'</p>'
+    + '<div class="expertise-badges">'+badges+'</div>'
+    + '<div class="profile-highlights">'+highlights+'</div>'
+    + '<div class="profile-contact"><p><strong>Phone:</strong> <a href="tel:'+opts.phone.replace(/\s/g,'')+'">'+opts.phone+'</a></p><p><strong>Email:</strong> <a href="mailto:'+opts.email+'">'+opts.email+'</a></p></div>'
+    + '</div></div></section>';
+}
+
+/* ═══════════════════════════════════════════
+   PAGE: HOME
+   ═══════════════════════════════════════════ */
+function pageHome(){
+  return '<section class="hero-banner"><div class="container"><h1>ACCOUNTING SERVICES</h1><p class="hero-sub">Building Wealth through Better Numbers</p></div></section>'
+
+  + '<section class="container bg-white reveal"><p class="section-label">ABOUT OUR ACCOUNTING PRACTICE</p><p class="about-text">Behind every successful business is a clear set of numbers. At Bird &amp; Yang, we go beyond compliance &mdash; we help you understand your financial position, make informed decisions, and build wealth with confidence. Working alongside our legal team, we provide integrated advice that sees the full picture of your business and personal finances.</p></section>'
+
+  + '<section class="container bg-cream reveal"><p class="section-label">Our Services</p><h2 class="section-title">What We Do</h2><div class="cards-grid">'
+
+  + serviceCard('Annual / Monthly Accounts','We prepare your numbers with precision and explain them with clarity.','#annual-accounts')
+  + serviceCard('Taxation','We navigate the complexity so you don\'t have to &mdash; keeping you compliant and efficient.','#taxation')
+  + serviceCard('Budget &amp; Forecast','A good forecast doesn\'t predict the future &mdash; it prepares you for it.','#budget-forecast')
+  + serviceCard('Cash Flow Management','Cash is the lifeblood of your business. We help you manage it with discipline.','#cash-flow')
+  + serviceCard('Business Plans','We help you turn ambition into a plan &mdash; and a plan into a business that works.','#business-plans')
+  + serviceCard('Asset Management','Your assets represent what you\'ve built. We help you protect and track them.','#asset-management')
+  + serviceCard('Trust Accounting','A well-managed trust gives you peace of mind.','#trust-accounting')
+
+  + '</div></section>'
+
+  + '<section class="container bg-white reveal"><p class="section-label">Our Team</p><h2 class="section-title">Meet the Accounting Team</h2><div class="team-grid">'
+  + teamCard('Heather Chao','Chartered Accountant (CA)','assets/team/heather-chao.png','#team/heather-chao')
+  + teamCard('Ming Lu','Trust and Financial Manager (CPA)','assets/team/ming-lu.png','#team/ming-lu')
+  + teamCard('Ally Liao','MBA, CA Candidate','assets/team/ally-liao.png','#team/ally-liao')
+  + '</div></section>';
+}
+
+function serviceCard(title, desc, hash){
+  return '<a href="'+hash+'" class="service-card reveal"><div class="card-icon-area"><div class="icon-circle"><img src="assets/svg/icon-accounting.svg" alt=""></div></div><div class="card-body"><h3>'+title+'</h3><p>'+desc+'</p><span class="learn-more">Learn more &rarr;</span></div></a>';
+}
+
+function teamCard(name, role, photo, hash){
+  return '<a href="'+hash+'" class="team-card reveal"><img src="'+photo+'" alt="'+name+'"><h3>'+name+'</h3><p>'+role+'</p></a>';
+}
+
+/* ═══════════════════════════════════════════
+   PAGE: ANNUAL ACCOUNTS
+   ═══════════════════════════════════════════ */
+function pageAnnualAccounts(){
+  return serviceDetail({
+    title: 'ANNUAL / MONTHLY ACCOUNTS',
+    intro: 'Good decisions start with good information. Bird &amp; Yang prepares accurate, timely, useful financial reporting that gives you clarity over your business performance and supports confident decision-making.',
+    accordions: [
+      'Annual financial statements',
+      'Monthly management accounts',
+      'Compilation &amp; review engagements',
+      'Multi-entity consolidation',
+      'Financial statement analysis',
+      'Bookkeeping support'
+    ],
+    sidebar: ['Accurate reporting','Insight beyond compliance','Cloud-based support']
+  });
+}
+
+/* ═══════════════════════════════════════════
+   PAGE: TAXATION
+   ═══════════════════════════════════════════ */
+function pageTaxation(){
+  return serviceDetail({
+    title: 'TAXATION',
+    intro: 'Tax obligations affect business income, GST, trust distributions, and international investments. Bird &amp; Yang ensures you meet your obligations while taking advantage of every legitimate opportunity to minimise your tax burden.',
+    accordions: [
+      'Income tax returns',
+      'GST returns',
+      'Fringe Benefit Tax',
+      'Tax planning &amp; structuring',
+      'IRD liaison &amp; audit support',
+      'Provisional tax management',
+      'International tax',
+      'R&amp;D Tax Incentive',
+      'Payday filing &amp; PAYE'
+    ],
+    sidebar: ['Compliance with foresight','IRD confidence','Cross-border tax insight']
+  });
+}
+
+/* ═══════════════════════════════════════════
+   PAGE: BUDGET & FORECAST
+   ═══════════════════════════════════════════ */
+function pageBudgetForecast(){
+  return serviceDetail({
+    title: 'BUDGET &amp; FORECAST',
+    intro: 'Bird &amp; Yang helps clients set financial targets, model scenarios, track performance against expectations, and adapt plans as conditions change.',
+    accordions: [
+      'Annual and multi-year budgets',
+      'Rolling forecasts',
+      'Revenue modelling &amp; scenario analysis',
+      'Cost structure analysis',
+      'KPI dashboards &amp; performance tracking',
+      'Break-even analysis'
+    ],
+    sidebar: ['Practical planning','Scenario clarity','Performance visibility']
+  });
+}
+
+/* ═══════════════════════════════════════════
+   PAGE: CASH FLOW
+   ═══════════════════════════════════════════ */
+function pageCashFlow(){
+  return serviceDetail({
+    title: 'CASH FLOW MANAGEMENT',
+    intro: 'A profitable business can still fail if it runs out of cash. Bird &amp; Yang helps you forecast, monitor, and manage your cash position so you can meet your commitments, seize opportunities, and avoid surprises.',
+    accordions: [
+      'Cash flow forecasting',
+      'Working capital optimization',
+      'Debtor management',
+      'Creditor management',
+      'Crisis &amp; turnaround support',
+      'Banking relationship support'
+    ],
+    sidebar: ['Liquidity discipline','Working capital focus','Bank-ready support']
+  });
+}
+
+/* ═══════════════════════════════════════════
+   PAGE: BUSINESS PLANS
+   ═══════════════════════════════════════════ */
+function pageBusinessPlans(){
+  return serviceDetail({
+    title: 'BUSINESS PLANS',
+    intro: 'Starting a business requires more than courage. Bird &amp; Yang helps you build a plan that is grounded in financial reality, supported by clear projections, and structured to attract funding or guide execution.',
+    accordions: [
+      'Start-up feasibility analysis',
+      'Business plan documentation',
+      'Funding applications',
+      'Business structure advisory',
+      'Expansion &amp; growth planning'
+    ],
+    sidebar: ['Funding-ready planning','Commercial realism','Structure with purpose']
+  });
+}
+
+/* ═══════════════════════════════════════════
+   PAGE: ASSET MANAGEMENT
+   ═══════════════════════════════════════════ */
+function pageAssetManagement(){
+  return serviceDetail({
+    title: 'ASSET MANAGEMENT',
+    intro: 'Assets represent years of hard work and careful planning. Bird &amp; Yang helps you track, protect, and optimise your asset base &mdash; whether that is commercial property, equipment, or investment portfolios.',
+    accordions: [
+      'Fixed asset register maintenance',
+      'Property portfolio management',
+      'Investment monitoring',
+      'Insurance adequacy reviews',
+      'Asset protection strategies'
+    ],
+    sidebar: ['Strategic oversight','Protection and performance','Integrated coordination']
+  });
+}
+
+/* ═══════════════════════════════════════════
+   PAGE: TRUST ACCOUNTING
+   ═══════════════════════════════════════════ */
+function pageTrustAccounting(){
+  return serviceDetail({
+    title: 'TRUST ACCOUNTING',
+    intro: 'Trusts remain important for asset protection, estate planning, and intergenerational wealth transfer. Bird &amp; Yang provides the accounting, tax, and administrative support your trust needs to remain compliant and effective.',
+    accordions: [
+      'Trust financial statements',
+      'Trust tax returns',
+      'Beneficiary distribution planning',
+      'Trust administration support',
+      'Trust restructuring',
+      'Trust &amp; legal coordination'
+    ],
+    sidebar: ['Trust compliance clarity','Tax-efficient planning','Legal-accounting coordination']
+  });
+}
+
+/* ═══════════════════════════════════════════
+   PAGE: HEATHER CHAO
+   ═══════════════════════════════════════════ */
+function pageHeatherChao(){
+  return profilePage({
+    name: 'Heather Chao',
+    role: 'Chartered Accountant (CA)',
+    photo: 'assets/team/heather-chao.png',
+    bio: 'Heather Chao is a Chartered Accountant with over 20 years of experience in accounting and business advisory. She leads Bird &amp; Yang\'s accounting practice, guiding clients through growth, change, and complexity with practical, clear-headed advice.',
+    expertise: ['SME Accounting','Cashflow Management','IRD Negotiations','Systems &amp; Procedures','MYOB/Xero/ERP'],
+    highlights: ['20+ years experience','Growth &amp; change advisor','Systems expert'],
+    phone: '+64 21 284 3737',
+    email: 'heather@birdyang.co.nz'
+  });
+}
+
+/* ═══════════════════════════════════════════
+   PAGE: MING LU
+   ═══════════════════════════════════════════ */
+function pageMingLu(){
+  return profilePage({
+    name: 'Ming Lu',
+    role: 'Trust and Financial Manager (CPA China)',
+    photo: 'assets/team/ming-lu.png',
+    bio: 'Ming Lu is the Trust and Financial Manager at Bird &amp; Yang with a strong background in accounting, audit, finance, and corporate management. She brings rigorous attention to detail and cross-border commercial insight to every engagement.',
+    expertise: ['Accounting &amp; Audit Support','Financial Consulting','Corporate Finance','Due Diligence','Investment &amp; Economic Management'],
+    highlights: ['Extensive accounting background','Regulatory review experience','Corporate finance insight'],
+    phone: '+64 9 590 0943',
+    email: 'ming@birdyang.co.nz'
+  });
+}
+
+/* ═══════════════════════════════════════════
+   PAGE: ALLY LIAO
+   ═══════════════════════════════════════════ */
+function pageAllyLiao(){
+  return profilePage({
+    name: 'Ally Liao',
+    role: 'MBA, CA Candidate',
+    photo: 'assets/team/ally-liao.png',
+    bio: 'Ally Liao supports Bird &amp; Yang\'s accounting and business advisory practice with a strong combination of accounting knowledge, commercial insight, and execution capability.',
+    expertise: ['Accounting Administration','GST &amp; IRD Compliance','Business Advisory Support','Xero &amp; MYOB','Cross-border Business Perspective'],
+    highlights: ['Accounting discipline','Commercial judgment','Strategic perspective'],
+    phone: '+64 9 590 0944',
+    email: 'ally@birdyang.co.nz'
+  });
+}
+
+})();
+</script>
+
+<!-- FOOTER -->
+<div id="site-footer"></div>
+<script src="/components/footer.js"></script>
+<script>renderFooter({lang:"en"})</script>
+
+</body>
+</html>

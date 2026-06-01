@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>为什么选择德扬 | 德扬集团 Bird & Yang</title>
+<meta name="description" content="了解德扬如何以专业整合复杂，以透明降低不确定，以协同实现结果——融贯西东，化繁为简。">
+<link rel="canonical" href="https://birdyang.pages.dev/zh/why.html">
+<link rel="alternate" hreflang="zh" href="https://birdyang.pages.dev/zh/why.html">
+<link rel="alternate" hreflang="en" href="https://birdyang.pages.dev/why.html">
+<link rel="alternate" hreflang="x-default" href="https://birdyang.pages.dev/why.html">
+<link rel="stylesheet" href="../style.css">
+<style>
+body{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",Verdana,Geneva,sans-serif}
+.hero-banner h1{letter-spacing:.15em}
+.section-title{letter-spacing:.06em}
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<div id="site-nav"></div>
+<script src="/components/nav.js"></script>
+<script>renderNav({active:"why",lang:"zh"})</script>
+
+<!-- APP -->
+<main id="app"></main>
+
+<!-- FOOTER -->
+<div id="site-footer"></div>
+<script src="/components/footer.js"></script>
+<script>renderFooter({lang:"zh"})</script>
+
+<script>
+(function() {
+  var app = document.getElementById('app');
+
+  /* --- ROUTES --- */
+  var routes = {
+    'home': renderHome
+  };
+
+  /* --- ROUTER --- */
+  function navigate() {
+    var hash = location.hash.slice(1) || 'home';
+    var render = routes[hash] || renderHome;
+    app.innerHTML = render();
+    window.scrollTo(0, 0);
+    initReveal();
+  }
+
+  window.addEventListener('hashchange', navigate);
+  window.addEventListener('DOMContentLoaded', navigate);
+  navigate();
+
+  /* --- NAV SCROLL EFFECT --- */
+  window.addEventListener('scroll', function() {
+    var nav = document.querySelector('nav');
+    if (window.scrollY > 60) {
+      nav.classList.add('scrolled');
+      nav.classList.remove('transparent');
+    } else {
+      nav.classList.remove('scrolled');
+      nav.classList.add('transparent');
+    }
+  });
+
+  /* --- SCROLL REVEAL --- */
+  function initReveal() {
+    var els = document.querySelectorAll('.reveal');
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.15 });
+    els.forEach(function(el) { observer.observe(el); });
+  }
+
+  /* --- PAGE: #home --- */
+  function renderHome() {
+    return '' +
+    '<div class="hero-banner">' +
+      '<div class="hero-label">德扬</div>' +
+      '<h1>为什么选择德扬</h1>' +
+      '<p class="hero-sub">融贯西东，化繁为简</p>' +
+    '</div>' +
+
+    /* Section 1: 客户可能遇到的法律挑战 */
+    '<section class="bg-cream reveal">' +
+      '<div class="container">' +
+        '<div class="section-label">客户可能遇到的法律挑战</div>' +
+        '<div class="about-text" style="margin-bottom:40px">' +
+          '<p>法律问题之所以令人焦虑，往往不是因为单一问题本身，而是因为它牵动生活、家庭、财产、事业、甚至未来安排。德扬提供的，不只是回答"能不能赢"，更重要的是帮助客户判断：问题究竟在哪里，成本有多大，怎样处理才是值得的。</p>' +
+        '</div>' +
+        '<div style="display:grid;gap:24px;max-width:800px;margin:0 auto">' +
+          '<div style="display:flex;gap:16px;align-items:flex-start">' +
+            '<div style="min-width:36px;height:36px;border-radius:50%;background:var(--blue);color:var(--gold);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem">1</div>' +
+            '<div><h4 style="font-size:.88rem;font-weight:700;color:var(--blue);margin-bottom:4px">这件事到底麻烦在哪里？</h4><p style="font-size:.82rem;color:var(--muted);line-height:1.7">是事实不清、证据不足、责任不明，还是对方不愿沟通？</p></div>' +
+          '</div>' +
+          '<div style="display:flex;gap:16px;align-items:flex-start">' +
+            '<div style="min-width:36px;height:36px;border-radius:50%;background:var(--blue);color:var(--gold);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem">2</div>' +
+            '<div><h4 style="font-size:.88rem;font-weight:700;color:var(--blue);margin-bottom:4px">我需要付出多少时间、精力和金钱？</h4><p style="font-size:.82rem;color:var(--muted);line-height:1.7">法律解决方案应当考虑现实成本，而不只是理论上的胜负。</p></div>' +
+          '</div>' +
+          '<div style="display:flex;gap:16px;align-items:flex-start">' +
+            '<div style="min-width:36px;height:36px;border-radius:50%;background:var(--blue);color:var(--gold);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem">3</div>' +
+            '<div><h4 style="font-size:.88rem;font-weight:700;color:var(--blue);margin-bottom:4px">我真正想得到什么结果？</h4><p style="font-size:.82rem;color:var(--muted);line-height:1.7">是赔偿、退款、保障权利、解决身份问题、保护家庭，还是避免未来更大的风险？</p></div>' +
+          '</div>' +
+        '</div>' +
+      '</div>' +
+    '</section>' +
+
+    /* Section 2: 德扬三问三解法 */
+    '<section class="bg-white reveal">' +
+      '<div class="container">' +
+        '<div class="section-label">德扬三问三解法</div>' +
+        '<h2 class="section-title">从复杂问题到清晰路径</h2>' +
+        '<div class="about-text" style="margin-bottom:40px">' +
+          '<p>在德扬，我们相信好的法律服务不应仅只是解释法律条文，而应帮助客户回答三个真正重要的问题。通过专业判断、清晰沟通与跨文化理解，我们协助客户把复杂问题转化为更明确、更可控的解决路径。</p>' +
+        '</div>' +
+        '<div style="display:grid;gap:24px;max-width:800px;margin:0 auto">' +
+          '<div style="display:flex;gap:16px;align-items:flex-start">' +
+            '<div style="min-width:36px;height:36px;border-radius:50%;background:var(--blue);color:var(--gold);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem">1</div>' +
+            '<div><h4 style="font-size:.88rem;font-weight:700;color:var(--blue);margin-bottom:4px">第一，这件事到底麻烦在哪里？</h4><p style="font-size:.82rem;color:var(--muted);line-height:1.7">我们通过深度团队与跨文化理解，帮助客户重新审视事实、证据、法律关系、程序路径与商业风险，准确识别问题真正的起因。</p></div>' +
+          '</div>' +
+          '<div style="display:flex;gap:16px;align-items:flex-start">' +
+            '<div style="min-width:36px;height:36px;border-radius:50%;background:var(--blue);color:var(--gold);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem">2</div>' +
+            '<div><h4 style="font-size:.88rem;font-weight:700;color:var(--blue);margin-bottom:4px">第二，我需要付出多少时间、精力和金钱？</h4><p style="font-size:.82rem;color:var(--muted);line-height:1.7">我们通过透明收费、阶段报告和项目管理机制，让法律服务的进度、成本与预后变得更清晰。</p></div>' +
+          '</div>' +
+          '<div style="display:flex;gap:16px;align-items:flex-start">' +
+            '<div style="min-width:36px;height:36px;border-radius:50%;background:var(--blue);color:var(--gold);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem">3</div>' +
+            '<div><h4 style="font-size:.88rem;font-weight:700;color:var(--blue);margin-bottom:4px">第三，我最终想得到什么结果？</h4><p style="font-size:.82rem;color:var(--muted);line-height:1.7">我们以结果为导向，结合客户的现实处境和长期目标，协助建构更合理的解决方案。</p></div>' +
+          '</div>' +
+        '</div>' +
+      '</div>' +
+    '</section>' +
+
+    /* Section 3: 服务亮点 */
+    '<section class="bg-cream reveal">' +
+      '<div class="container">' +
+        '<div class="section-label">服务亮点</div>' +
+        '<h2 class="section-title">我们的核心优势</h2>' +
+        '<div class="values-grid">' +
+          '<div class="value-card">' +
+            '<div class="num">1</div>' +
+            '<h3>以专业整合复杂</h3>' +
+            '<p>在客户面对法务、移民、税务等复杂问题时，真正的难处往往不在于某一单一领域，而在于多个问题互为关联。德扬把法务、税务、财会、保险与咨询为一体提供整合型解决方案。</p>' +
+          '</div>' +
+          '<div class="value-card">' +
+            '<div class="num">2</div>' +
+            '<h3>以透明降低不确定</h3>' +
+            '<p>移民投资是一项重大的决定。不确定性往往来自信息不对称与流程不清晰。德扬以高度透明的沟通与流程管理，帮您充分理解每个阶段、步骤要求、进展与可能的结果。</p>' +
+          '</div>' +
+          '<div class="value-card">' +
+            '<div class="num">3</div>' +
+            '<h3>以协同实现结果</h3>' +
+            '<p>整合法务、财税与咨询，为客户提供完整的跨领域支持。德扬法务、会计、咨询三大领域的专家团队以协同方式紧密合作，为您提供支持。帮助您企业降风险，优化资源配置，提升合规水平，稳步前行。</p>' +
+          '</div>' +
+        '</div>' +
+      '</div>' +
+    '</section>' +
+
+    /* CTA */
+    '<section style="background:linear-gradient(135deg,var(--navy-deep),var(--blue));text-align:center;padding:80px 5%;position:relative;overflow:hidden">' +
+      '<h2 style="font-size:clamp(1.1rem,2.5vw,1.5rem);font-weight:700;color:var(--white);letter-spacing:.04em;margin-bottom:16px">凡是与客户安居乐业相关的事务，德扬都愿鼎力相助。</h2>' +
+      '<a href="contact.html" class="cta-btn" style="margin-top:24px">预约咨询</a>' +
+    '</section>';
+  }
+
+})();
+</script>
+</body>
+</html>

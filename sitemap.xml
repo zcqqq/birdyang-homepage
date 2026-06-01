@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://birdyang.pages.dev/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://birdyang.pages.dev/index.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://birdyang.pages.dev/zh/index.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://birdyang.pages.dev/index.html"/>
+  </url>
+  <url>
+    <loc>https://birdyang.pages.dev/legal.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://birdyang.pages.dev/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://birdyang.pages.dev/zh/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://birdyang.pages.dev/legal.html"/>
+  </url>
+  <url>
+    <loc>https://birdyang.pages.dev/accounting.html</loc>
+  </url>
+  <url>
+    <loc>https://birdyang.pages.dev/consulting.html</loc>
+  </url>
+  <url>
+    <loc>https://birdyang.pages.dev/why.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://birdyang.pages.dev/why.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://birdyang.pages.dev/zh/why.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://birdyang.pages.dev/why.html"/>
+  </url>
+  <url>
+    <loc>https://birdyang.pages.dev/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://birdyang.pages.dev/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://birdyang.pages.dev/zh/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://birdyang.pages.dev/contact.html"/>
+  </url>
+  <url>
+    <loc>https://birdyang.pages.dev/zh/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://birdyang.pages.dev/zh/index.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://birdyang.pages.dev/index.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://birdyang.pages.dev/index.html"/>
+  </url>
+  <url>
+    <loc>https://birdyang.pages.dev/zh/legal.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://birdyang.pages.dev/zh/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://birdyang.pages.dev/legal.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://birdyang.pages.dev/legal.html"/>
+  </url>
+  <url>
+    <loc>https://birdyang.pages.dev/zh/why.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://birdyang.pages.dev/zh/why.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://birdyang.pages.dev/why.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://birdyang.pages.dev/why.html"/>
+  </url>
+  <url>
+    <loc>https://birdyang.pages.dev/zh/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://birdyang.pages.dev/zh/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://birdyang.pages.dev/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://birdyang.pages.dev/contact.html"/>
+  </url>
+</urlset>
