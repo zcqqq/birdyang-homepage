@@ -34,7 +34,6 @@ function renderNav(opts) {
       '<div class="nav-links">' + navLinks + '</div>' +
       '<div class="nav-extras">' +
         '<span class="lang-toggle">' + enToggle + ' | ' + zhToggle + '</span>' +
-        '<span class="search-icon"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>' +
       '</div>' +
       '<div class="hamburger" onclick="document.querySelector(\'.mobile-menu\').classList.add(\'open\')"><span></span><span></span><span></span></div>' +
     '</nav>' +

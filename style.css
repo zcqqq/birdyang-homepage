@@ -39,9 +39,6 @@ nav .nav-extras .lang-toggle{font-size:.7rem;color:rgba(255,255,255,.7);letter-s
 nav .nav-extras .lang-toggle a{color:rgba(255,255,255,.7);text-decoration:none;transition:color .2s}
 nav .nav-extras .lang-toggle a.active-lang{color:var(--white);font-weight:600}
 nav .nav-extras .lang-toggle a:hover{color:var(--gold-light)}
-nav .nav-extras .search-icon{cursor:pointer;opacity:.7;transition:opacity .2s}
-nav .nav-extras .search-icon:hover{opacity:1}
-nav .nav-extras .search-icon svg{width:16px;height:16px;stroke:var(--white);fill:none}
 
 @media(max-width:768px){
   nav .nav-links{display:none}
