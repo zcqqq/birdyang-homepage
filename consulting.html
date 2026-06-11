@@ -316,8 +316,8 @@ function renderHome() {
               <div class="icon-circle"><img src="assets/svg/icon-insurance.svg" alt="Insurance"></div>
             </div>
             <div class="card-body">
-              <h3>Insurance</h3>
-              <p>Securing your future with expertise</p>
+              <h3>INSURANCE</h3>
+              <p>Securing Your Future with Expertise</p>
               <span class="learn-more">Learn More &rarr;</span>
             </div>
           </a>
@@ -326,8 +326,8 @@ function renderHome() {
               <div class="icon-circle"><img src="assets/svg/icon-hr.svg" alt="HR Consulting"></div>
             </div>
             <div class="card-body">
-              <h3>HR Consulting</h3>
-              <p>Supporting your success with practical HR guidance</p>
+              <h3>HR CONSULTING</h3>
+              <p>Supporting Your Success with Resources</p>
               <span class="learn-more">Learn More &rarr;</span>
             </div>
           </a>
@@ -336,8 +336,8 @@ function renderHome() {
               <div class="icon-circle"><img src="assets/svg/icon-immigration.svg" alt="Immigration"></div>
             </div>
             <div class="card-body">
-              <h3>Immigration</h3>
-              <p>Realizing your pathway with efficiency</p>
+              <h3>IMMIGRATION</h3>
+              <p>Realizing Your Pathway with Efficiency</p>
               <span class="learn-more">Learn More &rarr;</span>
             </div>
           </a>
@@ -373,10 +373,12 @@ function renderInsuranceHome() {
 
     <section class="reveal">
       <div class="container">
-        <a class="back-link" href="#home">BACK TO CONSULTING</a>
+        <a class="back-link" href="#home">BACK TO CONSULTING SERVICES</a>
         <div class="about-text">
-          <p>We help individuals, families, and businesses understand their insurance options and make informed decisions. Whether it's your car, your home, or your health, our role is to guide you through the process with clarity and confidence.</p>
+          <p>Life and business are built on &ldquo;what ifs&rdquo;. At Bird &amp; Yang, we help you answer those questions before they arise. We do not just arrange policies; we provide clear guidance so your assets, your family, and your future are protected with the right cover.</p>
+          <p style="margin-top:16px">Working alongside our legal and accounting teams, we offer an integrated approach to insurance support &mdash; because your protection should not operate in a silo.</p>
         </div>
+        <div style="text-align:center;margin:24px 0"><a href="contact.html#book" class="cta-btn primary">BOOK A CONSULTATION</a></div>
         <div class="cards-grid">
           <a class="service-card" href="#insurance/car">
             <div class="card-icon-area">
@@ -384,7 +386,7 @@ function renderInsuranceHome() {
             </div>
             <div class="card-body">
               <h3>Car Insurance</h3>
-              <p>Driving with clarity and confidence</p>
+              <p>We take the guesswork out of the road &mdash; providing the clarity you need to drive with confidence.</p>
               <span class="learn-more">Learn More &rarr;</span>
             </div>
           </a>
@@ -394,7 +396,7 @@ function renderInsuranceHome() {
             </div>
             <div class="card-body">
               <h3>House Insurance</h3>
-              <p>Protecting your home with foresight</p>
+              <p>We protect the roof over your head with professional foresight &mdash; so your family&rsquo;s sanctuary remains secure.</p>
               <span class="learn-more">Learn More &rarr;</span>
             </div>
           </a>
@@ -403,8 +405,8 @@ function renderInsuranceHome() {
               <div class="icon-circle"><img src="assets/svg/icon-insurance.svg" alt="Life Health Insurance"></div>
             </div>
             <div class="card-body">
-              <h3>Life, Health &amp; Business</h3>
-              <p>Planning for the unexpected with clarity</p>
+              <h3>Life, Health &amp; Business Protection</h3>
+              <p>We help you plan for the unexpected with clarity &mdash; ensuring that when life changes, your security does not.</p>
               <span class="learn-more">Learn More &rarr;</span>
             </div>
           </a>
@@ -598,24 +600,26 @@ function renderTeamProfile(id) {
       <p class="hero-sub">${profile.role}</p>
     </div>
 
-    <section class="reveal">
+    <section>
       <div class="container">
         <a class="back-link" href="#home">BACK TO OUR TEAM</a>
         <div class="profile-layout">
-          <div style="text-align:center">
+          <div class="profile-photo-col">
             <img class="profile-photo" src="${profile.photo}" alt="${profile.name}">
           </div>
-          <div>
+          <div class="profile-main">
             <h2 class="profile-name">${profile.name}</h2>
             <p class="profile-role">${profile.role}</p>
             <p class="profile-bio">${profile.bio}</p>
-
-            <div class="expertise-badges">
-              ${profile.expertise.map(e => `<span>${e}</span>`).join('')}
-            </div>
-
-            <p style="font-size:.85rem;color:var(--charcoal);line-height:1.8;margin-bottom:24px">${profile.summary}</p>
-
+            <h3>AREAS OF EXPERTISE</h3>
+            <ul class="expertise-list">
+              ${profile.expertise.map(e => `<li>${e}</li>`).join('')}
+            </ul>
+            <h3>PROFILE SUMMARY</h3>
+            <p class="profile-summary">${profile.summary}</p>
+          </div>
+          <div class="profile-sidebar">
+            <h3>PROFILE HIGHLIGHTS</h3>
             <div class="profile-highlights">
               ${profile.highlights.map(h => `
                 <div class="highlight">
@@ -624,11 +628,13 @@ function renderTeamProfile(id) {
                 </div>
               `).join('')}
             </div>
-
-            <div class="profile-contact">
-              <p><strong>Phone:</strong> <a href="tel:${profile.contact.phone.replace(/\s/g,'')}">${profile.contact.phone}</a></p>
-              <p><strong>Email:</strong> <a href="mailto:${profile.contact.email}">${profile.contact.email}</a></p>
-            </div>
+          </div>
+        </div>
+        <div class="profile-bottom">
+          <a href="contact.html#book" class="cta-btn">BOOK A CONSULTATION</a>
+          <div class="profile-contact">
+            <p><a href="tel:${profile.contact.phone.replace(/\s/g,'')}">${profile.contact.phone}</a></p>
+            <p><a href="mailto:${profile.contact.email}">${profile.contact.email}</a></p>
           </div>
         </div>
       </div>

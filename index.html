@@ -85,7 +85,8 @@ nav .hamburger span{width:22px;height:2px;background:var(--white);transition:tra
 }
 
 /* HERO */
-#hero{position:relative;height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,var(--navy-deep) 0%,var(--blue) 100%);overflow:hidden}
+#hero{position:relative;height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#0a1a3a 0%,#0d2e6b 40%,var(--blue) 100%);overflow:hidden}
+#hero::after{content:'';position:absolute;top:35%;left:50%;transform:translate(-50%,-50%);width:1000px;height:600px;background:radial-gradient(ellipse,rgba(30,80,180,.15) 0%,rgba(197,133,30,.05) 30%,transparent 65%);pointer-events:none}
 #hero canvas{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none}
 .hero-content{position:relative;z-index:2;text-align:center;padding:0 20px;width:100%}
 .hero-title{font-size:clamp(2rem,5vw,3.5rem);font-weight:700;color:var(--white);letter-spacing:.08em;margin-bottom:12px}
@@ -95,18 +96,18 @@ nav .hamburger span{width:22px;height:2px;background:var(--white);transition:tra
 /* HERO ICONS ORBIT */
 .hero-icons{position:relative;width:min(620px,85vw);height:min(540px,75vh);margin:0 auto}
 .hero-icons .center-text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center}
-.hero-icons .center-text h1{font-size:clamp(1.6rem,4vw,2.8rem);font-weight:700;color:var(--white);letter-spacing:.08em;white-space:nowrap}
-.hero-icons .center-text p{font-size:clamp(.75rem,1.2vw,.9rem);color:var(--gold-light);font-style:italic;margin-top:8px}
-.hero-icons .center-text .cn{font-size:.8rem;color:rgba(255,255,255,.55);font-style:normal;margin-top:4px}
+.hero-icons .center-text h1{font-size:clamp(1.6rem,4vw,2.8rem);font-weight:700;color:var(--white);letter-spacing:.08em;white-space:nowrap;margin-top:100px}
+.hero-icons .center-text p{font-size:clamp(.8rem,1.3vw,.95rem);color:#e4cc9c;font-style:italic;margin-top:10px;text-shadow:0 0 20px rgba(197,133,30,.3)}
+.hero-icons .center-text .slogan-img{margin-top:-70px;width:clamp(260px,40vw,420px);height:auto;filter:drop-shadow(0 0 12px rgba(197,133,30,.4))}
 
-.icon-node{position:absolute;width:64px;height:64px;display:flex;flex-direction:column;align-items:center;transform:translate(-50%,-50%)}
-.icon-node .icon-circle{width:56px;height:56px;border-radius:50%;border:1px solid rgba(197,133,30,.4);display:flex;align-items:center;justify-content:center;background:rgba(7,14,26,.5);transition:all .3s}
-.icon-node .icon-circle img{width:28px;height:28px}
+.icon-node{position:absolute;width:68px;height:68px;display:flex;flex-direction:column;align-items:center;transform:translate(-50%,-50%)}
+.icon-node .icon-circle{width:68px;height:68px;display:flex;align-items:center;justify-content:center;background:transparent;transition:all .3s}
+.icon-node .icon-circle img{width:68px;height:68px;object-fit:contain}
 .icon-node .icon-label{font-size:.55rem;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.1em;margin-top:6px;white-space:nowrap}
 .icon-node:hover .icon-circle{border-color:var(--gold);background:rgba(197,133,30,.1);transform:translateY(-3px)}
 
 /* Icon positions (5 around circle) */
-.icon-node:nth-child(1){top:14%;left:50%}
+.icon-node:nth-child(1){top:6%;left:50%}
 .icon-node:nth-child(2){top:34%;left:92%}
 .icon-node:nth-child(3){top:78%;left:80%}
 .icon-node:nth-child(4){top:78%;left:20%}
@@ -139,9 +140,10 @@ section{padding:80px 5%}
 .expertise-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;max-width:1100px;margin:0 auto}
 .expertise-card{border-radius:var(--radius);overflow:hidden;background:var(--white);box-shadow:0 2px 8px rgba(0,0,0,.06);transition:transform .3s,box-shadow .3s;cursor:pointer}
 .expertise-card:hover{transform:translateY(-8px);box-shadow:0 12px 32px rgba(1,48,138,.12)}
-.expertise-card .card-header{background:linear-gradient(135deg,var(--blue),var(--navy-mid));height:180px;display:flex;align-items:center;justify-content:center}
-.expertise-card .card-header .card-icon{width:72px;height:72px;border-radius:50%;border:1px solid rgba(197,133,30,.5);display:flex;align-items:center;justify-content:center;background:rgba(7,14,26,.4)}
-.expertise-card .card-header .card-icon img{width:36px;height:36px}
+.expertise-card .card-header{background:linear-gradient(135deg,var(--blue) 0%,#0a1e4a 50%,var(--blue) 100%);height:200px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.expertise-card .card-header::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,rgba(197,133,30,.06) 0%,transparent 70%)}
+.expertise-card .card-header .card-icon{width:100px;height:100px;display:flex;align-items:center;justify-content:center;background:transparent;position:relative}
+.expertise-card .card-header .card-icon img{width:100px;height:100px;object-fit:contain}
 .expertise-card .card-body{padding:28px 24px}
 .expertise-card .card-body h3{font-size:1.1rem;font-weight:700;color:var(--blue);margin-bottom:10px;letter-spacing:.02em}
 .expertise-card .card-body p{font-size:.85rem;color:var(--muted);line-height:1.7;margin-bottom:16px}
@@ -153,8 +155,8 @@ section{padding:80px 5%}
 .steps{display:flex;align-items:flex-start;justify-content:center;gap:0;max-width:900px;margin:0 auto;position:relative}
 .steps::before{content:'';position:absolute;top:36px;left:25%;right:25%;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
 .step{flex:1;text-align:center;padding:0 16px;position:relative}
-.step-number{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--navy-mid));display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:1.5rem;font-weight:700;color:var(--gold);position:relative;z-index:2}
-.step-number::after{content:'';position:absolute;inset:-4px;border-radius:50%;border:1px solid rgba(197,133,30,.3)}
+.step-number{width:72px;height:72px;margin:0 auto 20px;position:relative;z-index:2}
+.step-number img{width:72px;height:72px;object-fit:contain;filter:drop-shadow(0 2px 8px rgba(197,133,30,.3))}
 .step h3{font-size:.95rem;font-weight:700;color:var(--blue);margin-bottom:8px}
 .step p{font-size:.82rem;color:var(--muted);line-height:1.7}
 
@@ -204,29 +206,28 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.7);padding:60px 5% 24
   <div class="hero-content">
     <div class="hero-icons">
       <div class="icon-node">
-        <div class="icon-circle"><img src="assets/svg/icon-legal.svg" alt="Legal"></div>
+        <div class="icon-circle"><img src="assets/svg/icon-legal.png" alt="Legal"></div>
         <span class="icon-label">Legal</span>
       </div>
       <div class="icon-node">
-        <div class="icon-circle"><img src="assets/svg/icon-accounting.svg" alt="Accounting"></div>
+        <div class="icon-circle"><img src="assets/svg/icon-accounting.png" alt="Accounting"></div>
         <span class="icon-label">Accounting</span>
       </div>
       <div class="icon-node">
-        <div class="icon-circle"><img src="assets/svg/icon-immigration.svg" alt="Immigration"></div>
+        <div class="icon-circle"><img src="assets/svg/icon-immigration.png" alt="Immigration"></div>
         <span class="icon-label">Immigration</span>
       </div>
       <div class="icon-node">
-        <div class="icon-circle"><img src="assets/svg/icon-insurance.svg" alt="Insurance"></div>
+        <div class="icon-circle"><img src="assets/svg/icon-insurance.png" alt="Insurance"></div>
         <span class="icon-label">Insurance</span>
       </div>
       <div class="icon-node">
-        <div class="icon-circle"><img src="assets/svg/icon-hr.svg" alt="HR"></div>
+        <div class="icon-circle"><img src="assets/svg/icon-hr.png" alt="HR"></div>
         <span class="icon-label">HR</span>
       </div>
       <div class="center-text">
         <h1>BIRD &amp; YANG</h1>
-        <p>Integrated in Expertise, Together for Growth</p>
-        <p class="cn">融汇法税财保，守护安居乐业。</p>
+        <img class="slogan-img" src="assets/svg/slogan.png" alt="Integrated in Expertise, Together for Growth">
       </div>
     </div>
   </div>
@@ -252,7 +253,7 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.7);padding:60px 5% 24
   <div class="expertise-grid">
     <div class="expertise-card">
       <div class="card-header">
-        <div class="card-icon"><img src="assets/svg/icon-legal.svg" alt="Legal Practice"></div>
+        <div class="card-icon"><img src="assets/svg/icon-legal.png" alt="Legal Practice"></div>
       </div>
       <div class="card-body">
         <h3>LEGAL PRACTICE</h3>
@@ -262,7 +263,7 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.7);padding:60px 5% 24
     </div>
     <div class="expertise-card">
       <div class="card-header">
-        <div class="card-icon"><img src="assets/svg/icon-accounting.svg" alt="Accounting Solutions"></div>
+        <div class="card-icon"><img src="assets/svg/icon-accounting.png" alt="Accounting Solutions"></div>
       </div>
       <div class="card-body">
         <h3>ACCOUNTING SOLUTIONS</h3>
@@ -272,7 +273,7 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.7);padding:60px 5% 24
     </div>
     <div class="expertise-card">
       <div class="card-header">
-        <div class="card-icon"><img src="assets/svg/icon-immigration.svg" alt="Consulting Services"></div>
+        <div class="card-icon"><img src="assets/svg/icon-consulting.png" alt="Consulting Services"></div>
       </div>
       <div class="card-body">
         <h3>CONSULTING SERVICES</h3>
@@ -289,17 +290,17 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.7);padding:60px 5% 24
   <h2 class="section-title">WHY BIRD &amp; YANG</h2>
   <div class="steps">
     <div class="step">
-      <div class="step-number">1</div>
+      <div class="step-number"><img src="assets/svg/icon_1.png" alt="1"></div>
       <h3>Integrated Expertise</h3>
       <p>We bring legal, accounting, and consulting expertise together to help clients address complex matters with greater clarity and coordination.</p>
     </div>
     <div class="step">
-      <div class="step-number">2</div>
+      <div class="step-number"><img src="assets/svg/icon_2.png" alt="2"></div>
       <h3>Transparent Process</h3>
       <p>We reduce uncertainty through clear communication, structured workflows, and practical guidance at every step.</p>
     </div>
     <div class="step">
-      <div class="step-number">3</div>
+      <div class="step-number"><img src="assets/svg/icon_3.png" alt="3"></div>
       <h3>Collaborative Results</h3>
       <p>We coordinate across disciplines to provide more complete support and more practical outcomes.</p>
     </div>
