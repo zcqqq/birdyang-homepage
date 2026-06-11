@@ -83,6 +83,7 @@ const teamProfiles = {
 
 const servicePages = {
   'insurance/car': {
+    img: 'assets/images/30_InsuranceSubHome01_Car.png',
     label: 'INSURANCE',
     title: 'Driving with Clarity and Confidence',
     subtitle: 'Car Insurance',
@@ -100,6 +101,7 @@ const servicePages = {
     sidebar: ['Policy clarity', 'Disclosure guidance', 'Claim readiness']
   },
   'insurance/house': {
+    img: 'assets/images/31_InsuranceSubHome02_House.png',
     label: 'INSURANCE',
     title: 'Protecting Your Home with Foresight',
     subtitle: 'House Insurance',
@@ -117,6 +119,7 @@ const servicePages = {
     sidebar: ['Rebuild confidence', 'Risk awareness', 'Practical protection']
   },
   'insurance/life-health': {
+    img: 'assets/images/32_InsuranceSubHome03_Life.png',
     label: 'INSURANCE',
     title: 'Planning for the Unexpected with Clarity',
     subtitle: 'Life, Health & Business Insurance',
@@ -134,6 +137,7 @@ const servicePages = {
     sidebar: ['Integrated planning', 'Broader coverage', 'Future security']
   },
   'hr/compliance': {
+    img: 'assets/images/34_HRSubhome01_HRCompliance.png',
     label: 'HR CONSULTING',
     title: 'Building Your HR Foundations with Confidence',
     subtitle: 'HR Compliance',
@@ -151,6 +155,7 @@ const servicePages = {
     sidebar: ['Practical compliance', 'Current and informed', 'Integrated support']
   },
   'hr/people': {
+    img: 'assets/images/35_HRSubhome02_PeopleManagement.png',
     label: 'HR CONSULTING',
     title: 'Handling Hard Conversations with Confidence',
     subtitle: 'People Management',
@@ -168,6 +173,7 @@ const servicePages = {
     sidebar: ['Fair process support', 'Clear documentation', 'Integrated legal pathway']
   },
   'hr/workplace': {
+    img: 'assets/images/36_HRSubhome03_Workplace.png',
     label: 'HR CONSULTING',
     title: 'Building Safe, Respectful, and Resilient Workplaces',
     subtitle: 'Workplace Culture & Risk',
@@ -185,6 +191,7 @@ const servicePages = {
     sidebar: ['Culture with clarity', 'Risk-aware support', 'Early intervention']
   },
   'hr/recruitment': {
+    img: 'assets/images/37_HRSubhome04_Recruitment.png',
     label: 'HR CONSULTING',
     title: 'Helping You Attract, Onboard, and Keep the Right People',
     subtitle: 'Recruitment & Retention',
@@ -202,6 +209,7 @@ const servicePages = {
     sidebar: ['Smarter hiring', 'Better onboarding', 'Retention focus']
   },
   'hr/bilingual': {
+    img: 'assets/images/38_HRSubhome05_Bilingual.png',
     label: 'HR CONSULTING',
     title: 'Helping Your Workplace Stay on the Same Page',
     subtitle: 'Bilingual HR',
@@ -219,6 +227,7 @@ const servicePages = {
     sidebar: ['Clear communication', 'Cultural understanding', 'Seamless legal connection']
   },
   'immigration/pathway': {
+    img: 'assets/images/40_ImmigrationSubhome01_Pathway.png',
     label: 'IMMIGRATION CONSULTING',
     title: 'Prepared, Informed, and Confident from the Start',
     subtitle: 'Pathway Support',
@@ -236,6 +245,7 @@ const servicePages = {
     sidebar: ['Clear starting point', 'Integrated team', 'Less confusion']
   },
   'immigration/application': {
+    img: 'assets/images/41_ImmigrationSubhome02_Preparation.png',
     label: 'IMMIGRATION CONSULTING',
     title: 'Putting Your Best Case Forward',
     subtitle: 'Application Preparation',
@@ -253,6 +263,7 @@ const servicePages = {
     sidebar: ['Clear documentation', 'Quality control', 'Submission readiness']
   },
   'immigration/relationship': {
+    img: 'assets/images/42_ImmigrationSubhome03_Relationship%26Employment.png',
     label: 'IMMIGRATION CONSULTING',
     title: 'Presenting Your Story with Clarity',
     subtitle: 'Relationship & Employment',
@@ -270,6 +281,7 @@ const servicePages = {
     sidebar: ['Authentic evidence', 'Applicant and employer support', 'Closer alignment']
   },
   'immigration/timeline': {
+    img: 'assets/images/43_ImmigrationSubhome04_Timeline.png',
     label: 'IMMIGRATION CONSULTING',
     title: 'Keeping Your Matter on Schedule',
     subtitle: 'Timeline & Process',
@@ -292,7 +304,7 @@ const servicePages = {
 
 function renderHome() {
   return `
-    <div class="hero-banner">
+    <div class="hero-banner" style="background:url('assets/images/28_ConsultingHome01_FirstSight.png') center/cover no-repeat">
       <h1>CONSULTING SERVICES</h1>
       <p class="hero-sub">Helping You Move Forward with Confidence</p>
     </div>
@@ -312,9 +324,7 @@ function renderHome() {
         <h2 class="section-title">Areas of Practice</h2>
         <div class="cards-grid">
           <a class="service-card" href="#insurance">
-            <div class="card-icon-area">
-              <div class="icon-circle"><img src="assets/svg/icon-insurance.svg" alt="Insurance"></div>
-            </div>
+            <div class="card-icon-area" style="background:url('assets/images/28_ConsultingHome02_Insurance.png') center/cover no-repeat;height:140px"></div>
             <div class="card-body">
               <h3>INSURANCE</h3>
               <p>Securing Your Future with Expertise</p>
@@ -322,9 +332,7 @@ function renderHome() {
             </div>
           </a>
           <a class="service-card" href="#hr">
-            <div class="card-icon-area">
-              <div class="icon-circle"><img src="assets/svg/icon-hr.svg" alt="HR Consulting"></div>
-            </div>
+            <div class="card-icon-area" style="background:url('assets/images/28_ConsultingHome03_HR.png') center/cover no-repeat;height:140px"></div>
             <div class="card-body">
               <h3>HR CONSULTING</h3>
               <p>Supporting Your Success with Resources</p>
@@ -332,9 +340,7 @@ function renderHome() {
             </div>
           </a>
           <a class="service-card" href="#immigration">
-            <div class="card-icon-area">
-              <div class="icon-circle"><img src="assets/svg/icon-immigration.svg" alt="Immigration"></div>
-            </div>
+            <div class="card-icon-area" style="background:url('assets/images/28_ConsultingHome04_Immigration.png') center/cover no-repeat;height:140px"></div>
             <div class="card-body">
               <h3>IMMIGRATION</h3>
               <p>Realizing Your Pathway with Efficiency</p>
@@ -365,7 +371,7 @@ function renderHome() {
 
 function renderInsuranceHome() {
   return `
-    <div class="hero-banner">
+    <div class="hero-banner" style="background:url('assets/images/29_InsuranceHome01_FirstSight.png') center/cover no-repeat">
       <p class="breadcrumb">CONSULTING SERVICES</p>
       <h1>INSURANCE</h1>
       <p class="hero-sub">Securing your future with expertise</p>
@@ -381,9 +387,7 @@ function renderInsuranceHome() {
         <div style="text-align:center;margin:24px 0"><a href="contact.html#book" class="cta-btn primary">BOOK A CONSULTATION</a></div>
         <div class="cards-grid">
           <a class="service-card" href="#insurance/car">
-            <div class="card-icon-area">
-              <div class="icon-circle"><img src="assets/svg/icon-insurance.svg" alt="Car Insurance"></div>
-            </div>
+            <div class="card-icon-area" style="background:url('assets/images/29_InsuranceHome02_Car.png') center/cover no-repeat;height:140px"></div>
             <div class="card-body">
               <h3>Car Insurance</h3>
               <p>We take the guesswork out of the road &mdash; providing the clarity you need to drive with confidence.</p>
@@ -391,9 +395,7 @@ function renderInsuranceHome() {
             </div>
           </a>
           <a class="service-card" href="#insurance/house">
-            <div class="card-icon-area">
-              <div class="icon-circle"><img src="assets/svg/icon-insurance.svg" alt="House Insurance"></div>
-            </div>
+            <div class="card-icon-area" style="background:url('assets/images/29_InsuranceHome03_House.png') center/cover no-repeat;height:140px"></div>
             <div class="card-body">
               <h3>House Insurance</h3>
               <p>We protect the roof over your head with professional foresight &mdash; so your family&rsquo;s sanctuary remains secure.</p>
@@ -401,7 +403,7 @@ function renderInsuranceHome() {
             </div>
           </a>
           <a class="service-card" href="#insurance/life-health">
-            <div class="card-icon-area">
+            <div class="card-icon-area" style="background:url('assets/images/29_InsuranceHome04_Life.png') center/cover no-repeat;height:140px"></div>
               <div class="icon-circle"><img src="assets/svg/icon-insurance.svg" alt="Life Health Insurance"></div>
             </div>
             <div class="card-body">
@@ -418,7 +420,7 @@ function renderInsuranceHome() {
 
 function renderHRHome() {
   return `
-    <div class="hero-banner">
+    <div class="hero-banner" style="background:url('assets/images/33_HRHome01_FirstSight.png') center/cover no-repeat">
       <p class="breadcrumb">CONSULTING SERVICES</p>
       <h1>HR CONSULTING</h1>
       <p class="hero-sub">Supporting your success with practical HR guidance</p>
@@ -432,9 +434,7 @@ function renderHRHome() {
         </div>
         <div class="cards-grid">
           <a class="service-card" href="#hr/compliance">
-            <div class="card-icon-area">
-              <div class="icon-circle"><img src="assets/svg/icon-hr.svg" alt="HR Compliance"></div>
-            </div>
+            <div class="card-icon-area" style="background:url('assets/images/33_HRHome02_HRCompliance.png') center/cover no-repeat;height:140px"></div>
             <div class="card-body">
               <h3>HR Compliance</h3>
               <p>Building your HR foundations with confidence</p>
@@ -442,9 +442,7 @@ function renderHRHome() {
             </div>
           </a>
           <a class="service-card" href="#hr/people">
-            <div class="card-icon-area">
-              <div class="icon-circle"><img src="assets/svg/icon-hr.svg" alt="People Management"></div>
-            </div>
+            <div class="card-icon-area" style="background:url('assets/images/33_HRHome03_PeopleManagement.png') center/cover no-repeat;height:140px"></div>
             <div class="card-body">
               <h3>People Management</h3>
               <p>Handling hard conversations with confidence</p>
@@ -452,9 +450,7 @@ function renderHRHome() {
             </div>
           </a>
           <a class="service-card" href="#hr/workplace">
-            <div class="card-icon-area">
-              <div class="icon-circle"><img src="assets/svg/icon-hr.svg" alt="Workplace Culture"></div>
-            </div>
+            <div class="card-icon-area" style="background:url('assets/images/33_HRHome04_Workplace.png') center/cover no-repeat;height:140px"></div>
             <div class="card-body">
               <h3>Workplace Culture &amp; Risk</h3>
               <p>Building safe, respectful, and resilient workplaces</p>
@@ -462,9 +458,7 @@ function renderHRHome() {
             </div>
           </a>
           <a class="service-card" href="#hr/recruitment">
-            <div class="card-icon-area">
-              <div class="icon-circle"><img src="assets/svg/icon-hr.svg" alt="Recruitment"></div>
-            </div>
+            <div class="card-icon-area" style="background:url('assets/images/33_HRHome05_Recruitment.png') center/cover no-repeat;height:140px"></div>
             <div class="card-body">
               <h3>Recruitment &amp; Retention</h3>
               <p>Helping you attract, onboard, and keep the right people</p>
@@ -472,9 +466,7 @@ function renderHRHome() {
             </div>
           </a>
           <a class="service-card" href="#hr/bilingual">
-            <div class="card-icon-area">
-              <div class="icon-circle"><img src="assets/svg/icon-hr.svg" alt="Bilingual HR"></div>
-            </div>
+            <div class="card-icon-area" style="background:url('assets/images/33_HRHome06_Bilingual.png') center/cover no-repeat;height:140px"></div>
             <div class="card-body">
               <h3>Bilingual HR</h3>
               <p>Helping your workplace stay on the same page</p>
@@ -489,7 +481,7 @@ function renderHRHome() {
 
 function renderImmigrationHome() {
   return `
-    <div class="hero-banner">
+    <div class="hero-banner" style="background:url('assets/images/39_ImmigrationHome01_FirstSight.png') center/cover no-repeat">
       <p class="breadcrumb">CONSULTING SERVICES</p>
       <h1>IMMIGRATION CONSULTING</h1>
       <p class="hero-sub">Realizing your pathway with efficiency</p>
@@ -503,9 +495,7 @@ function renderImmigrationHome() {
         </div>
         <div class="cards-grid">
           <a class="service-card" href="#immigration/pathway">
-            <div class="card-icon-area">
-              <div class="icon-circle"><img src="assets/svg/icon-immigration.svg" alt="Pathway Support"></div>
-            </div>
+            <div class="card-icon-area" style="background:url('assets/images/39_ImmigrationHome02_Pathway.png') center/cover no-repeat;height:140px"></div>
             <div class="card-body">
               <h3>Pathway Support</h3>
               <p>Prepared, informed, and confident from the start</p>
@@ -513,9 +503,7 @@ function renderImmigrationHome() {
             </div>
           </a>
           <a class="service-card" href="#immigration/application">
-            <div class="card-icon-area">
-              <div class="icon-circle"><img src="assets/svg/icon-immigration.svg" alt="Application Preparation"></div>
-            </div>
+            <div class="card-icon-area" style="background:url('assets/images/39_ImmigrationHome03_Preparation.png') center/cover no-repeat;height:140px"></div>
             <div class="card-body">
               <h3>Application Preparation</h3>
               <p>Putting your best case forward</p>
@@ -523,9 +511,7 @@ function renderImmigrationHome() {
             </div>
           </a>
           <a class="service-card" href="#immigration/relationship">
-            <div class="card-icon-area">
-              <div class="icon-circle"><img src="assets/svg/icon-immigration.svg" alt="Relationship & Employment"></div>
-            </div>
+            <div class="card-icon-area" style="background:url('assets/images/39_ImmigrationHome04_Relationship%26Employment.png') center/cover no-repeat;height:140px"></div>
             <div class="card-body">
               <h3>Relationship &amp; Employment</h3>
               <p>Presenting your story with clarity</p>
@@ -533,9 +519,7 @@ function renderImmigrationHome() {
             </div>
           </a>
           <a class="service-card" href="#immigration/timeline">
-            <div class="card-icon-area">
-              <div class="icon-circle"><img src="assets/svg/icon-immigration.svg" alt="Timeline & Process"></div>
-            </div>
+            <div class="card-icon-area" style="background:url('assets/images/39_ImmigrationHome05_Timeline.png') center/cover no-repeat;height:140px"></div>
             <div class="card-body">
               <h3>Timeline &amp; Process</h3>
               <p>Keeping your matter on schedule</p>
@@ -562,8 +546,9 @@ function serviceDetailPage(opts) {
     </div>
   `).join('');
 
+  const heroStyle = opts.img ? ` style="background:url('${opts.img}') center/cover no-repeat"` : '';
   return `
-    <div class="hero-banner">
+    <div class="hero-banner"${heroStyle}>
       <div class="breadcrumb"><a href="#home">CONSULTING</a> &gt; <a href="${opts.backHash}">${opts.label}</a> &gt; ${opts.subtitle}</div>
       <h1>${opts.title}</h1>
     </div>
@@ -594,7 +579,7 @@ function renderTeamProfile(id) {
   if (!profile) return renderHome();
 
   return `
-    <div class="hero-banner">
+    <div class="hero-banner" style="background:url('assets/images/11_Team_memberPageV7.png') center/cover no-repeat">
       <p class="breadcrumb">OUR TEAM</p>
       <h1>${profile.name}</h1>
       <p class="hero-sub">${profile.role}</p>

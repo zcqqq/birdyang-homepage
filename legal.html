@@ -56,13 +56,13 @@
 /* ─── DATA ─── */
 
 const services = [
-  { id: 'immigration', title: 'Immigration', subtitle: 'Guiding you through immigration pathways with clarity and confidence.' },
-  { id: 'property', title: 'Property & Development', subtitle: 'Supporting purchases, sales, and development matters with practical insight.' },
-  { id: 'business-law', title: 'Business Law', subtitle: 'Helping businesses structure, grow, and manage legal risk with confidence.' },
-  { id: 'estate-planning', title: 'Estate Planning, Trusts & Wills', subtitle: 'Protecting your family, assets, and future through thoughtful planning.' },
-  { id: 'family-employment', title: 'Family & Employment', subtitle: 'Providing practical guidance through family and workplace matters.' },
-  { id: 'litigation', title: 'Litigation & Dispute Resolution', subtitle: 'Helping you assess options, resolve disputes, and move forward clearly.' },
-  { id: 'china-desk', title: 'China Desk / Cross-Border', subtitle: 'Bridging different worlds with one trusted legal team.' }
+  { id: 'immigration', title: 'Immigration', subtitle: 'Guiding you through immigration pathways with clarity and confidence.', img: 'assets/images/02_LegalHome02_ImmigrationV2.png' },
+  { id: 'property', title: 'Property & Development', subtitle: 'Supporting purchases, sales, and development matters with practical insight.', img: 'assets/images/02_LegalHome03_PropertyV2.png' },
+  { id: 'business-law', title: 'Business Law', subtitle: 'Helping businesses structure, grow, and manage legal risk with confidence.', img: 'assets/images/02_LegalHome04_BusinessLawV2.png' },
+  { id: 'estate-planning', title: 'Estate Planning, Trusts & Wills', subtitle: 'Protecting your family, assets, and future through thoughtful planning.', img: 'assets/images/02_LegalHome05_Estate.png' },
+  { id: 'family-employment', title: 'Family & Employment', subtitle: 'Providing practical guidance through family and workplace matters.', img: 'assets/images/02_LegalHome06_Family%26EmploymentV2.png' },
+  { id: 'litigation', title: 'Litigation & Dispute Resolution', subtitle: 'Helping you assess options, resolve disputes, and move forward clearly.', img: 'assets/images/02_LegalHome07_Dispute.png' },
+  { id: 'china-desk', title: 'China Desk / Cross-Border', subtitle: 'Bridging different worlds with one trusted legal team.', img: 'assets/images/02_LegalHome08_China.png' }
 ];
 
 const team = [
@@ -78,6 +78,7 @@ const servicePages = {
   immigration: {
     title: 'IMMIGRATION',
     breadcrumb: 'Immigration',
+    img: 'assets/images/03_LegalExpertise_LegalSubhome01_Immigration.png',
     intro: 'At Bird & Yang, our experienced legal team provides clear, practical advice on immigration matters across New Zealand and a wide range of cross-border situations. We help individuals, families, and businesses achieve their goals with confidence—backed by deep legal knowledge and a commitment to achieving the best possible outcomes.',
     items: [
       { title: 'Skilled Migrant Category Residence Visas', desc: 'Points-based assessment, job offer support, and qualification recognition' },
@@ -97,6 +98,7 @@ const servicePages = {
     ]
   },
   property: {
+    img: 'assets/images/05_LegalExpertise_LegalSubhome02_PropertyV3.png',
     title: 'PROPERTY & DEVELOPMENT',
     breadcrumb: 'Property & Development',
     intro: 'At Bird & Yang, we guide clients through residential, commercial, and development property matters with practical advice and close attention to detail. From first-home purchases to complex projects, we help you identify risks, structure transactions, and move forward with confidence.',
@@ -119,6 +121,7 @@ const servicePages = {
     ]
   },
   'business-law': {
+    img: 'assets/images/06_LegalExpertise_LegalSubhome03_BusinessLawV3.png',
     title: 'BUSINESS LAW',
     breadcrumb: 'Business Law',
     intro: 'At Bird & Yang, we help businesses build strong legal foundations, manage risk, and make commercial decisions with confidence. From formation and daily operations to major transactions and restructuring, our team provides practical advice tailored to your goals.',
@@ -141,6 +144,7 @@ const servicePages = {
     ]
   },
   'estate-planning': {
+    img: 'assets/images/07_LegalExpertise_LegalSubhome04_EstateV3.png',
     title: 'ESTATE PLANNING, TRUSTS & WILLS',
     breadcrumb: 'Estate Planning, Trusts & Wills',
     intro: 'Planning for the future is an act of care. At Bird & Yang, we help clients protect family, assets, and intentions with clear legal structures—from wills and enduring powers of attorney to trusts, succession planning, and estate administration.',
@@ -160,6 +164,7 @@ const servicePages = {
     ]
   },
   'family-employment': {
+    img: 'assets/images/08_LegalExpertise_LegalSubhome05_Family%26EmploymentV3.png',
     title: 'FAMILY & EMPLOYMENT',
     breadcrumb: 'Family & Employment',
     intro: 'Family and workplace matters are deeply personal. We provide practical, sensitive guidance to help clients navigate relationship property, parenting issues, employment concerns, and disputes with clarity, fairness, and confidence.',
@@ -184,6 +189,7 @@ const servicePages = {
     ]
   },
   litigation: {
+    img: 'assets/images/09_LegalExpertise_LegalSubhome06_DisputeV4.png',
     title: 'LITIGATION & DISPUTE RESOLUTION',
     breadcrumb: 'Litigation & Dispute Resolution',
     intro: 'Commercial disputes can be costly and stressful. At Bird & Yang, we give clients clear-eyed assessments, practical strategy, and strong representation—helping you understand the issues, evaluate the options, and work toward the best possible resolution.',
@@ -205,6 +211,7 @@ const servicePages = {
     ]
   },
   'china-desk': {
+    img: 'assets/images/10_LegalExpertise_LegalSubhome07_ChinaV2.png',
     title: 'CHINA DESK / CROSS-BORDER SERVICES',
     breadcrumb: 'China Desk / Cross-Border',
     intro: 'Bird & Yang offers integrated support for Chinese families, investors, and businesses establishing or growing their presence in New Zealand. With multilingual capability and genuine cross-cultural understanding, we help clients move through cross-border matters with clarity and confidence.',
@@ -339,7 +346,7 @@ const teamProfiles = {
 
 function renderHome() {
   return `
-    <div class="hero-banner">
+    <div class="hero-banner" style="background:url('assets/images/02_LegalHome01_FirstSight.png') center/cover no-repeat">
       <h1>LEGAL SERVICES</h1>
       <p class="hero-sub">Guiding What Matters with Clarity</p>
     </div>
@@ -360,9 +367,7 @@ function renderHome() {
         <div class="cards-grid">
           ${services.map(s => `
             <a class="service-card" href="#${s.id}">
-              <div class="card-icon-area">
-                <div class="icon-circle"></div>
-              </div>
+              <div class="card-icon-area" style="background:url('${s.img}') center/cover no-repeat;height:140px"></div>
               <div class="card-body">
                 <h3>${s.title}</h3>
                 <p>${s.subtitle}</p>
@@ -412,8 +417,9 @@ function renderServiceDetail(key) {
       </div>`;
   }).join('');
 
+  const heroStyle = page.img ? ` style="background:url('${page.img}') center/cover no-repeat"` : '';
   return `
-    <div class="hero-banner">
+    <div class="hero-banner"${heroStyle}>
       <div class="breadcrumb"><a href="#home">LEGAL SERVICES</a> &gt; ${page.breadcrumb}</div>
       <h1>${page.title}</h1>
     </div>
@@ -446,7 +452,7 @@ function renderServiceDetail(key) {
 
 function renderBusinessInvestor() {
   return `
-    <div class="hero-banner">
+    <div class="hero-banner" style="background:url('assets/images/04_LegalExpertise_LegalSubhome01_Immigration_Feature_InvestorV4.png') center/cover no-repeat">
       <div class="breadcrumb"><a href="#home">LEGAL SERVICES</a> &gt; <a href="#immigration">IMMIGRATION</a> &gt; BUSINESS &amp; INVESTOR IMMIGRATION</div>
       <h1>Business &amp; Investor Visas</h1>
       <p class="hero-sub">Strategic immigration guidance for investors, entrepreneurs, and business owners seeking opportunities in New Zealand.</p>
@@ -603,7 +609,7 @@ function renderTeamProfile(id) {
   if (!profile) return renderHome();
 
   return `
-    <div class="hero-banner">
+    <div class="hero-banner" style="background:url('assets/images/11_Team_memberPageV7.png') center/cover no-repeat">
       <p class="breadcrumb">OUR TEAM</p>
       <h1>${profile.name}</h1>
       <p class="hero-sub">${profile.role}</p>

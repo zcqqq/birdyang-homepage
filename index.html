@@ -85,33 +85,11 @@ nav .hamburger span{width:22px;height:2px;background:var(--white);transition:tra
 }
 
 /* HERO */
-#hero{position:relative;height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#0a1a3a 0%,#0d2e6b 40%,var(--blue) 100%);overflow:hidden}
-#hero::after{content:'';position:absolute;top:35%;left:50%;transform:translate(-50%,-50%);width:1000px;height:600px;background:radial-gradient(ellipse,rgba(30,80,180,.15) 0%,rgba(197,133,30,.05) 30%,transparent 65%);pointer-events:none}
-#hero canvas{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none}
-.hero-content{position:relative;z-index:2;text-align:center;padding:0 20px;width:100%}
-.hero-title{font-size:clamp(2rem,5vw,3.5rem);font-weight:700;color:var(--white);letter-spacing:.08em;margin-bottom:12px}
-.hero-subtitle{font-size:clamp(.85rem,1.5vw,1rem);color:var(--gold-light);font-style:italic;margin-bottom:8px;letter-spacing:.02em}
-.hero-subtitle-cn{font-size:.9rem;color:rgba(255,255,255,.6);margin-bottom:48px}
-
-/* HERO ICONS ORBIT */
-.hero-icons{position:relative;width:min(620px,85vw);height:min(540px,75vh);margin:0 auto}
-.hero-icons .center-text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center}
-.hero-icons .center-text h1{font-size:clamp(1.6rem,4vw,2.8rem);font-weight:700;color:var(--white);letter-spacing:.08em;white-space:nowrap;margin-top:100px}
-.hero-icons .center-text p{font-size:clamp(.8rem,1.3vw,.95rem);color:#e4cc9c;font-style:italic;margin-top:10px;text-shadow:0 0 20px rgba(197,133,30,.3)}
-.hero-icons .center-text .slogan-img{margin-top:-70px;width:clamp(260px,40vw,420px);height:auto;filter:drop-shadow(0 0 12px rgba(197,133,30,.4))}
-
-.icon-node{position:absolute;width:68px;height:68px;display:flex;flex-direction:column;align-items:center;transform:translate(-50%,-50%)}
-.icon-node .icon-circle{width:68px;height:68px;display:flex;align-items:center;justify-content:center;background:transparent;transition:all .3s}
-.icon-node .icon-circle img{width:68px;height:68px;object-fit:contain}
-.icon-node .icon-label{font-size:.55rem;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.1em;margin-top:6px;white-space:nowrap}
-.icon-node:hover .icon-circle{border-color:var(--gold);background:rgba(197,133,30,.1);transform:translateY(-3px)}
-
-/* Icon positions (5 around circle) */
-.icon-node:nth-child(1){top:6%;left:50%}
-.icon-node:nth-child(2){top:34%;left:92%}
-.icon-node:nth-child(3){top:78%;left:80%}
-.icon-node:nth-child(4){top:78%;left:20%}
-.icon-node:nth-child(5){top:34%;left:8%}
+#hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#070e1a;overflow:hidden}
+#hero .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center bottom}
+.hero-content{position:relative;z-index:2;text-align:center;padding:0 20px;width:100%;margin-top:-10vh}
+.hero-content h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:700;color:var(--white);letter-spacing:.1em;margin-bottom:12px}
+.hero-content .slogan-img{width:clamp(280px,42vw,460px);height:auto;filter:drop-shadow(0 0 12px rgba(197,133,30,.4))}
 
 /* Nav extras (lang toggle + search) */
 nav .nav-extras{display:flex;align-items:center;gap:12px;margin-left:20px;padding-left:20px;border-left:1px solid rgba(255,255,255,.2)}
@@ -121,9 +99,8 @@ nav .nav-extras .lang-toggle a.active-lang{color:var(--white);font-weight:600}
 nav .nav-extras .lang-toggle a:hover{color:var(--gold-light)}
 
 @media(max-width:600px){
-  .hero-icons{width:100%;height:auto;display:flex;flex-wrap:wrap;justify-content:center;gap:16px;padding:20px}
-  .hero-icons .center-text{position:relative;top:auto;left:auto;transform:none;width:100%;margin-bottom:24px}
-  .icon-node{position:relative;top:auto!important;left:auto!important;transform:none;width:auto}
+  .hero-content h1{font-size:1.8rem}
+  .hero-content .slogan-img{width:260px}
 }
 
 /* SECTIONS */
@@ -140,10 +117,8 @@ section{padding:80px 5%}
 .expertise-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;max-width:1100px;margin:0 auto}
 .expertise-card{border-radius:var(--radius);overflow:hidden;background:var(--white);box-shadow:0 2px 8px rgba(0,0,0,.06);transition:transform .3s,box-shadow .3s;cursor:pointer}
 .expertise-card:hover{transform:translateY(-8px);box-shadow:0 12px 32px rgba(1,48,138,.12)}
-.expertise-card .card-header{background:linear-gradient(135deg,var(--blue) 0%,#0a1e4a 50%,var(--blue) 100%);height:200px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
-.expertise-card .card-header::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,rgba(197,133,30,.06) 0%,transparent 70%)}
-.expertise-card .card-header .card-icon{width:100px;height:100px;display:flex;align-items:center;justify-content:center;background:transparent;position:relative}
-.expertise-card .card-header .card-icon img{width:100px;height:100px;object-fit:contain}
+.expertise-card .card-header{height:180px;position:relative;overflow:hidden}
+.expertise-card .card-header img{width:100%;height:100%;object-fit:cover}
 .expertise-card .card-body{padding:28px 24px}
 .expertise-card .card-body h3{font-size:1.1rem;font-weight:700;color:var(--blue);margin-bottom:10px;letter-spacing:.02em}
 .expertise-card .card-body p{font-size:.85rem;color:var(--muted);line-height:1.7;margin-bottom:16px}
@@ -202,34 +177,10 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.7);padding:60px 5% 24
 
 <!-- HERO -->
 <section id="hero">
-  <canvas id="worldmap"></canvas>
+  <img class="hero-bg" src="assets/images/01_Home01_First SightV2.png" alt="Bird & Yang — Integrated Legal, Accounting & Consulting">
   <div class="hero-content">
-    <div class="hero-icons">
-      <div class="icon-node">
-        <div class="icon-circle"><img src="assets/svg/icon-legal.png" alt="Legal"></div>
-        <span class="icon-label">Legal</span>
-      </div>
-      <div class="icon-node">
-        <div class="icon-circle"><img src="assets/svg/icon-accounting.png" alt="Accounting"></div>
-        <span class="icon-label">Accounting</span>
-      </div>
-      <div class="icon-node">
-        <div class="icon-circle"><img src="assets/svg/icon-immigration.png" alt="Immigration"></div>
-        <span class="icon-label">Immigration</span>
-      </div>
-      <div class="icon-node">
-        <div class="icon-circle"><img src="assets/svg/icon-insurance.png" alt="Insurance"></div>
-        <span class="icon-label">Insurance</span>
-      </div>
-      <div class="icon-node">
-        <div class="icon-circle"><img src="assets/svg/icon-hr.png" alt="HR"></div>
-        <span class="icon-label">HR</span>
-      </div>
-      <div class="center-text">
-        <h1>BIRD &amp; YANG</h1>
-        <img class="slogan-img" src="assets/svg/slogan.png" alt="Integrated in Expertise, Together for Growth">
-      </div>
-    </div>
+    <h1>BIRD &amp; YANG</h1>
+    <img class="slogan-img" src="assets/svg/slogan.png" alt="Integrated in Expertise, Together for Growth">
   </div>
 </section>
 
@@ -253,7 +204,7 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.7);padding:60px 5% 24
   <div class="expertise-grid">
     <div class="expertise-card">
       <div class="card-header">
-        <div class="card-icon"><img src="assets/svg/icon-legal.png" alt="Legal Practice"></div>
+        <img src="assets/images/01_Home02_Legal.png" alt="Legal Practice">
       </div>
       <div class="card-body">
         <h3>LEGAL PRACTICE</h3>
@@ -263,7 +214,7 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.7);padding:60px 5% 24
     </div>
     <div class="expertise-card">
       <div class="card-header">
-        <div class="card-icon"><img src="assets/svg/icon-accounting.png" alt="Accounting Solutions"></div>
+        <img src="assets/images/01_Home03_Accounting.png" alt="Accounting Solutions">
       </div>
       <div class="card-body">
         <h3>ACCOUNTING SOLUTIONS</h3>
@@ -273,7 +224,7 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.7);padding:60px 5% 24
     </div>
     <div class="expertise-card">
       <div class="card-header">
-        <div class="card-icon"><img src="assets/svg/icon-consulting.png" alt="Consulting Services"></div>
+        <img src="assets/images/01_Home04_Consulting.png" alt="Consulting Services">
       </div>
       <div class="card-body">
         <h3>CONSULTING SERVICES</h3>
@@ -290,17 +241,17 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.7);padding:60px 5% 24
   <h2 class="section-title">WHY BIRD &amp; YANG</h2>
   <div class="steps">
     <div class="step">
-      <div class="step-number"><img src="assets/svg/icon_1.png" alt="1"></div>
+      <div class="step-number"><img src="assets/images/00_BasicDesign07_elements_No1_badge_circle.png" alt="1"></div>
       <h3>Integrated Expertise</h3>
       <p>We bring legal, accounting, and consulting expertise together to help clients address complex matters with greater clarity and coordination.</p>
     </div>
     <div class="step">
-      <div class="step-number"><img src="assets/svg/icon_2.png" alt="2"></div>
+      <div class="step-number"><img src="assets/images/00_BasicDesign08_elements_No2_badge_circle.png" alt="2"></div>
       <h3>Transparent Process</h3>
       <p>We reduce uncertainty through clear communication, structured workflows, and practical guidance at every step.</p>
     </div>
     <div class="step">
-      <div class="step-number"><img src="assets/svg/icon_3.png" alt="3"></div>
+      <div class="step-number"><img src="assets/images/00_BasicDesign09_elements_No3_badge_circle.png" alt="3"></div>
       <h3>Collaborative Results</h3>
       <p>We coordinate across disciplines to provide more complete support and more practical outcomes.</p>
     </div>
@@ -339,106 +290,6 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.15 });
 reveals.forEach(el => observer.observe(el));
 
-// World map canvas animation
-(function() {
-  const canvas = document.getElementById('worldmap');
-  const ctx = canvas.getContext('2d');
-  let W, H, particles, animId;
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  // Simplified world map coordinates (normalized 0-1)
-  const mapPoints = [
-    // North America
-    [.12,.28],[.14,.32],[.16,.30],[.18,.28],[.20,.26],[.22,.28],[.24,.30],[.15,.35],[.17,.38],[.20,.35],
-    [.22,.33],[.13,.40],[.16,.42],[.19,.40],[.22,.38],[.24,.36],[.14,.45],[.16,.48],[.18,.46],
-    // South America
-    [.22,.55],[.24,.58],[.25,.62],[.26,.65],[.24,.68],[.23,.72],[.22,.75],[.21,.78],[.20,.80],[.23,.60],
-    // Europe
-    [.44,.24],[.46,.26],[.48,.24],[.50,.26],[.52,.24],[.45,.28],[.47,.30],[.49,.28],[.51,.30],[.53,.28],
-    [.46,.32],[.48,.34],[.50,.32],[.44,.34],
-    // Africa
-    [.46,.42],[.48,.44],[.50,.42],[.47,.48],[.49,.50],[.51,.48],[.48,.54],[.50,.56],[.52,.54],
-    [.49,.60],[.51,.62],[.50,.66],[.48,.58],
-    // Asia
-    [.56,.24],[.58,.26],[.60,.24],[.62,.26],[.64,.24],[.66,.26],[.68,.24],[.70,.26],[.72,.24],
-    [.58,.30],[.60,.32],[.62,.30],[.64,.32],[.66,.30],[.68,.32],[.70,.30],[.72,.32],
-    [.60,.36],[.62,.38],[.64,.36],[.66,.38],[.68,.36],[.70,.38],[.74,.28],[.76,.30],
-    [.62,.42],[.64,.40],[.66,.42],[.68,.44],[.70,.42],[.72,.40],
-    // Australia
-    [.74,.60],[.76,.58],[.78,.60],[.80,.62],[.76,.64],[.78,.66],[.80,.64],[.82,.60],[.75,.62],
-    // Middle East
-    [.54,.36],[.56,.38],[.58,.36],[.54,.40],[.56,.42],
-  ];
-
-  function resize() {
-    W = canvas.width = canvas.offsetWidth;
-    H = canvas.height = canvas.offsetHeight;
-    particles = mapPoints.map(([x, y]) => ({
-      x: x * W,
-      y: y * H,
-      ox: x * W,
-      oy: y * H,
-      vx: (Math.random() - .5) * .3,
-      vy: (Math.random() - .5) * .3,
-      r: 1.5 + Math.random() * 1.5,
-      phase: Math.random() * Math.PI * 2
-    }));
-  }
-
-  function draw(t) {
-    ctx.clearRect(0, 0, W, H);
-    const time = t * .001;
-
-    // Draw connections
-    ctx.strokeStyle = 'rgba(197,133,30,0.12)';
-    ctx.lineWidth = .6;
-    for (let i = 0; i < particles.length; i++) {
-      for (let j = i + 1; j < particles.length; j++) {
-        const dx = particles[i].x - particles[j].x;
-        const dy = particles[i].y - particles[j].y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        const threshold = W * .08;
-        if (dist < threshold) {
-          const alpha = (1 - dist / threshold) * .15;
-          ctx.strokeStyle = `rgba(197,133,30,${alpha})`;
-          ctx.beginPath();
-          ctx.moveTo(particles[i].x, particles[i].y);
-          ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.stroke();
-        }
-      }
-    }
-
-    // Draw particles
-    particles.forEach(p => {
-      if (!reducedMotion) {
-        p.x = p.ox + Math.sin(time + p.phase) * 2;
-        p.y = p.oy + Math.cos(time * .8 + p.phase) * 1.5;
-      }
-      const pulse = .6 + Math.sin(time * 2 + p.phase) * .4;
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.r * pulse, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(197,133,30,${.25 + pulse * .15})`;
-      ctx.fill();
-    });
-
-    if (!reducedMotion) {
-      animId = requestAnimationFrame(draw);
-    }
-  }
-
-  resize();
-  if (reducedMotion) {
-    draw(0);
-  } else {
-    draw(0);
-  }
-
-  window.addEventListener('resize', () => {
-    resize();
-    if (reducedMotion) draw(0);
-  });
-})();
 </script>
 </body>
 </html>

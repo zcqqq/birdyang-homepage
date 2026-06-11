@@ -100,7 +100,8 @@ function serviceDetail(opts){
     if(typeof w === 'string') { whyHTML += '<div class="why-item">'+w+'</div>'; }
     else { whyHTML += '<div class="why-item"><h4>'+w.title+'</h4><p>'+w.desc+'</p></div>'; }
   });
-  return '<section class="hero-banner"><div class="container"><div class="breadcrumb"><a href="#home">Accounting</a> &rsaquo; '+opts.title+'</div><h1>'+opts.title+'</h1></div></section>'
+  var heroStyle = opts.img ? ' style="background:url('+opts.img+') center/cover no-repeat"' : '';
+  return '<section class="hero-banner"'+heroStyle+'><div class="container"><div class="breadcrumb"><a href="#home">Accounting</a> &rsaquo; '+opts.title+'</div><h1>'+opts.title+'</h1></div></section>'
     + '<section class="container"><a href="#home" class="back-link">&larr; Back to Accounting Services</a>'
     + '<div class="two-col"><div class="main-content"><p class="about-text reveal">'+opts.intro+'</p>'
     + accordionHTML
@@ -115,7 +116,7 @@ function profilePage(opts){
   opts.expertise.forEach(function(b){ expertiseItems += '<li>'+b+'</li>'; });
   var highlightCards = '';
   opts.highlights.forEach(function(h){ highlightCards += '<div class="highlight"><h4>'+h+'</h4></div>'; });
-  return '<div class="hero-banner"><p class="breadcrumb">OUR TEAM</p><h1>'+opts.name+'</h1><p class="hero-sub">'+opts.role+'</p></div>'
+  return '<div class="hero-banner" style="background:url(assets/images/11_Team_memberPageV7.png) center/cover no-repeat"><p class="breadcrumb">OUR TEAM</p><h1>'+opts.name+'</h1><p class="hero-sub">'+opts.role+'</p></div>'
     + '<section><div class="container"><a href="#home" class="back-link">BACK TO OUR TEAM</a>'
     + '<div class="profile-layout">'
     + '<div class="profile-photo-col"><img class="profile-photo" src="'+opts.photo+'" alt="'+opts.name+'"></div>'
@@ -135,19 +136,19 @@ function profilePage(opts){
    PAGE: HOME
    ═══════════════════════════════════════════ */
 function pageHome(){
-  return '<section class="hero-banner"><div class="container"><h1>ACCOUNTING SERVICES</h1><p class="hero-sub">Building Wealth through Better Numbers</p></div></section>'
+  return '<section class="hero-banner" style="background:url(assets/images/17_AccountingHome01_FirstSight.png) center/cover no-repeat"><div class="container"><h1>ACCOUNTING SERVICES</h1><p class="hero-sub">Building Wealth through Better Numbers</p></div></section>'
 
   + '<section class="container bg-white reveal"><p class="section-label">ABOUT OUR ACCOUNTING PRACTICE</p><p class="about-text">Behind every successful business is a clear set of numbers. At Bird &amp; Yang, we go beyond compliance &mdash; we help you understand your financial position, make informed decisions, and build wealth with confidence. Working alongside our legal team, we provide integrated advice that sees the full picture of your business and personal finances.</p></section>'
 
   + '<section class="container bg-cream reveal"><p class="section-label">Our Services</p><h2 class="section-title">What We Do</h2><div class="cards-grid">'
 
-  + serviceCard('Annual / Monthly Accounts','We prepare your numbers with precision and explain them with clarity &mdash; so you can make your decisions with confidence.','#annual-accounts')
-  + serviceCard('Taxation','We navigate the complexity so you don\'t have to &mdash; keeping you compliant, efficient, and always a step ahead.','#taxation')
-  + serviceCard('Budget &amp; Forecast','A good forecast doesn\'t predict the future &mdash; it prepares you for it. We build the financial clarity you need to move forward with confidence.','#budget-forecast')
-  + serviceCard('Cash Flow Management','Cash is the lifeblood of your business. We help you manage it with discipline &mdash; so growth never outpaces your ability to fund it.','#cash-flow')
-  + serviceCard('Business Plans','We help you turn ambition into a plan &mdash; and a plan into a business that works.','#business-plans')
-  + serviceCard('Asset Management','Your assets represent what you\'ve built. We help you protect them, track them, and make them work harder for you.','#asset-management')
-  + serviceCard('Trust Accounting','A well-managed trust gives you peace of mind. We bring the financial rigor &mdash; and work with our legal team to bring the full picture.','#trust-accounting')
+  + serviceCard('Annual / Monthly Accounts','We prepare your numbers with precision and explain them with clarity &mdash; so you can make your decisions with confidence.','#annual-accounts','assets/images/17_AccountingHome02_Annual%26Monthly.png')
+  + serviceCard('Taxation','We navigate the complexity so you don\'t have to &mdash; keeping you compliant, efficient, and always a step ahead.','#taxation','assets/images/17_AccountingHome03_Taxation.png')
+  + serviceCard('Budget &amp; Forecast','A good forecast doesn\'t predict the future &mdash; it prepares you for it. We build the financial clarity you need to move forward with confidence.','#budget-forecast','assets/images/17_AccountingHome04_BudgetForecast.png')
+  + serviceCard('Cash Flow Management','Cash is the lifeblood of your business. We help you manage it with discipline &mdash; so growth never outpaces your ability to fund it.','#cash-flow','assets/images/17_AccountingHome05_CashFlow.png')
+  + serviceCard('Business Plans','We help you turn ambition into a plan &mdash; and a plan into a business that works.','#business-plans','assets/images/17_AccountingHome06_BusinessPlan.png')
+  + serviceCard('Asset Management','Your assets represent what you\'ve built. We help you protect them, track them, and make them work harder for you.','#asset-management','assets/images/17_AccountingHome07_Asset.png')
+  + serviceCard('Trust Accounting','A well-managed trust gives you peace of mind. We bring the financial rigor &mdash; and work with our legal team to bring the full picture.','#trust-accounting','assets/images/17_AccountingHome08_Trust.png')
 
   + '</div></section>'
 
@@ -158,8 +159,8 @@ function pageHome(){
   + '</div></section>';
 }
 
-function serviceCard(title, desc, hash){
-  return '<a href="'+hash+'" class="service-card reveal"><div class="card-icon-area"><div class="icon-circle"><img src="assets/svg/icon-accounting.svg" alt=""></div></div><div class="card-body"><h3>'+title+'</h3><p>'+desc+'</p><span class="learn-more">Learn more &rarr;</span></div></a>';
+function serviceCard(title, desc, hash, img){
+  return '<a href="'+hash+'" class="service-card reveal"><div class="card-icon-area" style="background:url('+img+') center/cover no-repeat;height:140px"></div><div class="card-body"><h3>'+title+'</h3><p>'+desc+'</p><span class="learn-more">Learn more &rarr;</span></div></a>';
 }
 
 function teamCard(name, role, photo, hash){
@@ -171,6 +172,7 @@ function teamCard(name, role, photo, hash){
    ═══════════════════════════════════════════ */
 function pageAnnualAccounts(){
   return serviceDetail({
+    img: 'assets/images/18_AccSubHome01_Annual%26Monthly.png',
     title: 'ANNUAL / MONTHLY ACCOUNTS',
     intro: 'Good decisions start with good information. Bird &amp; Yang prepares accurate, timely, useful financial reporting for sole traders, growing companies, and multi-entity groups, and explains the numbers clearly so clients can make confident decisions.',
     accordions: [
@@ -194,6 +196,7 @@ function pageAnnualAccounts(){
    ═══════════════════════════════════════════ */
 function pageTaxation(){
   return serviceDetail({
+    img: 'assets/images/19_AccSubHome02_Taxation.png',
     title: 'TAXATION',
     intro: 'Tax obligations affect business income, GST, trust distributions, and international investments. Bird &amp; Yang manages compliance carefully and identifies forward-looking tax planning opportunities to help you minimise tax and support your long-term goals.',
     accordions: [
@@ -220,6 +223,7 @@ function pageTaxation(){
    ═══════════════════════════════════════════ */
 function pageBudgetForecast(){
   return serviceDetail({
+    img: 'assets/images/20_AccSubHome03_Budget%26Forecast.png',
     title: 'BUDGET &amp; FORECAST',
     intro: 'Bird &amp; Yang helps clients set financial targets, model scenarios, track performance, and make confident decisions about investment, scaling, and margin protection; budgets and forecasts are practical, relevant, and regularly refreshed.',
     accordions: [
@@ -243,6 +247,7 @@ function pageBudgetForecast(){
    ═══════════════════════════════════════════ */
 function pageCashFlow(){
   return serviceDetail({
+    img: 'assets/images/21_AccSubHome04_CashFlow.png',
     title: 'CASH FLOW MANAGEMENT',
     intro: 'A profitable business can still fail if it runs out of cash. Bird &amp; Yang helps clients anticipate shortfalls, manage timing of inflows and outflows, and build resilience with practical systems and banking support.',
     accordions: [
@@ -266,6 +271,7 @@ function pageCashFlow(){
    ═══════════════════════════════════════════ */
 function pageBusinessPlans(){
   return serviceDetail({
+    img: 'assets/images/22_AccSubHome05_BusinessPlan.png',
     title: 'BUSINESS PLANS',
     intro: 'Starting a business requires more than courage. Bird &amp; Yang helps clients test ideas, choose the right structure, prepare funding-ready documentation, and build practical plans grounded in research, numbers, and risks.',
     accordions: [
@@ -288,6 +294,7 @@ function pageBusinessPlans(){
    ═══════════════════════════════════════════ */
 function pageAssetManagement(){
   return serviceDetail({
+    img: 'assets/images/23_AccSubHome06_Asset.png',
     title: 'ASSET MANAGEMENT',
     intro: 'Assets represent years of hard work and careful planning. Bird &amp; Yang helps clients track, monitor, and optimise their asset base, coordinating with the legal team where ownership structures, insurance, and risk mitigation intersect.',
     accordions: [
@@ -310,6 +317,7 @@ function pageAssetManagement(){
    ═══════════════════════════════════════════ */
 function pageTrustAccounting(){
   return serviceDetail({
+    img: 'assets/images/24_AccSubHome07_Trust.png',
     title: 'TRUST ACCOUNTING',
     intro: 'Trusts remain important for asset protection, estate planning, and intergenerational wealth transfer. Bird &amp; Yang provides trust accounting and compliance support, coordinating closely with the legal team under the Trusts Act 2019.',
     accordions: [

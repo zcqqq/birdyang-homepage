@@ -12,37 +12,20 @@
 <link rel="stylesheet" href="../style.css">
 <style>
 body{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",Verdana,Geneva,sans-serif}
-#hero{position:relative;height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,var(--navy-deep) 0%,var(--blue) 100%);overflow:hidden}
-.hero-content{position:relative;z-index:2;text-align:center;padding:0 20px;width:100%}
-.hero-icons{position:relative;width:min(620px,85vw);height:min(540px,75vh);margin:0 auto}
-.hero-icons .center-text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center}
-.hero-icons .center-text h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:700;color:var(--white);letter-spacing:.2em}
-.hero-icons .center-text p{font-size:clamp(.75rem,1.2vw,.9rem);color:var(--gold-light);font-style:italic;margin-top:8px}
-.hero-icons .center-text .cn{font-size:.85rem;color:rgba(255,255,255,.55);font-style:normal;margin-top:4px}
-.icon-node{position:absolute;width:64px;height:64px;display:flex;flex-direction:column;align-items:center;transform:translate(-50%,-50%)}
-.icon-node .icon-circle{width:56px;height:56px;border-radius:50%;border:1px solid rgba(197,133,30,.4);display:flex;align-items:center;justify-content:center;background:rgba(7,14,26,.5);transition:all .3s}
-.icon-node .icon-circle img{width:28px;height:28px}
-.icon-node .icon-label{font-size:.55rem;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.1em;margin-top:6px;white-space:nowrap}
-.icon-node:hover .icon-circle{border-color:var(--gold);background:rgba(197,133,30,.1);transform:translateY(-3px)}
-.icon-node:nth-child(1){top:14%;left:50%}
-.icon-node:nth-child(2){top:34%;left:92%}
-.icon-node:nth-child(3){top:78%;left:80%}
-.icon-node:nth-child(4){top:78%;left:20%}
-.icon-node:nth-child(5){top:34%;left:8%}
-@media(max-width:600px){
-  .hero-icons{width:100%;height:auto;display:flex;flex-wrap:wrap;justify-content:center;gap:16px;padding:20px}
-  .hero-icons .center-text{position:relative;top:auto;left:auto;transform:none;width:100%;margin-bottom:24px}
-  .icon-node{position:relative;top:auto!important;left:auto!important;transform:none;width:auto}
-}
+#hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#070e1a;overflow:hidden}
+#hero .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center bottom}
+.hero-content{position:relative;z-index:2;text-align:center;padding:0 20px;width:100%;margin-top:-10vh}
+.hero-content h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:700;color:var(--white);letter-spacing:.2em;margin-bottom:12px}
+.hero-content .slogan-img{width:clamp(280px,42vw,460px);height:auto;filter:drop-shadow(0 0 12px rgba(197,133,30,.4))}
+@media(max-width:600px){.hero-content h1{font-size:1.8rem}.hero-content .slogan-img{width:260px}}
 #about{background:var(--cream);text-align:center;padding:80px 5%}
 .about-text{max-width:800px;margin:0 auto;font-size:.9rem;color:var(--charcoal);line-height:1.85}
 #expertise{background:var(--white);padding:80px 5%}
 .expertise-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;max-width:1100px;margin:0 auto}
 .expertise-card{border-radius:var(--radius);overflow:hidden;background:var(--white);box-shadow:0 2px 8px rgba(0,0,0,.06);transition:transform .3s,box-shadow .3s;cursor:pointer}
 .expertise-card:hover{transform:translateY(-8px);box-shadow:0 12px 32px rgba(1,48,138,.12)}
-.expertise-card .card-header{background:linear-gradient(135deg,var(--blue),var(--navy-mid));height:180px;display:flex;align-items:center;justify-content:center}
-.expertise-card .card-header .card-icon{width:72px;height:72px;border-radius:50%;border:1px solid rgba(197,133,30,.5);display:flex;align-items:center;justify-content:center;background:rgba(7,14,26,.4)}
-.expertise-card .card-header .card-icon img{width:36px;height:36px}
+.expertise-card .card-header{height:180px;position:relative;overflow:hidden}
+.expertise-card .card-header img{width:100%;height:100%;object-fit:cover}
 .expertise-card .card-body{padding:28px 24px}
 .expertise-card .card-body h3{font-size:1.1rem;font-weight:700;color:var(--blue);margin-bottom:10px}
 .expertise-card .card-body p{font-size:.85rem;color:var(--muted);line-height:1.7;margin-bottom:16px}
@@ -51,8 +34,8 @@ body{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans S
 .steps{display:flex;align-items:flex-start;justify-content:center;max-width:900px;margin:0 auto;position:relative}
 .steps::before{content:'';position:absolute;top:36px;left:25%;right:25%;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
 .step{flex:1;text-align:center;padding:0 16px;position:relative}
-.step-number{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--navy-mid));display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:1.5rem;font-weight:700;color:var(--gold);position:relative;z-index:2}
-.step-number::after{content:'';position:absolute;inset:-4px;border-radius:50%;border:1px solid rgba(197,133,30,.3)}
+.step-number{width:72px;height:72px;margin:0 auto 20px;position:relative;z-index:2}
+.step-number img{width:72px;height:72px;object-fit:contain}
 .step h3{font-size:1rem;font-weight:700;color:var(--blue);margin-bottom:8px}
 .step p{font-size:.82rem;color:var(--muted);line-height:1.7}
 @media(max-width:768px){.steps{flex-direction:column;gap:32px}.steps::before{display:none}}
@@ -80,34 +63,10 @@ nav .nav-extras .lang-toggle a.active-lang{color:var(--white);font-weight:600}
 
 <!-- HERO -->
 <section id="hero">
+  <img class="hero-bg" src="../assets/images/01_Home01_First SightV2.png" alt="Bird & Yang">
   <div class="hero-content">
-    <div class="hero-icons">
-      <div class="icon-node">
-        <div class="icon-circle"><img src="../assets/svg/icon-legal.svg" alt="法务"></div>
-        <span class="icon-label">法务</span>
-      </div>
-      <div class="icon-node">
-        <div class="icon-circle"><img src="../assets/svg/icon-accounting.svg" alt="会计"></div>
-        <span class="icon-label">会计</span>
-      </div>
-      <div class="icon-node">
-        <div class="icon-circle"><img src="../assets/svg/icon-immigration.svg" alt="移民"></div>
-        <span class="icon-label">移民</span>
-      </div>
-      <div class="icon-node">
-        <div class="icon-circle"><img src="../assets/svg/icon-insurance.svg" alt="保险"></div>
-        <span class="icon-label">保险</span>
-      </div>
-      <div class="icon-node">
-        <div class="icon-circle"><img src="../assets/svg/icon-hr.svg" alt="人力资源"></div>
-        <span class="icon-label">人力资源</span>
-      </div>
-      <div class="center-text">
-        <h1>德 扬</h1>
-        <p>法务 | 会计 | 咨询</p>
-        <p class="cn">融汇法税财保，守护安居乐业</p>
-      </div>
-    </div>
+    <h1>德 扬</h1>
+    <img class="slogan-img" src="../assets/svg/slogan.png" alt="Integrated in Expertise, Together for Growth">
   </div>
 </section>
 
@@ -129,7 +88,7 @@ nav .nav-extras .lang-toggle a.active-lang{color:var(--white);font-weight:600}
   <div class="expertise-grid">
     <div class="expertise-card">
       <div class="card-header">
-        <div class="card-icon"><img src="../assets/svg/icon-legal.svg" alt="法务"></div>
+        <img src="../assets/images/01_Home02_Legal.png" alt="法务">
       </div>
       <div class="card-body">
         <h3>法务</h3>
@@ -139,7 +98,7 @@ nav .nav-extras .lang-toggle a.active-lang{color:var(--white);font-weight:600}
     </div>
     <div class="expertise-card">
       <div class="card-header">
-        <div class="card-icon"><img src="../assets/svg/icon-accounting.svg" alt="会计"></div>
+        <img src="../assets/images/01_Home03_Accounting.png" alt="会计">
       </div>
       <div class="card-body">
         <h3>会计</h3>
@@ -149,7 +108,7 @@ nav .nav-extras .lang-toggle a.active-lang{color:var(--white);font-weight:600}
     </div>
     <div class="expertise-card">
       <div class="card-header">
-        <div class="card-icon"><img src="../assets/svg/icon-immigration.svg" alt="咨询"></div>
+        <img src="../assets/images/01_Home04_Consulting.png" alt="咨询">
       </div>
       <div class="card-body">
         <h3>咨询</h3>
@@ -166,17 +125,17 @@ nav .nav-extras .lang-toggle a.active-lang{color:var(--white);font-weight:600}
   <h2 class="section-title">为什么选择德扬</h2>
   <div class="steps">
     <div class="step">
-      <div class="step-number">1</div>
+      <div class="step-number"><img src="../assets/images/00_BasicDesign07_elements_No1_badge_circle.png" alt="1"></div>
       <h3>以专业整合复杂</h3>
       <p>德扬如何把多领域问题整合为一条清晰路径</p>
     </div>
     <div class="step">
-      <div class="step-number">2</div>
+      <div class="step-number"><img src="../assets/images/00_BasicDesign08_elements_No2_badge_circle.png" alt="2"></div>
       <h3>以透明降低不确定</h3>
       <p>降低不确定，增强信心</p>
     </div>
     <div class="step">
-      <div class="step-number">3</div>
+      <div class="step-number"><img src="../assets/images/00_BasicDesign09_elements_No3_badge_circle.png" alt="3"></div>
       <h3>以协同实现结果</h3>
       <p>整合法务、财税与咨询，为客户提供完整的跨领域支持</p>
     </div>
