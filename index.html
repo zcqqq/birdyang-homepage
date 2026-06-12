@@ -16,7 +16,7 @@
   "@type": "ProfessionalService",
   "name": "Bird & Yang",
   "url": "https://birdyang.pages.dev",
-  "logo": "https://birdyang.pages.dev/assets/svg/logo.svg",
+  "logo": "https://birdyang.pages.dev/assets/icons/logo.svg",
   "description": "Integrated Legal, Accounting, and Consulting expertise for individuals, families, and businesses.",
   "address": {
     "@type": "PostalAddress",
@@ -89,7 +89,6 @@ nav .hamburger span{width:22px;height:2px;background:var(--white);transition:tra
 #hero .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center bottom}
 .hero-content{position:relative;z-index:2;text-align:center;padding:0 20px;width:100%;margin-top:-10vh}
 .hero-content h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:700;color:var(--white);letter-spacing:.1em;margin-bottom:12px}
-.hero-content .slogan-img{width:clamp(280px,42vw,460px);height:auto;filter:drop-shadow(0 0 12px rgba(197,133,30,.4))}
 
 /* Nav extras (lang toggle + search) */
 nav .nav-extras{display:flex;align-items:center;gap:12px;margin-left:20px;padding-left:20px;border-left:1px solid rgba(255,255,255,.2)}
@@ -180,7 +179,7 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.7);padding:60px 5% 24
   <img class="hero-bg" src="assets/images/01_Home01_First SightV2.png" alt="Bird & Yang — Integrated Legal, Accounting & Consulting">
   <div class="hero-content">
     <h1>BIRD &amp; YANG</h1>
-    <img class="slogan-img" src="assets/svg/slogan.png" alt="Integrated in Expertise, Together for Growth">
+    <p style="font-size:clamp(.9rem,1.5vw,1.1rem);color:var(--white);font-style:italic;margin-top:8px;letter-spacing:.02em">Integrated in Expertise, Together for Growth</p>
   </div>
 </section>
 
@@ -241,21 +240,22 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.7);padding:60px 5% 24
   <h2 class="section-title">WHY BIRD &amp; YANG</h2>
   <div class="steps">
     <div class="step">
-      <div class="step-number"><img src="assets/images/00_BasicDesign07_elements_No1_badge_circle.png" alt="1"></div>
+      <div class="step-number"><img src="assets/icons/icon_hexagon_1.png" alt="1"></div>
       <h3>Integrated Expertise</h3>
       <p>We bring legal, accounting, and consulting expertise together to help clients address complex matters with greater clarity and coordination.</p>
     </div>
     <div class="step">
-      <div class="step-number"><img src="assets/images/00_BasicDesign08_elements_No2_badge_circle.png" alt="2"></div>
+      <div class="step-number"><img src="assets/icons/icon_hexagon_2.png" alt="2"></div>
       <h3>Transparent Process</h3>
       <p>We reduce uncertainty through clear communication, structured workflows, and practical guidance at every step.</p>
     </div>
     <div class="step">
-      <div class="step-number"><img src="assets/images/00_BasicDesign09_elements_No3_badge_circle.png" alt="3"></div>
+      <div class="step-number"><img src="assets/icons/icon_hexagon_3.png" alt="3"></div>
       <h3>Collaborative Results</h3>
       <p>We coordinate across disciplines to provide more complete support and more practical outcomes.</p>
     </div>
   </div>
+  <p style="text-align:center;margin-top:32px"><a href="why.html" style="color:var(--gold);font-weight:600;font-size:.85rem;letter-spacing:.04em">LEARN MORE &rarr;</a></p>
 </section>
 
 <!-- CTA -->
@@ -291,5 +291,7 @@ const observer = new IntersectionObserver((entries) => {
 reveals.forEach(el => observer.observe(el));
 
 </script>
+<script src="/components/chatbot.js"></script>
+<script>renderChatbot({lang:"en"})</script>
 </body>
 </html>

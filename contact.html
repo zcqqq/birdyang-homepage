@@ -30,9 +30,9 @@
 
 function renderHome() {
   return '' +
-    '<div class="hero-banner" style="background:url(assets/images/50_ContactUs.png) center/cover no-repeat">' +
+    '<div class="hero-banner" style="min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;background:url(assets/images/50_ContactUs.png) center/cover no-repeat">' +
       '<h1>CONTACT US</h1>' +
-      '<p class="hero-sub">We\'re here to help &mdash; reach out, ask questions, or book a consultation.</p>' +
+      '<p class="hero-sub">We\'re Here to Help &mdash; Reach Out, Ask Questions, or Book A Consultation</p>' +
     '</div>' +
 
     '<section class="section">' +
@@ -111,6 +111,8 @@ function renderHome() {
         '<div class="two-col mt-32">' +
           '<div class="main-content">' +
             '<form id="contact-form">' +
+              '<input type="hidden" name="form_type" value="Contact Enquiry">' +
+              '<div style="position:absolute;left:-9999px" aria-hidden="true"><input type="text" name="_honey" tabindex="-1" autocomplete="off"></div>' +
               '<div class="form-group">' +
                 '<label>Full Name *</label>' +
                 '<input type="text" name="name" required>' +
@@ -165,6 +167,8 @@ function renderBook() {
           '<div class="main-content">' +
             '<p class="section-label" style="text-align:left">CONSULTATION REQUEST FORM</p>' +
             '<form id="book-form" class="mt-24">' +
+              '<input type="hidden" name="form_type" value="Consultation Booking">' +
+              '<div style="position:absolute;left:-9999px" aria-hidden="true"><input type="text" name="_honey" tabindex="-1" autocomplete="off"></div>' +
               '<div class="form-group">' +
                 '<label>Full Name *</label>' +
                 '<input type="text" name="name" required>' +
@@ -268,21 +272,43 @@ function route() {
 }
 
 /* ─── FORM HANDLING ─── */
+function submitForm(form, successId, btnText) {
+  var btn = form.querySelector('button[type="submit"]');
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+
+  fetch('/api/contact', { method: 'POST', body: new FormData(form) })
+    .then(function(res) { return res.json(); })
+    .then(function(data) {
+      if (data.success) {
+        form.style.display = 'none';
+        document.getElementById(successId).style.display = 'block';
+      } else {
+        btn.disabled = false;
+        btn.textContent = btnText;
+        alert('Something went wrong. Please try again or email us directly at info@birdyang.co.nz');
+      }
+    })
+    .catch(function() {
+      btn.disabled = false;
+      btn.textContent = btnText;
+      alert('Connection error. Please try again.');
+    });
+}
+
 function bindForms() {
   var contactForm = document.getElementById('contact-form');
   if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
       e.preventDefault();
-      contactForm.style.display = 'none';
-      document.getElementById('contact-success').style.display = 'block';
+      submitForm(contactForm, 'contact-success', 'SUBMIT ENQUIRY');
     });
   }
   var bookForm = document.getElementById('book-form');
   if (bookForm) {
     bookForm.addEventListener('submit', function(e) {
       e.preventDefault();
-      bookForm.style.display = 'none';
-      document.getElementById('book-success').style.display = 'block';
+      submitForm(bookForm, 'book-success', 'REQUEST CONSULTATION');
     });
   }
 }
@@ -326,5 +352,7 @@ route();
 
 })();
 </script>
+<script src="/components/chatbot.js"></script>
+<script>renderChatbot({lang:"en"})</script>
 </body>
 </html>

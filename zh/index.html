@@ -66,7 +66,7 @@ nav .nav-extras .lang-toggle a.active-lang{color:var(--white);font-weight:600}
   <img class="hero-bg" src="../assets/images/01_Home01_First SightV2.png" alt="Bird & Yang">
   <div class="hero-content">
     <h1>德 扬</h1>
-    <img class="slogan-img" src="../assets/svg/slogan.png" alt="Integrated in Expertise, Together for Growth">
+    <p style="font-size:clamp(.9rem,1.5vw,1.1rem);color:var(--white);font-style:italic;margin-top:8px;letter-spacing:.02em">Integrated in Expertise, Together for Growth</p>
   </div>
 </section>
 
@@ -125,17 +125,17 @@ nav .nav-extras .lang-toggle a.active-lang{color:var(--white);font-weight:600}
   <h2 class="section-title">为什么选择德扬</h2>
   <div class="steps">
     <div class="step">
-      <div class="step-number"><img src="../assets/images/00_BasicDesign07_elements_No1_badge_circle.png" alt="1"></div>
+      <div class="step-number"><img src="../assets/icons/icon_hexagon_1.png" alt="1"></div>
       <h3>以专业整合复杂</h3>
       <p>德扬如何把多领域问题整合为一条清晰路径</p>
     </div>
     <div class="step">
-      <div class="step-number"><img src="../assets/images/00_BasicDesign08_elements_No2_badge_circle.png" alt="2"></div>
+      <div class="step-number"><img src="../assets/icons/icon_hexagon_2.png" alt="2"></div>
       <h3>以透明降低不确定</h3>
       <p>降低不确定，增强信心</p>
     </div>
     <div class="step">
-      <div class="step-number"><img src="../assets/images/00_BasicDesign09_elements_No3_badge_circle.png" alt="3"></div>
+      <div class="step-number"><img src="../assets/icons/icon_hexagon_3.png" alt="3"></div>
       <h3>以协同实现结果</h3>
       <p>整合法务、财税与咨询，为客户提供完整的跨领域支持</p>
     </div>
@@ -173,5 +173,7 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.15 });
 reveals.forEach(el => observer.observe(el));
 </script>
+<script src="/components/chatbot.js"></script>
+<script>renderChatbot({lang:"zh"})</script>
 </body>
 </html>

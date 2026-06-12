@@ -304,7 +304,7 @@ const servicePages = {
 
 function renderHome() {
   return `
-    <div class="hero-banner" style="background:url('assets/images/28_ConsultingHome01_FirstSight.png') center/cover no-repeat">
+    <div class="hero-banner" style="min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;background:url('assets/images/28_ConsultingHome01_FirstSight.png') center/cover no-repeat">
       <h1>CONSULTING SERVICES</h1>
       <p class="hero-sub">Helping You Move Forward with Confidence</p>
     </div>
@@ -371,7 +371,7 @@ function renderHome() {
 
 function renderInsuranceHome() {
   return `
-    <div class="hero-banner" style="background:url('assets/images/29_InsuranceHome01_FirstSight.png') center/cover no-repeat">
+    <div class="hero-banner" style="min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;background:url('assets/images/29_InsuranceHome01_FirstSight.png') center/cover no-repeat">
       <p class="breadcrumb">CONSULTING SERVICES</p>
       <h1>INSURANCE</h1>
       <p class="hero-sub">Securing your future with expertise</p>
@@ -404,7 +404,7 @@ function renderInsuranceHome() {
           </a>
           <a class="service-card" href="#insurance/life-health">
             <div class="card-icon-area" style="background:url('assets/images/29_InsuranceHome04_Life.png') center/cover no-repeat;height:140px"></div>
-              <div class="icon-circle"><img src="assets/svg/icon-insurance.svg" alt="Life Health Insurance"></div>
+              <div class="icon-circle"><img src="assets/icons/icon-insurance.svg" alt="Life Health Insurance"></div>
             </div>
             <div class="card-body">
               <h3>Life, Health &amp; Business Protection</h3>
@@ -420,7 +420,7 @@ function renderInsuranceHome() {
 
 function renderHRHome() {
   return `
-    <div class="hero-banner" style="background:url('assets/images/33_HRHome01_FirstSight.png') center/cover no-repeat">
+    <div class="hero-banner" style="min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;background:url('assets/images/33_HRHome01_FirstSight.png') center/cover no-repeat">
       <p class="breadcrumb">CONSULTING SERVICES</p>
       <h1>HR CONSULTING</h1>
       <p class="hero-sub">Supporting your success with practical HR guidance</p>
@@ -481,7 +481,7 @@ function renderHRHome() {
 
 function renderImmigrationHome() {
   return `
-    <div class="hero-banner" style="background:url('assets/images/39_ImmigrationHome01_FirstSight.png') center/cover no-repeat">
+    <div class="hero-banner" style="min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;background:url('assets/images/39_ImmigrationHome01_FirstSight.png') center/cover no-repeat">
       <p class="breadcrumb">CONSULTING SERVICES</p>
       <h1>IMMIGRATION CONSULTING</h1>
       <p class="hero-sub">Realizing your pathway with efficiency</p>
@@ -533,10 +533,10 @@ function renderImmigrationHome() {
 }
 
 function serviceDetailPage(opts) {
-  const accordionHtml = opts.accordions.map(item => `
-    <div class="accordion">
-      <div class="accordion-header">${item.title}</div>
-      <div class="accordion-body"><p>${item.desc}</p></div>
+  const itemsHtml = opts.accordions.map(item => `
+    <div class="service-item">
+      <div class="service-item-icon">●</div>
+      <div><h4>${item.title}</h4><p>${item.desc}</p></div>
     </div>
   `).join('');
 
@@ -553,20 +553,24 @@ function serviceDetailPage(opts) {
       <h1>${opts.title}</h1>
     </div>
 
-    <section class="reveal">
+    <section>
       <div class="container">
         <a class="back-link" href="${opts.backHash}">${opts.backText}</a>
         <div class="two-col">
           <div class="main-content">
-            <p style="font-size:.88rem;color:var(--charcoal);line-height:1.85;margin-bottom:32px">${opts.intro}</p>
-            ${accordionHtml}
+            <h2 style="font-size:1.4rem;font-weight:700;color:var(--blue);margin-bottom:12px">${opts.title}</h2>
+            <p style="font-size:.92rem;color:var(--charcoal);line-height:1.85;margin-bottom:24px">${opts.intro}</p>
+            <p style="font-size:.82rem;font-weight:700;color:var(--charcoal);margin-bottom:16px">Our services include:</p>
+            <div class="service-items-grid">
+              ${itemsHtml}
+            </div>
           </div>
           <div class="sidebar">
             <div class="sidebar-card">
               <h3>WHY BIRD &amp; YANG</h3>
               ${sidebarHtml}
             </div>
-            <a href="contact.html" class="cta-btn primary" style="width:100%;display:block;text-align:center">BOOK A CONSULTATION</a>
+            <a href="contact.html#book" class="cta-btn primary" style="width:100%;display:block;text-align:center;margin-top:20px">BOOK A CONSULTATION</a>
           </div>
         </div>
       </div>
@@ -680,5 +684,7 @@ render();
 })();
 </script>
 
+<script src="/components/chatbot.js"></script>
+<script>renderChatbot({lang:"en"})</script>
 </body>
 </html>

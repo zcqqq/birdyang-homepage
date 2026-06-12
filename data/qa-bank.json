@@ -1,0 +1,507 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-06-12",
+  "defaultHandoff": "This question needs tailored professional review. Please contact us or book a consultation.",
+  "categories": [
+    { "id": "legal", "label": "Legal" },
+    { "id": "accounting", "label": "Accounting" },
+    { "id": "insurance", "label": "Insurance" },
+    { "id": "hr", "label": "HR" },
+    { "id": "immigration", "label": "Immigration" },
+    { "id": "others", "label": "Others" }
+  ],
+  "pairs": [
+    {
+      "id": "legal-01",
+      "category": "legal",
+      "question": "What immigration services does Bird & Yang provide?",
+      "answer": "Bird & Yang assists with New Zealand immigration matters including Skilled Migrant Category residence, Accredited Employer Work Visas, business and investor visas, family visas, student visas, visitor and working holiday visas, refugee/protected person claims, appeals and reviews, and selected US/China immigration support. We can help visitors understand the right pathway, required evidence, and next steps. For tailored advice, please book a consultation."
+    },
+    {
+      "id": "legal-02",
+      "category": "legal",
+      "question": "Can you tell me which visa I should apply for?",
+      "answer": "We can give general information about common visa pathways, but the correct pathway depends on your nationality, current visa, work history, job offer, qualifications, family situation, health/character position, and long-term goals. Please book a consultation so our team can assess your situation properly."
+    },
+    {
+      "id": "legal-03",
+      "category": "legal",
+      "question": "Can Bird & Yang help with an Accredited Employer Work Visa?",
+      "answer": "Yes. We can assist with employer accreditation, job check-related matters, and work visa support under the current framework. We can also help employers and employees understand document requirements, role evidence, and timing. Because AEWV rules and individual facts matter, please book a consultation for tailored advice."
+    },
+    {
+      "id": "legal-04",
+      "category": "legal",
+      "question": "Can Bird & Yang help with a residence visa?",
+      "answer": "Yes. We assist with residence pathways such as skilled residence, family-related residence, business/investor pathways, and other eligible categories. Residence applications require careful planning and strong evidence, so we recommend a consultation before preparing documents."
+    },
+    {
+      "id": "legal-05",
+      "category": "legal",
+      "question": "What documents do I need for an immigration application?",
+      "answer": "Documents vary by visa category. Common documents may include passports, identity documents, employment evidence, qualifications, relationship evidence, financial records, health and character checks, and supporting explanations. The safest approach is to start with an eligibility and document planning consultation."
+    },
+    {
+      "id": "legal-06",
+      "category": "legal",
+      "question": "Can you help if my visa application is declined?",
+      "answer": "Yes. Bird & Yang assists with appeals and reviews, including Immigration and Protection Tribunal appeals, ministerial requests, and judicial review matters where appropriate. Declined applications often have strict deadlines, so please contact us urgently or book a consultation as soon as possible."
+    },
+    {
+      "id": "legal-07",
+      "category": "legal",
+      "question": "Can you help with partnership or family visa evidence?",
+      "answer": "Yes. We can help organise relationship and family evidence clearly, including documents that explain the history, stability, and genuine nature of the relationship where relevant. Because each relationship history is different, a consultation is recommended before submission."
+    },
+    {
+      "id": "legal-08",
+      "category": "legal",
+      "question": "Do you provide immigration support in Chinese?",
+      "answer": "Yes. Bird & Yang provides multilingual support, including English and Mandarin, and the wider team also has strong cross-border experience. We aim to make immigration matters clearer for clients and families who prefer bilingual communication."
+    },
+    {
+      "id": "legal-09",
+      "category": "legal",
+      "question": "How long will my immigration matter take?",
+      "answer": "Processing time depends on the visa category, Immigration New Zealand workload, document completeness, and whether further information is requested. We can help you understand the likely process and prepare your documents to reduce avoidable delay, but we cannot guarantee government processing times."
+    },
+    {
+      "id": "legal-10",
+      "category": "legal",
+      "question": "How much does an immigration consultation cost?",
+      "answer": "Fees may depend on the type and complexity of the matter. Please contact Bird & Yang or book a consultation and our team can confirm the appropriate consultation arrangement and scope before work begins."
+    },
+    {
+      "id": "legal-11",
+      "category": "legal",
+      "question": "I want to invest or do business in New Zealand. What visa pathway should I consider?",
+      "answer": "Business and investor immigration usually requires early planning around eligibility, investment amount, source of funds, business history, acceptable investments, family goals, and post-approval compliance. Bird & Yang can assist with Active Investor Plus matters, historical investor visa reviews, entrepreneur/business migration support, business plan preparation, and coordination with accounting or commercial advisers. Please book a consultation before preparing documents."
+    },
+    {
+      "id": "legal-12",
+      "category": "legal",
+      "question": "Can you review a sale and purchase agreement before I sign?",
+      "answer": "Yes. Bird & Yang can assist with residential and commercial sale and purchase agreements, title review, due diligence, conditions, settlement, finance, leasing, subdivision, and development matters. For property purchases, it is best to get legal advice before signing or before conditions become unconditional."
+    },
+    {
+      "id": "legal-13",
+      "category": "legal",
+      "question": "I am starting or buying a business. What legal documents do I need?",
+      "answer": "The documents depend on the transaction and structure. Common matters include company incorporation, constitution, shareholder agreement, sale and purchase agreement, due diligence, lease review, terms of trade, employment documents, finance/security documents, and IP or confidentiality arrangements. Bird & Yang can help structure the matter and identify legal risks."
+    },
+    {
+      "id": "legal-14",
+      "category": "legal",
+      "question": "Do I need a will or family trust?",
+      "answer": "A will, enduring power of attorney, and/or trust may be useful depending on your family, assets, business interests, property ownership, succession goals, and risk profile. Bird & Yang helps with wills, family trusts, EPAs, estate administration, asset protection, succession planning, and contested estate matters. Please book a consultation for tailored estate planning."
+    },
+    {
+      "id": "legal-15",
+      "category": "legal",
+      "question": "Can you help with a relationship property or employment problem?",
+      "answer": "Yes. Bird & Yang assists with family law matters such as relationship property, separation agreements, contracting out agreements, parenting arrangements, and related disputes. We also assist with employment agreements, personal grievances, redundancy, restructuring, workplace policies, mediation, and ERA matters. Sensitive or urgent matters should be discussed directly with a lawyer."
+    },
+    {
+      "id": "legal-16",
+      "category": "legal",
+      "question": "I have a dispute. Should I go to court?",
+      "answer": "Court is only one option. Bird & Yang can help assess the claim, evidence, cost, risk, likely outcomes, negotiation options, mediation, arbitration, debt recovery, enforcement, and court proceedings where needed. A consultation is recommended so the team can understand the facts and advise on strategy."
+    },
+    {
+      "id": "legal-17",
+      "category": "legal",
+      "question": "Can you help Chinese clients with New Zealand legal and cross-border matters?",
+      "answer": "Yes. Bird & Yang supports Chinese families, investors, and businesses with New Zealand legal matters and cross-border coordination, including investment structuring, immigration and settlement planning, property acquisition, business establishment, wealth management, trusts, and transactions requiring coordination with Chinese advisers."
+    },
+    {
+      "id": "accounting-01",
+      "category": "accounting",
+      "question": "What accounting services does Bird & Yang provide?",
+      "answer": "Bird & Yang provides annual and monthly accounts, taxation, budget and forecast, cash flow management, business plans, asset management, and trust accounting. We aim to explain the numbers clearly so business owners can make better decisions, not only meet compliance deadlines."
+    },
+    {
+      "id": "accounting-02",
+      "category": "accounting",
+      "question": "Can Bird & Yang prepare my annual accounts?",
+      "answer": "Yes. Bird & Yang can prepare annual financial statements for sole traders, companies, trusts, partnerships, and other entities, depending on your business structure and reporting requirements. We also explain the numbers so you can understand performance and make informed decisions."
+    },
+    {
+      "id": "accounting-03",
+      "category": "accounting",
+      "question": "Do I need monthly management accounts?",
+      "answer": "Monthly management accounts are useful if you want timely visibility over sales, margins, costs, cash flow, and performance trends. They are especially helpful for growing businesses, multi-entity groups, and businesses seeking funding or better management control."
+    },
+    {
+      "id": "accounting-04",
+      "category": "accounting",
+      "question": "What is the difference between annual accounts and management accounts?",
+      "answer": "Annual accounts usually support compliance, tax, bank, shareholder, or statutory reporting needs. Management accounts are more frequent and practical, designed to help owners monitor performance, identify variances, and make decisions during the year."
+    },
+    {
+      "id": "accounting-05",
+      "category": "accounting",
+      "question": "Can you help clean up messy bookkeeping?",
+      "answer": "Yes. Bird & Yang can provide bookkeeping support using Xero, MYOB, and other cloud-based systems. We can help bring records up to date, reconcile accounts, organise supporting documents, and improve the process going forward."
+    },
+    {
+      "id": "accounting-06",
+      "category": "accounting",
+      "question": "Can you help with Xero or MYOB?",
+      "answer": "Yes. Bird & Yang supports clients using Xero, MYOB, and other systems. We can assist with setup, bookkeeping workflows, reconciliations, reporting, and practical improvements so the system gives reliable financial information."
+    },
+    {
+      "id": "accounting-07",
+      "category": "accounting",
+      "question": "Can you prepare reports for my bank or lender?",
+      "answer": "Yes. We can prepare financial statements, management accounts, cash flow forecasts, and supporting information for banks or lenders. If lending involves legal documents, security, or property/business transactions, we can coordinate with the legal team where appropriate."
+    },
+    {
+      "id": "accounting-08",
+      "category": "accounting",
+      "question": "Can you help multi-entity groups?",
+      "answer": "Yes. Bird & Yang can assist with multi-entity consolidation and reporting for businesses operating through multiple companies, trusts, partnerships, or related entities. This helps owners see the full picture and manage inter-entity transactions more clearly."
+    },
+    {
+      "id": "accounting-09",
+      "category": "accounting",
+      "question": "Do you help not-for-profit organisations or incorporated societies?",
+      "answer": "Yes. Bird & Yang can support compilation or review-style reporting needs for SMEs, not-for-profit organisations, and incorporated societies where appropriate, including financial reporting and records support."
+    },
+    {
+      "id": "accounting-10",
+      "category": "accounting",
+      "question": "How often should I review my financial reports?",
+      "answer": "At minimum, business owners should review financial performance regularly enough to make timely decisions. For active or growing businesses, monthly reporting is often more useful than waiting until year-end. We can help set a reporting rhythm that fits your business."
+    },
+    {
+      "id": "accounting-11",
+      "category": "accounting",
+      "question": "What information should I provide for annual or monthly accounts?",
+      "answer": "Common information includes bank statements, sales and purchase records, payroll details, GST and IRD records, loan documents, asset purchases, inventory information, leases, invoices, and access to accounting software. We can provide a tailored checklist after understanding your structure."
+    },
+    {
+      "id": "accounting-12",
+      "category": "accounting",
+      "question": "Can you help me reduce tax legally while staying compliant?",
+      "answer": "Yes. Bird & Yang helps with tax compliance and forward-looking planning, including income tax, GST, FBT, provisional tax, PAYE, international tax issues, IRD liaison, and tax structuring within legal frameworks. Tax outcomes depend on facts, so please book a consultation for tailored advice."
+    },
+    {
+      "id": "accounting-13",
+      "category": "accounting",
+      "question": "Can you help me prepare a business budget or forecast?",
+      "answer": "Yes. Bird & Yang can help prepare annual or multi-year budgets, rolling forecasts, revenue models, scenario analysis, cost structure reviews, KPI dashboards, and break-even analysis. The goal is to make the plan practical, measurable, and useful for decisions."
+    },
+    {
+      "id": "accounting-14",
+      "category": "accounting",
+      "question": "My business is profitable but cash is tight. Can you help?",
+      "answer": "Yes. Bird & Yang helps with cash flow forecasting, working capital optimisation, debtor and creditor management, crisis and turnaround support, IRD instalment arrangements, and bank-ready financial information. Early action is important when cash pressure appears."
+    },
+    {
+      "id": "accounting-15",
+      "category": "accounting",
+      "question": "Can you help prepare a business plan for a bank, investor, or immigration purpose?",
+      "answer": "Yes. Bird & Yang can help with feasibility analysis, business plan documentation, market and competitor analysis, financial projections, funding applications, structure advisory, and growth planning. If the plan supports an immigration or legal matter, we can coordinate the approach."
+    },
+    {
+      "id": "accounting-16",
+      "category": "accounting",
+      "question": "Can you help me track and manage business or property assets?",
+      "answer": "Yes. Bird & Yang can assist with fixed asset registers, depreciation schedules, property portfolio tracking, investment monitoring coordination, insurance adequacy reviews, and asset protection strategy in coordination with legal advisers where needed."
+    },
+    {
+      "id": "accounting-17",
+      "category": "accounting",
+      "question": "Can you help with trust accounting and trust tax returns?",
+      "answer": "Yes. Bird & Yang provides trust financial statements, trust tax returns, beneficiary distribution planning, trust administration support, trust restructuring support, and legal-accounting coordination. Trust matters often involve both tax and trustee duties, so tailored advice is recommended."
+    },
+    {
+      "id": "insurance-01",
+      "category": "insurance",
+      "question": "What insurance services does Bird & Yang provide?",
+      "answer": "Bird & Yang provides practical insurance support for car insurance, house insurance, and life, health, and business protection. The focus is helping clients understand cover, disclosure, exclusions, values, claims readiness, and how insurance fits with broader legal and financial planning."
+    },
+    {
+      "id": "insurance-02",
+      "category": "insurance",
+      "question": "What type of car insurance should I choose?",
+      "answer": "Common options include comprehensive cover, third party fire and theft, and third party only. The right option depends on the car value, loan position, driving use, budget, risk tolerance, and who drives the vehicle. Bird & Yang can help compare options and explain the trade-offs."
+    },
+    {
+      "id": "insurance-03",
+      "category": "insurance",
+      "question": "What is the difference between agreed value and market value?",
+      "answer": "Agreed value generally means the insured value is set in the policy, while market value usually depends on the vehicle's value at the time of loss. The best option depends on your vehicle, premium, and expectations at claim time. We can help you understand the difference before choosing."
+    },
+    {
+      "id": "insurance-04",
+      "category": "insurance",
+      "question": "How does the excess affect my premium and claim?",
+      "answer": "A higher excess can sometimes reduce premium, but it also means you pay more out of pocket at claim time. Some policies may also apply different excesses, such as standard excess, young driver excess, or glass excess. We can help you compare the practical effect."
+    },
+    {
+      "id": "insurance-05",
+      "category": "insurance",
+      "question": "Do I need to disclose modifications or previous claims?",
+      "answer": "Yes, you should answer insurer questions accurately and disclose relevant information requested by the insurer. Vehicle modifications, driver history, licence status, use of the car, and prior claims may affect cover. If you are unsure, please speak with an adviser before relying on the policy."
+    },
+    {
+      "id": "insurance-06",
+      "category": "insurance",
+      "question": "Can I use my car for business, rideshare, or delivery work?",
+      "answer": "You should not assume private-use cover applies to business, rideshare, or delivery use. Vehicle use should match the policy. If your use changes, check the policy or speak with an adviser before driving for that purpose."
+    },
+    {
+      "id": "insurance-07",
+      "category": "insurance",
+      "question": "I have an overseas driver licence. Can I get car insurance?",
+      "answer": "Many migrants can obtain car insurance, but licence status, driving history, New Zealand licence conversion, and insurer criteria may affect eligibility and premium. Bird & Yang can help you understand the information insurers may ask for."
+    },
+    {
+      "id": "insurance-08",
+      "category": "insurance",
+      "question": "What should I do after a car accident?",
+      "answer": "Prioritise safety, contact emergency services if needed, exchange details, take photos, record location/time/witnesses, avoid admitting liability at the scene, and notify your insurer promptly. Bird & Yang can provide a claim evidence checklist and explain the next steps."
+    },
+    {
+      "id": "insurance-09",
+      "category": "insurance",
+      "question": "Will my claim be declined if I missed information?",
+      "answer": "It depends on the policy, the information, the law, and the insurer's assessment. Missing or inaccurate information can create claim problems, especially if it relates to the risk. Please seek advice if you are concerned about disclosure or a claim."
+    },
+    {
+      "id": "insurance-10",
+      "category": "insurance",
+      "question": "Can Bird & Yang help me compare car insurance policies?",
+      "answer": "Yes. Bird & Yang can help compare policy types, insured value, excess, exclusions, vehicle use, disclosure requirements, and claims process so you understand what you are buying."
+    },
+    {
+      "id": "insurance-11",
+      "category": "insurance",
+      "question": "Can you help if my insurer refuses to pay?",
+      "answer": "We can help you understand the issue and direct you to the appropriate support. Depending on the facts, the matter may involve insurer review, dispute resolution, policy interpretation, or legal advice. Please book a consultation for an active dispute."
+    },
+    {
+      "id": "insurance-12",
+      "category": "insurance",
+      "question": "How much house insurance do I need?",
+      "answer": "House insurance should be based on a realistic rebuild value, not simply purchase price or council valuation. You should consider building costs, property features, renovations, exclusions, vacancy, landlord obligations, and whether contract works cover is needed during renovations. Bird & Yang can help you review key risk points."
+    },
+    {
+      "id": "insurance-13",
+      "category": "insurance",
+      "question": "Do I need life, health, income protection, or business insurance?",
+      "answer": "The right protection depends on family responsibilities, debt, income, health needs, business risk, key people, and long-term plans. Bird & Yang can help you identify the risks to discuss with an adviser and align protection with broader legal and financial planning."
+    },
+    {
+      "id": "hr-01",
+      "category": "hr",
+      "question": "What HR consulting services does Bird & Yang provide?",
+      "answer": "Bird & Yang provides HR consulting support for compliance foundations, people management, workplace culture and risk, recruitment and retention, and bilingual HR support. When a matter requires legal advice or representation, HR consulting can connect with the employment law team."
+    },
+    {
+      "id": "hr-02",
+      "category": "hr",
+      "question": "Do I need written employment agreements for all employees?",
+      "answer": "Yes. In New Zealand, employers must provide written employment agreements. Agreements should clearly set out role, duties, hours, pay, leave, trial/probation terms where applicable, termination provisions, and other required terms. Bird & Yang can review or prepare compliant agreements."
+    },
+    {
+      "id": "hr-03",
+      "category": "hr",
+      "question": "Can I use the same employment agreement template for every employee?",
+      "answer": "Templates can be a starting point, but agreements should match the actual role, hours, pay structure, location, obligations, and any role-specific risk. Using the wrong template may create compliance issues. Bird & Yang can help adapt documents to your business."
+    },
+    {
+      "id": "hr-04",
+      "category": "hr",
+      "question": "What workplace policies should a small business have?",
+      "answer": "Common policies include leave and attendance, health and safety, code of conduct, bullying and harassment, privacy, IT/email use, flexible work, vehicle use, expenses, and disciplinary processes. The right policy set depends on your business size, industry, and risk profile."
+    },
+    {
+      "id": "hr-05",
+      "category": "hr",
+      "question": "How do I check payroll and leave compliance?",
+      "answer": "Review employment agreements, wage rates, hours, timesheets, leave balances, holiday pay calculations, payslips, payroll settings, and record-keeping. Holidays Act compliance can be complex, so Bird & Yang can help review payroll processes and identify gaps."
+    },
+    {
+      "id": "hr-06",
+      "category": "hr",
+      "question": "How should I onboard a new employee?",
+      "answer": "A good onboarding process includes signed employment documents, right-to-work checks, payroll and KiwiSaver forms, policy acknowledgements, health and safety induction, role expectations, training plan, and probation/trial process where relevant."
+    },
+    {
+      "id": "hr-07",
+      "category": "hr",
+      "question": "Can I hire someone as a contractor instead of an employee?",
+      "answer": "The label is not enough. The real working relationship, control, independence, equipment, risk, integration, and legal tests matter. Misclassification can create tax, employment, and liability risks. Bird & Yang can help assess contractor versus employee arrangements."
+    },
+    {
+      "id": "hr-08",
+      "category": "hr",
+      "question": "What records must employers keep?",
+      "answer": "Employers should maintain accurate employment agreements, wage/time records, leave records, payroll records, tax records, policy acknowledgements, performance records, and key communications. Good records support compliance and fair process if issues arise."
+    },
+    {
+      "id": "hr-09",
+      "category": "hr",
+      "question": "How often should HR documents be reviewed?",
+      "answer": "HR documents should be reviewed when laws change, roles change, pay structures change, business risks change, or at least periodically as part of compliance housekeeping. Regular review reduces avoidable employment risk."
+    },
+    {
+      "id": "hr-10",
+      "category": "hr",
+      "question": "Can Bird & Yang review my current HR compliance?",
+      "answer": "Yes. Bird & Yang can review employment agreements, workplace policies, payroll and leave processes, onboarding documents, contractor arrangements, and record-keeping to identify gaps and practical improvements."
+    },
+    {
+      "id": "hr-11",
+      "category": "hr",
+      "question": "What should I do if I discover a compliance problem?",
+      "answer": "Do not ignore it. Preserve records, identify the affected employees or period, avoid rushed decisions, and seek advice on correction steps. Bird & Yang can help you plan a practical response and involve employment lawyers where legal risk is high."
+    },
+    {
+      "id": "hr-12",
+      "category": "hr",
+      "question": "How should I manage poor performance or misconduct?",
+      "answer": "Performance and misconduct matters need a fair and well-documented process. Usually this involves clear concerns, evidence, notice, a chance to respond, support where appropriate, and careful decision-making. Bird & Yang can help structure the process and connect you with employment lawyers if legal advice is needed."
+    },
+    {
+      "id": "hr-13",
+      "category": "hr",
+      "question": "How can I reduce workplace culture and risk problems?",
+      "answer": "Bird & Yang can help with workplace culture reviews, bullying and harassment prevention, health and safety alignment, policy communication, conflict management, and practical systems that make expectations clear. Early support often prevents small problems from becoming formal disputes."
+    },
+    {
+      "id": "hr-14",
+      "category": "hr",
+      "question": "Can you help with recruitment and retention?",
+      "answer": "Yes. Bird & Yang can support role design, recruitment process structure, onboarding, probation planning, retention systems, and practical HR documents so new employees understand expectations and stay engaged."
+    },
+    {
+      "id": "hr-15",
+      "category": "hr",
+      "question": "Can you provide bilingual HR documents or communication support?",
+      "answer": "Yes. Bird & Yang provides bilingual HR support in English, Mandarin, and Cantonese, including employment documents, HR forms, workplace notices, policy explanations, cross-cultural communication support, and coordination with bilingual employment lawyers where legal risk is involved."
+    },
+    {
+      "id": "immigration-01",
+      "category": "immigration",
+      "question": "What is the difference between immigration consulting and immigration legal advice at Bird & Yang?",
+      "answer": "Immigration consulting supports the practical and organisational side of the matter, such as document preparation, file management, evidence gathering, and timeline coordination. When licensed immigration advice or legal strategy is needed, Bird & Yang refers clients directly to the immigration lawyers within the same firm."
+    },
+    {
+      "id": "immigration-02",
+      "category": "immigration",
+      "question": "Can you help me understand my immigration pathway?",
+      "answer": "Yes. Bird & Yang can help you take the first step by organising your background information, identifying likely pathway questions, and connecting you with licensed immigration advice where needed. Pathway decisions should be made after a proper review."
+    },
+    {
+      "id": "immigration-03",
+      "category": "immigration",
+      "question": "I am not sure whether to study, work, invest, or apply through family. Can you help?",
+      "answer": "Yes. We can help map your goals, current visa position, qualifications, work experience, family situation, budget, and timing. Because this involves pathway selection, we recommend a consultation with the appropriate adviser or lawyer."
+    },
+    {
+      "id": "immigration-04",
+      "category": "immigration",
+      "question": "Can you check if my job supports a visa?",
+      "answer": "We can help organise employment evidence and identify key questions, but whether a job supports a particular visa depends on the role, employer status, pay, duties, skill level, and current immigration rules. Please book a consultation for a proper assessment."
+    },
+    {
+      "id": "immigration-05",
+      "category": "immigration",
+      "question": "Can you help employers support migrant workers?",
+      "answer": "Yes. Bird & Yang can assist employers with practical document preparation, timeline coordination, and connection with immigration lawyers for accreditation, job check, work visa, and compliance-related advice."
+    },
+    {
+      "id": "immigration-06",
+      "category": "immigration",
+      "question": "Can you help plan from temporary visa to residence?",
+      "answer": "Yes. We can help organise the pathway discussion, document timeline, and evidence strategy, and connect you with legal advice on residence options. Early planning is important because work, qualification, salary, English, health, character, and family factors may matter."
+    },
+    {
+      "id": "immigration-07",
+      "category": "immigration",
+      "question": "Can you help international students plan their next step?",
+      "answer": "Yes. We can help students organise study documents, understand post-study transition questions, and plan what evidence may be needed for future work or residence pathways. Specific visa advice should be given through a consultation."
+    },
+    {
+      "id": "immigration-08",
+      "category": "immigration",
+      "question": "Can you help with family or partnership pathway planning?",
+      "answer": "Yes. We can help organise relationship history, family documents, communication records, living arrangements, financial evidence, and other supporting materials. Because relationship evidence is fact-sensitive, please book a consultation before submission."
+    },
+    {
+      "id": "immigration-09",
+      "category": "immigration",
+      "question": "Can you help if I have a previous visa issue?",
+      "answer": "Yes. Previous declines, overstays, character issues, health issues, or incorrect information can affect future applications. Please book a consultation so the team can review the history and decide how to address it properly."
+    },
+    {
+      "id": "immigration-10",
+      "category": "immigration",
+      "question": "Can you help with Chinese documents and translations?",
+      "answer": "Bird & Yang can help clients organise Chinese-language background documents and explain what may need translation, certification, or clear supporting explanation. Requirements vary by application type."
+    },
+    {
+      "id": "immigration-11",
+      "category": "immigration",
+      "question": "How early should I start planning my visa?",
+      "answer": "Start as early as possible, especially if documents need to be collected from overseas, translated, certified, or coordinated with employers, schools, banks, or family members. Early planning reduces avoidable delay and stress."
+    },
+    {
+      "id": "immigration-12",
+      "category": "immigration",
+      "question": "Can you prepare my immigration application documents?",
+      "answer": "Bird & Yang can help organise application documents, check completeness, manage files, prepare evidence lists, and coordinate timelines. If legal submissions or licensed immigration advice are needed, the matter can be referred to Bird & Yang's immigration lawyers."
+    },
+    {
+      "id": "immigration-13",
+      "category": "immigration",
+      "question": "Can you help organise relationship or employment evidence?",
+      "answer": "Yes. For visa categories requiring more than basic forms, Bird & Yang helps organise the story and supporting evidence clearly. This may include relationship history, shared life evidence, employment documents, role details, employer support documents, and explanatory materials."
+    },
+    {
+      "id": "immigration-14",
+      "category": "immigration",
+      "question": "Can you manage my immigration timeline and process?",
+      "answer": "Yes. Bird & Yang can help track document collection, application steps, deadlines, follow-ups, and communications so the file stays organised. We cannot control government processing time, but we can help reduce avoidable delay caused by incomplete or unclear documents."
+    },
+    {
+      "id": "others-01",
+      "category": "others",
+      "question": "Why should I choose Bird & Yang?",
+      "answer": "Bird & Yang integrates legal, accounting, and consulting expertise under one roof. This helps clients manage complex matters with coordinated support, clear communication, and practical outcomes, especially where legal structure, tax, accounting, immigration, insurance, HR, or cross-border issues overlap."
+    },
+    {
+      "id": "others-02",
+      "category": "others",
+      "question": "What does \"Integrated in Expertise, Together for Growth\" mean?",
+      "answer": "It means Bird & Yang aims to connect the right expertise around the client's real issue. Instead of treating law, accounting, tax, insurance, HR, immigration, and consulting as separate silos, the team works together where appropriate so clients can move forward with clarity and confidence."
+    },
+    {
+      "id": "others-03",
+      "category": "others",
+      "question": "Do you support clients in both English and Chinese?",
+      "answer": "Yes. Bird & Yang has multilingual and cross-cultural capability. The team can support many clients in English, Mandarin, Cantonese, and other languages depending on team availability and the matter. Please contact us to confirm the best person for your needs."
+    },
+    {
+      "id": "others-04",
+      "category": "others",
+      "question": "Where is Bird & Yang located and how can I contact you?",
+      "answer": "Bird & Yang is located at 520 Mt Albert Road, Three Kings, Auckland 1042. You can contact the team by email at info@birdyang.co.nz or phone +64 9 212 6231. You may also book a consultation through the website."
+    },
+    {
+      "id": "others-05",
+      "category": "others",
+      "question": "Can the website chatbot give me legal, accounting, immigration, or financial advice?",
+      "answer": "The chatbot can provide general information about Bird & Yang's services and common process questions. It cannot provide tailored legal, accounting, immigration, insurance, financial, or tax advice. For advice based on your facts, please book a consultation."
+    },
+    {
+      "id": "others-06",
+      "category": "others",
+      "question": "My question is not listed here. What should I do?",
+      "answer": "If your question is outside the chatbot's scope, or if it involves your personal facts, documents, deadlines, risks, or a decision you need to make, please contact Bird & Yang or book a consultation. The team will direct your enquiry to the appropriate professional."
+    }
+  ]
+}

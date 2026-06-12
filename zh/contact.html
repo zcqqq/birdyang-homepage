@@ -87,33 +87,35 @@ body{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans S
     <h2 class="section-title">发送消息</h2>
     <div style="max-width:640px;margin:0 auto">
       <form id="contact-form">
+        <input type="hidden" name="form_type" value="Contact Enquiry (Chinese)">
+        <div style="position:absolute;left:-9999px" aria-hidden="true"><input type="text" name="_honey" tabindex="-1" autocomplete="off"></div>
         <div class="form-group">
           <label>姓名 *</label>
-          <input type="text" required placeholder="您的姓名">
+          <input type="text" name="name" required placeholder="您的姓名">
         </div>
         <div class="form-group">
           <label>邮箱 *</label>
-          <input type="email" required placeholder="your@email.com">
+          <input type="email" name="email" required placeholder="your@email.com">
         </div>
         <div class="form-group">
           <label>电话</label>
-          <input type="tel" placeholder="+64">
+          <input type="tel" name="phone" placeholder="+64">
         </div>
         <div class="form-group">
           <label>咨询类别 *</label>
-          <select required>
+          <select name="category" required>
             <option value="">请选择类别...</option>
-            <option>法务</option>
-            <option>会计</option>
-            <option>咨询-移民</option>
-            <option>咨询-人力资源</option>
-            <option>咨询-保险</option>
-            <option>一般咨询</option>
+            <option value="法务">法务</option>
+            <option value="会计">会计</option>
+            <option value="咨询-移民">咨询-移民</option>
+            <option value="咨询-人力资源">咨询-人力资源</option>
+            <option value="咨询-保险">咨询-保险</option>
+            <option value="一般咨询">一般咨询</option>
           </select>
         </div>
         <div class="form-group">
           <label>您的消息 *</label>
-          <textarea required placeholder="请简要描述您希望咨询的事项"></textarea>
+          <textarea name="message" required placeholder="请简要描述您希望咨询的事项"></textarea>
         </div>
         <button type="submit" class="cta-btn primary">提交咨询</button>
       </form>
@@ -151,11 +153,27 @@ body{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans S
   if (form) {
     form.addEventListener('submit', function(e) {
       e.preventDefault();
-      var successEl = document.querySelector('.form-success');
-      if (successEl) {
-        form.style.display = 'none';
-        successEl.style.display = 'block';
-      }
+      var btn = form.querySelector('button[type="submit"]');
+      btn.disabled = true;
+      btn.textContent = '发送中...';
+
+      fetch('/api/contact', { method: 'POST', body: new FormData(form) })
+        .then(function(res) { return res.json(); })
+        .then(function(data) {
+          if (data.success) {
+            form.style.display = 'none';
+            document.querySelector('.form-success').style.display = 'block';
+          } else {
+            btn.disabled = false;
+            btn.textContent = '提交咨询';
+            alert('发送失败，请重试或直接邮件联系 info@birdyang.co.nz');
+          }
+        })
+        .catch(function() {
+          btn.disabled = false;
+          btn.textContent = '提交咨询';
+          alert('网络错误，请重试。');
+        });
     });
   }
 
@@ -171,5 +189,7 @@ body{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans S
   reveals.forEach(function(el) { observer.observe(el); });
 })();
 </script>
+<script src="/components/chatbot.js"></script>
+<script>renderChatbot({lang:"zh"})</script>
 </body>
 </html>

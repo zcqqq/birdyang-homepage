@@ -30,7 +30,7 @@
 
 function renderHome() {
   return '' +
-    '<div class="hero-banner" style="background:url(assets/images/47_WhyBird%26Yang_FirstSight.png) center/cover no-repeat">' +
+    '<div class="hero-banner" style="min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;background:url(assets/images/47_WhyBird%26Yang_FirstSight.png) center/cover no-repeat">' +
       '<h1>WHY BIRD &amp; YANG</h1>' +
       '<p class="hero-sub">What makes our service different</p>' +
       '<p class="breadcrumb">Integrated in Expertise, Together for Growth</p>' +
@@ -193,7 +193,7 @@ function renderHowItWorks() {
 
     '<section class="section bg-white">' +
       '<div class="container">' +
-        '<p class="section-label">Integrating Complexity through Professional Expertise</p>' +
+        '<h2 style="font-size:1.3rem;font-weight:700;color:var(--blue);margin-bottom:16px">★ Integrating Complexity through Professional Expertise</h2>' +
         '<table class="how-table mt-24">' +
           '<thead><tr><th>Discipline</th><th>Description</th></tr></thead>' +
           '<tbody>' +
@@ -209,7 +209,7 @@ function renderHowItWorks() {
 
     '<section class="section">' +
       '<div class="container">' +
-        '<p class="section-label">Reducing Uncertainty through Transparency</p>' +
+        '<h2 style="font-size:1.3rem;font-weight:700;color:var(--blue);margin-bottom:16px">★ Reducing Uncertainty through Transparency</h2>' +
         '<table class="how-table mt-24">' +
           '<thead><tr><th>Discipline</th><th>Description</th></tr></thead>' +
           '<tbody>' +
@@ -225,7 +225,7 @@ function renderHowItWorks() {
 
     '<section class="section bg-white">' +
       '<div class="container">' +
-        '<p class="section-label">Achieving Results through Collaboration</p>' +
+        '<h2 style="font-size:1.3rem;font-weight:700;color:var(--blue);margin-bottom:16px">★ Achieving Results through Collaboration</h2>' +
         '<table class="how-table mt-24">' +
           '<thead><tr><th>Discipline</th><th>Description</th></tr></thead>' +
           '<tbody>' +
@@ -289,5 +289,7 @@ route();
 
 })();
 </script>
+<script src="/components/chatbot.js"></script>
+<script>renderChatbot({lang:"en"})</script>
 </body>
 </html>

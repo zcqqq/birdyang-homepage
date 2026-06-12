@@ -346,7 +346,7 @@ const teamProfiles = {
 
 function renderHome() {
   return `
-    <div class="hero-banner" style="background:url('assets/images/02_LegalHome01_FirstSight.png') center/cover no-repeat">
+    <div class="hero-banner" style="min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;background:url('assets/images/02_LegalHome01_FirstSight.png') center/cover no-repeat">
       <h1>LEGAL SERVICES</h1>
       <p class="hero-sub">Guiding What Matters with Clarity</p>
     </div>
@@ -402,26 +402,45 @@ function renderServiceDetail(key) {
   if (!page) return renderHome();
 
   let currentGroup = '';
-  const accordionHtml = page.items.map(item => {
+  const itemsHtml = page.items.map(item => {
     let groupLabel = '';
     if (item.group && item.group !== currentGroup) {
       currentGroup = item.group;
-      groupLabel = `<div style="margin-top:24px;margin-bottom:12px;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)">${item.group}</div>`;
+      groupLabel = `<div style="grid-column:1/-1;margin-top:16px;font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)">${item.group}</div>`;
     }
-    const featuredBadge = item.featured ? '<span class="featured-badge">Featured</span>' : '';
-    const linkWrap = item.link ? `<a href="${item.link}" style="color:var(--gold);font-size:.78rem;font-weight:600;margin-top:8px;display:inline-block">View details &rarr;</a>` : '';
+    const featuredBadge = item.featured ? ' <span style="font-size:.6rem;background:var(--gold);color:var(--white);padding:2px 8px;border-radius:10px;margin-left:6px;vertical-align:middle">Featured</span>' : '';
+    const linkWrap = item.link ? `<a href="${item.link}" style="color:var(--gold);font-size:.78rem;font-weight:600;display:block;margin-top:6px">View details &rarr;</a>` : '';
+    if (item.featured) {
+      return `${groupLabel}
+        <div class="service-item featured-item" style="grid-column:1/-1">
+          <div class="service-item-icon">★</div>
+          <div style="flex:1">
+            <h4 style="cursor:pointer" onclick="this.closest('.featured-item').classList.toggle('expanded');event.stopPropagation()">${item.title}${featuredBadge} <span class="expand-arrow" style="float:right;font-size:.8rem;color:var(--gold)">▼</span></h4>
+            <p>${item.desc}</p>
+            <div class="featured-expand" style="display:none;margin-top:12px;padding-top:12px;border-top:1px solid rgba(0,0,0,.06)">
+              <p style="font-size:.82rem;color:var(--charcoal);line-height:1.7;margin-bottom:8px">Strategic immigration guidance for investors, entrepreneurs, and business owners seeking opportunities in New Zealand.</p>
+              ${linkWrap}
+            </div>
+          </div>
+        </div>`;
+    }
     return `${groupLabel}
-      <div class="accordion">
-        <div class="accordion-header">${item.title}${featuredBadge}</div>
-        <div class="accordion-body"><p>${item.desc}</p>${linkWrap}</div>
+      <div class="service-item">
+        <div class="service-item-icon">●</div>
+        <div>
+          <h4>${item.title}${featuredBadge}</h4>
+          <p>${item.desc}</p>${linkWrap}
+        </div>
       </div>`;
   }).join('');
 
-  const heroStyle = page.img ? ` style="background:url('${page.img}') center/cover no-repeat"` : '';
   return `
-    <div class="hero-banner"${heroStyle}>
-      <div class="breadcrumb"><a href="#home">LEGAL SERVICES</a> &gt; ${page.breadcrumb}</div>
-      <h1>${page.title}</h1>
+    <div style="min-height:100vh;display:flex;flex-direction:column">
+      <div class="hero-banner" style="padding:100px 5% 30px;flex-shrink:0">
+        <div class="breadcrumb"><a href="#home">LEGAL SERVICES</a> &gt; ${page.breadcrumb}</div>
+        <h1>${page.title}</h1>
+      </div>
+      ${page.img ? `<div style="flex:1;background:url('${page.img}') center/cover no-repeat;min-height:200px"></div>` : ''}
     </div>
 
     <section>
@@ -429,8 +448,12 @@ function renderServiceDetail(key) {
         <a class="back-link" href="#home">BACK TO LEGAL SERVICES</a>
         <div class="two-col">
           <div class="main-content">
-            <p style="font-size:.88rem;color:var(--charcoal);line-height:1.85;margin-bottom:32px">${page.intro}</p>
-            ${accordionHtml}
+            <h2 style="font-size:1.4rem;font-weight:700;color:var(--blue);margin-bottom:12px">${page.title}</h2>
+            <p style="font-size:.92rem;color:var(--charcoal);line-height:1.85;margin-bottom:32px">${page.intro}</p>
+            <p style="font-size:.82rem;font-weight:700;color:var(--charcoal);margin-bottom:16px">Our ${page.breadcrumb.toLowerCase()} services include:</p>
+            <div class="service-items-grid">
+              ${itemsHtml}
+            </div>
           </div>
           <div class="sidebar">
             <div class="sidebar-card">
@@ -442,7 +465,7 @@ function renderServiceDetail(key) {
                 </div>
               `).join('')}
             </div>
-            <a href="contact.html" class="cta-btn primary" style="width:100%;display:block;text-align:center">BOOK A CONSULTATION</a>
+            <a href="contact.html#book" class="cta-btn primary" style="width:100%;display:block;text-align:center;margin-top:20px">BOOK A CONSULTATION</a>
           </div>
         </div>
       </div>
@@ -452,10 +475,13 @@ function renderServiceDetail(key) {
 
 function renderBusinessInvestor() {
   return `
-    <div class="hero-banner" style="background:url('assets/images/04_LegalExpertise_LegalSubhome01_Immigration_Feature_InvestorV4.png') center/cover no-repeat">
-      <div class="breadcrumb"><a href="#home">LEGAL SERVICES</a> &gt; <a href="#immigration">IMMIGRATION</a> &gt; BUSINESS &amp; INVESTOR IMMIGRATION</div>
-      <h1>Business &amp; Investor Visas</h1>
-      <p class="hero-sub">Strategic immigration guidance for investors, entrepreneurs, and business owners seeking opportunities in New Zealand.</p>
+    <div style="min-height:100vh;display:flex;flex-direction:column">
+      <div class="hero-banner" style="padding:100px 5% 30px;flex-shrink:0">
+        <div class="breadcrumb"><a href="#home">LEGAL SERVICES</a> &gt; <a href="#immigration">IMMIGRATION</a> &gt; BUSINESS &amp; INVESTOR IMMIGRATION</div>
+        <h1>Business &amp; Investor Visas</h1>
+        <p class="hero-sub">Strategic immigration guidance for investors, entrepreneurs, and business owners seeking opportunities in New Zealand.</p>
+      </div>
+      <div style="flex:1;background:url('assets/images/04_LegalExpertise_LegalSubhome01_Immigration_Feature_InvestorV4.png') center/cover no-repeat;min-height:200px"></div>
     </div>
 
     <section>
@@ -621,7 +647,7 @@ function renderTeamProfile(id) {
 
         <div class="profile-top">
           <div class="profile-photo-col">
-            <img class="profile-photo" src="${profile.photo}" alt="${profile.name}">
+            <img class="profile-photo" src="${profile.photo}" alt="${profile.name}" style="border-radius:8px;width:200px;height:auto;border:none">
           </div>
           <div>
             <h2 class="profile-name">${profile.name}</h2>
@@ -633,20 +659,24 @@ function renderTeamProfile(id) {
         <div class="profile-body">
           <div class="profile-main">
             <h3>AREAS OF EXPERTISE</h3>
-            <ul class="expertise-list">
-              ${profile.expertise.map(e => '<li>' + e + '</li>').join('')}
-            </ul>
+            <div class="expertise-badges">
+              ${profile.expertise.map(e => '<span>' + e + '</span>').join('')}
+            </div>
             <h3>PROFILE SUMMARY</h3>
             <p class="profile-summary">${profile.summary}</p>
+            ${profile.contact && profile.contact.qualifications ? `
+            <h3>EDUCATION BACKGROUND</h3>
+            <ul style="list-style:none;padding:0;font-size:.85rem;color:var(--charcoal);line-height:2">
+              ${profile.contact.qualifications.map(q => '<li>' + q + '</li>').join('')}
+            </ul>` : ''}
           </div>
           <div class="profile-sidebar">
             <h3>PROFILE HIGHLIGHTS</h3>
             <div class="profile-highlights">
-              ${profile.highlights.map(h => '<div class="highlight"><h4>' + h.title + '</h4><p>' + h.desc + '</p></div>').join('')}
+              ${profile.highlights.map(h => '<div class="highlight"><h4>★ ' + h.title + '</h4><p>' + h.desc + '</p></div>').join('')}
             </div>
-            <a href="contact.html#book" class="cta-btn">BOOK A CONSULTATION</a>
-            <div class="profile-contact">
-              ${profile.contact.qualifications.map(q => '<p>' + q + '</p>').join('')}
+            <a href="contact.html#book" class="cta-btn primary" style="width:100%;display:block;text-align:center;margin-top:20px">BOOK A CONSULTATION</a>
+            <div class="profile-contact" style="margin-top:16px">
               <p><a href="tel:${profile.contact.phone.replace(/\s/g,'')}">${profile.contact.phone}</a></p>
               <p><a href="mailto:${profile.contact.email}">${profile.contact.email}</a></p>
             </div>
@@ -697,5 +727,7 @@ render();
 })();
 </script>
 
+<script src="/components/chatbot.js"></script>
+<script>renderChatbot({lang:"en"})</script>
 </body>
 </html>
