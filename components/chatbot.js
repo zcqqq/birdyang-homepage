@@ -6,7 +6,7 @@ function renderChatbot(opts) {
 .by-chat-bubble{position:fixed;bottom:24px;right:24px;width:56px;height:56px;border-radius:50%;background:#c5851e;cursor:pointer;z-index:9999;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,0.25);transition:transform 0.2s,box-shadow 0.2s}\
 .by-chat-bubble:hover{transform:scale(1.08);box-shadow:0 6px 24px rgba(0,0,0,0.3)}\
 .by-chat-bubble svg{width:28px;height:28px;fill:#fff}\
-.by-chat-panel{position:fixed;bottom:92px;right:24px;width:380px;height:520px;background:#f8f5f0;border-radius:12px;box-shadow:0 8px 40px rgba(0,0,0,0.2);z-index:9999;display:none;flex-direction:column;overflow:hidden;font-family:Verdana,Geneva,sans-serif}\
+.by-chat-panel{position:fixed;bottom:92px;right:24px;width:380px;height:420px;background:#f8f5f0;border-radius:12px;box-shadow:0 8px 40px rgba(0,0,0,0.2);z-index:9999;display:none;flex-direction:column;overflow:hidden;font-family:Verdana,Geneva,sans-serif}\
 .by-chat-panel.active{display:flex}\
 .by-chat-header{background:#070e1a;color:#fff;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}\
 .by-chat-header h4{margin:0;font-size:0.9rem;font-weight:600}\
