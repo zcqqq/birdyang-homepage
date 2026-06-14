@@ -25,6 +25,7 @@
 <script src="/components/footer.js"></script>
 <script>renderFooter({lang:"en"})</script>
 
+<script src="/components/team-profile.js"></script>
 <script>
 (function() {
 
@@ -36,50 +37,6 @@ const team = [
   { id: 'rockie-wei', name: 'Rockie Wei', role: 'Insurance Adviser', photo: 'assets/team/rockie-wei.png' }
 ];
 
-const teamProfiles = {
-  'aimee-yang': {
-    name: 'Aimee Yang',
-    role: 'Partner',
-    photo: 'assets/team/aimee-yang.png',
-    bio: 'Aimee Yang is a partner at Bird & Yang and leads the firm\'s commercial and property law practice, providing integrated consulting and legal support.',
-    expertise: ['Corporate & Commercial Law', 'Property', 'Financing', 'Immigration', 'Commercial Litigation', 'Overseas Investment'],
-    summary: 'Aimee holds a BCOM, LLB from the University of Auckland, and a BMGT from Nanjing University of Economics and Finance, China.',
-    highlights: [
-      { title: 'Commercial & property leadership', desc: 'Leading the firm\'s commercial and property law practice.' },
-      { title: 'Cross-border finance experience', desc: 'Deep expertise in financing and overseas investment matters.' },
-      { title: 'Multilingual client service', desc: 'Providing seamless service in English and Mandarin.' }
-    ],
-    contact: { phone: '+64 9 590 0944', email: 'aimee@birdyang.co.nz' }
-  },
-  'julia-huang': {
-    name: 'Julia Huang',
-    role: 'Barrister & Senior Solicitor',
-    photo: 'assets/team/julia-huang.png',
-    bio: 'Julia Huang is a barrister and senior solicitor at Bird & Yang with a broad practice spanning corporate, property, immigration, family, and employment law.',
-    expertise: ['Corporate & Commercial Law', 'Property', 'Immigration', 'Family Law', 'Employment Law'],
-    summary: 'Julia brings international legal education and cross-border experience to her practice, providing versatile and client-focused legal support.',
-    highlights: [
-      { title: 'International legal education', desc: 'Qualifications spanning multiple jurisdictions.' },
-      { title: 'Cross-border legal experience', desc: 'Practical experience navigating international legal matters.' },
-      { title: 'Client-focused versatility', desc: 'Broad expertise across multiple practice areas.' }
-    ],
-    contact: { phone: '+64 21 1059 862', email: 'julia@birdyang.co.nz' }
-  },
-  'rockie-wei': {
-    name: 'Rockie Wei',
-    role: 'Insurance Adviser',
-    photo: 'assets/team/rockie-wei.png',
-    bio: 'Rockie Wei is an insurance adviser at Bird & Yang bringing a business owner\'s perspective to insurance and risk advisory.',
-    expertise: ['Real Estate Transactions', 'Loan-related Matters', 'Client Service', 'Car Insurance', 'House Insurance'],
-    summary: 'Rockie combines her business background with insurance expertise to provide practical, client-focused advisory services.',
-    highlights: [
-      { title: 'Business owner perspective', desc: 'Real-world commercial understanding from running her own business.' },
-      { title: 'Property & loan support', desc: 'Practical assistance with real estate and lending matters.' },
-      { title: 'Qualified insurance adviser', desc: 'Additional expertise in car and house insurance advisory services.' }
-    ],
-    contact: { phone: '+64 9 590 0948', email: 'rockie@birdyang.co.nz' }
-  }
-};
 
 const servicePages = {
   'insurance/car': {
@@ -304,10 +261,10 @@ const servicePages = {
 
 function renderHome() {
   return `
-    <div class="hero-banner" style="min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;background:url('assets/images/28_ConsultingHome01_FirstSight.png') center/cover no-repeat">
+    <section class="hero-full" style="background-image:url('assets/images/28_ConsultingHome01_FirstSight.png')">
       <h1>CONSULTING SERVICES</h1>
       <p class="hero-sub">Helping You Move Forward with Confidence</p>
-    </div>
+    </section>
 
     <section class="bg-cream reveal">
       <div class="container">
@@ -371,11 +328,11 @@ function renderHome() {
 
 function renderInsuranceHome() {
   return `
-    <div class="hero-banner" style="min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;background:url('assets/images/29_InsuranceHome01_FirstSight.png') center/cover no-repeat">
+    <section class="hero-full" style="background-image:url('assets/images/29_InsuranceHome01_FirstSight.png')">
       <p class="breadcrumb">CONSULTING SERVICES</p>
       <h1>INSURANCE</h1>
       <p class="hero-sub">Securing your future with expertise</p>
-    </div>
+    </section>
 
     <section class="reveal">
       <div class="container">
@@ -418,11 +375,11 @@ function renderInsuranceHome() {
 
 function renderHRHome() {
   return `
-    <div class="hero-banner" style="min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;background:url('assets/images/33_HRHome01_FirstSight.png') center/cover no-repeat">
+    <section class="hero-full" style="background-image:url('assets/images/33_HRHome01_FirstSight.png')">
       <p class="breadcrumb">CONSULTING SERVICES</p>
       <h1>HR CONSULTING</h1>
       <p class="hero-sub">Supporting your success with practical HR guidance</p>
-    </div>
+    </section>
 
     <section class="reveal">
       <div class="container">
@@ -479,11 +436,11 @@ function renderHRHome() {
 
 function renderImmigrationHome() {
   return `
-    <div class="hero-banner" style="min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;background:url('assets/images/39_ImmigrationHome01_FirstSight.png') center/cover no-repeat">
+    <section class="hero-full" style="background-image:url('assets/images/39_ImmigrationHome01_FirstSight.png')">
       <p class="breadcrumb">CONSULTING SERVICES</p>
       <h1>IMMIGRATION CONSULTING</h1>
       <p class="hero-sub">Realizing your pathway with efficiency</p>
-    </div>
+    </section>
 
     <section class="reveal">
       <div class="container">
@@ -532,9 +489,9 @@ function renderImmigrationHome() {
 
 function serviceDetailPage(opts) {
   const itemsHtml = opts.accordions.map(item => `
-    <div class="service-item">
-      <div class="service-item-icon">●</div>
-      <div><h4>${item.title}</h4><p>${item.desc}</p></div>
+    <div class="service-item" onclick="this.classList.toggle('open')">
+      <div class="service-item-icon">▸</div>
+      <div><h4>${item.title}</h4>${item.desc ? '<p class="service-item-desc">'+item.desc+'</p>' : ''}</div>
     </div>
   `).join('');
 
@@ -545,12 +502,12 @@ function serviceDetailPage(opts) {
   `).join('');
 
   return `
-    <div style="min-height:100vh;display:flex;flex-direction:column">
-      <div class="hero-banner" style="padding:100px 5% 30px;flex-shrink:0">
+    <div class="hero-split">
+      <div class="hero-split-header">
         <div class="breadcrumb"><a href="#home">CONSULTING</a> &gt; <a href="${opts.backHash}">${opts.label}</a> &gt; ${opts.subtitle}</div>
         <h1>${opts.title}</h1>
       </div>
-      ${opts.img ? `<div style="flex:1;background:url('${opts.img}') center/cover no-repeat;min-height:200px"></div>` : ''}
+      ${opts.img ? `<div class="hero-split-image" style="background-image:url('${opts.img}')"></div>` : ''}
     </div>
 
     <section>
@@ -579,56 +536,8 @@ function serviceDetailPage(opts) {
 }
 
 function renderTeamProfile(id) {
-  const profile = teamProfiles[id];
-  if (!profile) return renderHome();
-
-  return `
-    <div class="hero-banner" style="background:url('assets/images/11_Team_memberPageV7.png') center/cover no-repeat">
-      <p class="breadcrumb">OUR TEAM</p>
-      <h1>${profile.name}</h1>
-      <p class="hero-sub">${profile.role}</p>
-    </div>
-
-    <section>
-      <div class="container">
-        <a class="back-link" href="#home">BACK TO OUR TEAM</a>
-        <div class="profile-layout">
-          <div class="profile-photo-col">
-            <img class="profile-photo" src="${profile.photo}" alt="${profile.name}">
-          </div>
-          <div class="profile-main">
-            <h2 class="profile-name">${profile.name}</h2>
-            <p class="profile-role">${profile.role}</p>
-            <p class="profile-bio">${profile.bio}</p>
-            <h3>AREAS OF EXPERTISE</h3>
-            <ul class="expertise-list">
-              ${profile.expertise.map(e => `<li>${e}</li>`).join('')}
-            </ul>
-            <h3>PROFILE SUMMARY</h3>
-            <p class="profile-summary">${profile.summary}</p>
-          </div>
-          <div class="profile-sidebar">
-            <h3>PROFILE HIGHLIGHTS</h3>
-            <div class="profile-highlights">
-              ${profile.highlights.map(h => `
-                <div class="highlight">
-                  <h4>${h.title}</h4>
-                  <p>${h.desc}</p>
-                </div>
-              `).join('')}
-            </div>
-          </div>
-        </div>
-        <div class="profile-bottom">
-          <a href="contact.html#book" class="cta-btn">BOOK A CONSULTATION</a>
-          <div class="profile-contact">
-            <p><a href="tel:${profile.contact.phone.replace(/\s/g,'')}">${profile.contact.phone}</a></p>
-            <p><a href="mailto:${profile.contact.email}">${profile.contact.email}</a></p>
-          </div>
-        </div>
-      </div>
-    </section>
-  `;
+  var html = renderTeamProfileHTML(id, {backHash:'#home', backText:'BACK TO OUR TEAM'});
+  return html || renderHome();
 }
 
 /* ─── ROUTER ─── */
