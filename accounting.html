@@ -100,8 +100,9 @@ function serviceDetail(opts){
     if(typeof w === 'string') { whyHTML += '<div class="why-item">'+w+'</div>'; }
     else { whyHTML += '<div class="why-item"><h4>'+w.title+'</h4><p>'+w.desc+'</p></div>'; }
   });
-  var heroStyle = opts.img ? ' style="background:url('+opts.img+') center/cover no-repeat"' : '';
-  return '<section class="hero-banner"'+heroStyle+'><div class="container"><div class="breadcrumb"><a href="#home">Accounting</a> &rsaquo; '+opts.title+'</div><h1>'+opts.title+'</h1></div></section>'
+  return '<div style="min-height:100vh;display:flex;flex-direction:column"><div class="hero-banner" style="padding:100px 5% 30px;flex-shrink:0"><div class="breadcrumb"><a href="#home">Accounting</a> &rsaquo; '+opts.title+'</div><h1>'+opts.title+'</h1></div>'
+    + (opts.img ? '<div style="flex:1;background:url('+opts.img+') center/cover no-repeat;min-height:200px"></div>' : '')
+    + '</div>'
     + '<section class="container"><a href="#home" class="back-link">&larr; Back to Accounting Services</a>'
     + '<div class="two-col"><div class="main-content">'
     + '<h2 style="font-size:1.4rem;font-weight:700;color:var(--blue);margin-bottom:12px">'+opts.title+'</h2>'
