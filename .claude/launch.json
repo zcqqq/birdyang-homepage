@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "dev",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["-e", "const http=require('http'),fs=require('fs'),path=require('path'),mimeTypes={'.html':'text/html','.css':'text/css','.js':'application/javascript','.json':'application/json','.png':'image/png','.svg':'image/svg+xml','.jpg':'image/jpeg','.ico':'image/x-icon','.webp':'image/webp'};http.createServer((req,res)=>{let url=decodeURIComponent(req.url.split('?')[0]);if(url.endsWith('/'))url+='index.html';const filePath=path.join('.',url),ext=path.extname(filePath);fs.readFile(filePath,(err,data)=>{if(err){res.writeHead(404);res.end('Not found');return;}res.writeHead(200,{'Content-Type':mimeTypes[ext]||'application/octet-stream'});res.end(data);});}).listen(8080,()=>console.log('Server running on port 8080'));"],
+      "port": 8080
+    }
+  ]
+}

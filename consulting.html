@@ -404,8 +404,6 @@ function renderInsuranceHome() {
           </a>
           <a class="service-card" href="#insurance/life-health">
             <div class="card-icon-area" style="background:url('assets/images/29_InsuranceHome04_Life.png') center/cover no-repeat;height:140px"></div>
-              <div class="icon-circle"><img src="assets/icons/icon-insurance.svg" alt="Life Health Insurance"></div>
-            </div>
             <div class="card-body">
               <h3>Life, Health &amp; Business Protection</h3>
               <p>We help you plan for the unexpected with clarity &mdash; ensuring that when life changes, your security does not.</p>
@@ -546,11 +544,13 @@ function serviceDetailPage(opts) {
     </div>
   `).join('');
 
-  const heroStyle = opts.img ? ` style="background:url('${opts.img}') center/cover no-repeat"` : '';
   return `
-    <div class="hero-banner"${heroStyle}>
-      <div class="breadcrumb"><a href="#home">CONSULTING</a> &gt; <a href="${opts.backHash}">${opts.label}</a> &gt; ${opts.subtitle}</div>
-      <h1>${opts.title}</h1>
+    <div style="min-height:100vh;display:flex;flex-direction:column">
+      <div class="hero-banner" style="padding:100px 5% 30px;flex-shrink:0">
+        <div class="breadcrumb"><a href="#home">CONSULTING</a> &gt; <a href="${opts.backHash}">${opts.label}</a> &gt; ${opts.subtitle}</div>
+        <h1>${opts.title}</h1>
+      </div>
+      ${opts.img ? `<div style="flex:1;background:url('${opts.img}') center/cover no-repeat;min-height:200px"></div>` : ''}
     </div>
 
     <section>
