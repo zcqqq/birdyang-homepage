@@ -175,7 +175,7 @@ function renderTeamProfileHTML(id, opts) {
       profile.contact.qualifications.map(function(q) { return '<li>' + q + '</li>'; }).join('') + '</ul>';
   }
 
-  return '<div class="hero-banner" style="background:url(\'' + imgBase + 'assets/images/11_Team_memberPageV7.png\') center/cover no-repeat">' +
+  return '<div class="hero-banner team-hero" style="background:url(\'' + imgBase + 'assets/images/11_Team_memberPageV7.png\') center/cover no-repeat">' +
       '<p class="breadcrumb">OUR TEAM</p>' +
       '<h1>' + profile.name + '</h1>' +
       '<p class="hero-sub">' + profile.role + '</p>' +
@@ -196,8 +196,6 @@ function renderTeamProfileHTML(id, opts) {
         '<div class="profile-main">' +
           '<h3>AREAS OF EXPERTISE</h3>' +
           '<div class="expertise-badges">' + expertiseHTML + '</div>' +
-          '<h3>PROFILE SUMMARY</h3>' +
-          '<p class="profile-summary">' + profile.summary + '</p>' +
           qualificationsHTML +
         '</div>' +
         '<div class="profile-sidebar">' +

@@ -199,7 +199,7 @@
 
   function renderHome() {
     return `
-      <div class="hero-banner" style="background:url(../assets/images/17_AccountingHome01_FirstSight.png) center/cover no-repeat">
+      <div class="hero-banner hero-glow" style="background:url(../assets/images/17_AccountingHome01_FirstSight.png) center/cover no-repeat">
         <div class="hero-label">Accounting</div>
         <h1>ACCOUNTING SERVICES</h1>
         <p class="hero-sub">Building Wealth Through Better Numbers</p>
@@ -312,7 +312,7 @@
     if (!data) return renderHome();
 
     return `
-      <div class="hero-banner">
+      <div class="hero-banner team-hero">
         <div class="hero-label">Our Team</div>
         <h1>${data.name}</h1>
         <p class="hero-sub">${data.role}</p>

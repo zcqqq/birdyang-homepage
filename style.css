@@ -49,12 +49,17 @@ nav .nav-extras .lang-toggle a:hover{color:var(--gold-light)}
 /* HERO BANNER (compact for sub-pages) */
 .hero-banner{background:linear-gradient(135deg,var(--navy-deep),var(--blue));padding:120px 5% 60px;text-align:center;position:relative;overflow:hidden;background-size:cover;background-position:center}
 .hero-banner::before{display:none}
-.hero-banner .hero-label{font-size:.65rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
-.hero-banner h1{font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:700;color:var(--white);letter-spacing:.06em;margin-bottom:12px;position:relative;z-index:1}
-.hero-banner .hero-sub{font-size:.9rem;color:rgba(255,255,255,.6);font-style:italic;position:relative;z-index:1;font-weight:700}
-.hero-banner .breadcrumb{font-size:.7rem;color:var(--gold-light);letter-spacing:.08em;margin-top:12px;position:relative;z-index:1;font-weight:700}
-.hero-banner .breadcrumb a{color:var(--gold-light);opacity:.7}
+.hero-banner .hero-label{font-size:11.2px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgb(201,152,50);margin-bottom:8px}
+.hero-banner h1{font-size:clamp(1.8rem,3.5vw,34px);font-weight:700;color:var(--white);letter-spacing:.06em;margin-bottom:12px;position:relative;z-index:1}
+.hero-banner .hero-sub{font-size:13.4px;color:var(--white);font-style:italic;position:relative;z-index:1;font-weight:700}
+.hero-banner .breadcrumb{font-size:11.2px;color:rgb(201,152,50);letter-spacing:.08em;margin-top:12px;position:relative;z-index:1;font-weight:normal}
+.hero-banner .breadcrumb a{color:rgb(201,152,50);opacity:.7}
 .hero-banner .breadcrumb a:hover{opacity:1}
+.hero-banner.hero-glow h1{font-size:clamp(2rem,4vw,38.4px);text-shadow:0 0 6px rgba(201,152,50,0.35),0 2px 4px rgba(0,0,0,0.5)}
+.hero-banner.hero-glow .hero-sub{font-size:15.2px;text-shadow:0 0 6px rgba(201,152,50,0.35),0 2px 4px rgba(0,0,0,0.5)}
+.hero-banner.team-hero h1{font-size:clamp(1.8rem,3.5vw,34px);text-shadow:0 0 6px rgba(201,152,50,0.35),0 2px 4px rgba(0,0,0,0.5)}
+.hero-banner.team-hero .hero-sub{font-size:13.4px;text-shadow:0 0 6px rgba(201,152,50,0.35),0 2px 4px rgba(0,0,0,0.5)}
+.hero-banner.team-hero .breadcrumb{font-size:11.2px;font-weight:700;color:rgb(201,152,50)}
 
 /* SECTION BASICS */
 section,.section{padding:60px 5%}
@@ -204,7 +209,7 @@ section,.section{padding:60px 5%}
 
 /* CONTACT DIVISIONS */
 .divisions-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;max-width:900px;margin:0 auto}
-.division-card{text-align:center;padding:28px 20px;background:var(--white);border-radius:var(--radius);border-top:3px solid var(--blue);box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.division-card{text-align:center;padding:28px 20px;background:var(--white);border-radius:var(--radius);border-top:3px solid var(--gold);box-shadow:0 2px 8px rgba(0,0,0,.04)}
 .division-card h3{font-size:.9rem;font-weight:700;color:var(--blue);margin-bottom:8px}
 .division-card p{font-size:.78rem;color:var(--muted);line-height:1.8}
 .division-card a{color:var(--gold);font-size:.75rem;font-weight:600}
