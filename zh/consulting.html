@@ -76,8 +76,8 @@
   }
 
   // --- HELPER: Hero Banner ---
-  function heroBanner(label, title, subtitle) {
-    return '<div class="hero-banner" style="background:url(../assets/images/28_ConsultingHome01_FirstSight.png) center/cover no-repeat"><div class="hero-label">' + label + '</div><h1>' + title + '</h1><p class="hero-sub">' + subtitle + '</p></div>';
+  function heroBanner(label, title, subtitle, extraClass) {
+    return '<div class="hero-banner' + (extraClass ? ' ' + extraClass : '') + '" style="background:url(../assets/images/28_ConsultingHome01_FirstSight.png) center/cover no-repeat"><div class="hero-label">' + label + '</div><h1>' + title + '</h1><p class="hero-sub">' + subtitle + '</p></div>';
   }
 
   // --- HELPER: Service Detail Page ---
@@ -99,7 +99,7 @@
 
   // --- PAGE: Consulting Home ---
   function renderHome() {
-    var html = heroBanner('CONSULTING', 'CONSULTING SERVICES', 'Helping You Move Forward with Confidence');
+    var html = heroBanner('CONSULTING', 'CONSULTING SERVICES', 'Helping You Move Forward with Confidence', 'hero-glow');
     html += '<section><div class="container"><div class="about-text"><p>At Bird &amp; Yang, we provide practical consulting support across immigration, HR, insurance, and business matters. Our goal is to help individuals, families, and businesses understand their options, manage risk, and move forward with confidence. Working alongside our legal and accounting teams, we offer integrated guidance that connects professional expertise with real-life needs.</p></div></div></section>';
     // Our Expertise
     html += '<section class="bg-white"><div class="container"><div class="section-label">What We Do</div><h2 class="section-title">OUR EXPERTISE</h2><div class="cards-grid">';
@@ -118,7 +118,7 @@
 
   // --- PAGE: Insurance Home ---
   function renderInsuranceHome() {
-    var html = heroBanner('INSURANCE', 'INSURANCE SERVICES', 'Securing Your Future with Expertise');
+    var html = heroBanner('INSURANCE', 'INSURANCE SERVICES', 'Securing Your Future with Expertise', 'hero-glow');
     html += '<section><div class="container">';
     html += '<a class="back-link" href="#home">Back to Consulting</a>';
     html += '<div class="about-text"><p>Life and business are built on ‘what ifs’. At Bird &amp; Yang, we help you answer those questions before they arise.</p></div>';
@@ -132,7 +132,7 @@
 
   // --- PAGE: HR Home ---
   function renderHRHome() {
-    var html = heroBanner('HR CONSULTING', 'HUMAN RESOURCES CONSULTING', 'Supporting Your Success with Resources');
+    var html = heroBanner('HR CONSULTING', 'HUMAN RESOURCES CONSULTING', 'Supporting Your Success with Resources', 'hero-glow');
     html += '<section><div class="container">';
     html += '<a class="back-link" href="#home">Back to Consulting</a>';
     html += '<div class="about-text"><p>At Bird &amp; Yang, our HR consulting team provides the practical, day-to-day support your business needs.</p></div>';
@@ -148,7 +148,7 @@
 
   // --- PAGE: Immigration Home ---
   function renderImmigrationHome() {
-    var html = heroBanner('IMMIGRATION', 'IMMIGRATION CONSULTING', 'Realizing Your Pathway with Efficiency');
+    var html = heroBanner('IMMIGRATION', 'IMMIGRATION CONSULTING', 'Realizing Your Pathway with Efficiency', 'hero-glow');
     html += '<section><div class="container">';
     html += '<a class="back-link" href="#home">Back to Consulting</a>';
     html += '<div class="about-text"><p>Immigration consulting and immigration law work hand in hand at Bird &amp; Yang. Our consulting team handles the practical and organisational side.</p></div>';
