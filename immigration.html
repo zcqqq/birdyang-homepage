@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Immigration Consulting | Pathway, Application & Timeline | Bird & Yang</title>
+<meta name="description" content="Bird & Yang Immigration Consulting — Realizing Your Pathway with Efficiency. Pathway support, application preparation, relationship & employment evidence, and timeline management.">
+<link rel="canonical" href="https://birdyang.pages.dev/immigration.html">
+<link rel="alternate" hreflang="en" href="https://birdyang.pages.dev/immigration.html">
+<link rel="alternate" hreflang="zh" href="https://birdyang.pages.dev/zh/immigration.html">
+<link rel="alternate" hreflang="x-default" href="https://birdyang.pages.dev/immigration.html">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<div id="site-nav"></div>
+<script src="/components/nav.js"></script>
+<script>renderNav({active:"consulting",lang:"en"})</script>
+
+<main id="app"></main>
+
+<!-- FOOTER -->
+<div id="site-footer"></div>
+<script src="/components/footer.js"></script>
+<script>renderFooter({lang:"en"})</script>
+
+<script src="/components/section-header.js"></script>
+<script>
+(function(){
+
+/* ─── DATA ─── */
+
+const servicePages = {
+  'pathway': {
+    img: 'assets/images/40_ImmigrationSubhome01_Pathway.png',
+    title: 'PATHWAY SUPPORT',
+    heroSub: ‘Prepared, Informed, and Confident from the Start’,
+    backHash: ‘#home’,
+    backText: ‘BACK TO IMMIGRATION CONSULTING’,
+    intro: ‘Every immigration journey begins with a question: what is the right pathway for me? With visitor, student, work, partnership, residence, and special-purpose visa categories, it is easy to feel lost before the process even begins. Bird & Yang helps you gather the right background information, organise your personal profile, and prepare for a focused conversation with our Licensed Immigration Advisers or lawyers.’,
+    accordions: [
+      { title: ‘Personal, family, and immigration background gathering’, desc: ‘helping you organise key personal, family, travel, immigration, and settlement information so your adviser can understand your situation clearly from the start.’ },
+      { title: ‘Education and employment profile organization’, desc: ‘summarising your education history, qualifications, work experience, skills, and career plans to support a clearer assessment of potential immigration pathways.’ },
+      { title: ‘Preliminary visa pathway preparation’, desc: ‘helping you understand the broad visa categories that may be relevant to your circumstances and prepare key questions for discussion with a Licensed Immigration Adviser.’ },
+      { title: ‘Initial document and evidence checklist’, desc: ‘preparing an initial checklist of identity documents, qualifications, employment records, relationship evidence, financial information, and other supporting materials.’ },
+      { title: ‘Consultation brief preparation for legal advisers’, desc: ‘organising your background, goals, key issues, and available documents into a clear consultation brief, so our immigration advisers or lawyers can review your matter efficiently.’ },
+      { title: ‘Internal referral to our immigration lawyers’, desc: ‘connecting you with our Licensed Immigration Advisers or immigration lawyers where legal advice, eligibility assessment, or formal visa application support is needed.’ }
+    ],
+    sidebar: [
+      { title: 'Clear starting point', desc: 'We help organise your story before formal advice begins.' },
+      { title: 'Integrated team', desc: 'Consulting and legal support work together under one roof.' },
+      { title: 'Less confusion', desc: 'You begin with structure, clarity, and the right next steps.' }
+    ]
+  },
+  'application': {
+    img: 'assets/images/41_ImmigrationSubhome02_Preparation.png',
+    title: 'APPLICATION PREPARATION',
+    heroSub: 'Putting Your Best Case Forward',
+    backHash: '#home',
+    backText: 'BACK TO IMMIGRATION CONSULTING',
+    intro: 'One of the most common reasons for visa delays and declines is documentation that is incomplete, inconsistent, or poorly presented. Bird & Yang works alongside you to prepare every part of the application carefully, so your file is clear, complete, and ready for submission. Our consulting team supports the practical preparation work that helps your case speak for itself.',
+    accordions: [
+      { title: 'Document preparation and organization', desc: 'helping you collect, sort, label, and organise the required application documents so your file is clear, complete, and easy for advisers or decision-makers to navigate.' },
+      { title: 'Supporting document format and quality review', desc: 'reviewing the format, readability, translation quality, certification requirements, file names, and presentation of supporting documents to reduce avoidable requests for further information.' },
+      { title: 'Financial evidence preparation', desc: 'helping you organise bank statements, income records, sponsorship evidence, funding explanations, and other financial documents to support the financial requirements of your application.' },
+      { title: 'Health and character documentation coordination', desc: 'assisting you to coordinate medical examinations, police certificates, identity records, and related supporting documents required for health and character assessments.' },
+      { title: 'Consistency review across all records', desc: 'checking key details across application forms, passports, employment records, education documents, financial evidence, and previous visa records to identify discrepancies before submission.' },
+      { title: 'Final file readiness and submission preparation', desc: 'reviewing the application package for completeness, structure, document order, and presentation so the file is ready for final adviser review and submission.' }
+    ],
+    sidebar: [
+      { title: 'Clear documentation', desc: 'Every document is prepared with structure and care.' },
+      { title: 'Quality control', desc: 'We cross-check details to reduce risk and avoid inconsistency.' },
+      { title: 'Submission readiness', desc: 'Your application is organised to move forward smoothly.' }
+    ]
+  },
+  'relationship': {
+    img: 'assets/images/42_ImmigrationSubhome03_Relationship%26Employment.png',
+    title: 'RELATIONSHIP & EMPLOYMENT EVIDENCE',
+    heroSub: 'Presenting Your Story with Clarity',
+    backHash: '#home',
+    backText: 'BACK TO IMMIGRATION CONSULTING',
+    intro: 'Some visa categories require more than paperwork — they require proof of your story. Whether the application is based on a partnership, a job offer, or both, Bird & Yang helps organise the evidence clearly and convincingly. We support clients and employers in preparing relationship records, employment documents, and supporting materials that align with Immigration New Zealand expectations.',
+    accordions: [
+      { title: 'Relationship timeline preparation', desc: 'helping you organise the key stages of your relationship, including when you met, how the relationship developed, important milestones, periods of living together, and future plans.' },
+      { title: 'Cohabitation and shared records organization', desc: 'assisting you to collect and present evidence of living together and shared life, such as tenancy records, bills, joint accounts, correspondence, photos, and statements from others.' },
+      { title: 'Explanations for periods spent apart', desc: 'helping you prepare clear explanations and supporting evidence for periods of separation, including travel, work, study, family obligations, visa issues, or other circumstances.' },
+      { title: 'Employment documentation support', desc: 'supporting employees and employers to organise job offers, employment agreements, position descriptions, employer letters, payslips, tax records, and other work-related evidence.' },
+      { title: 'Accreditation and role requirement checks', desc: 'helping employers and applicants identify key employment-related requirements, including employer accreditation status, role details, pay rate, working conditions, and advertising obligations.' },
+      { title: 'Qualification and experience matching presentation', desc: 'helping you present how your qualifications, work experience, skills, and professional background align with the role or visa pathway being considered.' }
+    ],
+    sidebar: [
+      { title: 'Authentic evidence', desc: 'We help present your real story in a clear and credible way.' },
+      { title: 'Applicant and employer support', desc: 'We work with both sides where employment evidence matters.' },
+      { title: 'Closer alignment', desc: 'Supporting details are organised to match visa requirements.' }
+    ]
+  },
+  'timeline': {
+    img: 'assets/images/43_ImmigrationSubhome04_Timeline.png',
+    title: 'TIMELINE & PROCESS MANAGEMENT',
+    heroSub: 'Keeping Your Matter on Schedule',
+    backHash: '#home',
+    backText: 'BACK TO IMMIGRATION CONSULTING',
+    intro: 'Immigration applications do not happen in isolation. Visa expiry dates, processing times, job start dates, school enrolments, and personal deadlines often intersect. Bird & Yang helps map the process from end to end, track key dates, and coordinate the practical steps so nothing is rushed, overlooked, or allowed to lapse.',
+    accordions: [
+      { title: 'End-to-end application timeline planning', desc: 'mapping the full application process from initial preparation to final submission, so each stage is planned clearly and completed in the right order.' },
+      { title: 'Key date and deadline mapping', desc: 'identifying important dates, required actions, document timing, and decision points to help you stay organised and avoid last-minute pressure.' },
+      { title: 'Visa expiry and renewal tracking', desc: 'helping you monitor visa expiry dates, renewal windows, interim steps, and related timing issues so your immigration matter does not lapse unexpectedly.' },
+      { title: 'Processing time monitoring', desc: 'tracking published processing time guidance, application progress, and practical timing considerations so you can plan around expected waiting periods.' },
+      { title: 'Coordination around job, school, and personal deadlines', desc: 'aligning immigration preparation with employment start dates, school enrolments, travel plans, family arrangements, and other important personal or business milestones.' },
+      { title: 'Seamless handover to our immigration legal team', desc: 'organising your timeline, documents, key dates, and background information for a smooth handover to our Licensed Immigration Advisers or immigration lawyers.' }
+    ],
+    sidebar: [
+      { title: 'No missed dates', desc: 'We track key milestones so your file stays on course.' },
+      { title: 'Seamless internal handover', desc: 'Your consulting file moves smoothly to our legal team when needed.' },
+      { title: 'Peace of mind', desc: 'You stay informed, organised, and on schedule throughout the process.' }
+    ]
+  }
+};
+
+/* ─── RENDER FUNCTIONS ─── */
+
+function renderHome() {
+  return `
+    <div class="hero-banner hero-glow" style="min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;background:url('assets/images/39_ImmigrationHome01_FirstSight.png') center/cover no-repeat">
+      <p class="breadcrumb"><a href="consulting.html">CONSULTING</a> &gt; IMMIGRATION CONSULTING</p>
+      <h1>IMMIGRATION CONSULTING</h1>
+      <p class="hero-sub">Realizing Your Pathway with Efficiency</p>
+    </div>
+
+    <section class="bg-cream reveal">
+      <div class="container">
+        ${sectionAbout("ABOUT OUR IMMIGRATION PRACTICE", "Immigration consulting and immigration law work hand in hand at Bird &amp; Yang. Our consulting team handles the practical and organisational side — document preparation, file management, evidence gathering, and timeline coordination — so that when your matter is referred to our Licensed Immigration Advisers or lawyers, everything is clear, complete, and ready to move.")}
+      </div>
+    </section>
+
+    <section class="bg-white reveal">
+      <div class="container">
+        ${sectionHeader('WHAT WE DO', 'Our Expertise')}
+        <div class="cards-grid">
+          <a class="service-card" href="#pathway">
+            <div class="card-icon-area" style="background:url('assets/images/39_ImmigrationHome02_Pathway.png') center/cover no-repeat;height:140px"></div>
+            <div class="card-body">
+              <h3>Pathway Support</h3>
+              <p>We help you take the first step — prepared, informed, and confident about the journey ahead.</p>
+              <span class="learn-more">Learn More &rarr;</span>
+            </div>
+          </a>
+          <a class="service-card" href="#application">
+            <div class="card-icon-area" style="background:url('assets/images/39_ImmigrationHome03_Preparation.png') center/cover no-repeat;height:140px"></div>
+            <div class="card-body">
+              <h3>Application Preparation</h3>
+              <p>We help you put your best case forward — clearly, completely, and on time.</p>
+              <span class="learn-more">Learn More &rarr;</span>
+            </div>
+          </a>
+          <a class="service-card" href="#relationship">
+            <div class="card-icon-area" style="background:url('assets/images/39_ImmigrationHome04_Relationship%26Employment.png') center/cover no-repeat;height:140px"></div>
+            <div class="card-body">
+              <h3>Relationship &amp; Employment</h3>
+              <p>For visa categories that require more than paperwork, we help organise the story and supporting details clearly.</p>
+              <span class="learn-more">Learn More &rarr;</span>
+            </div>
+          </a>
+          <a class="service-card" href="#timeline">
+            <div class="card-icon-area" style="background:url('assets/images/39_ImmigrationHome05_Timeline.png') center/cover no-repeat;height:140px"></div>
+            <div class="card-body">
+              <h3>Timeline &amp; Process</h3>
+              <p>We keep your file moving, guided, and on schedule throughout the process.</p>
+              <span class="learn-more">Learn More &rarr;</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+function serviceDetailPage(opts) {
+  const itemsHtml = opts.accordions.map(item => `
+    <div class="service-item">
+      <div class="service-item-icon">●</div>
+      <div><h4>${item.title}</h4><p>${item.desc}</p></div>
+    </div>
+  `).join('');
+
+  const sidebarHtml = opts.sidebar.map(s => `
+    <div class="why-item">
+      <h4>${s.title}</h4>
+      <p>${s.desc}</p>
+    </div>
+  `).join('');
+
+  return `
+    <div style="min-height:100vh;display:flex;flex-direction:column">
+      <div class="hero-banner" style="padding:100px 5% 30px;flex-shrink:0">
+        <div class="breadcrumb"><a href="consulting.html">CONSULTING</a> &gt; <a href="#home">IMMIGRATION</a> &gt; ${opts.title}</div>
+        <h1>${opts.title}</h1>
+        ${opts.heroSub ? `<p class="hero-sub">${opts.heroSub}</p>` : ''}
+      </div>
+      ${opts.img ? `<div style="flex:1;background:url('${opts.img}') center/cover no-repeat;min-height:200px"></div>` : ''}
+    </div>
+
+    <section>
+      <div class="container">
+        <a class="back-link" href="${opts.backHash}">${opts.backText}</a>
+        <div class="two-col">
+          <div class="main-content">
+            <h2 style="font-size:1.4rem;font-weight:700;color:var(--blue);margin-bottom:12px">${opts.title}</h2>
+            <p style="font-size:.92rem;color:var(--charcoal);line-height:1.85;margin-bottom:24px">${opts.intro}</p>
+            <p style="font-size:.82rem;font-weight:700;color:var(--charcoal);margin-bottom:16px">OUR ${opts.title} SERVICES INCLUDE:</p>
+            <div class="service-items-grid">
+              ${itemsHtml}
+            </div>
+          </div>
+          <div class="sidebar">
+            <div class="sidebar-card">
+              <h3>WHY BIRD &amp; YANG</h3>
+              ${sidebarHtml}
+            </div>
+            <a href="contact.html#book" class="cta-btn primary" style="width:100%;display:block;text-align:center;margin-top:20px">BOOK A CONSULTATION</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+/* ─── ROUTER ─── */
+
+function render() {
+  const hash = location.hash.slice(1) || 'home';
+  const app = document.getElementById('app');
+
+  if (hash === 'home' || hash === '') {
+    app.innerHTML = renderHome();
+  } else if (servicePages[hash]) {
+    app.innerHTML = serviceDetailPage(servicePages[hash]);
+  } else {
+    app.innerHTML = renderHome();
+  }
+
+  window.scrollTo(0, 0);
+  initReveal();
+}
+
+function initReveal() {
+  document.querySelectorAll('.reveal').forEach(function(el) {
+    new IntersectionObserver(function(entries, obs) {
+      entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, {threshold: 0.1}).observe(el);
+  });
+}
+
+/* ─── INIT ─── */
+window.addEventListener('hashchange', render);
+render();
+
+})();
+</script>
+
+<script src="/components/chatbot.js"></script>
+<script>renderChatbot({lang:"en"})</script>
+</body>
+</html>

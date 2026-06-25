@@ -20,6 +20,8 @@
 
 <main id="app"></main>
 
+<script src="/components/section-header.js"></script>
+<script src="/components/team-profile.js"></script>
 <script>
 (function(){
 
@@ -36,9 +38,9 @@ function route(){
     case 'business-plans': html = pageBusinessPlans(); break;
     case 'asset-management': html = pageAssetManagement(); break;
     case 'trust-accounting': html = pageTrustAccounting(); break;
-    case 'team/heather-chao': html = pageHeatherChao(); break;
-    case 'team/ming-lu': html = pageMingLu(); break;
-    case 'team/ally-liao': html = pageAllyLiao(); break;
+    case 'team/heather-chao': html = renderTeamProfileHTML('heather-chao', {backHash:'#home', backText:'BACK TO OUR TEAM'}); break;
+    case 'team/ming-lu': html = renderTeamProfileHTML('ming-lu', {backHash:'#home', backText:'BACK TO OUR TEAM'}); break;
+    case 'team/ally-liao': html = renderTeamProfileHTML('ally-liao', {backHash:'#home', backText:'BACK TO OUR TEAM'}); break;
     default: html = pageHome();
   }
   document.getElementById('app').innerHTML = html;
@@ -116,25 +118,6 @@ function serviceDetail(opts){
 }
 
 /* ─── Helper: Team Profile ─── */
-function profilePage(opts){
-  var expertiseItems = '';
-  opts.expertise.forEach(function(b){ expertiseItems += '<li>'+b+'</li>'; });
-  var highlightCards = '';
-  opts.highlights.forEach(function(h){ highlightCards += '<div class="highlight"><h4>'+h+'</h4></div>'; });
-  return '<div class="hero-banner team-hero" style="background:url(assets/images/11_Team_memberPageV7.png) center/cover no-repeat"><p class="breadcrumb">OUR TEAM</p><h1>'+opts.name+'</h1><p class="hero-sub">'+opts.role+'</p></div>'
-    + '<section><div class="container"><a href="#home" class="back-link">BACK TO OUR TEAM</a>'
-    + '<div class="profile-layout">'
-    + '<div class="profile-photo-col"><img class="profile-photo" src="'+opts.photo+'" alt="'+opts.name+'"></div>'
-    + '<div class="profile-main"><h2 class="profile-name">'+opts.name+'</h2><p class="profile-role">'+opts.role+'</p>'
-    + '<p class="profile-bio">'+opts.bio+'</p>'
-    + '<h3>AREAS OF EXPERTISE</h3><ul class="expertise-list">'+expertiseItems+'</ul>'
-    + '</div>'
-    + '<div class="profile-sidebar"><h3>PROFILE HIGHLIGHTS</h3><div class="profile-highlights">'+highlightCards+'</div></div>'
-    + '</div>'
-    + '<div class="profile-bottom"><a href="contact.html#book" class="cta-btn">BOOK A CONSULTATION</a>'
-    + '<div class="profile-contact"><p><a href="tel:'+opts.phone.replace(/\s/g,'')+'">'+opts.phone+'</a></p><p><a href="mailto:'+opts.email+'">'+opts.email+'</a></p></div></div>'
-    + '</div></section>';
-}
 
 /* ═══════════════════════════════════════════
    PAGE: HOME
@@ -142,9 +125,9 @@ function profilePage(opts){
 function pageHome(){
   return '<section class="hero-banner hero-glow" style="min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;background:url(assets/images/17_AccountingHome01_FirstSight.png) center/cover no-repeat"><div class="container"><h1>ACCOUNTING SERVICES</h1><p class="hero-sub">Building Wealth through Better Numbers</p></div></section>'
 
-  + '<section class="container bg-white reveal"><p class="section-label">ABOUT OUR ACCOUNTING PRACTICE</p><p class="about-text">Behind every successful business is a clear set of numbers. At Bird &amp; Yang, we go beyond compliance &mdash; we help you understand your financial position, make informed decisions, and build wealth with confidence. Working alongside our legal team, we provide integrated advice that sees the full picture of your business and personal finances.</p></section>'
+  + '<section class="container bg-white reveal">'+sectionAbout('ABOUT OUR ACCOUNTING PRACTICE','Behind every successful business is a clear set of numbers. At Bird &amp; Yang, we go beyond compliance — we help you understand your financial position, make informed decisions, and build wealth with confidence. Working alongside our legal team, we provide integrated advice that sees the full picture of your business and personal finances.')+'</section>'
 
-  + '<section class="container bg-cream reveal"><p class="section-label">OUR EXPERTISE</p><h2 class="section-title">What We Do</h2><div class="cards-grid">'
+  + '<section class="container bg-cream reveal">'+sectionHeader('WHAT WE DO','Our Expertise')+'<div class="cards-grid">'
 
   + serviceCard('Annual / Monthly Accounts','We prepare your numbers with precision and explain them with clarity &mdash; so you can make your decisions with confidence.','#annual-accounts','assets/images/17_AccountingHome02_Annual%26Monthly.png')
   + serviceCard('Taxation','We navigate the complexity so you don\'t have to &mdash; keeping you compliant, efficient, and always a step ahead.','#taxation','assets/images/17_AccountingHome03_Taxation.png')
@@ -156,20 +139,13 @@ function pageHome(){
 
   + '</div></section>'
 
-  + '<section class="container bg-white reveal"><p class="section-label">MEET THE TEAM</p><h2 class="section-title">Meet the Accounting Team</h2><div class="team-grid">'
-  + teamCard('Heather Chao','Chartered Accountant (CA)','assets/team/heather-chao.png','#team/heather-chao')
-  + teamCard('Ming Lu','Trust and Financial Manager (CPA)','assets/team/ming-lu.png','#team/ming-lu')
-  + teamCard('Ally Liao','MBA, CA Candidate','assets/team/ally-liao.png','#team/ally-liao')
-  + '</div></section>';
+  + '<section class="container bg-white reveal">'+renderTeamGrid(['heather-chao','ming-lu','ally-liao'])+'</section>';
 }
 
 function serviceCard(title, desc, hash, img){
   return '<a href="'+hash+'" class="service-card reveal"><div class="card-icon-area" style="background:url('+img+') center/cover no-repeat;height:140px"></div><div class="card-body"><h3>'+title+'</h3><p>'+desc+'</p><span class="learn-more">Learn more &rarr;</span></div></a>';
 }
 
-function teamCard(name, role, photo, hash){
-  return '<a href="'+hash+'" class="team-card reveal"><img src="'+photo+'" alt="'+name+'"><h3>'+name+'</h3><p>'+role+'</p></a>';
-}
 
 /* ═══════════════════════════════════════════
    PAGE: ANNUAL ACCOUNTS
@@ -350,53 +326,6 @@ function pageTrustAccounting(){
 /* ═══════════════════════════════════════════
    PAGE: HEATHER CHAO
    ═══════════════════════════════════════════ */
-function pageHeatherChao(){
-  return profilePage({
-    name: 'Heather Chao',
-    role: 'Chartered Accountant (CA)',
-    photo: 'assets/team/heather-chao.png',
-    bio: 'Heather Chao is a Chartered Accountant with over 20 years of experience in accounting and business advisory. She partners with SMEs and growing businesses to provide practical financial solutions that drive performance, improve efficiency, and support sustainable growth. Heather is known for her clear advice, strong attention to detail, and commitment to building long-term client relationships.',
-    expertise: ['SME Accounting','Cashflow Management','IRD Negotiations','Systems &amp; Procedures','MYOB, Xero &amp; ERP Systems'],
-    summary: 'Heather holds a Chartered Accountant qualification and brings over 20 years of experience across a wide range of industries. She provides end-to-end accounting and advisory services, helping clients improve financial clarity, strengthen control, and make confident decisions. Heather works closely with business owners and management teams to streamline processes, implement the right systems, and support business growth through practical, commercially focused advice.',
-    highlights: ['20+ years of experience','Growth &amp; change advisor','Systems expert'],
-    phone: '+64 21 284 3737',
-    email: 'heather@birdyang.co.nz'
-  });
-}
-
-/* ═══════════════════════════════════════════
-   PAGE: MING LU
-   ═══════════════════════════════════════════ */
-function pageMingLu(){
-  return profilePage({
-    name: 'Ming Lu',
-    role: 'Trust and Financial Manager (CPA China)',
-    photo: 'assets/team/ming-lu.png',
-    bio: 'Ming Lu is the Trust and Financial Manager at Bird &amp; Yang. With a strong background in accounting, audit, finance, and corporate management, she brings a careful, structured, and analytical approach to complex client matters. Her experience enables her to assist with financial review, due diligence, trust-related administration, corporate finance coordination, and the preparation of reliable financial information to support legal, accounting, and advisory services.',
-    expertise: ['Accounting &amp; Audit Support','Financial Consulting','Corporate Finance','Due Diligence','Investment &amp; Economic Management'],
-    summary: 'Ming Lu holds a Bachelor in Investment and Economic Management and is a Chartered Accountant in China, with Securities, Funds, and Futures qualifications. She has many years of experience at Dalian Huanyu United Accounting Firm, where she progressed from assistant to partner. She has carried out audits, appraisal work, financial consulting, operational guidance, and reviews, and served as a financial review expert for Dalian Municipal Science and Technology Bureau and a part-time inspector for the Liaoning Provincial Institute of Chartered Accountants. She later worked at Changjiang Securities Co., Ltd. in corporate finance. Her strong accounting, finance, and corporate management background enables her to support clients with insight and precision.',
-    highlights: ['Extensive accounting background','Regulatory review experience','Corporate finance insight'],
-    phone: '+64 9 590 0943',
-    email: 'ming@birdyang.co.nz'
-  });
-}
-
-/* ═══════════════════════════════════════════
-   PAGE: ALLY LIAO
-   ═══════════════════════════════════════════ */
-function pageAllyLiao(){
-  return profilePage({
-    name: 'Ally Liao',
-    role: 'MBA, CA Candidate',
-    photo: 'assets/team/ally-liao.png',
-    bio: 'Ally Liao supports Bird &amp; Yang\'s accounting and business advisory practice with a strong combination of accounting knowledge, commercial insight, and execution capability. Her background in private equity investment, entrepreneurship, project management, advertising planning, and strategic analysis enables her to understand client matters from both a financial and business perspective.',
-    expertise: ['Accounting Administration','GST &amp; IRD Compliance','Business Advisory Support','Xero &amp; MYOB','Cross-border Business Perspective'],
-    summary: 'Ally completed the MPA(CA) within an accelerated period at Massey University and holds an MBA from Fudan University. She has prior experience in private equity investment, commercial projects, advertising planning, and entrepreneurship in China, including founding a Shanghai-based catering brand that has operated for over 10 years. At Bird &amp; Yang, Ally supports accounting and advisory-related work with an analytical, organized, and commercially aware approach. Her background allows her to connect financial information with wider business considerations, helping clients better understand their position, improve decision-making, and move forward with confidence.',
-    highlights: ['Accounting discipline','Commercial judgment','Strategic perspective'],
-    phone: '+64 9 590 0944',
-    email: 'ally@birdyang.co.nz'
-  });
-}
 
 })();
 </script>

@@ -114,14 +114,14 @@ section{padding:80px 5%}
 /* EXPERTISE */
 #expertise{background:var(--white)}
 .expertise-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;max-width:1100px;margin:0 auto}
-.expertise-card{border-radius:var(--radius);overflow:hidden;background:var(--white);box-shadow:0 2px 8px rgba(0,0,0,.06);transition:transform .3s,box-shadow .3s;cursor:pointer}
+.expertise-card{border-radius:var(--radius);overflow:hidden;background:var(--white);box-shadow:0 2px 8px rgba(0,0,0,.06);transition:transform .3s,box-shadow .3s;cursor:pointer;text-decoration:none;color:inherit;display:block}
 .expertise-card:hover{transform:translateY(-8px);box-shadow:0 12px 32px rgba(1,48,138,.12)}
 .expertise-card .card-header{height:180px;position:relative;overflow:hidden}
 .expertise-card .card-header img{width:100%;height:100%;object-fit:cover}
 .expertise-card .card-body{padding:28px 24px}
 .expertise-card .card-body h3{font-size:1.1rem;font-weight:700;color:var(--blue);margin-bottom:10px;letter-spacing:.02em}
 .expertise-card .card-body p{font-size:.85rem;color:var(--muted);line-height:1.7;margin-bottom:16px}
-.expertise-card .card-body a{font-size:.8rem;color:var(--gold);text-decoration:none;font-weight:600;letter-spacing:.02em;transition:color .2s}
+.expertise-card .card-body .learn-more{font-size:.8rem;color:var(--gold);text-decoration:none;font-weight:600;letter-spacing:.02em;transition:color .2s}
 .expertise-card .card-body a:hover{color:#a06d12}
 
 /* WHY SECTION */
@@ -179,7 +179,7 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.7);padding:60px 5% 24
   <img class="hero-bg" src="assets/images/01_Home01_FirstSightV2.png" alt="Bird & Yang — Integrated Legal, Accounting & Consulting">
   <div class="hero-content">
     <h1>BIRD &amp; YANG</h1>
-    <p style="font-size:15.2px;color:var(--white);font-weight:700;margin-top:40px;letter-spacing:.02em;text-shadow:0 0 6px rgba(201,152,50,0.35),0 2px 4px rgba(0,0,0,0.5)">Integrated in Expertise, Together for Growth</p>
+    <p class="gold-glow" style="font-size:15.2px;color:var(--white);font-weight:700;margin-top:40px;letter-spacing:.02em">Integrated in Expertise, Together for Growth</p>
   </div>
 </section>
 
@@ -201,36 +201,36 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.7);padding:60px 5% 24
   <div class="section-label">What We Do</div>
   <h2 class="section-title">OUR EXPERTISE</h2>
   <div class="expertise-grid">
-    <div class="expertise-card">
+    <a class="expertise-card" href="legal.html">
       <div class="card-header">
         <img src="assets/images/01_Home02_Legal.png" alt="Legal Practice">
       </div>
       <div class="card-body">
         <h3>LEGAL PRACTICE</h3>
         <p>Guiding What Matters with Clarity</p>
-        <a href="legal.html">Learn More &rarr;</a>
+        <span class="learn-more">Learn More &rarr;</span>
       </div>
-    </div>
-    <div class="expertise-card">
+    </a>
+    <a class="expertise-card" href="accounting.html">
       <div class="card-header">
         <img src="assets/images/01_Home03_Accounting.png" alt="Accounting Solutions">
       </div>
       <div class="card-body">
         <h3>ACCOUNTING SOLUTIONS</h3>
         <p>Building Wealth through Better Numbers</p>
-        <a href="accounting.html">Learn More &rarr;</a>
+        <span class="learn-more">Learn More &rarr;</span>
       </div>
-    </div>
-    <div class="expertise-card">
+    </a>
+    <a class="expertise-card" href="consulting.html">
       <div class="card-header">
         <img src="assets/images/01_Home04_Consulting.png" alt="Consulting Services">
       </div>
       <div class="card-body">
         <h3>CONSULTING SERVICES</h3>
         <p>Helping You Move Forward with Confidence</p>
-        <a href="consulting.html">Learn More &rarr;</a>
+        <span class="learn-more">Learn More &rarr;</span>
       </div>
-    </div>
+    </a>
   </div>
 </section>
 

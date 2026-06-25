@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人力资源咨询 | 合规、人员管理、职场文化 | Bird & Yang</title>
+<meta name="description" content="Bird & Yang 人力资源咨询 — 以资源支持您的成功。人力合规、人员管理、职场文化、招聘留人及双语HR支持。">
+<link rel="canonical" href="https://birdyang.pages.dev/zh/hr.html">
+<link rel="alternate" hreflang="zh" href="https://birdyang.pages.dev/zh/hr.html">
+<link rel="alternate" hreflang="en" href="https://birdyang.pages.dev/hr.html">
+<link rel="alternate" hreflang="x-default" href="https://birdyang.pages.dev/hr.html">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<div id="site-nav"></div>
+<script src="/components/nav.js"></script>
+<script>renderNav({active:"consulting",lang:"zh"})</script>
+
+<main id="app"></main>
+
+<!-- FOOTER -->
+<div id="site-footer"></div>
+<script src="/components/footer.js"></script>
+<script>renderFooter({lang:"zh"})</script>
+
+<script>
+(function(){
+
+  function heroBanner(label, title, subtitle, extraClass) {
+    return '<div class="hero-banner' + (extraClass ? ' ' + extraClass : '') + '" style="min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;background:url(../assets/images/33_HRHome01_FirstSight.png) center/cover no-repeat"><div class="hero-label">' + label + '</div><h1>' + title + '</h1><p class="hero-sub">' + subtitle + '</p></div>';
+  }
+
+  function serviceDetailPage(opts) {
+    var html = '<div class="hero-banner" style="min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;background:url(../assets/images/33_HRHome01_FirstSight.png) center/cover no-repeat"><div class="hero-label">' + (opts.label || 'HR CONSULTING') + '</div><h1>' + opts.title + '</h1><p class="hero-sub">' + opts.subtitle + '</p></div>';
+    html += '<section><div class="container">';
+    html += '<a class="back-link" href="#home">返回人力资源咨询</a>';
+    html += '<div class="two-col"><div class="main-content">';
+    opts.accordions.forEach(function(acc) {
+      html += '<div class="accordion"><div class="accordion-header">' + acc + '</div><div class="accordion-body"><p>我们的团队在此领域提供专业指导和实际支持，与法律和会计专业人士协作，为您量身定制综合解决方案。</p></div></div>';
+    });
+    html += '</div><div class="sidebar"><div class="sidebar-card"><h3>为什么选择德扬</h3>';
+    opts.sidebar.forEach(function(item) {
+      html += '<div class="why-item"><h4>' + item + '</h4><p>来自经验丰富团队的实际综合支持。</p></div>';
+    });
+    html += '</div><div class="sidebar-card"><a href="contact.html" class="cta-btn" style="width:100%">预约咨询</a></div></div></div></div></section>';
+    return html;
+  }
+
+  function renderHome() {
+    var html = heroBanner('HR CONSULTING', '人力资源咨询', '以资源支持您的成功', 'hero-glow');
+    html += '<section><div class="container">';
+    html += '<a class="back-link" href="consulting.html">返回咨询服务</a>';
+    html += '<div class="about-text"><p>在德扬，我们的HR咨询团队为新西兰企业提供实际的日常支持。我们的咨询团队与Bird &amp; Yang的法律团队协作，确保您在需要时获得综合支持。</p></div>';
+    html += '<div class="cards-grid mt-32">';
+    html += '<a class="service-card" href="#compliance"><div class="card-icon-area" style="background:url(../assets/images/33_HRHome02_HRCompliance.png) center/cover no-repeat;height:140px"></div><div class="card-body"><h3>人力合规</h3><p>自信地建立您的HR基础，符合当前最佳实践。</p><span class="learn-more">了解更多 &rarr;</span></div></a>';
+    html += '<a class="service-card" href="#people"><div class="card-icon-area" style="background:url(../assets/images/33_HRHome03_PeopleManagement.png) center/cover no-repeat;height:140px"></div><div class="card-body"><h3>人员管理</h3><p>以信心和公平流程处理困难对话。</p><span class="learn-more">了解更多 &rarr;</span></div></a>';
+    html += '<a class="service-card" href="#workplace"><div class="card-icon-area" style="background:url(../assets/images/33_HRHome04_Workplace.png) center/cover no-repeat;height:140px"></div><div class="card-body"><h3>职场文化与风险</h3><p>打造安全、尊重、有韧性的工作场所。</p><span class="learn-more">了解更多 &rarr;</span></div></a>';
+    html += '<a class="service-card" href="#recruitment"><div class="card-icon-area" style="background:url(../assets/images/33_HRHome05_Recruitment.png) center/cover no-repeat;height:140px"></div><div class="card-body"><h3>招聘与留人</h3><p>帮助您吸引、入职和留住合适的人才。</p><span class="learn-more">了解更多 &rarr;</span></div></a>';
+    html += '<a class="service-card" href="#bilingual"><div class="card-icon-area" style="background:url(../assets/images/33_HRHome06_Bilingual.png) center/cover no-repeat;height:140px"></div><div class="card-body"><h3>双语HR</h3><p>帮助您的工作场所跨语言保持一致。</p><span class="learn-more">了解更多 &rarr;</span></div></a>';
+    html += '</div></div></section>';
+    return html;
+  }
+
+  function renderCompliance() {
+    return serviceDetailPage({
+      label: 'HR咨询',
+      title: '人力合规基础',
+      subtitle: '自信地建立您的HR基础',
+      accordions: ['雇佣协议审查', '工作场所政策制定', '薪资与假期合规', '入职系统', '承包商与雇员评估', '记录保存与合规检查'],
+      sidebar: ['实际合规', '及时了解', '综合支持']
+    });
+  }
+
+  function renderPeople() {
+    return serviceDetailPage({
+      label: 'HR咨询',
+      title: '人员管理支持',
+      subtitle: '以信心处理困难对话',
+      accordions: ['绩效管理', '纪律程序指导', '重组支持', '终止指导', '文档与记录保存', '沟通与协商规划'],
+      sidebar: ['公平流程支持', '清晰文档', '综合法律通道']
+    });
+  }
+
+  function renderWorkplace() {
+    return serviceDetailPage({
+      label: 'HR咨询',
+      title: '职场文化与风险',
+      subtitle: '打造安全、尊重、有韧性的工作场所',
+      accordions: ['反霸凌与骚扰政策', '投诉与调查支持', '心理社会风险评估', '幸福感与参与度策略', '管理者培训指导', '职场行为框架'],
+      sidebar: ['文化清晰', '风险感知支持', '早期干预']
+    });
+  }
+
+  function renderRecruitment() {
+    return serviceDetailPage({
+      label: 'HR咨询',
+      title: '招聘与留人',
+      subtitle: '帮助您吸引、入职和留住合适的人才',
+      accordions: ['招聘流程设计', '工作权利检查', '入职培训', '留人与参与度审查', '能力与发展规划', '岗位与职位描述支持'],
+      sidebar: ['更智慧的招聘', '更好的入职', '留人重点']
+    });
+  }
+
+  function renderBilingual() {
+    return serviceDetailPage({
+      label: 'HR咨询',
+      title: '双语HR支持',
+      subtitle: '帮助您的工作场所保持一致',
+      accordions: ['双语雇佣文件', '员工沟通支持', '跨文化职场指导', '中资企业支持', '双语HR表格与政策', '与法律团队协调'],
+      sidebar: ['清晰沟通', '文化理解', '无缝法律衔接']
+    });
+  }
+
+  /* ─── ROUTER ─── */
+  const routes = {
+    'home': renderHome,
+    'compliance': renderCompliance,
+    'people': renderPeople,
+    'workplace': renderWorkplace,
+    'recruitment': renderRecruitment,
+    'bilingual': renderBilingual
+  };
+
+  function navigate() {
+    const hash = location.hash.slice(1) || 'home';
+    const render = routes[hash] || renderHome;
+    document.getElementById('app').innerHTML = render();
+    window.scrollTo(0, 0);
+    initAccordions();
+  }
+
+  function initAccordions() {
+    document.querySelectorAll('.accordion-header').forEach(function(header) {
+      header.addEventListener('click', function() {
+        this.parentElement.classList.toggle('open');
+      });
+    });
+  }
+
+  window.addEventListener('hashchange', navigate);
+  window.addEventListener('DOMContentLoaded', navigate);
+  navigate();
+
+  var navEl = document.querySelector('nav');
+  window.addEventListener('scroll', function() {
+    navEl.classList.toggle('scrolled', window.scrollY > 60);
+  });
+})();
+</script>
+<script src="/components/chatbot.js"></script>
+<script>renderChatbot({lang:"zh"})</script>
+</body>
+</html>

@@ -156,9 +156,12 @@ function renderHome() {
 
 function renderBook() {
   return '' +
-    '<div class="hero-banner" style="background:url(assets/images/53_BookAConsultation_HomePage.png) center/cover no-repeat">' +
-      '<h1>BOOK A CONSULTATION</h1>' +
-      '<p class="hero-sub">Choose the Right Service Area and Request A Consultation with Our Team</p>' +
+    '<div style="min-height:100vh;display:flex;flex-direction:column">' +
+      '<div class="hero-banner" style="padding:100px 5% 30px;flex-shrink:0">' +
+        '<h1>BOOK A CONSULTATION</h1>' +
+        '<p class="hero-sub">Choose the Right Service Area and Request A Consultation with Our Team</p>' +
+      '</div>' +
+      '<div style="flex:1;background:url(assets/images/53_BookAConsultation_HomePage.png) center/cover no-repeat;min-height:200px"></div>' +
     '</div>' +
 
     '<section class="section">' +

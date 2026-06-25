@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>保险服务 | 车险、房险、人寿健康保险 | Bird & Yang</title>
+<meta name="description" content="Bird & Yang 保险咨询 — 以专业守护您的未来。车险、房险、人寿健康及商业保险。">
+<link rel="canonical" href="https://birdyang.pages.dev/zh/insurance.html">
+<link rel="alternate" hreflang="zh" href="https://birdyang.pages.dev/zh/insurance.html">
+<link rel="alternate" hreflang="en" href="https://birdyang.pages.dev/insurance.html">
+<link rel="alternate" hreflang="x-default" href="https://birdyang.pages.dev/insurance.html">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<div id="site-nav"></div>
+<script src="/components/nav.js"></script>
+<script>renderNav({active:"consulting",lang:"zh"})</script>
+
+<main id="app"></main>
+
+<!-- FOOTER -->
+<div id="site-footer"></div>
+<script src="/components/footer.js"></script>
+<script>renderFooter({lang:"zh"})</script>
+
+<script>
+(function(){
+
+  function heroBanner(label, title, subtitle, extraClass) {
+    return '<div class="hero-banner' + (extraClass ? ' ' + extraClass : '') + '" style="min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;background:url(../assets/images/29_InsuranceHome01_FirstSight.png) center/cover no-repeat"><div class="hero-label">' + label + '</div><h1>' + title + '</h1><p class="hero-sub">' + subtitle + '</p></div>';
+  }
+
+  function serviceDetailPage(opts) {
+    var html = '<div class="hero-banner" style="min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;background:url(../assets/images/29_InsuranceHome01_FirstSight.png) center/cover no-repeat"><div class="hero-label">' + (opts.label || 'INSURANCE') + '</div><h1>' + opts.title + '</h1><p class="hero-sub">' + opts.subtitle + '</p></div>';
+    html += '<section><div class="container">';
+    html += '<a class="back-link" href="#home">返回保险服务</a>';
+    html += '<div class="two-col"><div class="main-content">';
+    opts.accordions.forEach(function(acc) {
+      html += '<div class="accordion"><div class="accordion-header">' + acc + '</div><div class="accordion-body"><p>我们的团队在此领域提供专业指导和实际支持，与法律和会计专业人士协作，为您量身定制综合解决方案。</p></div></div>';
+    });
+    html += '</div><div class="sidebar"><div class="sidebar-card"><h3>为什么选择德扬</h3>';
+    opts.sidebar.forEach(function(item) {
+      html += '<div class="why-item"><h4>' + item + '</h4><p>来自经验丰富团队的实际综合支持。</p></div>';
+    });
+    html += '</div><div class="sidebar-card"><a href="contact.html" class="cta-btn" style="width:100%">预约咨询</a></div></div></div></div></section>';
+    return html;
+  }
+
+  function renderHome() {
+    var html = heroBanner('INSURANCE', '保险服务', '以专业守护您的未来', 'hero-glow');
+    html += '<section><div class="container">';
+    html += '<a class="back-link" href="consulting.html">返回咨询服务</a>';
+    html += '<div class="about-text"><p>生活和商业建立在"假如"之上。在德扬，我们帮助您在问题出现之前就做好应对准备。我们不仅仅是安排保单——我们提供清晰的指导，确保您的资产、家庭和未来得到正确的保障。</p></div>';
+    html += '<div class="cards-grid mt-32">';
+    html += '<a class="service-card" href="#car"><div class="card-icon-area" style="background:url(../assets/images/29_InsuranceHome02_Car.png) center/cover no-repeat;height:140px"></div><div class="card-body"><h3>车险</h3><p>让您放心驾驶，为出行提供专业保障指导。</p><span class="learn-more">了解更多 &rarr;</span></div></a>';
+    html += '<a class="service-card" href="#house"><div class="card-icon-area" style="background:url(../assets/images/29_InsuranceHome03_House.png) center/cover no-repeat;height:140px"></div><div class="card-body"><h3>房险</h3><p>以专业前瞻性保护您的家园安全。</p><span class="learn-more">了解更多 &rarr;</span></div></a>';
+    html += '<a class="service-card" href="#life-health"><div class="card-icon-area" style="background:url(../assets/images/29_InsuranceHome04_Life.png) center/cover no-repeat;height:140px"></div><div class="card-body"><h3>人寿、健康及商业保险</h3><p>为不确定性做好规划，确保生活变化时安全不变。</p><span class="learn-more">了解更多 &rarr;</span></div></a>';
+    html += '</div></div></section>';
+    return html;
+  }
+
+  function renderCar() {
+    return serviceDetailPage({
+      label: '保险',
+      title: '车险',
+      subtitle: '为日常出行提供可靠保障',
+      accordions: ['保单比较与选择', '约定价值 vs 市场价值', '免赔额策略', '告知义务与资格审查', '车辆用途评估', '理赔证据支持'],
+      sidebar: ['保单清晰', '告知指导', '理赔就绪']
+    });
+  }
+
+  function renderHouse() {
+    return serviceDetailPage({
+      label: '保险',
+      title: '房险',
+      subtitle: '守护家中最重要的一切',
+      accordions: ['重建保额准确性', '渐进损害与维护', '空置物业保障', '居家办公咨询', '装修及合同工程', '房东保障'],
+      sidebar: ['重建信心', '风险意识', '实际保障']
+    });
+  }
+
+  function renderLifeHealth() {
+    return serviceDetailPage({
+      label: '保险',
+      title: '人寿、健康及商业保险',
+      subtitle: '为生命、健康和商业提供清晰指导',
+      accordions: ['人寿保险', '健康与医疗保障', '重大疾病保险', '收入保护与房贷还款', '商业与责任保险', '团体保险计划'],
+      sidebar: ['综合规划', '更广保障', '未来安全']
+    });
+  }
+
+  /* ─── ROUTER ─── */
+  const routes = {
+    'home': renderHome,
+    'car': renderCar,
+    'house': renderHouse,
+    'life-health': renderLifeHealth
+  };
+
+  function navigate() {
+    const hash = location.hash.slice(1) || 'home';
+    const render = routes[hash] || renderHome;
+    document.getElementById('app').innerHTML = render();
+    window.scrollTo(0, 0);
+    initAccordions();
+  }
+
+  function initAccordions() {
+    document.querySelectorAll('.accordion-header').forEach(function(header) {
+      header.addEventListener('click', function() {
+        this.parentElement.classList.toggle('open');
+      });
+    });
+  }
+
+  window.addEventListener('hashchange', navigate);
+  window.addEventListener('DOMContentLoaded', navigate);
+  navigate();
+
+  var navEl = document.querySelector('nav');
+  window.addEventListener('scroll', function() {
+    navEl.classList.toggle('scrolled', window.scrollY > 60);
+  });
+})();
+</script>
+<script src="/components/chatbot.js"></script>
+<script>renderChatbot({lang:"zh"})</script>
+</body>
+</html>

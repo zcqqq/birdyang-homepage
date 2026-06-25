@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insurance Services | Car, House & Life Insurance | Bird & Yang</title>
+<meta name="description" content="Bird & Yang Insurance — Securing Your Future with Expertise. Car insurance, house insurance, and life, health & business protection.">
+<link rel="canonical" href="https://birdyang.pages.dev/insurance.html">
+<link rel="alternate" hreflang="en" href="https://birdyang.pages.dev/insurance.html">
+<link rel="alternate" hreflang="zh" href="https://birdyang.pages.dev/zh/insurance.html">
+<link rel="alternate" hreflang="x-default" href="https://birdyang.pages.dev/insurance.html">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<div id="site-nav"></div>
+<script src="/components/nav.js"></script>
+<script>renderNav({active:"consulting",lang:"en"})</script>
+
+<main id="app"></main>
+
+<!-- FOOTER -->
+<div id="site-footer"></div>
+<script src="/components/footer.js"></script>
+<script>renderFooter({lang:"en"})</script>
+
+<script src="/components/section-header.js"></script>
+<script>
+(function(){
+
+/* ─── DATA ─── */
+
+const servicePages = {
+  'car': {
+    img: 'assets/images/30_InsuranceSubHome01_Car.png',
+    title: 'CAR INSURANCE',
+    heroSub: 'Driving with Clarity and Confidence',
+    backHash: '#home',
+    backText: 'BACK TO INSURANCE',
+    intro: 'Car insurance is more than just having a policy; clients need the right cover, a clear understanding of obligations, and confidence that claims will be paid when needed. Bird & Yang helps clients navigate vehicle insurance in New Zealand and avoid common pitfalls that cause declined claims or unexpected costs.',
+    accordions: [
+      { title: 'Policy comparison & selection', desc: 'comparing Comprehensive, Third Party Fire and Theft, and Third Party Only options to match your vehicle value and budget.' },
+      { title: 'Agreed value vs market value', desc: 'ensuring you set an appropriate value for your car so there are no surprises at renewal or in the event of a total loss.' },
+      { title: 'Excess strategy', desc: 'explaining how different excesses (standard, young driver, or glass) impact your premium and your out-of-pocket costs at claim time.' },
+      { title: 'Disclosure & eligibility', desc: 'helping you navigate the duty of disclosure, including modifications, driver history, and license requirements (especially for overseas license holders and migrants).' },
+      { title: 'Vehicle use assessment', desc: 'ensuring your policy correctly reflects your use, whether it\'s private, business-related, or used for rideshare and delivery services.' },
+      { title: 'Claim evidence support', desc: 'providing checklists on what evidence to collect at the scene of an accident to ensure a smooth claim process.' }
+    ],
+    sidebar: [
+      { title: 'Policy clarity', desc: 'We help match cover to your vehicle and budget.' },
+      { title: 'Disclosure guidance', desc: 'Support for driver history, modifications, and eligibility issues.' },
+      { title: 'Claim readiness', desc: 'Practical guidance so accidents are documented properly.' }
+    ]
+  },
+  'house': {
+    img: 'assets/images/31_InsuranceSubHome02_House.png',
+    title: 'HOUSE INSURANCE',
+    heroSub: 'Protecting Your Home with Foresight',
+    backHash: '#home',
+    backText: 'BACK TO INSURANCE',
+    intro: 'A home is often a client\'s largest financial investment. Protecting it requires more than a standard policy; it requires understanding rebuild costs, exclusions, and property-specific risks. Bird & Yang helps first-home buyers and investors make sure their house insurance is calculated accurately and managed proactively.',
+    accordions: [
+      { title: 'Sum insured accuracy', desc: 'using current building cost data to help you determine the correct rebuild value, protecting you from the risk of under-insurance.' },
+      { title: 'Gradual damage & maintenance', desc: 'clearly explaining the difference between sudden accidental damage and excluded gradual damage (like hidden leaks), so you can manage your property risk.' },
+      { title: 'Unoccupied property cover', desc: 'advising on policy requirements for homes left vacant during travel or transitions, ensuring your cover remains valid.' },
+      { title: 'Business-at-home advisory', desc: 'ensuring your house insurance accounts for any commercial or professional activities conducted from your property.' },
+      { title: 'Renovations & contract works', desc: 'helping you bridge the gap in cover when your home is undergoing structural changes or major renovations.' },
+      { title: 'Landlord protections', desc: 'for investors, ensuring compliance with regular inspection obligations and protecting against tenant-related risks.' }
+    ],
+    sidebar: [
+      { title: 'Rebuild confidence', desc: 'Guidance using current building cost thinking.' },
+      { title: 'Risk awareness', desc: 'Clear explanation of exclusions and property-specific issues.' },
+      { title: 'Practical protection', desc: 'Support for vacant homes, renovations, and landlord risks.' }
+    ]
+  },
+  'life-health': {
+    img: 'assets/images/32_InsuranceSubHome03_Life.png',
+    title: 'LIFE, HEALTH & BUSINESS INSURANCE',
+    heroSub: 'Planning for the Unexpected with Clarity',
+    backHash: '#home',
+    backText: 'BACK TO INSURANCE',
+    intro: 'Sudden illness, injury, or the loss of a key person can disrupt a family or business. Bird & Yang helps clients create a safety net that protects income, health, and long-term goals, with protection aligned to broader legal and financial planning.',
+    accordions: [
+      { title: 'Life insurance', desc: 'providing a lump-sum payment to ensure your loved ones are financially secure and your legacy is protected.' },
+      { title: 'Health & medical cover', desc: 'ensuring prompt access to private specialist care and surgeries, avoiding long wait times in the public system.' },
+      { title: 'Trauma & critical illness', desc: 'providing financial support upon diagnosis of serious conditions (like cancer or stroke), allowing you to focus on recovery without the burden of bills.' },
+      { title: 'Income protection & mortgage repayment', desc: 'safeguarding your ability to meet your most important financial commitments if you are unable to work.' },
+      { title: 'Business & liability insurance', desc: 'protecting your enterprise from public liability, professional indemnity risks, and the loss of key personnel.' },
+      { title: 'Group insurance schemes', desc: 'tailored health and life benefits for businesses looking to protect and retain their most valuable asset: their people.' }
+    ],
+    sidebar: [
+      { title: 'Integrated planning', desc: 'Protection aligned with business and personal goals.' },
+      { title: 'Broader coverage', desc: 'Advice across life, health, income, and business risks.' },
+      { title: 'Future security', desc: 'Support designed to protect families, enterprises, and legacy.' }
+    ]
+  }
+};
+
+/* ─── RENDER FUNCTIONS ─── */
+
+function renderHome() {
+  return `
+    <div class="hero-banner hero-glow" style="min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;background:url('assets/images/29_InsuranceHome01_FirstSight.png') center/cover no-repeat">
+      <p class="breadcrumb"><a href="consulting.html">CONSULTING</a> &gt; INSURANCE</p>
+      <h1>INSURANCE</h1>
+      <p class="hero-sub">Securing Your Future with Expertise</p>
+    </div>
+
+    <section class="bg-cream reveal">
+      <div class="container">
+        ${sectionAbout('ABOUT OUR INSURANCE PRACTICE', 'Life and business are built on “what ifs”. At Bird &amp; Yang, we help you answer those questions before they arise. We do not just arrange policies; we provide clear guidance so your assets, your family, and your future are protected with the right cover. Working alongside our legal and accounting teams, we offer an integrated approach to insurance support — because your protection should not operate in a silo.')}
+      </div>
+    </section>
+
+    <section class="bg-white reveal">
+      <div class="container">
+        ${sectionHeader('WHAT WE DO', 'Our Expertise')}
+        <div class="cards-grid">
+          <a class="service-card" href="#car">
+            <div class="card-icon-area" style="background:url('assets/images/29_InsuranceHome02_Car.png') center/cover no-repeat;height:140px"></div>
+            <div class="card-body">
+              <h3>Car Insurance</h3>
+              <p>We take the guesswork out of the road &mdash; providing the clarity you need to drive with confidence.</p>
+              <span class="learn-more">Learn More &rarr;</span>
+            </div>
+          </a>
+          <a class="service-card" href="#house">
+            <div class="card-icon-area" style="background:url('assets/images/29_InsuranceHome03_House.png') center/cover no-repeat;height:140px"></div>
+            <div class="card-body">
+              <h3>House Insurance</h3>
+              <p>We protect the roof over your head with professional foresight &mdash; so your family&rsquo;s sanctuary remains secure.</p>
+              <span class="learn-more">Learn More &rarr;</span>
+            </div>
+          </a>
+          <a class="service-card" href="#life-health">
+            <div class="card-icon-area" style="background:url('assets/images/29_InsuranceHome04_Life.png') center/cover no-repeat;height:140px"></div>
+            <div class="card-body">
+              <h3>Life, Health &amp; Business Protection</h3>
+              <p>We help you plan for the unexpected with clarity &mdash; ensuring that when life changes, your security does not.</p>
+              <span class="learn-more">Learn More &rarr;</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+function serviceDetailPage(opts) {
+  const itemsHtml = opts.accordions.map(item => `
+    <div class="service-item">
+      <div class="service-item-icon">●</div>
+      <div><h4>${item.title}</h4><p>${item.desc}</p></div>
+    </div>
+  `).join('');
+
+  const sidebarHtml = opts.sidebar.map(s => `
+    <div class="why-item">
+      <h4>${s.title}</h4>
+      <p>${s.desc}</p>
+    </div>
+  `).join('');
+
+  return `
+    <div style="min-height:100vh;display:flex;flex-direction:column">
+      <div class="hero-banner" style="padding:100px 5% 30px;flex-shrink:0">
+        <div class="breadcrumb"><a href="consulting.html">CONSULTING</a> &gt; <a href="#home">INSURANCE</a> &gt; ${opts.title}</div>
+        <h1>${opts.title}</h1>
+        ${opts.heroSub ? `<p class="hero-sub">${opts.heroSub}</p>` : ''}
+      </div>
+      ${opts.img ? `<div style="flex:1;background:url('${opts.img}') center/cover no-repeat;min-height:200px"></div>` : ''}
+    </div>
+
+    <section>
+      <div class="container">
+        <a class="back-link" href="${opts.backHash}">${opts.backText}</a>
+        <div class="two-col">
+          <div class="main-content">
+            <h2 style="font-size:1.4rem;font-weight:700;color:var(--blue);margin-bottom:12px">${opts.title}</h2>
+            <p style="font-size:.92rem;color:var(--charcoal);line-height:1.85;margin-bottom:24px">${opts.intro}</p>
+            <p style="font-size:.82rem;font-weight:700;color:var(--charcoal);margin-bottom:16px">OUR ${opts.title} SERVICES INCLUDE:</p>
+            <div class="service-items-grid">
+              ${itemsHtml}
+            </div>
+          </div>
+          <div class="sidebar">
+            <div class="sidebar-card">
+              <h3>WHY BIRD &amp; YANG</h3>
+              ${sidebarHtml}
+            </div>
+            <a href="contact.html#book" class="cta-btn primary" style="width:100%;display:block;text-align:center;margin-top:20px">BOOK A CONSULTATION</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+/* ─── ROUTER ─── */
+
+function render() {
+  const hash = location.hash.slice(1) || 'home';
+  const app = document.getElementById('app');
+
+  if (hash === 'home' || hash === '') {
+    app.innerHTML = renderHome();
+  } else if (servicePages[hash]) {
+    app.innerHTML = serviceDetailPage(servicePages[hash]);
+  } else {
+    app.innerHTML = renderHome();
+  }
+
+  window.scrollTo(0, 0);
+  initReveal();
+}
+
+function initReveal() {
+  document.querySelectorAll('.reveal').forEach(function(el) {
+    new IntersectionObserver(function(entries, obs) {
+      entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, {threshold: 0.1}).observe(el);
+  });
+}
+
+/* ─── INIT ─── */
+window.addEventListener('hashchange', render);
+render();
+
+})();
+</script>
+
+<script src="/components/chatbot.js"></script>
+<script>renderChatbot({lang:"en"})</script>
+</body>
+</html>

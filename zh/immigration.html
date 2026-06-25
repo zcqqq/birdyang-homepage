@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>移民咨询 | 路径支持、申请准备、时间管理 | Bird & Yang</title>
+<meta name="description" content="Bird & Yang 移民咨询 — 高效实现您的移民路径。路径支持、申请材料准备、关系与就业证据、时间线管理。">
+<link rel="canonical" href="https://birdyang.pages.dev/zh/immigration.html">
+<link rel="alternate" hreflang="zh" href="https://birdyang.pages.dev/zh/immigration.html">
+<link rel="alternate" hreflang="en" href="https://birdyang.pages.dev/immigration.html">
+<link rel="alternate" hreflang="x-default" href="https://birdyang.pages.dev/immigration.html">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<div id="site-nav"></div>
+<script src="/components/nav.js"></script>
+<script>renderNav({active:"consulting",lang:"zh"})</script>
+
+<main id="app"></main>
+
+<!-- FOOTER -->
+<div id="site-footer"></div>
+<script src="/components/footer.js"></script>
+<script>renderFooter({lang:"zh"})</script>
+
+<script>
+(function(){
+
+  function heroBanner(label, title, subtitle, extraClass) {
+    return '<div class="hero-banner' + (extraClass ? ' ' + extraClass : '') + '" style="min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;background:url(../assets/images/39_ImmigrationHome01_FirstSight.png) center/cover no-repeat"><div class="hero-label">' + label + '</div><h1>' + title + '</h1><p class="hero-sub">' + subtitle + '</p></div>';
+  }
+
+  function serviceDetailPage(opts) {
+    var html = '<div class="hero-banner" style="min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;background:url(../assets/images/39_ImmigrationHome01_FirstSight.png) center/cover no-repeat"><div class="hero-label">' + (opts.label || 'IMMIGRATION') + '</div><h1>' + opts.title + '</h1><p class="hero-sub">' + opts.subtitle + '</p></div>';
+    html += '<section><div class="container">';
+    html += '<a class="back-link" href="#home">返回移民咨询</a>';
+    html += '<div class="two-col"><div class="main-content">';
+    opts.accordions.forEach(function(acc) {
+      html += '<div class="accordion"><div class="accordion-header">' + acc + '</div><div class="accordion-body"><p>我们的团队在此领域提供专业指导和实际支持，与移民律师协作，确保您的准备工作全面周到。</p></div></div>';
+    });
+    html += '</div><div class="sidebar"><div class="sidebar-card"><h3>为什么选择德扬</h3>';
+    opts.sidebar.forEach(function(item) {
+      html += '<div class="why-item"><h4>' + item + '</h4><p>来自经验丰富团队的实际综合支持。</p></div>';
+    });
+    html += '</div><div class="sidebar-card"><a href="contact.html" class="cta-btn" style="width:100%">预约咨询</a></div></div></div></div></section>';
+    return html;
+  }
+
+  function renderHome() {
+    var html = heroBanner('IMMIGRATION', '移民咨询', '高效实现您的移民路径', 'hero-glow');
+    html += '<section><div class="container">';
+    html += '<a class="back-link" href="consulting.html">返回咨询服务</a>';
+    html += '<div class="about-text"><p>我们的移民咨询团队帮助您清晰地准备、组织和呈现您的移民事务。我们与Bird &amp; Yang的移民律师协作，确保您的准备工作全面，向法律支持的过渡顺畅无缝。</p></div>';
+    html += '<div class="cards-grid mt-32">';
+    html += '<a class="service-card" href="#pathway"><div class="card-icon-area" style="background:url(../assets/images/39_ImmigrationHome02_Pathway.png) center/cover no-repeat;height:140px"></div><div class="card-body"><h3>路径支持</h3><p>从一开始就做好准备，充满信心。</p><span class="learn-more">了解更多 &rarr;</span></div></a>';
+    html += '<a class="service-card" href="#application"><div class="card-icon-area" style="background:url(../assets/images/39_ImmigrationHome03_Preparation.png) center/cover no-repeat;height:140px"></div><div class="card-body"><h3>申请准备</h3><p>以最佳状态提交您的申请。</p><span class="learn-more">了解更多 &rarr;</span></div></a>';
+    html += '<a class="service-card" href="#relationship"><div class="card-icon-area" style="background:url(../assets/images/39_ImmigrationHome04_Relationship%26Employment.png) center/cover no-repeat;height:140px"></div><div class="card-body"><h3>关系与就业证据</h3><p>清晰地呈现您的故事。</p><span class="learn-more">了解更多 &rarr;</span></div></a>';
+    html += '<a class="service-card" href="#timeline"><div class="card-icon-area" style="background:url(../assets/images/39_ImmigrationHome05_Timeline.png) center/cover no-repeat;height:140px"></div><div class="card-body"><h3>时间线与流程</h3><p>让您的事务按计划推进。</p><span class="learn-more">了解更多 &rarr;</span></div></a>';
+    html += '</div></div></section>';
+    return html;
+  }
+
+  function renderPathway() {
+    return serviceDetailPage({
+      label: '移民咨询',
+      title: '路径支持',
+      subtitle: '帮助您选择正确的移民路径',
+      accordions: ['个人家庭及移民背景收集', '教育与就业档案整理', '初步签证路径准备', '初始文件与证据清单', '咨询简报准备', '内部转介至移民律师'],
+      sidebar: ['清晰起点', '综合团队', '减少困惑']
+    });
+  }
+
+  function renderApplication() {
+    return serviceDetailPage({
+      label: '移民咨询',
+      title: '申请准备',
+      subtitle: '清晰高效地组织材料',
+      accordions: ['文件准备与组织', '辅助文件格式与质量审查', '财务证据准备', '健康与品格文件协调', '所有记录一致性审查', '最终文件就绪与提交准备'],
+      sidebar: ['清晰文件', '质量控制', '提交就绪']
+    });
+  }
+
+  function renderRelationship() {
+    return serviceDetailPage({
+      label: '移民咨询',
+      title: '关系与就业证据',
+      subtitle: '用心和清晰帮助您整理证据',
+      accordions: ['关系时间线准备', '同居与共享记录', '分居期间说明', '就业文件支持', '认证与岗位要求检查', '学历与经验匹配'],
+      sidebar: ['真实证据', '申请人与雇主支持', '更紧密对齐']
+    });
+  }
+
+  function renderTimeline() {
+    return serviceDetailPage({
+      label: '移民咨询',
+      title: '时间线与流程管理',
+      subtitle: '让您的事务按计划推进',
+      accordions: ['端到端申请时间线规划', '关键日期与截止日映射', '签证到期与续签追踪', '处理时间监控', '围绕截止日的协调', '无缝移交至移民法律团队'],
+      sidebar: ['不错过任何日期', '无缝内部移交', '安心']
+    });
+  }
+
+  /* ─── ROUTER ─── */
+  const routes = {
+    'home': renderHome,
+    'pathway': renderPathway,
+    'application': renderApplication,
+    'relationship': renderRelationship,
+    'timeline': renderTimeline
+  };
+
+  function navigate() {
+    const hash = location.hash.slice(1) || 'home';
+    const render = routes[hash] || renderHome;
+    document.getElementById('app').innerHTML = render();
+    window.scrollTo(0, 0);
+    initAccordions();
+  }
+
+  function initAccordions() {
+    document.querySelectorAll('.accordion-header').forEach(function(header) {
+      header.addEventListener('click', function() {
+        this.parentElement.classList.toggle('open');
+      });
+    });
+  }
+
+  window.addEventListener('hashchange', navigate);
+  window.addEventListener('DOMContentLoaded', navigate);
+  navigate();
+
+  var navEl = document.querySelector('nav');
+  window.addEventListener('scroll', function() {
+    navEl.classList.toggle('scrolled', window.scrollY > 60);
+  });
+})();
+</script>
+<script src="/components/chatbot.js"></script>
+<script>renderChatbot({lang:"zh"})</script>
+</body>
+</html>

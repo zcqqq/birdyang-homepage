@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Consulting Services | Insurance, HR & Immigration | Bird & Yang</title>
-<meta name="description" content="Bird & Yang Consulting provides practical support across immigration, HR, insurance, and business matters.">
+<title>咨询服务 | 保险、人力资源、移民 | Bird & Yang</title>
+<meta name="description" content="Bird & Yang 咨询服务 — 为个人、家庭和企业提供保险、人力资源及移民方面的实际咨询支持。">
 <link rel="canonical" href="https://birdyang.pages.dev/zh/consulting.html">
 <link rel="alternate" hreflang="zh" href="https://birdyang.pages.dev/zh/consulting.html">
 <link rel="alternate" hreflang="en" href="https://birdyang.pages.dev/consulting.html">
@@ -18,7 +18,6 @@
 <script src="/components/nav.js"></script>
 <script>renderNav({active:"consulting",lang:"zh"})</script>
 
-<!-- APP -->
 <main id="app"></main>
 
 <!-- FOOTER -->
@@ -27,449 +26,63 @@
 <script>renderFooter({lang:"zh"})</script>
 
 <script>
-(function() {
-  const app = document.getElementById('app');
+(function(){
 
-  // --- ROUTE DEFINITIONS ---
-  const routes = {
-    'home': renderHome,
-    'insurance': renderInsuranceHome,
-    'insurance/car': renderInsuranceCar,
-    'insurance/house': renderInsuranceHouse,
-    'insurance/life-health': renderInsuranceLifeHealth,
-    'hr': renderHRHome,
-    'hr/compliance': renderHRCompliance,
-    'hr/people': renderHRPeople,
-    'hr/workplace': renderHRWorkplace,
-    'hr/recruitment': renderHRRecruitment,
-    'hr/bilingual': renderHRBilingual,
-    'immigration': renderImmigrationHome,
-    'immigration/pathway': renderImmigrationPathway,
-    'immigration/application': renderImmigrationApplication,
-    'immigration/relationship': renderImmigrationRelationship,
-    'immigration/timeline': renderImmigrationTimeline,
-    'team/aimee-yang': renderTeamAimee,
-    'team/julia-huang': renderTeamJulia,
-    'team/rockie-wei': renderTeamRockie
-  };
+document.getElementById('app').innerHTML = `
+  <div class="hero-banner hero-glow" style="min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;background:url(../assets/images/28_ConsultingHome01_FirstSight.png) center/cover no-repeat">
+    <h1>咨询服务</h1>
+    <p class="hero-sub">Helping You Move Forward with Confidence</p>
+  </div>
 
-  // --- ROUTER ---
-  function navigate() {
-    const hash = location.hash.slice(1) || 'home';
-    const render = routes[hash] || renderHome;
-    app.innerHTML = render();
-    window.scrollTo(0, 0);
-    initAccordions();
-  }
+  <section class="bg-cream reveal">
+    <div class="container">
+      <div class="about-text">
+        <p>在德扬，我们为个人、家庭和企业在移民、人力资源、保险及商务方面提供实际咨询支持。我们的目标是帮助您了解选项、管理风险，并充满信心地向前迈进。与我们的法律和会计团队协作，提供将专业知识与现实需求相连接的综合指导。</p>
+      </div>
+    </div>
+  </section>
 
-  window.addEventListener('hashchange', navigate);
-  window.addEventListener('DOMContentLoaded', navigate);
-  navigate();
+  <section class="bg-white reveal">
+    <div class="container">
+      <div class="section-label">我们的专业</div>
+      <h2 class="section-title">服务领域</h2>
+      <div class="cards-grid">
+        <a class="service-card" href="insurance.html">
+          <div class="card-icon-area" style="background:url(../assets/images/28_ConsultingHome02_Insurance.png) center/cover no-repeat;height:140px"></div>
+          <div class="card-body">
+            <h3>保险</h3>
+            <p>以专业守护您的未来</p>
+            <span class="learn-more">了解更多 &rarr;</span>
+          </div>
+        </a>
+        <a class="service-card" href="hr.html">
+          <div class="card-icon-area" style="background:url(../assets/images/28_ConsultingHome03_HR.png) center/cover no-repeat;height:140px"></div>
+          <div class="card-body">
+            <h3>人力资源咨询</h3>
+            <p>以资源支持您的成功</p>
+            <span class="learn-more">了解更多 &rarr;</span>
+          </div>
+        </a>
+        <a class="service-card" href="immigration.html">
+          <div class="card-icon-area" style="background:url(../assets/images/28_ConsultingHome04_Immigration.png) center/cover no-repeat;height:140px"></div>
+          <div class="card-body">
+            <h3>移民咨询</h3>
+            <p>高效实现您的移民路径</p>
+            <span class="learn-more">了解更多 &rarr;</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+`;
 
-  // --- ACCORDION TOGGLE ---
-  function initAccordions() {
-    document.querySelectorAll('.accordion-header').forEach(function(header) {
-      header.addEventListener('click', function() {
-        this.parentElement.classList.toggle('open');
-      });
-    });
-  }
+/* ─── Scroll Reveal ─── */
+document.querySelectorAll('.reveal').forEach(function(el) {
+  new IntersectionObserver(function(entries, obs) {
+    entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, {threshold: 0.1}).observe(el);
+});
 
-  // --- HELPER: Hero Banner ---
-  function heroBanner(label, title, subtitle, extraClass) {
-    return '<div class="hero-banner' + (extraClass ? ' ' + extraClass : '') + '" style="background:url(../assets/images/28_ConsultingHome01_FirstSight.png) center/cover no-repeat"><div class="hero-label">' + label + '</div><h1>' + title + '</h1><p class="hero-sub">' + subtitle + '</p></div>';
-  }
-
-  // --- HELPER: Service Detail Page ---
-  function serviceDetailPage(opts) {
-    var html = heroBanner(opts.label || 'CONSULTING', opts.title, opts.subtitle);
-    html += '<section><div class="container">';
-    html += '<a class="back-link" href="#' + opts.backHash + '">' + opts.backText + '</a>';
-    html += '<div class="two-col"><div class="main-content">';
-    opts.accordions.forEach(function(acc) {
-      html += '<div class="accordion"><div class="accordion-header">' + acc + '</div><div class="accordion-body"><p>Our team provides expert guidance and practical support in this area, working alongside our legal and accounting professionals to deliver integrated solutions tailored to your needs.</p></div></div>';
-    });
-    html += '</div><div class="sidebar"><div class="sidebar-card"><h3>Why Choose Us</h3>';
-    opts.sidebar.forEach(function(item) {
-      html += '<div class="why-item"><h4>' + item + '</h4><p>Practical, integrated support from our experienced team.</p></div>';
-    });
-    html += '</div><div class="sidebar-card"><a href="#home" class="cta-btn" style="width:100%">Book a Consultation</a></div></div></div></div></section>';
-    return html;
-  }
-
-  // --- PAGE: Consulting Home ---
-  function renderHome() {
-    var html = heroBanner('CONSULTING', 'CONSULTING SERVICES', 'Helping You Move Forward with Confidence', 'hero-glow');
-    html += '<section><div class="container"><div class="about-text"><p>At Bird &amp; Yang, we provide practical consulting support across immigration, HR, insurance, and business matters. Our goal is to help individuals, families, and businesses understand their options, manage risk, and move forward with confidence. Working alongside our legal and accounting teams, we offer integrated guidance that connects professional expertise with real-life needs.</p></div></div></section>';
-    // Our Expertise
-    html += '<section class="bg-white"><div class="container"><div class="section-label">What We Do</div><h2 class="section-title">OUR EXPERTISE</h2><div class="cards-grid">';
-    html += '<a class="service-card" href="#insurance"><div class="card-icon-area"><div class="icon-circle"><img src="../assets/icons/icon-insurance.svg" alt="Insurance"></div></div><div class="card-body"><h3>Insurance</h3><p>Securing your future with expertise across car, house, life, health, and business protection.</p><span class="learn-more">Learn More &rarr;</span></div></a>';
-    html += '<a class="service-card" href="#hr"><div class="card-icon-area"><div class="icon-circle"><img src="../assets/icons/icon-hr.svg" alt="HR Consulting"></div></div><div class="card-body"><h3>HR Consulting</h3><p>Supporting your success with practical, day-to-day HR guidance for businesses of all sizes.</p><span class="learn-more">Learn More &rarr;</span></div></a>';
-    html += '<a class="service-card" href="#immigration"><div class="card-icon-area"><div class="icon-circle"><img src="../assets/icons/icon-immigration.svg" alt="Immigration"></div></div><div class="card-body"><h3>Immigration Consulting</h3><p>Realizing your pathway with efficiency through practical and organisational immigration support.</p><span class="learn-more">Learn More &rarr;</span></div></a>';
-    html += '</div></div></section>';
-    // Our Team
-    html += '<section><div class="container"><div class="section-label">Our People</div><h2 class="section-title">OUR TEAM</h2><div class="team-grid">';
-    html += '<a class="team-card" href="#team/aimee-yang"><img src="../assets/team/aimee-yang.png" alt="Aimee Yang"><h4>Aimee Yang</h4><p>Partner</p></a>';
-    html += '<a class="team-card" href="#team/julia-huang"><img src="../assets/team/julia-huang.png" alt="Julia Huang"><h4>Julia Huang</h4><p>Barrister &amp; Senior Solicitor</p></a>';
-    html += '<a class="team-card" href="#team/rockie-wei"><img src="../assets/team/rockie-wei.png" alt="Rockie Wei"><h4>Rockie Wei</h4><p>Insurance Adviser</p></a>';
-    html += '</div></div></section>';
-    return html;
-  }
-
-  // --- PAGE: Insurance Home ---
-  function renderInsuranceHome() {
-    var html = heroBanner('INSURANCE', 'INSURANCE SERVICES', 'Securing Your Future with Expertise', 'hero-glow');
-    html += '<section><div class="container">';
-    html += '<a class="back-link" href="#home">Back to Consulting</a>';
-    html += '<div class="about-text"><p>Life and business are built on ‘what ifs’. At Bird &amp; Yang, we help you answer those questions before they arise.</p></div>';
-    html += '<div class="cards-grid mt-32">';
-    html += '<a class="service-card" href="#insurance/car"><div class="card-icon-area"><div class="icon-circle"><img src="../assets/icons/icon-insurance.svg" alt="Car Insurance"></div></div><div class="card-body"><h3>Car Insurance</h3><p>Driving with clarity and confidence through expert policy guidance.</p><span class="learn-more">Learn More &rarr;</span></div></a>';
-    html += '<a class="service-card" href="#insurance/house"><div class="card-icon-area"><div class="icon-circle"><img src="../assets/icons/icon-insurance.svg" alt="House Insurance"></div></div><div class="card-body"><h3>House Insurance</h3><p>Protecting your home with foresight and practical coverage advice.</p><span class="learn-more">Learn More &rarr;</span></div></a>';
-    html += '<a class="service-card" href="#insurance/life-health"><div class="card-icon-area"><div class="icon-circle"><img src="../assets/icons/icon-insurance.svg" alt="Life Health &amp; Business"></div></div><div class="card-body"><h3>Life, Health &amp; Business Protection</h3><p>Planning for the unexpected with clarity and integrated coverage.</p><span class="learn-more">Learn More &rarr;</span></div></a>';
-    html += '</div></div></section>';
-    return html;
-  }
-
-  // --- PAGE: HR Home ---
-  function renderHRHome() {
-    var html = heroBanner('HR CONSULTING', 'HUMAN RESOURCES CONSULTING', 'Supporting Your Success with Resources', 'hero-glow');
-    html += '<section><div class="container">';
-    html += '<a class="back-link" href="#home">Back to Consulting</a>';
-    html += '<div class="about-text"><p>At Bird &amp; Yang, our HR consulting team provides the practical, day-to-day support your business needs.</p></div>';
-    html += '<div class="cards-grid mt-32">';
-    html += '<a class="service-card" href="#hr/compliance"><div class="card-icon-area"><div class="icon-circle"><img src="../assets/icons/icon-hr.svg" alt="Compliance"></div></div><div class="card-body"><h3>HR Compliance</h3><p>Building your HR foundations with confidence and current best practice.</p><span class="learn-more">Learn More &rarr;</span></div></a>';
-    html += '<a class="service-card" href="#hr/people"><div class="card-icon-area"><div class="icon-circle"><img src="../assets/icons/icon-hr.svg" alt="People Management"></div></div><div class="card-body"><h3>People Management</h3><p>Handling hard conversations with confidence and fair process.</p><span class="learn-more">Learn More &rarr;</span></div></a>';
-    html += '<a class="service-card" href="#hr/workplace"><div class="card-icon-area"><div class="icon-circle"><img src="../assets/icons/icon-hr.svg" alt="Workplace Culture"></div></div><div class="card-body"><h3>Workplace Culture &amp; Risk</h3><p>Building safe, respectful, and resilient workplaces.</p><span class="learn-more">Learn More &rarr;</span></div></a>';
-    html += '<a class="service-card" href="#hr/recruitment"><div class="card-icon-area"><div class="icon-circle"><img src="../assets/icons/icon-hr.svg" alt="Recruitment"></div></div><div class="card-body"><h3>Recruitment &amp; Retention</h3><p>Helping you attract, onboard, and keep the right people.</p><span class="learn-more">Learn More &rarr;</span></div></a>';
-    html += '<a class="service-card" href="#hr/bilingual"><div class="card-icon-area"><div class="icon-circle"><img src="../assets/icons/icon-hr.svg" alt="Bilingual HR"></div></div><div class="card-body"><h3>Bilingual HR</h3><p>Helping your workplace stay on the same page across languages.</p><span class="learn-more">Learn More &rarr;</span></div></a>';
-    html += '</div></div></section>';
-    return html;
-  }
-
-  // --- PAGE: Immigration Home ---
-  function renderImmigrationHome() {
-    var html = heroBanner('IMMIGRATION', 'IMMIGRATION CONSULTING', 'Realizing Your Pathway with Efficiency', 'hero-glow');
-    html += '<section><div class="container">';
-    html += '<a class="back-link" href="#home">Back to Consulting</a>';
-    html += '<div class="about-text"><p>Immigration consulting and immigration law work hand in hand at Bird &amp; Yang. Our consulting team handles the practical and organisational side.</p></div>';
-    html += '<div class="cards-grid mt-32">';
-    html += '<a class="service-card" href="#immigration/pathway"><div class="card-icon-area"><div class="icon-circle"><img src="../assets/icons/icon-immigration.svg" alt="Pathway Support"></div></div><div class="card-body"><h3>Pathway Support</h3><p>Prepared, informed, and confident from the start of your journey.</p><span class="learn-more">Learn More &rarr;</span></div></a>';
-    html += '<a class="service-card" href="#immigration/application"><div class="card-icon-area"><div class="icon-circle"><img src="../assets/icons/icon-immigration.svg" alt="Application Preparation"></div></div><div class="card-body"><h3>Application Preparation</h3><p>Putting your best case forward with thorough documentation.</p><span class="learn-more">Learn More &rarr;</span></div></a>';
-    html += '<a class="service-card" href="#immigration/relationship"><div class="card-icon-area"><div class="icon-circle"><img src="../assets/icons/icon-immigration.svg" alt="Relationship &amp; Employment Evidence"></div></div><div class="card-body"><h3>Relationship &amp; Employment Evidence</h3><p>Presenting your story with clarity and authentic evidence.</p><span class="learn-more">Learn More &rarr;</span></div></a>';
-    html += '<a class="service-card" href="#immigration/timeline"><div class="card-icon-area"><div class="icon-circle"><img src="../assets/icons/icon-immigration.svg" alt="Timeline Management"></div></div><div class="card-body"><h3>Timeline &amp; Process Management</h3><p>Keeping your matter on schedule with proactive coordination.</p><span class="learn-more">Learn More &rarr;</span></div></a>';
-    html += '</div></div></section>';
-    return html;
-  }
-
-  // --- PAGE: Car Insurance ---
-  function renderInsuranceCar() {
-    return serviceDetailPage({
-      label: 'INSURANCE',
-      title: 'CAR INSURANCE',
-      subtitle: 'Driving with Clarity and Confidence',
-      backHash: 'insurance',
-      backText: 'Back to Insurance Services',
-      accordions: [
-        'Policy comparison & selection',
-        'Agreed value vs market value',
-        'Excess strategy',
-        'Disclosure & eligibility',
-        'Vehicle use assessment',
-        'Claim evidence support'
-      ],
-      sidebar: ['Policy clarity', 'Disclosure guidance', 'Claim readiness']
-    });
-  }
-
-  // --- PAGE: House Insurance ---
-  function renderInsuranceHouse() {
-    return serviceDetailPage({
-      label: 'INSURANCE',
-      title: 'HOUSE INSURANCE',
-      subtitle: 'Protecting Your Home with Foresight',
-      backHash: 'insurance',
-      backText: 'Back to Insurance Services',
-      accordions: [
-        'Sum insured accuracy',
-        'Gradual damage & maintenance',
-        'Unoccupied property cover',
-        'Business-at-home advisory',
-        'Renovations & contract works',
-        'Landlord protections'
-      ],
-      sidebar: ['Rebuild confidence', 'Risk awareness', 'Practical protection']
-    });
-  }
-
-  // --- PAGE: Life, Health & Business ---
-  function renderInsuranceLifeHealth() {
-    return serviceDetailPage({
-      label: 'INSURANCE',
-      title: 'LIFE, HEALTH & BUSINESS PROTECTION',
-      subtitle: 'Planning for the Unexpected with Clarity',
-      backHash: 'insurance',
-      backText: 'Back to Insurance Services',
-      accordions: [
-        'Life insurance',
-        'Health & medical cover',
-        'Trauma & critical illness',
-        'Income protection & mortgage repayment',
-        'Business & liability insurance',
-        'Group insurance schemes'
-      ],
-      sidebar: ['Integrated planning', 'Broader coverage', 'Future security']
-    });
-  }
-
-  // --- PAGE: HR Compliance ---
-  function renderHRCompliance() {
-    return serviceDetailPage({
-      label: 'HR CONSULTING',
-      title: 'HR COMPLIANCE FOUNDATION',
-      subtitle: 'Building Your HR Foundations with Confidence',
-      backHash: 'hr',
-      backText: 'Back to HR Consulting',
-      accordions: [
-        'Employment agreement reviews',
-        'Workplace policy development',
-        'Payroll and leave compliance',
-        'Onboarding systems',
-        'Contractor vs employee assessment',
-        'Record-keeping and compliance checks'
-      ],
-      sidebar: ['Practical compliance', 'Current and informed', 'Integrated support']
-    });
-  }
-
-  // --- PAGE: HR People Management ---
-  function renderHRPeople() {
-    return serviceDetailPage({
-      label: 'HR CONSULTING',
-      title: 'PEOPLE MANAGEMENT SUPPORT',
-      subtitle: 'Handling Hard Conversations with Confidence',
-      backHash: 'hr',
-      backText: 'Back to HR Consulting',
-      accordions: [
-        'Performance management',
-        'Disciplinary process guidance',
-        'Restructuring support',
-        'Termination guidance',
-        'Documentation and record-keeping',
-        'Consultation and communication planning'
-      ],
-      sidebar: ['Fair process support', 'Clear documentation', 'Integrated legal pathway']
-    });
-  }
-
-  // --- PAGE: HR Workplace Culture & Risk ---
-  function renderHRWorkplace() {
-    return serviceDetailPage({
-      label: 'HR CONSULTING',
-      title: 'WORKPLACE CULTURE & RISK',
-      subtitle: 'Building Safe, Respectful, and Resilient Workplaces',
-      backHash: 'hr',
-      backText: 'Back to HR Consulting',
-      accordions: [
-        'Anti-bullying and harassment policies',
-        'Complaint and investigation support',
-        'Psychosocial risk reviews',
-        'Wellbeing and engagement strategies',
-        'Manager training guidance',
-        'Workplace conduct framework'
-      ],
-      sidebar: ['Culture with clarity', 'Risk-aware support', 'Early intervention']
-    });
-  }
-
-  // --- PAGE: HR Recruitment & Retention ---
-  function renderHRRecruitment() {
-    return serviceDetailPage({
-      label: 'HR CONSULTING',
-      title: 'RECRUITMENT & RETENTION',
-      subtitle: 'Helping You Attract, Onboard, and Keep the Right People',
-      backHash: 'hr',
-      backText: 'Back to HR Consulting',
-      accordions: [
-        'Recruitment process design',
-        'Right-to-work checks',
-        'Induction and onboarding',
-        'Retention and engagement review',
-        'Capability and development planning',
-        'Role and job description support'
-      ],
-      sidebar: ['Smarter hiring', 'Better onboarding', 'Retention focus']
-    });
-  }
-
-  // --- PAGE: HR Bilingual ---
-  function renderHRBilingual() {
-    return serviceDetailPage({
-      label: 'HR CONSULTING',
-      title: 'BILINGUAL HR SUPPORT',
-      subtitle: 'Helping Your Workplace Stay on the Same Page',
-      backHash: 'hr',
-      backText: 'Back to HR Consulting',
-      accordions: [
-        'Bilingual employment documents',
-        'Employee communication support',
-        'Cross-cultural workplace guidance',
-        'Support for Chinese-owned businesses',
-        'Bilingual HR forms and policies',
-        'Coordination with our legal team'
-      ],
-      sidebar: ['Clear communication', 'Cultural understanding', 'Seamless legal connection']
-    });
-  }
-
-  // --- PAGE: Immigration Pathway ---
-  function renderImmigrationPathway() {
-    return serviceDetailPage({
-      label: 'IMMIGRATION',
-      title: 'PATHWAY SUPPORT',
-      subtitle: 'Prepared, Informed, and Confident from the Start',
-      backHash: 'immigration',
-      backText: 'Back to Immigration Consulting',
-      accordions: [
-        'Personal family and immigration background gathering',
-        'Education and employment profile organization',
-        'Preliminary visa pathway preparation',
-        'Initial document and evidence checklist',
-        'Consultation brief preparation',
-        'Internal referral to immigration lawyers'
-      ],
-      sidebar: ['Clear starting point', 'Integrated team', 'Less confusion']
-    });
-  }
-
-  // --- PAGE: Immigration Application ---
-  function renderImmigrationApplication() {
-    return serviceDetailPage({
-      label: 'IMMIGRATION',
-      title: 'APPLICATION PREPARATION',
-      subtitle: 'Putting Your Best Case Forward',
-      backHash: 'immigration',
-      backText: 'Back to Immigration Consulting',
-      accordions: [
-        'Document preparation and organization',
-        'Supporting document format and quality review',
-        'Financial evidence preparation',
-        'Health and character documentation coordination',
-        'Consistency review across all records',
-        'Final file readiness and submission preparation'
-      ],
-      sidebar: ['Clear documentation', 'Quality control', 'Submission readiness']
-    });
-  }
-
-  // --- PAGE: Immigration Relationship ---
-  function renderImmigrationRelationship() {
-    return serviceDetailPage({
-      label: 'IMMIGRATION',
-      title: 'RELATIONSHIP & EMPLOYMENT EVIDENCE',
-      subtitle: 'Presenting Your Story with Clarity',
-      backHash: 'immigration',
-      backText: 'Back to Immigration Consulting',
-      accordions: [
-        'Relationship timeline preparation',
-        'Cohabitation and shared records',
-        'Explanations for periods apart',
-        'Employment documentation support',
-        'Accreditation and role requirement checks',
-        'Qualification and experience matching'
-      ],
-      sidebar: ['Authentic evidence', 'Applicant and employer support', 'Closer alignment']
-    });
-  }
-
-  // --- PAGE: Immigration Timeline ---
-  function renderImmigrationTimeline() {
-    return serviceDetailPage({
-      label: 'IMMIGRATION',
-      title: 'TIMELINE & PROCESS MANAGEMENT',
-      subtitle: 'Keeping Your Matter on Schedule',
-      backHash: 'immigration',
-      backText: 'Back to Immigration Consulting',
-      accordions: [
-        'End-to-end application timeline planning',
-        'Key date and deadline mapping',
-        'Visa expiry and renewal tracking',
-        'Processing time monitoring',
-        'Coordination around job school and personal deadlines',
-        'Seamless handover to immigration legal team'
-      ],
-      sidebar: ['No missed dates', 'Seamless internal handover', 'Peace of mind']
-    });
-  }
-
-  // --- PAGE: Team - Aimee Yang ---
-  function renderTeamAimee() {
-    var html = heroBanner('OUR TEAM', 'AIMEE YANG', 'Partner');
-    html += '<section><div class="container">';
-    html += '<a class="back-link" href="#home">Back to Consulting</a>';
-    html += '<div class="profile-layout">';
-    html += '<div><img class="profile-photo" src="../assets/team/aimee-yang.png" alt="Aimee Yang"></div>';
-    html += '<div>';
-    html += '<h2 class="profile-name">Aimee Yang</h2>';
-    html += '<p class="profile-role">Partner</p>';
-    html += '<div class="expertise-badges"><span>Corporate &amp; Commercial Law</span><span>Property</span><span>Financing</span><span>Immigration</span><span>Commercial Litigation</span><span>Overseas Investment</span></div>';
-    html += '<div class="profile-highlights">';
-    html += '<div class="highlight"><h4>Commercial &amp; property leadership</h4><p>Leading complex commercial and property transactions with strategic foresight.</p></div>';
-    html += '<div class="highlight"><h4>Cross-border finance experience</h4><p>Navigating international financing structures with precision and confidence.</p></div>';
-    html += '<div class="highlight"><h4>Multilingual client service</h4><p>Providing seamless support across languages for diverse clients.</p></div>';
-    html += '</div>';
-    html += '<div class="profile-contact"><p><strong>Phone:</strong> <a href="tel:+6495900944">+64 9 590 0944</a></p><p><strong>Email:</strong> <a href="mailto:aimee@birdyang.co.nz">aimee@birdyang.co.nz</a></p></div>';
-    html += '</div></div></div></section>';
-    return html;
-  }
-
-  // --- PAGE: Team - Julia Huang ---
-  function renderTeamJulia() {
-    var html = heroBanner('OUR TEAM', 'JULIA HUANG', 'Barrister & Senior Solicitor');
-    html += '<section><div class="container">';
-    html += '<a class="back-link" href="#home">Back to Consulting</a>';
-    html += '<div class="profile-layout">';
-    html += '<div><img class="profile-photo" src="../assets/team/julia-huang.png" alt="Julia Huang"></div>';
-    html += '<div>';
-    html += '<h2 class="profile-name">Julia Huang</h2>';
-    html += '<p class="profile-role">Barrister &amp; Senior Solicitor</p>';
-    html += '<div class="expertise-badges"><span>Corporate &amp; Commercial Law</span><span>Property</span><span>Immigration</span><span>Family Law</span><span>Employment Law</span></div>';
-    html += '<div class="profile-highlights">';
-    html += '<div class="highlight"><h4>International legal education</h4><p>Bringing a global perspective grounded in rigorous legal training.</p></div>';
-    html += '<div class="highlight"><h4>Cross-border legal experience</h4><p>Advising clients across jurisdictions with confidence and clarity.</p></div>';
-    html += '<div class="highlight"><h4>Client-focused versatility</h4><p>Adapting across practice areas to deliver tailored, practical outcomes.</p></div>';
-    html += '</div>';
-    html += '<div class="profile-contact"><p><strong>Phone:</strong> <a href="tel:+64211059862">+64 21 1059 862</a></p><p><strong>Email:</strong> <a href="mailto:julia@birdyang.co.nz">julia@birdyang.co.nz</a></p></div>';
-    html += '</div></div></div></section>';
-    return html;
-  }
-
-  // --- PAGE: Team - Rockie Wei ---
-  function renderTeamRockie() {
-    var html = heroBanner('OUR TEAM', 'ROCKIE WEI', 'Insurance Adviser');
-    html += '<section><div class="container">';
-    html += '<a class="back-link" href="#home">Back to Consulting</a>';
-    html += '<div class="profile-layout">';
-    html += '<div><img class="profile-photo" src="../assets/team/rockie-wei.png" alt="Rockie Wei"></div>';
-    html += '<div>';
-    html += '<h2 class="profile-name">Rockie Wei</h2>';
-    html += '<p class="profile-role">Insurance Adviser</p>';
-    html += '<p class="profile-bio">Rockie Wei is an Insurance Adviser and Legal Executive at Bird &amp; Yang with a strong business background and a client-first mindset.</p>';
-    html += '<div class="expertise-badges"><span>Real Estate Transactions</span><span>Loan-related Matters</span><span>Client Service</span><span>Car Insurance</span><span>House Insurance</span></div>';
-    html += '<div class="profile-highlights">';
-    html += '<div class="highlight"><h4>Business owner perspective</h4><p>Understanding client challenges through firsthand entrepreneurial experience.</p></div>';
-    html += '<div class="highlight"><h4>Property &amp; loan support</h4><p>Providing practical guidance across real estate and financing matters.</p></div>';
-    html += '<div class="highlight"><h4>Qualified in car &amp; house insurance</h4><p>Delivering specialist insurance advice with qualified expertise.</p></div>';
-    html += '</div>';
-    html += '<div class="profile-contact"><p><strong>Phone:</strong> <a href="tel:+6495900948">+64 9 590 0948</a></p><p><strong>Email:</strong> <a href="mailto:rockie@birdyang.co.nz">rockie@birdyang.co.nz</a></p></div>';
-    html += '</div></div></div></section>';
-    return html;
-  }
-
-  // --- NAV SCROLL EFFECT ---
-  var navEl = document.querySelector('nav');
-  window.addEventListener('scroll', function() {
-    navEl.classList.toggle('scrolled', window.scrollY > 60);
-  });
 })();
 </script>
 <script src="/components/chatbot.js"></script>

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HR Consulting | Compliance, People & Workplace | Bird & Yang</title>
+<meta name="description" content="Bird & Yang HR Consulting — Supporting Your Success with Resources. HR compliance, people management, workplace culture, recruitment, and bilingual HR support.">
+<link rel="canonical" href="https://birdyang.pages.dev/hr.html">
+<link rel="alternate" hreflang="en" href="https://birdyang.pages.dev/hr.html">
+<link rel="alternate" hreflang="zh" href="https://birdyang.pages.dev/zh/hr.html">
+<link rel="alternate" hreflang="x-default" href="https://birdyang.pages.dev/hr.html">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<div id="site-nav"></div>
+<script src="/components/nav.js"></script>
+<script>renderNav({active:"consulting",lang:"en"})</script>
+
+<main id="app"></main>
+
+<!-- FOOTER -->
+<div id="site-footer"></div>
+<script src="/components/footer.js"></script>
+<script>renderFooter({lang:"en"})</script>
+
+<script src="/components/section-header.js"></script>
+<script>
+(function(){
+
+/* ─── DATA ─── */
+
+const servicePages = {
+  'compliance': {
+    img: 'assets/images/34_HRSubhome01_HRCompliance.png',
+    title: 'HR COMPLIANCE',
+    heroSub: 'Building Your HR Foundations with Confidence',
+    backHash: '#home',
+    backText: 'BACK TO HR CONSULTING',
+    intro: 'Every employer in New Zealand has legal obligations from day one. Employment agreements, minimum wage compliance, Holidays Act entitlements, payroll accuracy, record-keeping, and fair process requirements form the foundation of a healthy workplace. Bird & Yang helps businesses review and strengthen these foundations so compliance is clear, practical, and current.',
+    accordions: [
+      { title: 'Employment agreement reviews', desc: 'ensuring your agreements are current, compliant, and clearly drafted, covering duties, hours, pay, trial periods, restraints of trade, and termination provisions.' },
+      { title: 'Workplace policy development', desc: 'building the policy framework your business needs, from leave and attendance to health and safety, flexible work, and employee conduct.' },
+      { title: 'Payroll and leave compliance', desc: 'reviewing your payroll processes, leave calculations, and record-keeping against current Holidays Act requirements and upcoming reforms.' },
+      { title: 'Onboarding systems', desc: 'creating structured induction processes that set expectations, meet legal requirements, and help new employees start well.' },
+      { title: 'Contractor vs employee assessment', desc: 'helping you understand the distinction, assess your current arrangements against the new statutory gateway test, and manage classification risk.' },
+      { title: 'Record-keeping and compliance checks', desc: 'maintaining accurate employment records, reviewing key HR documents, and identifying compliance gaps to help your business meet employer obligations and avoid penalties.' }
+    ],
+    sidebar: [
+      { title: 'Practical compliance', desc: 'Clear, usable HR foundations for everyday business.' },
+      { title: 'Current and informed', desc: 'Support aligned with changing NZ employment requirements.' },
+      { title: 'Integrated support', desc: 'HR consulting and employment law under one roof.' }
+    ]
+  },
+  'people': {
+    img: 'assets/images/35_HRSubhome02_PeopleManagement.png',
+    title: 'PEOPLE MANAGEMENT',
+    heroSub: 'Handling Hard Conversations with Confidence',
+    backHash: '#home',
+    backText: 'BACK TO HR CONSULTING',
+    intro: 'Performance issues, disciplinary situations, restructuring decisions, and employment endings are some of the hardest moments in business. Bird & Yang helps employers manage these situations with practical guidance, structured processes, and careful documentation — so difficult decisions are handled fairly, clearly, and with the right process behind them.',
+    accordions: [
+      { title: 'Performance management', desc: 'helping you set clear expectations, document concerns, and follow a fair process that gives employees a genuine opportunity to improve.' },
+      { title: 'Disciplinary process guidance', desc: 'guiding you through the steps required for a defensible disciplinary response, from investigation through to outcome.' },
+      { title: 'Restructuring support', desc: 'helping you plan and execute organisational change with proper consultation, fair selection criteria, and clear communication.' },
+      { title: 'Termination guidance', desc: 'ensuring that when employment ends, the process is conducted properly, respectfully, and in compliance with legal requirements.' },
+      { title: 'Documentation and record-keeping', desc: 'helping you create the written trail that supports every people management decision you make.' },
+      { title: 'Consultation and communication planning', desc: 'helping you plan clear and fair communication with employees, including consultation steps, meeting structure, written notices, timeframes, and follow-up actions.' }
+    ],
+    sidebar: [
+      { title: 'Fair process support', desc: 'Structured guidance through sensitive employment matters.' },
+      { title: 'Clear documentation', desc: 'We help build the written trail behind each decision.' },
+      { title: 'Integrated legal pathway', desc: 'HR consulting and employment law work side by side.' }
+    ]
+  },
+  'workplace': {
+    img: 'assets/images/36_HRSubhome03_Workplace.png',
+    title: 'WORKPLACE CULTURE & RISK',
+    heroSub: 'Building Safe, Respectful, and Resilient Workplaces',
+    backHash: '#home',
+    backText: 'BACK TO HR CONSULTING',
+    intro: 'Workplace culture is not just about morale — it is also about risk. Bullying, harassment, conflict, burnout, poor communication, and psychosocial hazards can affect your people and expose your business to serious issues. Bird & Yang helps businesses build workplaces that are safer, healthier, and more resilient through practical policies, reviews, and guidance.',
+    accordions: [
+      { title: 'Anti-bullying and harassment policies', desc: 'developing clear, practical policies that set expectations and outline complaint and investigation processes.' },
+      { title: 'Complaint and investigation support', desc: 'guiding you through how to receive, assess, and respond to workplace complaints fairly and consistently.' },
+      { title: 'Psychosocial risk reviews', desc: 'helping you identify and address the workplace factors that affect your team\'s mental health and wellbeing.' },
+      { title: 'Wellbeing and engagement strategies', desc: 'practical approaches to workload management, recognition, team communication, and building a positive work environment.' },
+      { title: 'Manager training guidance', desc: 'equipping your leaders with the knowledge and confidence to recognise issues early and respond appropriately.' },
+      { title: 'Workplace conduct framework', desc: 'creating a practical framework for expected workplace behavior, reporting channels, investigation steps, and appropriate responses, helping your business manage conduct issues consistently.' }
+    ],
+    sidebar: [
+      { title: 'Culture with clarity', desc: 'Practical policies that support respectful behaviour.' },
+      { title: 'Risk-aware support', desc: 'Guidance that helps identify and manage workplace risks.' },
+      { title: 'Early intervention', desc: 'We help leaders recognise issues and respond appropriately.' }
+    ]
+  },
+  'recruitment': {
+    img: 'assets/images/37_HRSubhome04_Recruitment.png',
+    imgPosition: 'center top',
+    title: 'RECRUITMENT & RETENTION',
+    heroSub: 'Helping You Attract, Onboard, and Keep the Right People',
+    backHash: '#home',
+    backText: 'BACK TO HR CONSULTING',
+    intro: 'Finding the right people is hard, and keeping them is harder. Recruitment, onboarding, right-to-work checks, and retention all shape your workforce from day one. Bird & Yang helps businesses create fair, practical, and efficient people systems that support better hiring decisions and stronger retention outcomes.',
+    accordions: [
+      { title: 'Recruitment process design', desc: 'helping you build a structured, fair, and efficient hiring process, from job descriptions and advertising through to interviews and selection.' },
+      { title: 'Right-to-work checks', desc: 'ensuring you verify work visa conditions and understand your obligations when employing migrant workers, coordinated with our immigration consulting team.' },
+      { title: 'Induction and onboarding', desc: 'creating a first-week and first-month experience that sets your new employee up for success and meets your compliance requirements.' },
+      { title: 'Retention and engagement review', desc: 'reviewing the factors that drive staff turnover in your business and developing practical strategies to improve retention.' },
+      { title: 'Capability and development planning', desc: 'helping you identify skill gaps, build development pathways, and support your managers to lead effectively.' },
+      { title: 'Role and job description support', desc: 'helping you create clear and practical job descriptions that define duties, reporting lines, required skills, performance expectations, and employment conditions.' }
+    ],
+    sidebar: [
+      { title: 'Smarter hiring', desc: 'Structured recruitment support from role design to selection.' },
+      { title: 'Better onboarding', desc: 'A stronger first-week and first-month experience.' },
+      { title: 'Retention focus', desc: 'Practical strategies to help good people stay.' }
+    ]
+  },
+  'bilingual': {
+    img: 'assets/images/38_HRSubhome05_Bilingual.png',
+    title: 'BILINGUAL HR',
+    heroSub: 'Helping Your Workplace Stay on the Same Page',
+    backHash: '#home',
+    backText: 'BACK TO HR CONSULTING',
+    intro: 'For many businesses in New Zealand, HR obligations need to be understood across more than one language and cultural context. Employment agreements, policies, and workplace communications only work when people genuinely understand them. Bird & Yang provides bilingual HR support in English, Mandarin, and Cantonese to help employers communicate clearly and manage people confidently.',
+    accordions: [
+      { title: 'Bilingual employment documents', desc: 'employment agreements, workplace policies, and HR forms prepared in both English and Chinese, ensuring clarity for all parties.' },
+      { title: 'Employee communication support', desc: 'helping you communicate workplace expectations, policy changes, and important information to employees in their first language.' },
+      { title: 'Cross-cultural workplace guidance', desc: 'practical advice on navigating the cultural dimensions of people management, from communication styles to expectations around hierarchy, feedback, and conflict.' },
+      { title: 'Support for Chinese-owned businesses', desc: 'helping business owners who are building their teams in New Zealand understand their employment obligations clearly, in the language they are most comfortable with.' },
+      { title: 'Bilingual HR forms and policies', desc: 'preparing clear English-Chinese HR forms, policy templates, workplace notices, acknowledgement forms, and checklists to reduce misunderstanding, support compliance, and improve communication.' },
+      { title: 'Coordination with our legal team', desc: 'when language barriers intersect with legal risk, we connect you with our bilingual employment lawyers for seamless support.' }
+    ],
+    sidebar: [
+      { title: 'Clear communication', desc: 'Key HR information delivered with clarity across languages.' },
+      { title: 'Cultural understanding', desc: 'Practical support across language and workplace expectations.' },
+      { title: 'Seamless legal connection', desc: 'Bilingual HR consulting linked with bilingual legal support.' }
+    ]
+  }
+};
+
+/* ─── RENDER FUNCTIONS ─── */
+
+function renderHome() {
+  return `
+    <div class="hero-banner hero-glow" style="min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;background:url('assets/images/33_HRHome01_FirstSight.png') center/cover no-repeat">
+      <p class="breadcrumb"><a href="consulting.html">CONSULTING</a> &gt; HR CONSULTING</p>
+      <h1>HR CONSULTING</h1>
+      <p class="hero-sub">Supporting Your Success with Resources</p>
+    </div>
+
+    <section class="bg-cream reveal">
+      <div class="container">
+        ${sectionAbout("ABOUT OUR HR PRACTICE", "At Bird &amp; Yang, our HR consulting team provides the practical, day-to-day support your business needs — compliance foundations, people management guidance, workplace culture, recruitment and retention, and bilingual HR support. When a matter requires legal advice or representation — a personal grievance, a dismissal process, or an Employment Relations Authority hearing — HR consulting works alongside our employment lawyers for a seamless transition.")}
+      </div>
+    </section>
+
+    <section class="bg-white reveal">
+      <div class="container">
+        ${sectionHeader('WHAT WE DO', 'Our Expertise')}
+        <div class="cards-grid">
+          <a class="service-card" href="#compliance">
+            <div class="card-icon-area" style="background:url('assets/images/33_HRHome02_HRCompliance.png') center/cover no-repeat;height:140px"></div>
+            <div class="card-body">
+              <h3>HR Compliance</h3>
+              <p>We help you get the foundations right — so your business is protected and your people know where they stand.</p>
+              <span class="learn-more">Learn More &rarr;</span>
+            </div>
+          </a>
+          <a class="service-card" href="#people">
+            <div class="card-icon-area" style="background:url('assets/images/33_HRHome03_PeopleManagement.png') center/cover no-repeat;height:140px"></div>
+            <div class="card-body">
+              <h3>People Management</h3>
+              <p>We help you handle the hard conversations with confidence — fairly, clearly, and with the right process behind you.</p>
+              <span class="learn-more">Learn More &rarr;</span>
+            </div>
+          </a>
+          <a class="service-card" href="#workplace">
+            <div class="card-icon-area" style="background:url('assets/images/33_HRHome04_Workplace.png') center/cover no-repeat;height:140px"></div>
+            <div class="card-body">
+              <h3>Workplace Culture &amp; Risk</h3>
+              <p>A healthy workplace doesn&apos;t happen by accident. We help you build a workplace people want to be part of.</p>
+              <span class="learn-more">Learn More &rarr;</span>
+            </div>
+          </a>
+          <a class="service-card" href="#recruitment">
+            <div class="card-icon-area" style="background:url('assets/images/33_HRHome05_Recruitment.png') center/cover no-repeat;height:140px"></div>
+            <div class="card-body">
+              <h3>Recruitment &amp; Retention</h3>
+              <p>We help you find the right people, attract and onboard them, and put systems in place so they can stay.</p>
+              <span class="learn-more">Learn More &rarr;</span>
+            </div>
+          </a>
+          <a class="service-card" href="#bilingual">
+            <div class="card-icon-area" style="background:url('assets/images/33_HRHome06_Bilingual.png') center/cover no-repeat;height:140px"></div>
+            <div class="card-body">
+              <h3>Bilingual HR</h3>
+              <p>We help make sure everyone is on the same page — in every language.</p>
+              <span class="learn-more">Learn More &rarr;</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+function serviceDetailPage(opts) {
+  const itemsHtml = opts.accordions.map(item => `
+    <div class="service-item">
+      <div class="service-item-icon">●</div>
+      <div><h4>${item.title}</h4><p>${item.desc}</p></div>
+    </div>
+  `).join('');
+
+  const sidebarHtml = opts.sidebar.map(s => `
+    <div class="why-item">
+      <h4>${s.title}</h4>
+      <p>${s.desc}</p>
+    </div>
+  `).join('');
+
+  return `
+    <div style="min-height:100vh;display:flex;flex-direction:column">
+      <div class="hero-banner" style="padding:100px 5% 30px;flex-shrink:0">
+        <div class="breadcrumb"><a href="consulting.html">CONSULTING</a> &gt; <a href="#home">HR CONSULTING</a> &gt; ${opts.title}</div>
+        <h1>${opts.title}</h1>
+        ${opts.heroSub ? `<p class="hero-sub">${opts.heroSub}</p>` : ''}
+      </div>
+      ${opts.img ? `<div style="flex:1;background:url('${opts.img}') ${opts.imgPosition || 'center'}/cover no-repeat;min-height:200px"></div>` : ''}
+    </div>
+
+    <section>
+      <div class="container">
+        <a class="back-link" href="${opts.backHash}">${opts.backText}</a>
+        <div class="two-col">
+          <div class="main-content">
+            <h2 style="font-size:1.4rem;font-weight:700;color:var(--blue);margin-bottom:12px">${opts.title}</h2>
+            <p style="font-size:.92rem;color:var(--charcoal);line-height:1.85;margin-bottom:24px">${opts.intro}</p>
+            <p style="font-size:.82rem;font-weight:700;color:var(--charcoal);margin-bottom:16px">OUR ${opts.title} SERVICES INCLUDE:</p>
+            <div class="service-items-grid">
+              ${itemsHtml}
+            </div>
+          </div>
+          <div class="sidebar">
+            <div class="sidebar-card">
+              <h3>WHY BIRD &amp; YANG</h3>
+              ${sidebarHtml}
+            </div>
+            <a href="contact.html#book" class="cta-btn primary" style="width:100%;display:block;text-align:center;margin-top:20px">BOOK A CONSULTATION</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+/* ─── ROUTER ─── */
+
+function render() {
+  const hash = location.hash.slice(1) || 'home';
+  const app = document.getElementById('app');
+
+  if (hash === 'home' || hash === '') {
+    app.innerHTML = renderHome();
+  } else if (servicePages[hash]) {
+    app.innerHTML = serviceDetailPage(servicePages[hash]);
+  } else {
+    app.innerHTML = renderHome();
+  }
+
+  window.scrollTo(0, 0);
+  initReveal();
+}
+
+function initReveal() {
+  document.querySelectorAll('.reveal').forEach(function(el) {
+    new IntersectionObserver(function(entries, obs) {
+      entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, {threshold: 0.1}).observe(el);
+  });
+}
+
+/* ─── INIT ─── */
+window.addEventListener('hashchange', render);
+render();
+
+})();
+</script>
+
+<script src="/components/chatbot.js"></script>
+<script>renderChatbot({lang:"en"})</script>
+</body>
+</html>

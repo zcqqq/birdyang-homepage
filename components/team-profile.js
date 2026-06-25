@@ -19,7 +19,7 @@ var TEAM_PROFILES = {
       { title: "Founder's perspective", desc: 'Real-world experience in startups, finance, and media.' }
     ],
     contact: {
-      qualifications: ['LLM — University of Michigan, USA', 'LLB — University of Auckland, New Zealand', 'Immigration, Business, and Investment'],
+      qualifications: ['LLM — University of Michigan, USA', 'LLB — University of Auckland, New Zealand'],
       phone: '+64 9 369 5989',
       email: 'marshall@marshallbird.com'
     }
@@ -37,7 +37,7 @@ var TEAM_PROFILES = {
       { title: 'Multilingual client service', desc: 'Fluent in Mandarin and Cantonese.' }
     ],
     contact: {
-      qualifications: ['BCOM, LLB — University of Auckland, New Zealand', 'BMGT — Nanjing University of Economics and Finance, China', 'Corporate and Commercial Law, Property, Financing, and Immigration'],
+      qualifications: ['BCOM, LLB — University of Auckland, New Zealand', 'BMGT — Nanjing University of Economics and Finance, China'],
       phone: '+64 9 590 0944',
       email: 'aimee@birdyang.co.nz'
     }
@@ -55,7 +55,7 @@ var TEAM_PROFILES = {
       { title: 'Client-focused versatility', desc: 'Wide-ranging practice across business and personal legal matters.' }
     ],
     contact: {
-      qualifications: ['LLM — London School of Economics and Political Science (LSE)', 'LLB — Auckland University of Technology; Peking University', 'Corporate and Commercial Law, Property, Immigration, Family Law, and Employment Law'],
+      qualifications: ['LLM — London School of Economics and Political Science (LSE)', 'LLB — Auckland University of Technology; Peking University'],
       phone: '+64 21 1059 862',
       email: 'julia@birdyang.co.nz'
     }
@@ -109,7 +109,7 @@ var TEAM_PROFILES = {
       { title: 'Corporate finance insight', desc: 'Experience in investment due diligence and finance services.' }
     ],
     contact: {
-      qualifications: ['Bachelor in Investment and Economic Management', 'Chartered Accountant in China; Securities, Funds, Futures qualifications', 'Accounting, finance, and corporate management support'],
+      qualifications: ['Bachelor in Investment and Economic Management', 'Chartered Accountant in China; Securities, Funds, Futures qualifications'],
       phone: '+64 9 590 0943',
       email: 'ming@birdyang.co.nz'
     }
@@ -151,6 +151,17 @@ var TEAM_PROFILES = {
     }
   }
 };
+
+function renderTeamGrid(memberIds, opts) {
+  opts = opts || {};
+  var cards = memberIds.map(function(id) {
+    var p = TEAM_PROFILES[id];
+    if (!p) return '';
+    var href = (opts.hashPrefix || '#team/') + id;
+    return '<a class="team-card" href="' + href + '"><img src="' + (opts.imgBase || '') + p.photo + '" alt="' + p.name + '"><h4>' + p.name + '</h4><p>' + p.role + '</p></a>';
+  }).join('');
+  return sectionHeader('OUR TEAM', 'Meet the Team') + '<div class="team-grid">' + cards + '</div>';
+}
 
 function renderTeamProfileHTML(id, opts) {
   opts = opts || {};
