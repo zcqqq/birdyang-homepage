@@ -30,7 +30,7 @@ function renderNav(opts) {
 
   var html = '' +
     '<nav' + (transparent ? ' class="transparent"' : '') + '>' +
-      '<a href="' + pages.home + '" class="logo"><img src="' + prefix + 'assets/icons/logo.svg" alt="' + (isZh ? '德扬' : 'Bird &amp; Yang') + '"></a>' +
+      '<a href="' + pages.home + '" class="logo"><img src="' + prefix + 'assets/icons/Logo_new.png" alt="' + (isZh ? '德扬' : 'Bird &amp; Yang') + '"></a>' +
       '<div class="nav-links">' + navLinks + '</div>' +
       '<div class="nav-extras">' +
         '<span class="lang-toggle">' + enToggle + ' | ' + zhToggle + '</span>' +
