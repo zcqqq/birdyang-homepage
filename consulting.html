@@ -30,7 +30,8 @@
 <script>
 (function(){
 
-document.getElementById('app').innerHTML = `
+function renderHome() {
+  return `
   <div class="hero-banner hero-glow" style="min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;background:url('assets/images/28_ConsultingHome01_FirstSight.png') center/cover no-repeat">
     <h1>CONSULTING SERVICES</h1>
     <p class="hero-sub">Helping You Move Forward with Confidence</p>
@@ -79,14 +80,31 @@ document.getElementById('app').innerHTML = `
       ${renderTeamGrid(['aimee-yang','julia-huang','rockie-wei'])}
     </div>
   </section>
-`;
+  `;
+}
 
-/* ─── Scroll Reveal ─── */
-document.querySelectorAll('.reveal').forEach(function(el) {
-  new IntersectionObserver(function(entries, obs) {
-    entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
-  }, {threshold: 0.1}).observe(el);
-});
+function render() {
+  var hash = location.hash.slice(1) || 'home';
+  var app = document.getElementById('app');
+
+  if (hash.indexOf('team/') === 0) {
+    var id = hash.slice(5);
+    var html = renderTeamProfileHTML(id, { backHash: '#home', backText: 'BACK TO CONSULTING' });
+    app.innerHTML = html || renderHome();
+  } else {
+    app.innerHTML = renderHome();
+  }
+
+  window.scrollTo(0, 0);
+  document.querySelectorAll('.reveal').forEach(function(el) {
+    new IntersectionObserver(function(entries, obs) {
+      entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, {threshold: 0.1}).observe(el);
+  });
+}
+
+window.addEventListener('hashchange', render);
+render();
 
 })();
 </script>
