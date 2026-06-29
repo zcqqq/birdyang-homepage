@@ -9,8 +9,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Use dev config
+        run: cp wrangler.dev.jsonc wrangler.jsonc
+
       - uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
-          command: pages deploy . --project-name=birdyang-dev --config=wrangler.dev.jsonc
+          command: pages deploy . --project-name=birdyang-dev
