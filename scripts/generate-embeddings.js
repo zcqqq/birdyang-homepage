@@ -5,7 +5,7 @@ const path = require('path');
 
 const ACCOUNT_ID = process.env.CLOUDFLARE_ACCOUNT_ID;
 const API_TOKEN = process.env.CLOUDFLARE_API_TOKEN;
-const KV_NAMESPACE_ID = '0a5adbe0c71043859e7bdeda8a7649db';
+const KV_NAMESPACE_ID = 'ab43ffbf6fb44a48869bbbb4db5af493';
 const MODEL = '@cf/baai/bge-base-en-v1.5';
 
 if (!ACCOUNT_ID || !API_TOKEN) {
