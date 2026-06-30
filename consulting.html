@@ -89,13 +89,16 @@ function render() {
 
   if (hash.indexOf('team/') === 0) {
     var id = hash.slice(5);
-    var html = renderTeamProfileHTML(id, { backHash: '#home', backText: 'BACK TO CONSULTING' });
+    var html = renderTeamProfileHTML(id, { backHash: '#team', backText: 'BACK TO OUR TEAM' });
     app.innerHTML = html || renderHome();
+    window.scrollTo(0, 0);
+  } else if (hash === 'team') {
+    app.innerHTML = renderHome();
+    setTimeout(function(){ var el = document.querySelector('.team-grid'); if (el) el.scrollIntoView({behavior:'smooth'}); }, 50);
   } else {
     app.innerHTML = renderHome();
+    window.scrollTo(0, 0);
   }
-
-  window.scrollTo(0, 0);
   document.querySelectorAll('.reveal').forEach(function(el) {
     new IntersectionObserver(function(entries, obs) {
       entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });

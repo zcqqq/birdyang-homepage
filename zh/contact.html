@@ -93,18 +93,58 @@ function renderHome() {
           '<span class="tab" data-tab="consulting-hr">咨询 &ndash; 人力资源</span>' +
           '<span class="tab" data-tab="consulting-insurance">咨询 &ndash; 保险</span>' +
         '</div>' +
-        '<div class="values-grid">' +
+        '<div class="values-grid" id="doc-panel-legal">' +
           '<div class="value-card">' +
             '<h3>服务条款</h3>' +
-            '<p><a href="#" style="color:var(--gold);font-size:.78rem">下载 PDF</a></p>' +
+            '<p><a href="../assets/pdf/Bird%26Yang_Legal_Terms_of_Engagement.pdf" target="_blank" style="color:var(--gold);font-size:.78rem">下载 PDF</a></p>' +
           '</div>' +
           '<div class="value-card">' +
             '<h3>客户关怀信息</h3>' +
-            '<p><a href="#" style="color:var(--gold);font-size:.78rem">下载 PDF</a></p>' +
+            '<p><a href="../assets/pdf/Bird%26Yang_Legal_Client_Care_Information.pdf" target="_blank" style="color:var(--gold);font-size:.78rem">下载 PDF</a></p>' +
           '</div>' +
           '<div class="value-card">' +
             '<h3>反洗钱声明</h3>' +
-            '<p><a href="#" style="color:var(--gold);font-size:.78rem">下载 PDF</a></p>' +
+            '<p><a href="../assets/pdf/Bird%26Yang_Legal_AML.pdf" target="_blank" style="color:var(--gold);font-size:.78rem">下载 PDF</a></p>' +
+          '</div>' +
+        '</div>' +
+        '<div class="values-grid" id="doc-panel-accounting" style="display:none">' +
+          '<div class="value-card">' +
+            '<h3>服务条款</h3>' +
+            '<p><a href="../assets/pdf/Bird%26Yang_Accounting_Terms_of_Engagement.pdf" target="_blank" style="color:var(--gold);font-size:.78rem">下载 PDF</a></p>' +
+          '</div>' +
+          '<div class="value-card">' +
+            '<h3>反洗钱声明</h3>' +
+            '<p><a href="../assets/pdf/Bird%26Yang_Accounting_AML.pdf" target="_blank" style="color:var(--gold);font-size:.78rem">下载 PDF</a></p>' +
+          '</div>' +
+        '</div>' +
+        '<div class="values-grid" id="doc-panel-consulting-immigration" style="display:none">' +
+          '<div class="value-card">' +
+            '<h3>服务条款</h3>' +
+            '<p><a href="../assets/pdf/Bird%26Yang_Immigration_Consulting_Terms_of_Engagement.pdf" target="_blank" style="color:var(--gold);font-size:.78rem">下载 PDF</a></p>' +
+          '</div>' +
+          '<div class="value-card">' +
+            '<h3>反洗钱声明</h3>' +
+            '<p><a href="../assets/pdf/Bird%26Yang_Immigration_Consulting_AML.pdf" target="_blank" style="color:var(--gold);font-size:.78rem">下载 PDF</a></p>' +
+          '</div>' +
+        '</div>' +
+        '<div class="values-grid" id="doc-panel-consulting-hr" style="display:none">' +
+          '<div class="value-card">' +
+            '<h3>服务条款</h3>' +
+            '<p><a href="../assets/pdf/Bird%26Yang_HR_Consulting_Terms_of_Engagement.pdf" target="_blank" style="color:var(--gold);font-size:.78rem">下载 PDF</a></p>' +
+          '</div>' +
+          '<div class="value-card">' +
+            '<h3>反洗钱声明</h3>' +
+            '<p><a href="../assets/pdf/Bird%26Yang_HR_Consulting_AML.pdf" target="_blank" style="color:var(--gold);font-size:.78rem">下载 PDF</a></p>' +
+          '</div>' +
+        '</div>' +
+        '<div class="values-grid" id="doc-panel-consulting-insurance" style="display:none">' +
+          '<div class="value-card">' +
+            '<h3>服务条款</h3>' +
+            '<p><a href="../assets/pdf/Bird%26Yang_Insurance_Terms_of_Engagement.pdf" target="_blank" style="color:var(--gold);font-size:.78rem">下载 PDF</a></p>' +
+          '</div>' +
+          '<div class="value-card">' +
+            '<h3>反洗钱声明</h3>' +
+            '<p><a href="../assets/pdf/Bird%26Yang_Insurance_AML.pdf" target="_blank" style="color:var(--gold);font-size:.78rem">下载 PDF</a></p>' +
           '</div>' +
         '</div>' +
       '</div>' +
@@ -161,7 +201,7 @@ function renderHome() {
 
 function renderBook() {
   return '' +
-    '<div class="hero-banner" style="background:url(../assets/images/53_BookAConsultation_HomePage.png) center/cover no-repeat">' +
+    '<div class="hero-banner" style="background:url(../assets/images/53_BookAConsultation_HomePageV3.png) center/cover no-repeat">' +
       '<h1>预约咨询</h1>' +
       '<p class="hero-sub">选择合适的服务领域，向我们的团队预约咨询。</p>' +
     '</div>' +
@@ -325,6 +365,10 @@ function bindTabs() {
     tab.addEventListener('click', function() {
       tabs.forEach(function(t) { t.classList.remove('active'); });
       tab.classList.add('active');
+      var panels = document.querySelectorAll('[id^="doc-panel-"]');
+      panels.forEach(function(p) { p.style.display = 'none'; });
+      var target = document.getElementById('doc-panel-' + tab.getAttribute('data-tab'));
+      if (target) target.style.display = '';
     });
   });
 }

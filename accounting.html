@@ -38,9 +38,14 @@ function route(){
     case 'business-plans': html = pageBusinessPlans(); break;
     case 'asset-management': html = pageAssetManagement(); break;
     case 'trust-accounting': html = pageTrustAccounting(); break;
-    case 'team/heather-chao': html = renderTeamProfileHTML('heather-chao', {backHash:'#home', backText:'BACK TO OUR TEAM'}); break;
-    case 'team/ming-lu': html = renderTeamProfileHTML('ming-lu', {backHash:'#home', backText:'BACK TO OUR TEAM'}); break;
-    case 'team/ally-liao': html = renderTeamProfileHTML('ally-liao', {backHash:'#home', backText:'BACK TO OUR TEAM'}); break;
+    case 'team/heather-chao': html = renderTeamProfileHTML('heather-chao', {backHash:'#team', backText:'BACK TO OUR TEAM'}); break;
+    case 'team/ming-lu': html = renderTeamProfileHTML('ming-lu', {backHash:'#team', backText:'BACK TO OUR TEAM'}); break;
+    case 'team/ally-liao': html = renderTeamProfileHTML('ally-liao', {backHash:'#team', backText:'BACK TO OUR TEAM'}); break;
+    case 'team':
+      html = pageHome();
+      document.getElementById('app').innerHTML = html;
+      setTimeout(function(){ var el = document.querySelector('.team-grid'); if (el) el.scrollIntoView({behavior:'smooth'}); }, 50);
+      initAccordions(); initReveal(); return;
     default: html = pageHome();
   }
   document.getElementById('app').innerHTML = html;
@@ -255,7 +260,7 @@ function pageCashFlow(){
    ═══════════════════════════════════════════ */
 function pageBusinessPlans(){
   return serviceDetail({
-    img: 'assets/images/22_AccSubHome05_BusinessPlan.png',
+    img: 'assets/images/22_AccSubHome05_BusinessPlanV2.png',
     title: 'BUSINESS PLANS',
     subtitle: 'From Vision to Plan, From Plan to Progress',
     intro: 'Starting a business requires more than courage. Bird &amp; Yang helps clients test ideas, choose the right structure, prepare funding-ready documentation, and build practical plans grounded in research, numbers, and risks.',

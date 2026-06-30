@@ -145,7 +145,7 @@ var TEAM_PROFILES = {
       { title: 'Strategic perspective', desc: 'MBA-level strategic analysis and business advisory capability.' }
     ],
     contact: {
-      qualifications: ['MPA(CA) — Massey University', 'MBA — Fudan University'],
+      qualifications: ['MPA(CA) — Massey University', 'MBA — Fudan University', 'Bachelor\'s Degree in Advertising – Xiamen University, China', 'Funds qualification'],
       phone: '+64 9 590 0944',
       email: 'ally@birdyang.co.nz'
     }
@@ -202,6 +202,10 @@ function renderTeamProfileHTML(id, opts) {
           '<p class="profile-role">' + profile.role + '</p>' +
           '<p class="profile-bio">' + profile.bio + '</p>' +
         '</div>' +
+      '</div>' +
+      '<div class="profile-summary-section" style="margin-top:32px;margin-bottom:32px">' +
+        '<h3 style="font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:12px">PROFILE SUMMARY</h3>' +
+        '<p style="font-size:.85rem;color:var(--charcoal);line-height:1.85">' + profile.summary + '</p>' +
       '</div>' +
       '<div class="profile-body">' +
         '<div class="profile-main">' +

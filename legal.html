@@ -74,7 +74,7 @@ const servicePages = {
     title: 'IMMIGRATION',
     subtitle: 'Clear Legal Guidance for Your New Beginning',
     breadcrumb: 'IMMIGRATION',
-    img: 'assets/images/03_LegalExpertise_LegalSubhome01_Immigration.png',
+    img: 'assets/images/03_LegalExpertise_LegalSubhome01_ImmigrationV3.png',
     intro: 'At Bird & Yang, our experienced legal team provides clear, practical advice on immigration matters across New Zealand and a wide range of cross-border situations. We help individuals, families, and businesses achieve their goals with confidence—backed by deep legal knowledge and a commitment to achieving the best possible outcomes.',
     items: [
       { title: 'Skilled Migrant Category Residence Visas', desc: 'Points-based assessment, job offer support, and qualification recognition' },
@@ -94,7 +94,7 @@ const servicePages = {
     ]
   },
   property: {
-    img: 'assets/images/05_LegalExpertise_LegalSubhome02_PropertyV3.png',
+    img: 'assets/images/05_LegalExpertise_LegalSubhome02_PropertyV4.png',
     title: 'PROPERTY & DEVELOPMENT',
     subtitle: 'Practical Legal Support for Property Transactions and Development Matters',
     breadcrumb: 'PROPERTY & DEVELOPMENT',
@@ -118,7 +118,7 @@ const servicePages = {
     ]
   },
   'business-law': {
-    img: 'assets/images/06_LegalExpertise_LegalSubhome03_BusinessLawV3.png',
+    img: 'assets/images/06_LegalExpertise_LegalSubhome03_BusinessLawV4.png',
     title: 'BUSINESS LAW',
     subtitle: 'Supporting Businesses from Structure to Growth',
     breadcrumb: 'BUSINESS LAW',
@@ -142,7 +142,7 @@ const servicePages = {
     ]
   },
   'estate-planning': {
-    img: 'assets/images/07_LegalExpertise_LegalSubhome04_EstateV3.png',
+    img: 'assets/images/07_LegalExpertise_LegalSubhome04_EstateV4.png',
     title: 'ESTATE PLANNING, TRUSTS & WILLS',
     subtitle: 'Protecting Families, Assets and Future Intentions',
     breadcrumb: 'ESTATE PLANNING, TRUSTS & WILLS',
@@ -360,7 +360,7 @@ function renderBusinessInvestor() {
         <h1>BUSINESS &amp; INVESTOR VISAS</h1>
         <p class="hero-sub">Invest with Confidence, Move Forward with Clarity</p>
       </div>
-      <div style="flex:1;background:url('assets/images/04_LegalExpertise_LegalSubhome01_Immigration_Feature_InvestorV4.png') center/cover no-repeat;min-height:200px"></div>
+      <div style="flex:1;background:url('assets/images/04_LegalExpertise_LegalSubhome01_Immigration_Feature_InvestorV5.png') center/cover no-repeat;min-height:200px"></div>
     </div>
 
     <section>
@@ -510,7 +510,7 @@ function renderBusinessInvestor() {
 }
 
 function renderTeamProfile(id) {
-  return renderTeamProfileHTML(id, {backHash: '#home', backText: 'BACK TO OUR TEAM'}) || renderHome();
+  return renderTeamProfileHTML(id, {backHash: '#team', backText: 'BACK TO OUR TEAM'}) || renderHome();
 }
 
 /* ─── ROUTER ─── */
@@ -526,18 +526,24 @@ function render() {
 
   if (route === 'home') {
     app.innerHTML = renderHome();
+    window.scrollTo(0, 0);
+  } else if (route === 'team') {
+    app.innerHTML = renderHome();
+    setTimeout(function(){ var el = document.querySelector('.team-grid'); if (el) el.scrollIntoView({behavior:'smooth'}); }, 50);
   } else if (route === 'business-investor') {
     app.innerHTML = renderBusinessInvestor();
+    window.scrollTo(0, 0);
   } else if (route.startsWith('team/')) {
     const id = route.replace('team/', '');
     app.innerHTML = renderTeamProfile(id);
+    window.scrollTo(0, 0);
   } else if (servicePages[route]) {
     app.innerHTML = renderServiceDetail(route);
+    window.scrollTo(0, 0);
   } else {
     app.innerHTML = renderHome();
+    window.scrollTo(0, 0);
   }
-
-  window.scrollTo(0, 0);
 }
 
 /* ─── ACCORDION TOGGLE ─── */

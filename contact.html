@@ -88,18 +88,58 @@ function renderHome() {
           '<span class="tab" data-tab="consulting-hr">Consulting &ndash; HR</span>' +
           '<span class="tab" data-tab="consulting-insurance">Consulting &ndash; Insurance</span>' +
         '</div>' +
-        '<div class="values-grid">' +
+        '<div class="values-grid" id="doc-panel-legal">' +
           '<div class="value-card">' +
             '<h3>Terms of Engagement</h3>' +
-            '<p><a href="#" style="color:var(--gold);font-size:.78rem">Download PDF</a></p>' +
+            '<p><a href="assets/pdf/Bird%26Yang_Legal_Terms_of_Engagement.pdf" target="_blank" style="color:var(--gold);font-size:.78rem">Download PDF</a></p>' +
           '</div>' +
           '<div class="value-card">' +
             '<h3>Client Care Information</h3>' +
-            '<p><a href="#" style="color:var(--gold);font-size:.78rem">Download PDF</a></p>' +
+            '<p><a href="assets/pdf/Bird%26Yang_Legal_Client_Care_Information.pdf" target="_blank" style="color:var(--gold);font-size:.78rem">Download PDF</a></p>' +
           '</div>' +
           '<div class="value-card">' +
             '<h3>AML Public Statement</h3>' +
-            '<p><a href="#" style="color:var(--gold);font-size:.78rem">Download PDF</a></p>' +
+            '<p><a href="assets/pdf/Bird%26Yang_Legal_AML.pdf" target="_blank" style="color:var(--gold);font-size:.78rem">Download PDF</a></p>' +
+          '</div>' +
+        '</div>' +
+        '<div class="values-grid" id="doc-panel-accounting" style="display:none">' +
+          '<div class="value-card">' +
+            '<h3>Terms of Engagement</h3>' +
+            '<p><a href="assets/pdf/Bird%26Yang_Accounting_Terms_of_Engagement.pdf" target="_blank" style="color:var(--gold);font-size:.78rem">Download PDF</a></p>' +
+          '</div>' +
+          '<div class="value-card">' +
+            '<h3>AML Public Statement</h3>' +
+            '<p><a href="assets/pdf/Bird%26Yang_Accounting_AML.pdf" target="_blank" style="color:var(--gold);font-size:.78rem">Download PDF</a></p>' +
+          '</div>' +
+        '</div>' +
+        '<div class="values-grid" id="doc-panel-consulting-immigration" style="display:none">' +
+          '<div class="value-card">' +
+            '<h3>Terms of Engagement</h3>' +
+            '<p><a href="assets/pdf/Bird%26Yang_Immigration_Consulting_Terms_of_Engagement.pdf" target="_blank" style="color:var(--gold);font-size:.78rem">Download PDF</a></p>' +
+          '</div>' +
+          '<div class="value-card">' +
+            '<h3>AML Public Statement</h3>' +
+            '<p><a href="assets/pdf/Bird%26Yang_Immigration_Consulting_AML.pdf" target="_blank" style="color:var(--gold);font-size:.78rem">Download PDF</a></p>' +
+          '</div>' +
+        '</div>' +
+        '<div class="values-grid" id="doc-panel-consulting-hr" style="display:none">' +
+          '<div class="value-card">' +
+            '<h3>Terms of Engagement</h3>' +
+            '<p><a href="assets/pdf/Bird%26Yang_HR_Consulting_Terms_of_Engagement.pdf" target="_blank" style="color:var(--gold);font-size:.78rem">Download PDF</a></p>' +
+          '</div>' +
+          '<div class="value-card">' +
+            '<h3>AML Public Statement</h3>' +
+            '<p><a href="assets/pdf/Bird%26Yang_HR_Consulting_AML.pdf" target="_blank" style="color:var(--gold);font-size:.78rem">Download PDF</a></p>' +
+          '</div>' +
+        '</div>' +
+        '<div class="values-grid" id="doc-panel-consulting-insurance" style="display:none">' +
+          '<div class="value-card">' +
+            '<h3>Terms of Engagement</h3>' +
+            '<p><a href="assets/pdf/Bird%26Yang_Insurance_Terms_of_Engagement.pdf" target="_blank" style="color:var(--gold);font-size:.78rem">Download PDF</a></p>' +
+          '</div>' +
+          '<div class="value-card">' +
+            '<h3>AML Public Statement</h3>' +
+            '<p><a href="assets/pdf/Bird%26Yang_Insurance_AML.pdf" target="_blank" style="color:var(--gold);font-size:.78rem">Download PDF</a></p>' +
           '</div>' +
         '</div>' +
       '</div>' +
@@ -161,7 +201,7 @@ function renderBook() {
         '<h1>BOOK A CONSULTATION</h1>' +
         '<p class="hero-sub">Choose the Right Service Area and Request A Consultation with Our Team</p>' +
       '</div>' +
-      '<div style="flex:1;background:url(assets/images/53_BookAConsultation_HomePage.png) center/cover no-repeat;min-height:200px"></div>' +
+      '<div style="flex:1;background:url(assets/images/53_BookAConsultation_HomePageV3.png) center/cover no-repeat;min-height:200px"></div>' +
     '</div>' +
 
     '<section class="section">' +
@@ -169,7 +209,7 @@ function renderBook() {
         '<div class="two-col">' +
           '<div class="main-content">' +
             '<p class="section-label" style="text-align:left">CONSULTATION REQUEST FORM</p>' +
-            '<form id="book-form" class="mt-24">' +
+            '<form id="book-form" class="mt-24" lang="en">' +
               '<input type="hidden" name="form_type" value="Consultation Booking">' +
               '<div style="position:absolute;left:-9999px" aria-hidden="true"><input type="text" name="_honey" tabindex="-1" autocomplete="off"></div>' +
               '<div class="form-group">' +
@@ -323,6 +363,10 @@ function bindTabs() {
     tab.addEventListener('click', function() {
       tabs.forEach(function(t) { t.classList.remove('active'); });
       tab.classList.add('active');
+      var panels = document.querySelectorAll('[id^="doc-panel-"]');
+      panels.forEach(function(p) { p.style.display = 'none'; });
+      var target = document.getElementById('doc-panel-' + tab.getAttribute('data-tab'));
+      if (target) target.style.display = '';
     });
   });
 }
