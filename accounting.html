@@ -44,7 +44,7 @@ function route(){
     case 'team':
       html = pageHome();
       document.getElementById('app').innerHTML = html;
-      setTimeout(function(){ var el = document.querySelector('.team-grid'); if (el) el.scrollIntoView({behavior:'smooth'}); }, 50);
+      setTimeout(function(){ var g = document.querySelector('.team-grid'); if (g) { var nav = document.querySelector('nav'); var navH = nav ? nav.offsetHeight : 76; var sec = g.closest('section'); var t = (sec || g).getBoundingClientRect().top + window.scrollY - navH - 20; window.scrollTo({ top: t, behavior: 'smooth' }); } }, 50);
       initAccordions(); initReveal(); return;
     default: html = pageHome();
   }
