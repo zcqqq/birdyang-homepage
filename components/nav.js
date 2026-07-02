@@ -12,12 +12,14 @@ function renderNav(opts) {
 
   var pages = { home:'index.html', legal:'legal.html', accounting:'accounting.html', consulting:'consulting.html', why:'why.html', contact:'contact.html' };
 
+  var hash = window.location.hash || '';
+  var pagePath = pages[active].replace(/\.html$/, '');
   var enToggle = isZh
-    ? '<a href="' + prefix + pages[active] + '">EN</a>'
+    ? '<a href="' + prefix + pagePath + hash + '">EN</a>'
     : '<a href="#" class="active-lang">EN</a>';
   var zhToggle = isZh
     ? '<a href="#" class="active-lang">中文</a>'
-    : '<a href="zh/' + pages[active] + '">中文</a>';
+    : '<a href="zh/' + pagePath + hash + '">中文</a>';
 
   var navLinks = '';
   var mobileLinks = '';

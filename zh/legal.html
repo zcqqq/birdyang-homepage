@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>法律业务 | 德扬集团 Bird & Yang</title>
-<meta name="description" content="德扬律师事务所提供移民、房产、商业法务、家庭与雇佣、诉讼等一站式法律服务，以专业指引方向，以清晰守护所托。">
+<title>法律业务 | 移民、房产、商业法务 | 德扬集团 Bird & Yang</title>
+<meta name="description" content="德扬律师事务所提供移民、房产、商业法务、家庭与雇佣、诉讼及跨境法律服务，以专业指引方向，以清晰守护所托。">
 <link rel="canonical" href="https://birdyang.pages.dev/zh/legal.html">
 <link rel="alternate" hreflang="zh" href="https://birdyang.pages.dev/zh/legal.html">
 <link rel="alternate" hreflang="en" href="https://birdyang.pages.dev/legal.html">
@@ -12,8 +12,6 @@
 <link rel="stylesheet" href="../style.css">
 <style>
 body{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",Verdana,Geneva,sans-serif}
-.hero-banner h1{letter-spacing:.15em}
-.section-title{letter-spacing:.06em}
 </style>
 </head>
 <body>
@@ -21,229 +19,742 @@ body{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans S
 <!-- NAVIGATION -->
 <div id="site-nav"></div>
 <script src="/components/nav.js"></script>
-<script>renderNav({active:"legal",lang:"zh",transparent:true})</script>
+<script>renderNav({active:"legal",lang:"zh"})</script>
 
-<!-- APP -->
 <main id="app"></main>
+
+<script src="/components/section-header.js"></script>
+<script>
+(function() {
+
+/* ═══════════════════════════════════════════
+   TEAM DATA (Chinese)
+   ═══════════════════════════════════════════ */
+
+const TEAM_PROFILES_ZH = {
+  'marshall-bird': {
+    name: 'Marshall Bird',
+    role: '合伙人 / 大律师',
+    photo: '../assets/team/marshall-bird.png',
+    bio: 'Marshall Bird 是德扬的合伙人，在移民、商业、房地产法和投资领域拥有丰富经验，横跨美国和新西兰。他为个人、企业家和企业提供战略性、务实的建议，帮助他们应对复杂的法律挑战并实现持久成功。',
+    expertise: ['移民', '商业法', '房地产', '投资', '创新商业融资', '创业'],
+    summary: 'Marshall 拥有美国密歇根大学法学硕士学位和新西兰奥克兰大学法学学士学位。他在移民、商业、房地产法和投资领域拥有美国和新西兰的丰富经验。Marshall 曾在加利福尼亚州比佛利山庄担任律师，就商业收购、创业和移民事务提供建议。他的文章曾发表于《综艺》和《好莱坞报道》。他创立了新西兰律师事务所，并在融资、创业、媒体制作和出版领域拥有丰富的实际经验。',
+    highlights: [
+      { title: '美国与新西兰法律洞察', desc: '在两个市场拥有深厚的跨境经验。' },
+      { title: '商业与移民经验', desc: '在创业和签证方面提供务实指导。' },
+      { title: '创始人视角', desc: '在创业、金融和媒体领域拥有实际经验。' }
+    ],
+    contact: {
+      qualifications: ['法学硕士 — 美国密歇根大学', '法学学士 — 新西兰奥克兰大学'],
+      phone: '+64 9 369 5989',
+      email: 'marshall@marshallbird.com'
+    }
+  },
+  'aimee-yang': {
+    name: 'Aimee Yang',
+    role: '合伙人 / 大律师',
+    photo: '../assets/team/aimee-yang.png',
+    bio: 'Aimee Yang 是德扬的合伙人，主管商业与房地产法律业务。她就商业结构、公司法、房地产开发、租赁和广泛的商业事务提供建议，提供务实、商业化的解决方案，帮助客户实现目标。',
+    expertise: ['公司与商业法', '房地产', '融资', '移民', '商业诉讼', '海外投资'],
+    summary: 'Aimee 拥有新西兰奥克兰大学商业学士和法学学士学位，以及中国南京财经大学管理学学士学位。她主管商业与房地产法律业务，就商业结构、公司法、房地产开发、租赁和商业事务提供建议。Aimee 此前曾在香港一家领先的国际律师事务所的公司与金融团队工作，就公开发售和并购提供建议。她是企业和私人客户的值得信赖的顾问，专注于房地产、海外投资、诉讼、居留和商业/投资签证。Aimee 精通普通话和粤语。',
+    highlights: [
+      { title: '商业与房地产领导力', desc: '在日常事务和复杂交易中拥有广泛经验。' },
+      { title: '跨境金融经验', desc: '拥有香港公司与金融工作背景。' },
+      { title: '多语言客户服务', desc: '精通普通话和粤语。' }
+    ],
+    contact: {
+      qualifications: ['商业学士、法学学士 — 新西兰奥克兰大学', '管理学学士 — 中国南京财经大学'],
+      phone: '+64 9 590 0944',
+      email: 'aimee@birdyang.co.nz'
+    }
+  },
+  'julia-huang': {
+    name: 'Julia Huang',
+    role: '大律师 / 高级律师',
+    photo: '../assets/team/julia-huang.png',
+    bio: 'Julia Huang 是一名大律师和高级律师，拥有跨境法律背景，执业范围广泛，涵盖公司与商业法、房地产法、移民法、家庭法和雇佣法。她精通英语和普通话，以全球视野和客户为中心的方法提供务实、战略性的解决方案。',
+    expertise: ['公司与商业法', '房地产', '移民', '家庭法', '雇佣法'],
+    summary: 'Julia 拥有伦敦政治经济学院（LSE）法学硕士学位和奥克兰理工大学法学学士学位，并曾在北京大学学习。她在中国担任商业律师数年，之后成为新西兰持牌移民顾问并建立了自己的移民咨询公司。她后来在新西兰完成了第二个法学学士学位，并成为一名新西兰大律师和律师。她现在执业于公司与商业法、房地产法、移民法、家庭法和雇佣法。Julia 精通英语和普通话，为她的执业带来强大的跨境视角。',
+    highlights: [
+      { title: '国际法律教育', desc: '拥有北京大学、奥克兰理工大学和伦敦政治经济学院的学术基础。' },
+      { title: '跨境法律经验', desc: '在中国和新西兰均拥有专业经验。' },
+      { title: '以客户为中心的多面手', desc: '在商业和个人法律事务方面拥有广泛的执业范围。' }
+    ],
+    contact: {
+      qualifications: ['法学硕士 — 伦敦政治经济学院（LSE）', '法学学士 — 奥克兰理工大学；北京大学'],
+      phone: '+64 21 1059 862',
+      email: 'julia@birdyang.co.nz'
+    }
+  },
+  'cici-du': {
+    name: 'Cici Du',
+    role: '注册法律行政官',
+    photo: '../assets/team/cici-du.png',
+    bio: 'Cici Du 是德扬的注册法律行政官，在法律行业拥有超过8年的经验。她就广泛的事务为客户提供建议和支持，专注于房地产交易、交割以及房地产、家庭和商业事务方面的法律支持。Cici 以其对细节的关注、务实的方法和致力于为客户提供顺畅高效结果的承诺而闻名。',
+    expertise: ['产权转让', '房地产交易', '开发项目', '商业事务', '家庭法'],
+    summary: 'Cici 拥有超过8年的经验，就广泛的事务提供法律支持和建议，专注于房地产、家庭和商法。她拥有英国纽卡斯尔大学法学学士学位和悉尼大学文学学士学位。Cici 是合格的注册法律行政官，已完成新西兰开放理工学院的法律行政文凭。她致力于提供高质量、以客户为中心的服务，并确保在她处理的每个事务中保持清晰的沟通和高效的结果。',
+    highlights: [
+      { title: '8年以上经验', desc: '在房地产交易、交割和法律支持方面拥有丰富经验。' },
+      { title: '顺畅的交易', desc: '注重细节，高效地为客户提供无缝结果。' },
+      { title: '以客户为中心的支持', desc: '致力于提供务实建议和卓越服务。' }
+    ],
+    contact: {
+      qualifications: ['法学学士 — 英国纽卡斯尔大学', '文学学士 — 澳大利亚悉尼大学', '法律行政文凭 — 新西兰开放理工学院'],
+      phone: '+64 21 114 2806',
+      email: 'cici@birdyang.co.nz'
+    }
+  },
+  'rockie-wei': {
+    name: 'Rockie Wei',
+    role: '法律行政官 / 保险顾问',
+    photo: '../assets/team/rockie-wei.png',
+    bio: 'Rockie Wei 是德扬的法律行政官和保险顾问，拥有强大的商业背景和以客户为先的心态。他在房地产交易、贷款相关事务和保险解决方案方面提供务实支持，帮助个人和企业以关怀、清晰和承诺来应对他们的需求。',
+    expertise: ['房地产交易', '贷款相关事务', '客户服务', '汽车保险', '房屋保险'],
+    summary: 'Rockie 拥有国际贸易和商业学士学位。他曾是新西兰的企业主，通过强大的领导力、运营关注点和以客户为中心的方法发展了他的团队和收入。他于2023年加入德扬，将他的商业洞察和以客户为先的心态带到保险业务。Rockie 持有汽车和房屋保险资格。',
+    highlights: [
+      { title: '企业主视角', desc: '借鉴他作为企业主的经验来理解客户需求并提供务实解决方案。' },
+      { title: '房地产与贷款支持', desc: '在房地产交易和贷款相关事务方面提供可靠支持。' },
+      { title: '汽车与房屋保险资格', desc: '持有汽车和房屋保险资格，提供专业保险建议。' }
+    ],
+    contact: {
+      qualifications: ['国际贸易和商业学士'],
+      phone: '+64 9 590 0948',
+      email: 'rockie@birdyang.co.nz'
+    }
+  },
+  'ming-lu': {
+    name: 'Ming Lu',
+    role: '信托与财务经理（中国注册会计师）',
+    photo: '../assets/team/ming-lu.png',
+    bio: 'Ming Lu 是德扬的信托与财务经理，在会计、审计、财务和企业管理方面拥有深厚背景。',
+    expertise: ['会计与审计支持', '财务咨询', '企业融资', '尽职调查', '投资与经济管理'],
+    summary: 'Ming Lu 拥有投资经济管理学士学位，是中国注册会计师，持有证券、基金和期货资格。她在大连环宇联合会计师事务所拥有多年经验，从助理晋升为合伙人。她进行过审计、评估工作、财务咨询、运营指导和审查，并担任大连市科技局财务审查专家和辽宁省注册会计师协会兼职检查员。她后来在长江证券股份有限公司从事企业融资工作。她强大的会计、财务和企业管理背景使她能够以洞察力和精确性支持客户。',
+    highlights: [
+      { title: '深厚的会计背景', desc: '在审计和财务咨询方面拥有多年经验。' },
+      { title: '监管审查经验', desc: '参与公共和专业审查工作。' },
+      { title: '企业融资洞察', desc: '在投资尽职调查和融资服务方面拥有经验。' }
+    ],
+    contact: {
+      qualifications: ['投资经济管理学士', '中国注册会计师；证券、基金、期货资格'],
+      phone: '+64 9 590 0943',
+      email: 'ming@birdyang.co.nz'
+    }
+  },
+  'heather-chao': {
+    name: 'Heather Chao',
+    role: '特许会计师（CA）',
+    photo: '../assets/team/heather-chao.png',
+    bio: 'Heather Chao 是特许会计师，在会计和商业咨询方面拥有超过20年的经验。她与中小企业和成长型企业合作，提供推动绩效、提高效率和支持可持续增长的务实财务解决方案。',
+    expertise: ['中小企业会计', '现金流管理', 'IRD谈判', '制度与流程', 'MYOB、Xero及ERP系统'],
+    summary: 'Heather 持有特许会计师资格，在广泛的行业拥有超过20年的经验。她提供端到端的会计和咨询服务，帮助客户提高财务清晰度、加强控制并做出自信决策。Heather 与企业主和管理团队紧密合作，简化流程、实施正确的系统，并通过务实、以商业为重点的建议支持业务增长。',
+    highlights: [
+      { title: '20年以上经验', desc: '在广泛的行业和企业类型方面拥有深厚专业知识。' },
+      { title: '成长与变革顾问', desc: '帮助企业扩展、适应和改善财务绩效。' },
+      { title: '系统专家', desc: '在MYOB、Xero和ERP系统实施方面提供务实支持。' }
+    ],
+    contact: {
+      qualifications: ['特许会计师（CA）'],
+      phone: '+64 21 284 3737',
+      email: 'heather@birdyang.co.nz'
+    }
+  },
+  'ally-liao': {
+    name: 'Ally Liao',
+    role: 'MBA，特许会计师候选人',
+    photo: '../assets/team/ally-liao.png',
+    bio: 'Ally Liao 以扎实的会计知识、商业洞察力和执行力支持德扬的会计与商业咨询业务。',
+    expertise: ['会计行政', 'GST与IRD合规', '商业咨询支持', 'Xero与MYOB', '跨境商业视角'],
+    summary: 'Ally 在梅西大学完成了MPA(CA)学位，并持有复旦大学MBA学位。她此前在中国拥有私募股权投资、商业项目、广告策划和创业经验，包括创立一家在上海运营超过10年的餐饮品牌。在德扬，Ally 以分析性、有条理和以商业意识的方式支持会计和咨询相关工作。她的背景使她能够将财务信息与更广泛的商业考虑联系起来，帮助客户更好地理解自己的处境、改善决策并自信前行。',
+    highlights: [
+      { title: '会计专业素养', desc: '在会计行政和合规方面拥有扎实基础。' },
+      { title: '商业判断力', desc: '拥有私募股权和创业背景。' },
+      { title: '战略视角', desc: 'MBA级别的战略分析和商业咨询能力。' }
+    ],
+    contact: {
+      qualifications: ['MPA(CA) — 梅西大学', 'MBA — 复旦大学', '广告学士学位 — 厦门大学', '基金资格'],
+      phone: '+64 9 590 0944',
+      email: 'ally@birdyang.co.nz'
+    }
+  }
+};
+
+function renderTeamGrid(memberIds, opts) {
+  opts = opts || {};
+  var cards = memberIds.map(function(id) {
+    var p = TEAM_PROFILES_ZH[id];
+    if (!p) return '';
+    var href = (opts.hashPrefix || '#team/') + id;
+    return '<a class="team-card" href="' + href + '"><img src="' + (opts.imgBase || '') + p.photo + '" alt="' + p.name + '"><h4>' + p.name + '</h4><p>' + p.role + '</p></a>';
+  }).join('');
+  return sectionHeader('我们的团队', '专业团队') + '<div class="team-grid">' + cards + '</div>';
+}
+
+function renderTeamProfileHTML(id, opts) {
+  opts = opts || {};
+  var profile = TEAM_PROFILES_ZH[id];
+  if (!profile) return null;
+
+  var imgBase = opts.imgBase || '';
+  var backHash = opts.backHash || '#home';
+  var backText = opts.backText || '返回我们的团队';
+
+  var highlightsHTML = profile.highlights.map(function(h) {
+    return '<div class="highlight"><h4><img src="' + imgBase + '../assets/icons/icon_star.png" style="width:16px;height:16px;vertical-align:middle;margin-right:6px">' + h.title + '</h4><p>' + h.desc + '</p></div>';
+  }).join('');
+
+  var expertiseHTML = profile.expertise.map(function(e) {
+    return '<span>' + e + '</span>';
+  }).join('');
+
+  var qualificationsHTML = '';
+  if (profile.contact.qualifications && profile.contact.qualifications.length) {
+    qualificationsHTML = '<h3>教育背景</h3><ul style="list-style:none;padding:0;font-size:.85rem;color:var(--charcoal);line-height:2">' +
+      profile.contact.qualifications.map(function(q) { return '<li>' + q + '</li>'; }).join('') + '</ul>';
+  }
+
+  return '<div class="hero-banner team-hero" style="background:url(\'' + imgBase + '../assets/images/11_Team_memberPageV7.png\') center/cover no-repeat">' +
+      '<p class="breadcrumb">我们的团队</p>' +
+      '<h1>' + profile.name + '</h1>' +
+      '<p class="hero-sub">' + profile.role + '</p>' +
+    '</div>' +
+    '<section><div class="container">' +
+      '<a class="back-link" href="' + backHash + '">' + backText + '</a>' +
+      '<div class="profile-top">' +
+        '<div class="profile-photo-col">' +
+          '<img class="profile-photo" src="' + profile.photo + '" alt="' + profile.name + '" style="border-radius:8px;width:200px;height:auto;border:none">' +
+        '</div>' +
+        '<div>' +
+          '<h2 class="profile-name">' + profile.name + '</h2>' +
+          '<p class="profile-role">' + profile.role + '</p>' +
+          '<p class="profile-bio">' + profile.bio + '</p>' +
+        '</div>' +
+      '</div>' +
+      '<div class="profile-summary-section" style="margin-top:32px;margin-bottom:32px">' +
+        '<h3 style="font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:12px">个人简介</h3>' +
+        '<p style="font-size:.85rem;color:var(--charcoal);line-height:1.85">' + profile.summary + '</p>' +
+      '</div>' +
+      '<div class="profile-body">' +
+        '<div class="profile-main">' +
+          '<h3>专业领域</h3>' +
+          '<div class="expertise-badges">' + expertiseHTML + '</div>' +
+          qualificationsHTML +
+        '</div>' +
+        '<div class="profile-sidebar">' +
+          '<h3>个人亮点</h3>' +
+          '<div class="profile-highlights">' + highlightsHTML + '</div>' +
+          '<a href="contact.html#book" class="cta-btn primary" style="width:100%;display:block;text-align:center;margin-top:20px">预约咨询</a>' +
+          '<div class="profile-contact" style="margin-top:16px">' +
+            '<p><a href="tel:' + profile.contact.phone.replace(/\s/g, '') + '">' + profile.contact.phone + '</a></p>' +
+            '<p><a href="mailto:' + profile.contact.email + '">' + profile.contact.email + '</a></p>' +
+          '</div>' +
+        '</div>' +
+      '</div>' +
+    '</div></section>';
+}
+
+/* ═══════════════════════════════════════════
+   DATA
+   ═══════════════════════════════════════════ */
+
+const services = [
+  { id: 'immigration', title: '移民', subtitle: '以清晰和信心指引您穿越移民路径。', img: '../assets/images/02_LegalHome02_ImmigrationV2.png' },
+  { id: 'property', title: '房产与开发', subtitle: '以实用洞察支持购买、销售和开发事务。', img: '../assets/images/02_LegalHome03_PropertyV2.png' },
+  { id: 'business-law', title: '商业法务', subtitle: '帮助企业构建结构、成长并自信地管理法律风险。', img: '../assets/images/02_LegalHome04_BusinessLawV2.png' },
+  { id: 'estate-planning', title: '家族财富规划、信托与遗嘱', subtitle: '通过深思熟虑的规划保护您的家庭、资产和未来。', img: '../assets/images/02_LegalHome05_Estate.png' },
+  { id: 'family-employment', title: '家庭与雇佣', subtitle: '为家庭和工作场所事务提供务实指导。', img: '../assets/images/02_LegalHome06_Family%26EmploymentV2.png' },
+  { id: 'litigation', title: '诉讼与争议解决', subtitle: '帮助您评估选项、解决争议并清晰前行。', img: '../assets/images/02_LegalHome07_Dispute.png' },
+  { id: 'china-desk', title: '中国业务 / 跨境服务', subtitle: '以同一个值得信赖的法律团队连接不同的世界。', img: '../assets/images/02_LegalHome08_China.png' }
+];
+
+const servicePages = {
+  immigration: {
+    title: '移民',
+    subtitle: '为您的新开始提供清晰的法律指导',
+    breadcrumb: '移民',
+    img: '../assets/images/03_LegalExpertise_LegalSubhome01_ImmigrationV3.png',
+    intro: '在德扬，我们经验丰富的法律团队就新西兰和广泛的跨境情况提供清晰、务实的移民事务建议。我们帮助个人、家庭和企业自信地实现他们的目标——以深厚的法律知识和致力于实现最佳可能结果的承诺为后盾。',
+    items: [
+      { title: '技术移民类别居留签证', desc: '积分评估、工作邀请支持和资格认证' },
+      { title: '认证雇主工作签证（AEWV）', desc: '雇主认证、职位检查申请和当前框架下的工作签证支持' },
+      { title: '商业与投资移民签证', desc: '探索投资者、企业家和商业移民路径。', featured: true, link: '#business-investor' },
+      { title: '家庭签证', desc: '基于伴侣关系、父母、兄弟姐妹和受抚养子女居留申请' },
+      { title: '学生签证', desc: '入学支持、衔接课程、毕业后工作签证过渡和付费学生申请' },
+      { title: '访客与打工度假签证', desc: '旅行和临时居留安排' },
+      { title: '难民与受保护人士申请', desc: '难民身份申请、受保护人士申请和领事事务' },
+      { title: '上诉与审查', desc: '移民和保护法庭上诉、部长特别指示请求和司法审查程序' },
+      { title: '美国与中国移民支持', desc: '非移民和移民签证、绿卡、商业相关申请和跨境咨询' }
+    ],
+    sidebar: [
+      { title: '资深法律指导', desc: '我们的资深律师为每个案件带来丰富的经验和战略洞察。' },
+      { title: '多语言支持', desc: '我们以英语、普通话和越南语沟通，让您的体验无缝顺畅。' },
+      { title: '跨境专业知识', desc: '对新西兰、美国、中国及其他地区移民框架的深入理解。' }
+    ]
+  },
+  property: {
+    title: '房产与开发',
+    subtitle: '为房产交易和开发事务提供务实法律支持',
+    breadcrumb: '房产与开发',
+    img: '../assets/images/05_LegalExpertise_LegalSubhome02_PropertyV4.png',
+    intro: '在德扬，我们指导客户完成住宅、商业和开发房产事务，提供实用建议和细致关注。从首次购房到复杂项目，我们帮助您识别风险、构建交易并自信推进。',
+    items: [
+      { title: '住宅与商业买卖', desc: '审查和建议协议条款、协商条件、管理交割并确保反洗钱合规' },
+      { title: '产权审查与尽职调查', desc: '识别产权负担、地役权、契约、交叉租赁问题及产权缺陷' },
+      { title: '首次购房', desc: '指导首次购房者完成 KiwiSaver 提款、首次购房补贴资格及法律流程' },
+      { title: '土地使用与开发', desc: '资源许可申请、地区规划合规、海外投资法考量及开发可行性评估' },
+      { title: '分割与单元产权开发', desc: '土地分割申请、交叉租赁转永久产权、单元产权开发及分期开发文件' },
+      { title: '租赁', desc: '商业、零售和住宅租赁谈判、租金审查、续约及租户/房东义务' },
+      { title: '房产融资与再融资', desc: '抵押贷款文件、再融资、担保安排及 Bright-line 测试影响' },
+      { title: '合资与开发融资', desc: '构建房产合资、利润分享协议和退出策略' },
+      { title: '复杂地役权与契约', desc: '起草和注册地役权、限制性契约和住宅协会规则' },
+      { title: '开发融资', desc: '帮助客户构建分割和分期房产开发的财务安排' }
+    ],
+    sidebar: [
+      { title: '实用房产指导', desc: '从协议到交割及之后的清晰建议。' },
+      { title: '注重细节的尽职调查', desc: '帮助您在承诺前发现风险。' },
+      { title: '清晰沟通', desc: '积极响应，让每一步都易于理解。' }
+    ]
+  },
+  'business-law': {
+    title: '商业法务',
+    subtitle: '支持企业从结构搭建到成长',
+    breadcrumb: '商业法务',
+    img: '../assets/images/06_LegalExpertise_LegalSubhome03_BusinessLawV4.png',
+    intro: '在德扬，我们帮助企业构建坚实的法律基础、管理风险并自信地做出商业决策。从设立和日常运营到重大交易和重组，我们的团队提供针对您目标的实用建议。',
+    items: [
+      { title: '公司设立与注册', desc: '根据《1993年公司法》进行注册、章程、股东协议和董事职责' },
+      { title: '商业收购与出售', desc: '尽职调查、买卖协议、商誉评估和卖方/买方咨询' },
+      { title: '商业合同', desc: '供应协议、分销协议、贸易条款、许可和特许经营安排' },
+      { title: '公司治理', desc: '董事会决议、年度股东大会、合规义务和《公司法》报告要求' },
+      { title: '重组与破产', desc: '自愿管理、清算、接管、债权人妥协和困境企业咨询' },
+      { title: '并购', desc: '构建交易、监管批准、竞争许可和交易后整合' },
+      { title: '银行与金融', desc: '贷款和担保文件、融资协议和融资安排' },
+      { title: '知识产权', desc: '商标保护、许可安排、保密协议和品牌战略' },
+      { title: '创业与新 venture', desc: '实体选择、创始人协议、资本募集和早期商业安排' },
+      { title: '健康与安全合规', desc: '就《2015年工作健康与安全法》下的义务、风险管理框架和 WorkSafe 参与提供建议' }
+    ],
+    sidebar: [
+      { title: '战略性商业建议', desc: '平衡法律保护与商业现实的建议。' },
+      { title: '务实商业洞察', desc: '在成长、交易和风险管理方面提供支持。' },
+      { title: '响应式合作伙伴', desc: '我们花时间了解您的企业和目标。' }
+    ]
+  },
+  'estate-planning': {
+    title: '家族财富规划、信托与遗嘱',
+    subtitle: '保护家庭、资产和未来意图',
+    breadcrumb: '家族财富规划、信托与遗嘱',
+    img: '../assets/images/07_LegalExpertise_LegalSubhome04_EstateV4.png',
+    intro: '为未来规划是一种关怀之举。在德扬，我们帮助客户通过清晰的法律结构保护家庭、资产和意图——从遗嘱和持久授权书到信托、继承规划和遗产管理。',
+    items: [
+      { title: '家庭信托', desc: '根据《2019年信托法》进行设立、变更、重置、受托人任命和持续合规' },
+      { title: '遗嘱', desc: '起草、更新和就遗嘱意图、复杂遗产和混合家庭的影响提供建议' },
+      { title: '持久授权书', desc: '财产EPA和个人护理与福利EPA文件，确保您的意愿被清晰记录' },
+      { title: '遗产管理', desc: '遗嘱认证和遗产管理书申请、资产分配、执行人和管理人支持' },
+      { title: '资产保护', desc: '构建信托、实体和所有权安排以保护家庭和企业资产免受未来风险' },
+      { title: '继承规划', desc: '代际财富转移、企业继承策略和家族企业有序过渡规划' },
+      { title: '争议遗产与索赔', desc: '就《1955年家庭保护法》、《1949年法律改革（遗嘱承诺）法》和信托争议下的索赔提供建议' }
+    ],
+    sidebar: [
+      { title: '面向未来的规划', desc: '我们在问题出现前帮助建立正确的结构。' },
+      { title: '家庭资产保护', desc: '保护财富、意图和关系的清晰建议。' },
+      { title: '与您的顾问协调', desc: '在需要时我们与会计师和其他顾问合作。' }
+    ]
+  },
+  'family-employment': {
+    title: '家庭与雇佣',
+    subtitle: '为家庭、关系和职场事务提供平衡指导',
+    breadcrumb: '家庭与雇佣',
+    img: '../assets/images/08_LegalExpertise_LegalSubhome05_Family%26EmploymentV3.png',
+    intro: '家庭和职场事务 deeply personal。我们提供务实、敏感的建议，帮助客户以清晰、公平和信心的方式处理关系财产、育儿问题、雇佣关切和争议。',
+    items: [
+      { title: '关系财产', desc: '根据《1976年财产（关系）法》进行资产分割、估值争议和分类', group: '家庭法' },
+      { title: '分居协议', desc: '协商和起草分居条款，包括儿童、财务和共享财产安排', group: '家庭法' },
+      { title: '财产协议', desc: '在进入或关系期间保护个人资产，按要求提供独立法律建议', group: '家庭法' },
+      { title: '育儿安排', desc: '儿童照顾、日常和接触安排、搬迁事务和监护权问题', group: '家庭法' },
+      { title: '婚姻解除', desc: '申请程序、同意令和管辖权要求', group: '家庭法' },
+      { title: '家庭信托与遗产争议', desc: '涉及信托、争议遗嘱和家庭与遗产法交叉领域的索赔', group: '家庭法' },
+      { title: '雇佣协议', desc: '起草、审查和建议个人和集体雇佣协议', group: '雇佣法' },
+      { title: '个人申诉', desc: '不公正解雇、不利待遇、歧视、欺凌和骚扰索赔', group: '雇佣法' },
+      { title: '裁员与重组', desc: '就公平程序、协商义务和权利为雇主和雇员提供建议', group: '雇佣法' },
+      { title: '职场政策与合规', desc: '起草职场政策、健康与安全义务和《假期法》合规', group: '雇佣法' },
+      { title: '调解与雇佣关系局', desc: '在调解和ERA听证会以及雇佣法庭程序中代表', group: '雇佣法' },
+      { title: '竞业限制', desc: '限制和竞业条款的可执行性', group: '雇佣法' }
+    ],
+    sidebar: [
+      { title: '敏感且务实的建议', desc: '我们认真倾听并引导您做出困难的决定。' },
+      { title: '个人与职场事务', desc: '在家庭法和雇佣问题方面提供支持。' },
+      { title: '以解决为导向的指导', desc: '我们旨在以清晰和关怀实现务实结果。' }
+    ]
+  },
+  litigation: {
+    title: '诉讼与争议解决',
+    subtitle: '为争议、风险和解决路径提供清晰代表',
+    breadcrumb: '诉讼与争议解决',
+    img: '../assets/images/09_LegalExpertise_LegalSubhome06_DisputeV4.png',
+    intro: '商业争议可能代价高昂且充满压力。在德扬，我们为客户提供清晰的评估、务实的策略和强有力的代表——帮助您理解问题、评估选项并努力争取最佳可能解决。',
+    items: [
+      { title: '合同违约', desc: '执行或捍卫合同义务、评估损害赔偿和追偿损失' },
+      { title: '股东与合资争议', desc: '少数股东压迫、僵局解决和买断机制' },
+      { title: '商业侵权', desc: '过失陈述、干扰合同关系、假冒和《公平交易法》索赔' },
+      { title: '债务追偿', desc: '法定要求、简易判决申请和执行程序' },
+      { title: '房产与建筑争议', desc: '漏水建筑索赔、工艺缺陷和边界争议' },
+      { title: '保险争议', desc: '争议索赔、保单解释和与保险公司谈判' },
+      { title: '外国判决执行', desc: '在新西兰认可和执行海外判决' },
+      { title: '替代性争议解决', desc: '调解、仲裁、专家决定和协商解决策略' },
+      { title: '监管与合规程序', desc: '就涉及商业委员会、WorkSafe或其他监管机构的索赔进行辩护或追诉' }
+    ],
+    sidebar: [
+      { title: '清晰的评估', desc: '我们诚实地解释问题、成本和可能的结果。' },
+      { title: '战略性争议管理', desc: '专注于杠杆、风险和实用解决方案的建议。' },
+      { title: '解决与代表', desc: '在谈判、调解和程序中提供强有力支持。' }
+    ]
+  },
+  'china-desk': {
+    title: '中国业务 / 跨境服务',
+    subtitle: '为跨境法律和商业事务提供双语支持',
+    breadcrumb: '中国业务 / 跨境',
+    img: '../assets/images/10_LegalExpertise_LegalSubhome07_ChinaV2.png',
+    intro: '德扬为在新西兰建立或发展业务的中国家庭、投资者和企业提供整合支持。凭借多语言能力和真正的跨文化理解，我们帮助客户以清晰和信心处理跨境事务。',
+    items: [
+      { title: '投资结构', desc: '《海外投资法》合规、实体组建和合资' },
+      { title: '移民与定居规划', desc: '与房产、商业和遗产规划需求协调的签证策略' },
+      { title: '房产收购', desc: '住宅和商业购买，包括海外人士的海外投资法要求' },
+      { title: '商业设立', desc: '公司注册、商业合同和监管合规' },
+      { title: '财富管理信托', desc: '用于国际资产规划的新西兰信托结构' },
+      { title: '跨境交易', desc: '与中国法律顾问就双边事务进行协调' }
+    ],
+    sidebar: [
+      { title: '多语言团队', desc: '在关键事务中以英语、普通话和粤语提供支持。' },
+      { title: '跨文化理解', desc: '由新西兰和中国的实际经验塑造的建议。' },
+      { title: '整合支持', desc: '在移民、房产、商业和信托方面提供连接指导。' }
+    ]
+  }
+};
+
+/* ═══════════════════════════════════════════
+   RENDER FUNCTIONS
+   ═══════════════════════════════════════════ */
+
+function renderHome() {
+  return `
+    <div class="hero-banner hero-glow" style="min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;background:url('../assets/images/02_LegalHome01_FirstSight.png') center/cover no-repeat">
+      <h1>法律业务</h1>
+      <p class="hero-sub">以专业指引方向，以清晰守护所托</p>
+    </div>
+
+    <section class="bg-cream">
+      <div class="container">
+        ${sectionAbout('关于我们的法律业务', '每一个法律事务，无论多么复杂，最终都只有一个问题：什么对你而言最重要？在德扬，我们先倾听，再以清晰的法律指导、用心的文化理解，为客户妥善处理每一件事务。')}
+      </div>
+    </section>
+
+    <section class="bg-white">
+      <div class="container">
+        ${sectionHeader('我们的服务', '专业领域')}
+        <div class="cards-grid">
+          ${services.map(s => `
+            <a class="service-card" href="#${s.id}">
+              <div class="card-icon-area" style="background:url('${s.img}') center/cover no-repeat;height:140px"></div>
+              <div class="card-body">
+                <h3>${s.title}</h3>
+                <p>${s.subtitle}</p>
+                <span class="learn-more">了解更多 &rarr;</span>
+              </div>
+            </a>
+          `).join('')}
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-cream">
+      <div class="container">
+        ${renderTeamGrid(['marshall-bird','aimee-yang','julia-huang','cici-du','rockie-wei','ming-lu'], {imgBase:'../'})}
+      </div>
+    </section>
+  `;
+}
+
+function renderServiceDetail(key) {
+  const page = servicePages[key];
+  if (!page) return renderHome();
+
+  let currentGroup = '';
+  const itemsHtml = page.items.map(item => {
+    let groupLabel = '';
+    if (item.group && item.group !== currentGroup) {
+      currentGroup = item.group;
+      groupLabel = `<div style="grid-column:1/-1;margin-top:16px;font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)">${item.group}</div>`;
+    }
+    const featuredBadge = item.featured ? ' <span style="font-size:.6rem;background:var(--gold);color:var(--white);padding:2px 8px;border-radius:10px;margin-left:6px;vertical-align:middle">精选</span>' : '';
+    const linkWrap = item.link ? `<a href="${item.link}" style="color:var(--gold);font-size:.78rem;font-weight:600;display:block;margin-top:6px">查看详情 &rarr;</a>` : '';
+    if (item.featured) {
+      return `${groupLabel}
+        <div class="service-item featured-item" style="grid-column:1/-1">
+          <div class="service-item-icon">★</div>
+          <div style="flex:1">
+            <h4 style="cursor:pointer" onclick="this.closest('.featured-item').classList.toggle('expanded');event.stopPropagation()">${item.title}${featuredBadge} <span class="expand-arrow" style="float:right;font-size:.8rem;color:var(--gold)">▼</span></h4>
+            <p>${item.desc}</p>
+            <div class="featured-expand" style="display:none;margin-top:12px;padding-top:12px;border-top:1px solid rgba(0,0,0,.06)">
+              <p style="font-size:.82rem;color:var(--charcoal);line-height:1.7;margin-bottom:8px">为寻求新西兰机会的投资者、企业家和企业主提供战略性移民指导。</p>
+              ${linkWrap}
+            </div>
+          </div>
+        </div>`;
+    }
+    return `${groupLabel}
+      <div class="service-item">
+        <div class="service-item-icon">●</div>
+        <div>
+          <h4>${item.title}${featuredBadge}</h4>
+          <p>${item.desc}</p>${linkWrap}
+        </div>
+      </div>`;
+  }).join('');
+
+  return `
+    <div style="min-height:100vh;display:flex;flex-direction:column">
+      <div class="hero-banner" style="padding:100px 5% 30px;flex-shrink:0">
+        <div class="breadcrumb"><a href="#home">法律业务</a> &gt; ${page.breadcrumb}</div>
+        <h1>${page.title}</h1>
+        ${page.subtitle ? `<p class="hero-sub">${page.subtitle}</p>` : ''}
+      </div>
+      ${page.img ? `<div style="flex:1;background:url('${page.img}') center/cover no-repeat;min-height:200px"></div>` : ''}
+    </div>
+
+    <section>
+      <div class="container">
+        <a class="back-link" href="#home">返回法律业务</a>
+        <div class="two-col">
+          <div class="main-content">
+            <h2 style="font-size:1.4rem;font-weight:700;color:var(--blue);margin-bottom:12px">${page.title}</h2>
+            <p style="font-size:.92rem;color:var(--charcoal);line-height:1.85;margin-bottom:32px">${page.intro}</p>
+            <p style="font-size:.82rem;font-weight:700;color:var(--charcoal);margin-bottom:16px">我们的${page.breadcrumb}服务包括：</p>
+            <div class="service-items-grid">
+              ${itemsHtml}
+            </div>
+          </div>
+          <div class="sidebar">
+            <div class="sidebar-card">
+              <h3>为什么选择德扬</h3>
+              ${page.sidebar.map(s => `
+                <div class="why-item">
+                  <h4>${s.title}</h4>
+                  <p>${s.desc}</p>
+                </div>
+              `).join('')}
+            </div>
+            <a href="contact.html#book" class="cta-btn primary" style="width:100%;display:block;text-align:center;margin-top:20px">预约咨询</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+function renderBusinessInvestor() {
+  return `
+    <div style="min-height:100vh;display:flex;flex-direction:column">
+      <div class="hero-banner" style="padding:100px 5% 30px;flex-shrink:0">
+        <div class="breadcrumb"><a href="#home">法律业务</a> &gt; <a href="#immigration">移民</a> &gt; 商业与投资移民签证</div>
+        <h1>商业与投资移民签证</h1>
+        <p class="hero-sub">以信心投资，以清晰前行</p>
+      </div>
+      <div style="flex:1;background:url('../assets/images/04_LegalExpertise_LegalSubhome01_Immigration_Feature_InvestorV5.png') center/cover no-repeat;min-height:200px"></div>
+    </div>
+
+    <section>
+      <div class="container">
+        <a class="back-link" href="#immigration">返回移民服务</a>
+        <div class="two-col">
+          <div class="main-content">
+            <p style="font-size:.88rem;color:var(--charcoal);line-height:1.85;margin-bottom:16px">在德扬，我们协助投资者、企业家和企业主处理新西兰移民路径，涉及重大投资、商业移民和商业规划。</p>
+            <p style="font-size:.88rem;color:var(--charcoal);line-height:1.85;margin-bottom:24px">我们的法律团队提供清晰、务实且具备商业意识的指导——从资格评估和投资结构到文件准备、商业计划及持续合规。</p>
+            <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:40px">
+              <a href="contact.html#book" class="cta-btn primary">预约咨询</a>
+              <a href="#immigration" class="cta-btn">返回移民服务</a>
+            </div>
+
+            <h2 style="font-size:1.2rem;font-weight:700;color:var(--blue);margin-bottom:8px">我们协助的事务</h2>
+            <p style="font-size:.82rem;color:var(--muted);margin-bottom:24px">为关键商业与投资移民路径提供全面支持。</p>
+
+            <div style="display:grid;gap:20px;margin-bottom:48px">
+              <div style="background:var(--white);border-radius:var(--radius);padding:24px;box-shadow:0 2px 8px rgba(0,0,0,.06)">
+                <h3 style="font-size:.92rem;font-weight:700;color:var(--blue);margin-bottom:8px">积极投资者加签证</h3>
+                <p style="font-size:.82rem;color:var(--muted);line-height:1.7;margin-bottom:12px">为希望通过符合条件的投资路径在新西兰生活、工作和投资的客户提供服务。</p>
+                <p style="font-size:.82rem;color:var(--charcoal);line-height:1.7;margin-bottom:8px">我们协助：</p>
+                <ul style="font-size:.8rem;color:var(--muted);line-height:1.8;padding-left:18px;margin-bottom:12px">
+                  <li>资格和资金来源审查</li>
+                  <li>投资路径比较</li>
+                  <li>文件准备和证据规划</li>
+                  <li>与金融、会计和商业顾问协调</li>
+                  <li>批准后投资和居留条件指导</li>
+                </ul>
+                <p style="font-size:.72rem;color:var(--muted);font-style:italic">注：可接受的投资类别和具体条件以新西兰移民局最新规定为准。</p>
+              </div>
+              <div style="background:var(--white);border-radius:var(--radius);padding:24px;box-shadow:0 2px 8px rgba(0,0,0,.06)">
+                <h3 style="font-size:.92rem;font-weight:700;color:var(--blue);margin-bottom:8px">投资者1与投资者2类别</h3>
+                <p style="font-size:.82rem;color:var(--muted);line-height:1.7;margin-bottom:12px">为具有现有、历史或遗留投资者签证事务的客户提供战略审查或后续支持。</p>
+                <ul style="font-size:.8rem;color:var(--muted);line-height:1.8;padding-left:18px;margin-bottom:12px">
+                  <li>投资者1：历史上要求NZD 1000万投资超过3年，无商业经验、语言或年龄要求</li>
+                  <li>投资者2：历史上要求NZD 300万投资超过4年，需商业经验、英语要求、居留条件、年龄限制及EOI筛选</li>
+                  <li>历史案件审查、文件解释、合规检查和过渡讨论</li>
+                </ul>
+                <p style="font-size:.72rem;color:var(--muted);font-style:italic">注：投资者1与投资者2类别已于2022年7月27日停止接受新申请。但现有申请或先前批准的项目可能仍需要专业协助。</p>
+              </div>
+              <div style="background:var(--white);border-radius:var(--radius);padding:24px;box-shadow:0 2px 8px rgba(0,0,0,.06)">
+                <h3 style="font-size:.92rem;font-weight:700;color:var(--blue);margin-bottom:8px">企业家工作签证 / 商业移民支持</h3>
+                <p style="font-size:.82rem;color:var(--muted);line-height:1.7;margin-bottom:12px">为具有现有事务或企业需要法律和商业指导的企业家提供服务。</p>
+                <p style="font-size:.82rem;color:var(--charcoal);line-height:1.7;margin-bottom:8px">我们协助：</p>
+                <ul style="font-size:.8rem;color:var(--muted);line-height:1.8;padding-left:18px">
+                  <li>符合条件的现有签证持有人续签或变更计划事务</li>
+                  <li>商业计划审查和法律文件</li>
+                  <li>资本投资和商业活动证据</li>
+                  <li>商业合规和风险识别</li>
+                  <li>未来移民规划路径讨论</li>
+                </ul>
+              </div>
+              <div style="background:var(--white);border-radius:var(--radius);padding:24px;box-shadow:0 2px 8px rgba(0,0,0,.06)">
+                <h3 style="font-size:.92rem;font-weight:700;color:var(--blue);margin-bottom:8px">商业计划编制</h3>
+                <p style="font-size:.82rem;color:var(--muted);line-height:1.7;margin-bottom:12px">强有力的商业计划对于证明可行性、商业效益和与移民要求的一致性至关重要。</p>
+                <p style="font-size:.82rem;color:var(--charcoal);line-height:1.7;margin-bottom:8px">我们支持客户：</p>
+                <ul style="font-size:.8rem;color:var(--muted);line-height:1.8;padding-left:18px">
+                  <li>商业模型澄清</li>
+                  <li>市场和竞争对手分析</li>
+                  <li>财务和投资叙事</li>
+                  <li>就业和运营规划</li>
+                  <li>法律和商业一致性审查</li>
+                  <li>以移民为重点的商业证据呈现</li>
+                </ul>
+              </div>
+            </div>
+
+            <h2 style="font-size:1.2rem;font-weight:700;color:var(--blue);margin-bottom:24px">为什么选择德扬处理商业与投资移民签证？</h2>
+            <div style="display:grid;gap:16px;margin-bottom:48px">
+              <div style="padding:20px;background:var(--white);border-radius:var(--radius);border-left:3px solid var(--gold)">
+                <h4 style="font-size:.8rem;font-weight:700;color:var(--blue);margin-bottom:4px">具备商业意识的法律指导</h4>
+                <p style="font-size:.75rem;color:var(--muted);line-height:1.6">我们理解投资者和商业移民事务涉及商业结构、投资规划、税务考量、资金来源证据和长期家庭规划。</p>
+              </div>
+              <div style="padding:20px;background:var(--white);border-radius:var(--radius);border-left:3px solid var(--gold)">
+                <h4 style="font-size:.8rem;font-weight:700;color:var(--blue);margin-bottom:4px">跨境经验</h4>
+                <p style="font-size:.75rem;color:var(--muted);line-height:1.6">我们在协助处理新西兰、中国及更广泛跨境事务方面处于有利地位，特别是在资金、商业历史、所有权结构或投资记录需要清晰解释的情况下。</p>
+              </div>
+              <div style="padding:20px;background:var(--white);border-radius:var(--radius);border-left:3px solid var(--gold)">
+                <h4 style="font-size:.8rem;font-weight:700;color:var(--blue);margin-bottom:4px">整合支持</h4>
+                <p style="font-size:.75rem;color:var(--muted);line-height:1.6">在适当情况下，我们与会计、商业和金融专业人士合作，帮助客户呈现连贯且支持充分的申请。</p>
+              </div>
+              <div style="padding:20px;background:var(--white);border-radius:var(--radius);border-left:3px solid var(--gold)">
+                <h4 style="font-size:.8rem;font-weight:700;color:var(--blue);margin-bottom:4px">清晰的文件策略</h4>
+                <p style="font-size:.75rem;color:var(--muted);line-height:1.6">我们帮助客户识别需要什么证据、如何组织，以及如何以清晰可信的方式解释复杂的商业或投资事实。</p>
+              </div>
+            </div>
+
+            <h2 style="font-size:1.2rem;font-weight:700;color:var(--blue);margin-bottom:24px">我们的流程</h2>
+            <div style="display:grid;gap:16px;margin-bottom:48px">
+              <div style="display:flex;gap:16px;align-items:flex-start">
+                <div style="min-width:36px;height:36px;border-radius:50%;background:var(--blue);color:var(--gold);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem">1</div>
+                <div><h4 style="font-size:.82rem;font-weight:700;color:var(--blue);margin-bottom:2px">初步咨询</h4><p style="font-size:.78rem;color:var(--muted);line-height:1.6">我们了解您的背景、家庭目标、投资能力、商业历史和首选新西兰路径。</p></div>
+              </div>
+              <div style="display:flex;gap:16px;align-items:flex-start">
+                <div style="min-width:36px;height:36px;border-radius:50%;background:var(--blue);color:var(--gold);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem">2</div>
+                <div><h4 style="font-size:.82rem;font-weight:700;color:var(--blue);margin-bottom:2px">资格与风险审查</h4><p style="font-size:.78rem;color:var(--muted);line-height:1.6">我们评估可能的路径、关键要求、资金来源问题、商业证据和潜在法律或实际风险。</p></div>
+              </div>
+              <div style="display:flex;gap:16px;align-items:flex-start">
+                <div style="min-width:36px;height:36px;border-radius:50%;background:var(--blue);color:var(--gold);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem">3</div>
+                <div><h4 style="font-size:.82rem;font-weight:700;color:var(--blue);margin-bottom:2px">策略与文件规划</h4><p style="font-size:.78rem;color:var(--muted);line-height:1.6">我们准备量身定制的文件清单，并解释每份证据如何支持申请。</p></div>
+              </div>
+              <div style="display:flex;gap:16px;align-items:flex-start">
+                <div style="min-width:36px;height:36px;border-radius:50%;background:var(--blue);color:var(--gold);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem">4</div>
+                <div><h4 style="font-size:.82rem;font-weight:700;color:var(--blue);margin-bottom:2px">申请与支持材料</h4><p style="font-size:.78rem;color:var(--muted);line-height:1.6">我们协助法律提交、支持文件、商业计划并与相关顾问协调。</p></div>
+              </div>
+              <div style="display:flex;gap:16px;align-items:flex-start">
+                <div style="min-width:36px;height:36px;border-radius:50%;background:var(--blue);color:var(--gold);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem">5</div>
+                <div><h4 style="font-size:.82rem;font-weight:700;color:var(--blue);margin-bottom:2px">持续支持</h4><p style="font-size:.78rem;color:var(--muted);line-height:1.6">我们提供批准后条件、投资时间线、合规要求和未来居留规划的指导。</p></div>
+              </div>
+            </div>
+
+            <div style="background:linear-gradient(135deg,var(--blue),var(--navy-mid));padding:32px;border-radius:var(--radius);text-align:center">
+              <h3 style="color:var(--white);font-size:1rem;margin-bottom:8px">正在规划您的新西兰投资或商业路径？</h3>
+              <p style="color:rgba(255,255,255,.7);font-size:.82rem;margin-bottom:20px">无论您正在了解积极投资者加签证、审查历史投资者1或投资者2事务，还是准备商业移民文件，德扬都可以帮助您清晰前行。</p>
+              <a href="contact.html#book" class="cta-btn" style="border-color:var(--gold-light);color:var(--gold-light)">预约咨询</a>
+            </div>
+
+            <p style="font-size:.72rem;color:var(--muted);margin-top:24px;font-style:italic">以上信息为一般性介绍，不构成法律意见。如需最新和量身定制的法律建议，请联系我们。</p>
+          </div>
+
+          <div class="sidebar">
+            <div class="sidebar-card">
+              <h3>需要量身定制的投资者签证建议？</h3>
+              <p style="font-size:.8rem;color:var(--muted);line-height:1.7;margin-bottom:16px">商业和投资者签证事务通常需要在准备文件前进行仔细规划。与我们的法律团队交流，了解您的选项、风险和后续步骤。</p>
+              <a href="contact.html#book" class="cta-btn primary" style="width:100%;display:block;text-align:center">预约咨询</a>
+              <div style="margin-top:16px;font-size:.75rem;color:var(--muted);line-height:2">
+                <p>&bull; 保密</p>
+                <p>&bull; 多语言</p>
+                <p>&bull; 以商业为导向</p>
+              </div>
+            </div>
+            <div class="sidebar-card">
+              <h3>新西兰移民局官方来源</h3>
+              <p style="font-size:.78rem;color:var(--muted);line-height:1.7;margin-bottom:12px">官方政策可能详细且复杂——我们帮助使其清晰、务实且更易于导航。</p>
+              <p style="font-size:.72rem;color:var(--muted);line-height:2">
+                <a href="https://www.immigration.govt.nz/visas/active-investor-plus-visa/" target="_blank" style="color:var(--gold);display:block;margin-bottom:4px">积极投资者加签证 &rarr;</a>
+                <a href="https://www.immigration.govt.nz/work/visas-for-investing-and-doing-business-in-new-zealand/" target="_blank" style="color:var(--gold);display:block;margin-bottom:4px">投资与商业签证 &rarr;</a>
+                <a href="https://www.immigration.govt.nz/visas/entrepreneur-work-visa/" target="_blank" style="color:var(--gold);display:block">企业家工作签证指南 &rarr;</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+function renderTeamProfile(id) {
+  return renderTeamProfileHTML(id, {backHash: '#team', backText: '返回我们的团队', imgBase: '../'}) || renderHome();
+}
+
+/* ═══════════════════════════════════════════
+   ROUTER
+   ═══════════════════════════════════════════ */
+
+function render() {
+  const route = location.hash.slice(1) || 'home';
+  const app = document.getElementById('app');
+
+  if (route === 'home') {
+    app.innerHTML = renderHome();
+    window.scrollTo(0, 0);
+  } else if (route === 'team') {
+    app.innerHTML = renderHome();
+    setTimeout(function(){ var g = document.querySelector('.team-grid'); if (g) { var nav = document.querySelector('nav'); var navH = nav ? nav.offsetHeight : 76; var sec = g.closest('section'); var t = (sec || g).getBoundingClientRect().top + window.scrollY - navH - 20; window.scrollTo({ top: t, behavior: 'smooth' }); } }, 50);
+  } else if (route === 'business-investor') {
+    app.innerHTML = renderBusinessInvestor();
+    window.scrollTo(0, 0);
+  } else if (route.startsWith('team/')) {
+    const id = route.replace('team/', '');
+    app.innerHTML = renderTeamProfile(id);
+    window.scrollTo(0, 0);
+  } else if (servicePages[route]) {
+    app.innerHTML = renderServiceDetail(route);
+    window.scrollTo(0, 0);
+  } else {
+    app.innerHTML = renderHome();
+    window.scrollTo(0, 0);
+  }
+}
+
+/* ═══════════════════════════════════════════
+   INIT
+   ═══════════════════════════════════════════ */
+window.addEventListener('hashchange', render);
+render();
+
+})();
+</script>
 
 <!-- FOOTER -->
 <div id="site-footer"></div>
 <script src="/components/footer.js"></script>
 <script>renderFooter({lang:"zh"})</script>
 
-<script>
-(function() {
-  var app = document.getElementById('app');
-
-  /* --- ROUTES --- */
-  var routes = {
-    'home': renderHome,
-    'immigration': renderImmigration
-  };
-
-  /* --- ROUTER --- */
-  function navigate() {
-    var hash = location.hash.slice(1) || 'home';
-    var render = routes[hash] || renderHome;
-    app.innerHTML = render();
-    window.scrollTo(0, 0);
-    initReveal();
-  }
-
-  window.addEventListener('hashchange', navigate);
-  window.addEventListener('DOMContentLoaded', navigate);
-  navigate();
-
-  /* --- NAV SCROLL EFFECT --- */
-  window.addEventListener('scroll', function() {
-    var nav = document.querySelector('nav');
-    if (window.scrollY > 60) {
-      nav.classList.add('scrolled');
-      nav.classList.remove('transparent');
-    } else {
-      nav.classList.remove('scrolled');
-      nav.classList.add('transparent');
-    }
-  });
-
-  /* --- SCROLL REVEAL --- */
-  function initReveal() {
-    var els = document.querySelectorAll('.reveal');
-    var observer = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.15 });
-    els.forEach(function(el) { observer.observe(el); });
-  }
-
-  /* --- PAGE: #home (法务首页) --- */
-  function renderHome() {
-    return '' +
-    '<div class="hero-banner hero-glow" style="background:url(../assets/images/02_LegalHome01_FirstSight.png) center/cover no-repeat">' +
-
-      '<h1>法律业务</h1>' +
-      '<p class="hero-sub">以专业指引方向，以清晰守护所托</p>' +
-    '</div>' +
-
-    '<section class="bg-cream reveal">' +
-      '<div class="container">' +
-        '<div class="section-label">关于我们的法律业务</div>' +
-        '<div class="about-text">' +
-          '<p>每一个法律事务，无论多么复杂，最终都只有一个问题：什么对你而言最重要？在德扬，我们先倾听，再以清晰的法律指导、用心的文化理解，为客户妥善处理每一件事务。</p>' +
-        '</div>' +
-        '<div class="steps" style="margin-top:40px">' +
-          '<div class="step"><div class="step-number">1</div><h3>先倾听</h3></div>' +
-          '<div class="step"><div class="step-number">2</div><h3>重清晰</h3></div>' +
-          '<div class="step"><div class="step-number">3</div><h3>懂文化</h3></div>' +
-        '</div>' +
-      '</div>' +
-    '</section>' +
-
-    '<section class="bg-white reveal">' +
-      '<div class="container">' +
-        '<div class="section-label">服务范围</div>' +
-        '<h2 class="section-title">我们的专业</h2>' +
-        '<div class="cards-grid">' +
-          '<a class="service-card" href="#immigration">' +
-            '<div class="card-icon-area"><div class="icon-circle"><img src="../assets/icons/icon-immigration.svg" alt="移民"></div></div>' +
-            '<div class="card-body"><h3>移民</h3><p>协助客户处理留学签证与移民签证，以定制专业方式配合申请与审批</p><span class="learn-more">了解更多 &rarr;</span></div>' +
-          '</a>' +
-          '<div class="service-card">' +
-            '<div class="card-icon-area"><div class="icon-circle"><img src="../assets/icons/icon-legal.svg" alt="房产"></div></div>' +
-            '<div class="card-body"><h3>房产与开发</h3><p>支持买卖、开发及相关法律风险管理</p></div>' +
-          '</div>' +
-          '<div class="service-card">' +
-            '<div class="card-icon-area"><div class="icon-circle"><img src="../assets/icons/icon-accounting.svg" alt="商业"></div></div>' +
-            '<div class="card-body"><h3>商业法务</h3><p>涉及企业设立、规章、商业风险管理</p></div>' +
-          '</div>' +
-          '<div class="service-card">' +
-            '<div class="card-icon-area"><div class="icon-circle"><img src="../assets/icons/icon-legal.svg" alt="信托"></div></div>' +
-            '<div class="card-body"><h3>家族财富规划、信托与遗嘱</h3><p>帮助客户保护家庭、资产与未来安排</p></div>' +
-          '</div>' +
-          '<div class="service-card">' +
-            '<div class="card-icon-area"><div class="icon-circle"><img src="../assets/icons/icon-hr.svg" alt="家庭"></div></div>' +
-            '<div class="card-body"><h3>家庭与雇佣</h3><p>为家庭事务与雇佣关系提供专业法律判断</p></div>' +
-          '</div>' +
-          '<div class="service-card">' +
-            '<div class="card-icon-area"><div class="icon-circle"><img src="../assets/icons/icon-legal.svg" alt="诉讼"></div></div>' +
-            '<div class="card-body"><h3>诉讼与争议解决</h3><p>根据客户具体方案，解决争议并推清前进路径</p></div>' +
-          '</div>' +
-          '<div class="service-card">' +
-            '<div class="card-icon-area"><div class="icon-circle"><img src="../assets/icons/icon-immigration.svg" alt="跨境"></div></div>' +
-            '<div class="card-body"><h3>中国业务/跨境服务</h3><p>以双语和文化能力，为中国客户在海外发展出清晰法律支撑</p></div>' +
-          '</div>' +
-        '</div>' +
-      '</div>' +
-    '</section>' +
-
-    '<section class="bg-cream reveal">' +
-      '<div class="container">' +
-        '<div class="section-label">我们的团队</div>' +
-        '<h2 class="section-title">专业团队</h2>' +
-        '<div class="team-grid">' +
-          '<div class="team-card"><img src="../assets/team/marshall-bird.png" alt="Marshall Bird"><h4>Marshall Bird</h4><p>合伙人/大律师</p></div>' +
-          '<div class="team-card"><img src="../assets/team/aimee-yang.png" alt="Aimee Yang"><h4>Aimee Yang</h4><p>合伙人/大律师</p></div>' +
-          '<div class="team-card"><img src="../assets/team/julia-huang.png" alt="Julia Huang"><h4>Julia Huang</h4><p>大律师</p></div>' +
-          '<div class="team-card"><img src="../assets/team/ming-lu.png" alt="Ming Lu"><h4>Ming Lu</h4><p>信托与财务经理</p></div>' +
-          '<div class="team-card"><img src="../assets/team/cici-du.png" alt="Cici Du"><h4>Cici Du</h4><p>注册法律行政官</p></div>' +
-          '<div class="team-card"><img src="../assets/team/rockie-wei.png" alt="Rockie Wei"><h4>Rockie Wei</h4><p>法律行政官</p></div>' +
-        '</div>' +
-      '</div>' +
-    '</section>';
-  }
-
-  /* --- PAGE: #immigration (投资移民路径解读) --- */
-  function renderImmigration() {
-    return '' +
-    '<div class="hero-banner">' +
-      '<div class="breadcrumb"><a href="#home">法律业务</a> &gt; 投资移民</div>' +
-      '<h1>投资移民路径解读</h1>' +
-      '<p class="hero-sub">现行规则与历史类别的专业理解</p>' +
-    '</div>' +
-
-    '<section>' +
-      '<div class="container">' +
-        '<a class="back-link" href="#home">&larr; 返回法律业务</a>' +
-        '<div class="two-col">' +
-
-          /* Main Content */
-          '<div class="main-content">' +
-            '<p style="font-size:.88rem;color:var(--charcoal);line-height:1.85;margin-bottom:32px">以移民事务为例：复杂不只是文件多，而是逻辑多。很多客户最初以为，投资移民只是准备材料、提交申请。但在实际操作中，它涉往返及资金来源证明、中西方理解差异以及不确定的处理周期。真正的难点，不只是"材料多"，而是如何把复杂背景整理成清楚、可信、合规、可审查的申请逻辑。</p>' +
-
-            '<div class="section-label" style="text-align:left;margin-bottom:20px">现行官方路径</div>' +
-            '<h2 style="font-size:1.2rem;font-weight:700;color:var(--blue);margin-bottom:24px">积极投资者加签证</h2>' +
-            '<div style="display:grid;gap:16px;margin-bottom:40px">' +
-              '<div style="background:var(--white);border-radius:var(--radius);padding:24px;box-shadow:0 2px 8px rgba(0,0,0,.06);border-left:3px solid var(--gold)">' +
-                '<h3 style="font-size:.92rem;font-weight:700;color:var(--blue);margin-bottom:8px">增长类别</h3>' +
-                '<p style="font-size:.82rem;color:var(--muted);line-height:1.7">至少 NZD 500万，投资期通常为3年</p>' +
-              '</div>' +
-              '<div style="background:var(--white);border-radius:var(--radius);padding:24px;box-shadow:0 2px 8px rgba(0,0,0,.06);border-left:3px solid var(--gold)">' +
-                '<h3 style="font-size:.92rem;font-weight:700;color:var(--blue);margin-bottom:8px">平衡类别</h3>' +
-                '<p style="font-size:.82rem;color:var(--muted);line-height:1.7">至少 NZD 1000万，投资期通常为5年</p>' +
-              '</div>' +
-            '</div>' +
-
-            '<div class="section-label" style="text-align:left;margin-bottom:20px">历史类别事务</div>' +
-            '<h2 style="font-size:1.2rem;font-weight:700;color:var(--blue);margin-bottom:24px">投资者1 / 投资者2</h2>' +
-            '<div style="display:grid;gap:16px;margin-bottom:20px">' +
-              '<div style="background:var(--white);border-radius:var(--radius);padding:24px;box-shadow:0 2px 8px rgba(0,0,0,.06);border-left:3px solid var(--gold)">' +
-                '<h3 style="font-size:.92rem;font-weight:700;color:var(--blue);margin-bottom:8px">投资者1</h3>' +
-                '<p style="font-size:.82rem;color:var(--muted);line-height:1.7">历史类别，通常为NZD 1000万 / 3年</p>' +
-              '</div>' +
-              '<div style="background:var(--white);border-radius:var(--radius);padding:24px;box-shadow:0 2px 8px rgba(0,0,0,.06);border-left:3px solid var(--gold)">' +
-                '<h3 style="font-size:.92rem;font-weight:700;color:var(--blue);margin-bottom:8px">投资者2</h3>' +
-                '<p style="font-size:.82rem;color:var(--muted);line-height:1.7">历史类别，通常为NZD 300万 / 4年</p>' +
-              '</div>' +
-            '</div>' +
-            '<p style="font-size:.78rem;color:var(--muted);font-style:italic;margin-bottom:40px">注：投资者1与投资者2已于2022年7月27日停止接受新申请。</p>' +
-
-            '<div class="section-label" style="text-align:left;margin-bottom:20px">我们的方法</div>' +
-            '<h2 style="font-size:1.2rem;font-weight:700;color:var(--blue);margin-bottom:24px">德扬如何化繁为简</h2>' +
-            '<div style="display:grid;gap:20px;margin-bottom:48px">' +
-              '<div style="display:flex;gap:16px;align-items:flex-start">' +
-                '<div style="min-width:36px;height:36px;border-radius:50%;background:var(--blue);color:var(--gold);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem">1</div>' +
-                '<div><h4 style="font-size:.85rem;font-weight:700;color:var(--blue);margin-bottom:4px">资金从哪里来？</h4><p style="font-size:.8rem;color:var(--muted);line-height:1.7">梳理资金来源过程、资产证明逻辑、资金流转路径及相关支持文件</p></div>' +
-              '</div>' +
-              '<div style="display:flex;gap:16px;align-items:flex-start">' +
-                '<div style="min-width:36px;height:36px;border-radius:50%;background:var(--blue);color:var(--gold);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem">2</div>' +
-                '<div><h4 style="font-size:.85rem;font-weight:700;color:var(--blue);margin-bottom:4px">资料是否足够可信？</h4><p style="font-size:.8rem;color:var(--muted);line-height:1.7">判断现有文件是否完整、是否一致、是否能够支持申请教权</p></div>' +
-              '</div>' +
-              '<div style="display:flex;gap:16px;align-items:flex-start">' +
-                '<div style="min-width:36px;height:36px;border-radius:50%;background:var(--blue);color:var(--gold);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem">3</div>' +
-                '<div><h4 style="font-size:.85rem;font-weight:700;color:var(--blue);margin-bottom:4px">移民官能如何理解这件事？</h4><p style="font-size:.8rem;color:var(--muted);line-height:1.7">从新西兰审理逻辑出发，把中国商业、家庭和投资背景转化为更清晰的专业表达</p></div>' +
-              '</div>' +
-              '<div style="display:flex;gap:16px;align-items:flex-start">' +
-                '<div style="min-width:36px;height:36px;border-radius:50%;background:var(--blue);color:var(--gold);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem">4</div>' +
-                '<div><h4 style="font-size:.85rem;font-weight:700;color:var(--blue);margin-bottom:4px">申请路径是否与客户目标一致？</h4><p style="font-size:.8rem;color:var(--muted);line-height:1.7">关注客户长期目标：子女、投资、资产配置</p></div>' +
-              '</div>' +
-              '<div style="display:flex;gap:16px;align-items:flex-start">' +
-                '<div style="min-width:36px;height:36px;border-radius:50%;background:var(--blue);color:var(--gold);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem">5</div>' +
-                '<div><h4 style="font-size:.85rem;font-weight:700;color:var(--blue);margin-bottom:4px">是否需要财税、公司或商业计划支持？</h4><p style="font-size:.8rem;color:var(--muted);line-height:1.7">通过法务、会计、咨询的整合视角，减少信息断裂</p></div>' +
-              '</div>' +
-            '</div>' +
-          '</div>' +
-
-          /* Sidebar */
-          '<div class="sidebar">' +
-            '<div class="sidebar-card">' +
-              '<h3>为什么选择德扬</h3>' +
-              '<div class="why-item"><h4>商业视角的法律指导</h4><p>我们理解投资与商业移民涉及商业结构、投资规划、税务考量</p></div>' +
-              '<div class="why-item"><h4>跨境经验</h4><p>协助新西兰、中国及更广泛跨境事务的客户</p></div>' +
-              '<div class="why-item"><h4>整合支持</h4><p>会计、商业与金融专业人士协同合作</p></div>' +
-            '</div>' +
-            '<a href="contact.html" class="cta-btn primary" style="width:100%;display:block;text-align:center">预约咨询</a>' +
-          '</div>' +
-
-        '</div>' +
-      '</div>' +
-    '</section>';
-  }
-
-})();
-</script>
 <script src="/components/chatbot.js"></script>
 <script>renderChatbot({lang:"zh"})</script>
 </body>

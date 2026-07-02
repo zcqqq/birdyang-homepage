@@ -25,130 +25,272 @@
 <script src="/components/footer.js"></script>
 <script>renderFooter({lang:"zh"})</script>
 
+<script src="/components/section-header.js"></script>
 <script>
 (function(){
 
-  function heroBanner(label, title, subtitle, extraClass) {
-    return '<div class="hero-banner' + (extraClass ? ' ' + extraClass : '') + '" style="min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;background:url(../assets/images/33_HRHome01_FirstSight.png) center/cover no-repeat"><div class="hero-label">' + label + '</div><h1>' + title + '</h1><p class="hero-sub">' + subtitle + '</p></div>';
+/* ─── DATA ─── */
+
+const servicePages = {
+  'compliance': {
+    img: '../assets/images/34_HRSubhome01_HRCompliance.png',
+    title: '人力合规基础',
+    heroSub: '自信地建立您的HR基础',
+    backHash: '#home',
+    backText: '返回人力资源咨询',
+    intro: '在新西兰，每位雇主从第一天起就负有法律义务。雇佣协议、最低工资合规、《假期法》权利、薪资准确性、记录保存和公平程序要求构成了健康职场的基础。德扬帮助企业审查和加强这些基础，使合规工作清晰、实用且与时俱进。',
+    accordions: [
+      { title: '雇佣协议审查', desc: '确保您的雇佣协议现行、合规且条款清晰，涵盖职责、工时、薪酬、试用期、竞业限制及终止条款。' },
+      { title: '工作场所政策制定', desc: '建立您企业所需的政策框架，从请假出勤到健康安全、弹性工作及员工行为。' },
+      { title: '薪资与假期合规', desc: '审查您的薪资流程、假期计算和记录保存，确保符合现行《假期法》要求及即将到来的改革。' },
+      { title: '入职系统', desc: '创建结构化的入职流程，明确期望、满足法律要求并帮助新员工良好起步。' },
+      { title: '承包商与雇员评估', desc: '帮助您理解两者区别，根据新的法定门槛测试评估现有安排，并管理分类风险。' },
+      { title: '记录保存与合规检查', desc: '维护准确的雇佣记录，审查关键HR文件，识别合规差距，帮助企业履行雇主义务并避免处罚。' }
+    ],
+    sidebar: [
+      { title: '实际合规', desc: '清晰、可用的HR基础，满足日常业务需求。' },
+      { title: '及时了解', desc: '支持紧跟新西兰不断变化的雇佣要求。' },
+      { title: '综合支持', desc: 'HR咨询与雇佣法在同一屋檐下。' }
+    ]
+  },
+  'people': {
+    img: '../assets/images/35_HRSubhome02_PeopleManagement.png',
+    title: '人员管理支持',
+    heroSub: '以信心处理困难对话',
+    backHash: '#home',
+    backText: '返回人力资源咨询',
+    intro: '绩效问题、纪律处分、重组决策和雇佣终止是商业中最艰难的时刻之一。德扬帮助雇主以实用指导、结构化流程和细致文档来管理这些情况——确保困难决策得到公平、清晰且遵循正确程序的处理。',
+    accordions: [
+      { title: '绩效管理', desc: '帮助您设定清晰期望、记录关切事项，并遵循公平流程，给予员工真正的改进机会。' },
+      { title: '纪律程序指导', desc: '指导您完成可抗辩的纪律处分所需的步骤，从调查到结果。' },
+      { title: '重组支持', desc: '帮助您以适当协商、公平选择标准和清晰沟通来规划和执行组织变革。' },
+      { title: '终止指导', desc: '确保雇佣关系终止时，流程以恰当、尊重且符合法律要求的方式进行。' },
+      { title: '文档与记录保存', desc: '帮助您创建书面记录，为每一项人员管理决策提供支撑。' },
+      { title: '沟通与协商规划', desc: '帮助您规划与员工的清晰公正沟通，包括协商步骤、会议结构、书面通知、时间安排及后续行动。' }
+    ],
+    sidebar: [
+      { title: '公平流程支持', desc: '为敏感雇佣事务提供结构化指导。' },
+      { title: '清晰文档', desc: '我们帮助建立每项决策背后的书面记录。' },
+      { title: '综合法律通道', desc: 'HR咨询与雇佣法并肩协作。' }
+    ]
+  },
+  'workplace': {
+    img: '../assets/images/36_HRSubhome03_Workplace.png',
+    title: '职场文化与风险',
+    heroSub: '打造安全、尊重、有韧性的工作场所',
+    backHash: '#home',
+    backText: '返回人力资源咨询',
+    intro: '职场文化不仅仅是士气——它也关乎风险。欺凌、骚扰、冲突、倦怠、沟通不畅和社会心理危害都可能影响员工并使企业面临严重问题。德扬通过实用政策、审查和指导帮助企业打造更安全、更健康、更具韧性的职场。',
+    accordions: [
+      { title: '反霸凌与骚扰政策', desc: '制定清晰、实用的政策，明确期望并概述投诉和调查流程。' },
+      { title: '投诉与调查支持', desc: '指导您如何公正、一致地接收、评估和回应职场投诉。' },
+      { title: '心理社会风险评估', desc: '帮助您识别和解决影响团队心理健康和福祉的职场因素。' },
+      { title: '幸福感与参与度策略', desc: '提供工作负荷管理、认可、团队沟通和营造积极工作环境的实用方法。' },
+      { title: '管理者培训指导', desc: '为您的领导者配备知识和信心，使其能够及早识别问题并做出适当回应。' },
+      { title: '职场行为框架', desc: '创建关于预期职场行为、举报渠道、调查步骤及适当回应的实用框架，帮助企业一致地管理行为问题。' }
+    ],
+    sidebar: [
+      { title: '文化清晰', desc: '支持尊重行为的实用政策。' },
+      { title: '风险感知支持', desc: '帮助识别和管理职场风险。' },
+      { title: '早期干预', desc: '我们帮助领导者识别问题并做出适当回应。' }
+    ]
+  },
+  'recruitment': {
+    img: '../assets/images/37_HRSubhome04_Recruitment.png',
+    imgPosition: 'center top',
+    title: '招聘与留人',
+    heroSub: '帮助您吸引、入职和留住合适的人才',
+    backHash: '#home',
+    backText: '返回人力资源咨询',
+    intro: '找到合适的人很难，留住他们更难。招聘、入职、工作权利检查和留任率从第一天起就塑造了您的员工队伍。德扬帮助企业建立公平、实用且高效的人员系统，以支持更好的招聘决策和更强的留任成果。',
+    accordions: [
+      { title: '招聘流程设计', desc: '帮助您建立结构化、公平且高效的招聘流程，从职位描述、招聘广告到面试和甄选。' },
+      { title: '工作权利检查', desc: '确保您核实工作签证条件并了解雇佣移民工人时的义务，与我们的移民咨询团队协作。' },
+      { title: '入职培训', desc: '创建新员工首周和首月的体验，为其成功奠定基础并满足您的合规要求。' },
+      { title: '留人与参与度审查', desc: '审查导致员工流失的因素，并制定改善留任率的实用策略。' },
+      { title: '能力与发展规划', desc: '帮助您识别技能差距、建立发展路径并支持管理者有效领导。' },
+      { title: '岗位与职位描述支持', desc: '帮助您创建清晰实用的职位描述，明确职责、汇报线、所需技能、绩效期望及雇佣条件。' }
+    ],
+    sidebar: [
+      { title: '更智慧的招聘', desc: '从职位设计到甄选的结构化招聘支持。' },
+      { title: '更好的入职', desc: '更强有力的首周和首月体验。' },
+      { title: '留人重点', desc: '帮助优秀人才留任的实用策略。' }
+    ]
+  },
+  'bilingual': {
+    img: '../assets/images/38_HRSubhome05_Bilingual.png',
+    title: '双语HR支持',
+    heroSub: '帮助您的工作场所保持一致',
+    backHash: '#home',
+    backText: '返回人力资源咨询',
+    intro: '在新西兰，许多企业的HR义务需要跨多种语言和文化背景才能被真正理解。雇佣协议、政策和职场沟通只有在人们真正理解时才有效。德扬提供英语、普通话和粤语双语HR支持，帮助雇主清晰沟通并自信地管理人员。',
+    accordions: [
+      { title: '双语雇佣文件', desc: '以中英文准备雇佣协议、职场政策和HR表格，确保各方清晰理解。' },
+      { title: '员工沟通支持', desc: '帮助您以员工母语沟通职场期望、政策变更及重要信息。' },
+      { title: '跨文化职场指导', desc: '就人员管理中的文化维度提供实用建议，从沟通风格到层级、反馈和冲突管理的期望。' },
+      { title: '中资企业支持', desc: '帮助在新西兰组建团队的企业主以最熟悉的语言清晰了解其雇佣义务。' },
+      { title: '双语HR表格与政策', desc: '准备清晰的中英双语HR表格、政策模板、职场通知、确认表格及检查清单，减少误解、支持合规并改善沟通。' },
+      { title: '与法律团队协调', desc: '当语言障碍与法律风险交织时，我们为您对接双语雇佣律师，提供无缝支持。' }
+    ],
+    sidebar: [
+      { title: '清晰沟通', desc: '以清晰方式跨语言传递关键HR信息。' },
+      { title: '文化理解', desc: '跨越语言和工作场所期望的实用支持。' },
+      { title: '无缝法律衔接', desc: '双语HR咨询与双语法律支持紧密衔接。' }
+    ]
+  }
+};
+
+/* ─── RENDER FUNCTIONS ─── */
+
+function renderHome() {
+  return `
+    <div class="hero-banner hero-glow" style="min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;background:url('../assets/images/33_HRHome01_FirstSight.png') center/cover no-repeat">
+      <p class="breadcrumb"><a href="consulting.html">咨询服务</a> &gt; 人力资源咨询</p>
+      <h1>人力资源咨询</h1>
+      <p class="hero-sub">以资源支持您的成功</p>
+    </div>
+
+    <section class="bg-cream reveal">
+      <div class="container">
+        ${sectionAbout('关于我们的HR咨询业务', '在德扬，我们的HR咨询团队为新西兰企业提供务实的日常支持——合规基础、人员管理指导、职场文化、招聘与留人，以及双语HR支持。当事务需要法律建议或代理时——如个人申诉、解雇程序或就业关系管理局听证——HR咨询与我们的雇佣律师并肩协作，实现无缝衔接。')}
+      </div>
+    </section>
+
+    <section class="bg-white reveal">
+      <div class="container">
+        ${sectionHeader('我们的服务', '专业领域')}
+        <div class="cards-grid">
+          <a class="service-card" href="#compliance">
+            <div class="card-icon-area" style="background:url('../assets/images/33_HRHome02_HRCompliance.png') center/cover no-repeat;height:140px"></div>
+            <div class="card-body">
+              <h3>人力合规</h3>
+              <p>自信地建立您的HR基础，符合当前最佳实践。</p>
+              <span class="learn-more">了解更多 &rarr;</span>
+            </div>
+          </a>
+          <a class="service-card" href="#people">
+            <div class="card-icon-area" style="background:url('../assets/images/33_HRHome03_PeopleManagement.png') center/cover no-repeat;height:140px"></div>
+            <div class="card-body">
+              <h3>人员管理</h3>
+              <p>以信心和公平流程处理困难对话。</p>
+              <span class="learn-more">了解更多 &rarr;</span>
+            </div>
+          </a>
+          <a class="service-card" href="#workplace">
+            <div class="card-icon-area" style="background:url('../assets/images/33_HRHome04_Workplace.png') center/cover no-repeat;height:140px"></div>
+            <div class="card-body">
+              <h3>职场文化与风险</h3>
+              <p>打造安全、尊重、有韧性的工作场所。</p>
+              <span class="learn-more">了解更多 &rarr;</span>
+            </div>
+          </a>
+          <a class="service-card" href="#recruitment">
+            <div class="card-icon-area" style="background:url('../assets/images/33_HRHome05_Recruitment.png') center/cover no-repeat;height:140px"></div>
+            <div class="card-body">
+              <h3>招聘与留人</h3>
+              <p>帮助您吸引、入职和留住合适的人才。</p>
+              <span class="learn-more">了解更多 &rarr;</span>
+            </div>
+          </a>
+          <a class="service-card" href="#bilingual">
+            <div class="card-icon-area" style="background:url('../assets/images/33_HRHome06_Bilingual.png') center/cover no-repeat;height:140px"></div>
+            <div class="card-body">
+              <h3>双语HR</h3>
+              <p>帮助您的工作场所跨语言保持一致。</p>
+              <span class="learn-more">了解更多 &rarr;</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+function serviceDetailPage(opts) {
+  const itemsHtml = opts.accordions.map(item => `
+    <div class="service-item">
+      <div class="service-item-icon">●</div>
+      <div><h4>${item.title}</h4><p>${item.desc}</p></div>
+    </div>
+  `).join('');
+
+  const sidebarHtml = opts.sidebar.map(s => `
+    <div class="why-item">
+      <h4>${s.title}</h4>
+      <p>${s.desc}</p>
+    </div>
+  `).join('');
+
+  const imgStyle = opts.imgPosition ? `${opts.imgPosition}/cover no-repeat` : `center/cover no-repeat`;
+
+  return `
+    <div style="min-height:100vh;display:flex;flex-direction:column">
+      <div class="hero-banner" style="padding:100px 5% 30px;flex-shrink:0">
+        <div class="breadcrumb"><a href="consulting.html">咨询服务</a> &gt; <a href="#home">人力资源咨询</a> &gt; ${opts.title}</div>
+        <h1>${opts.title}</h1>
+        ${opts.heroSub ? `<p class="hero-sub">${opts.heroSub}</p>` : ''}
+      </div>
+      ${opts.img ? `<div style="flex:1;background:url('${opts.img}') ${imgStyle};min-height:200px"></div>` : ''}
+    </div>
+
+    <section>
+      <div class="container">
+        <a class="back-link" href="${opts.backHash}">${opts.backText}</a>
+        <div class="two-col">
+          <div class="main-content">
+            <h2 style="font-size:1.4rem;font-weight:700;color:var(--blue);margin-bottom:12px">${opts.title}</h2>
+            <p style="font-size:.92rem;color:var(--charcoal);line-height:1.85;margin-bottom:24px">${opts.intro}</p>
+            <p style="font-size:.82rem;font-weight:700;color:var(--charcoal);margin-bottom:16px">我们的 ${opts.title} 服务包括：</p>
+            <div class="service-items-grid">
+              ${itemsHtml}
+            </div>
+          </div>
+          <div class="sidebar">
+            <div class="sidebar-card">
+              <h3>为什么选择德扬</h3>
+              ${sidebarHtml}
+            </div>
+            <a href="contact.html#book" class="cta-btn primary" style="width:100%;display:block;text-align:center;margin-top:20px">预约咨询</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+/* ─── ROUTER ─── */
+
+function render() {
+  const hash = location.hash.slice(1) || 'home';
+  const app = document.getElementById('app');
+
+  if (hash === 'home' || hash === '') {
+    app.innerHTML = renderHome();
+  } else if (servicePages[hash]) {
+    app.innerHTML = serviceDetailPage(servicePages[hash]);
+  } else {
+    app.innerHTML = renderHome();
   }
 
-  function serviceDetailPage(opts) {
-    var html = '<div class="hero-banner" style="min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;background:url(../assets/images/33_HRHome01_FirstSight.png) center/cover no-repeat"><div class="hero-label">' + (opts.label || 'HR CONSULTING') + '</div><h1>' + opts.title + '</h1><p class="hero-sub">' + opts.subtitle + '</p></div>';
-    html += '<section><div class="container">';
-    html += '<a class="back-link" href="#home">返回人力资源咨询</a>';
-    html += '<div class="two-col"><div class="main-content">';
-    opts.accordions.forEach(function(acc) {
-      html += '<div class="accordion"><div class="accordion-header">' + acc + '</div><div class="accordion-body"><p>我们的团队在此领域提供专业指导和实际支持，与法律和会计专业人士协作，为您量身定制综合解决方案。</p></div></div>';
-    });
-    html += '</div><div class="sidebar"><div class="sidebar-card"><h3>为什么选择德扬</h3>';
-    opts.sidebar.forEach(function(item) {
-      html += '<div class="why-item"><h4>' + item + '</h4><p>来自经验丰富团队的实际综合支持。</p></div>';
-    });
-    html += '</div><div class="sidebar-card"><a href="contact.html" class="cta-btn" style="width:100%">预约咨询</a></div></div></div></div></section>';
-    return html;
-  }
+  window.scrollTo(0, 0);
+  initReveal();
+}
 
-  function renderHome() {
-    var html = heroBanner('HR CONSULTING', '人力资源咨询', '以资源支持您的成功', 'hero-glow');
-    html += '<section><div class="container">';
-    html += '<a class="back-link" href="consulting.html">返回咨询服务</a>';
-    html += '<div class="about-text"><p>在德扬，我们的HR咨询团队为新西兰企业提供实际的日常支持。我们的咨询团队与Bird &amp; Yang的法律团队协作，确保您在需要时获得综合支持。</p></div>';
-    html += '<div class="cards-grid mt-32">';
-    html += '<a class="service-card" href="#compliance"><div class="card-icon-area" style="background:url(../assets/images/33_HRHome02_HRCompliance.png) center/cover no-repeat;height:140px"></div><div class="card-body"><h3>人力合规</h3><p>自信地建立您的HR基础，符合当前最佳实践。</p><span class="learn-more">了解更多 &rarr;</span></div></a>';
-    html += '<a class="service-card" href="#people"><div class="card-icon-area" style="background:url(../assets/images/33_HRHome03_PeopleManagement.png) center/cover no-repeat;height:140px"></div><div class="card-body"><h3>人员管理</h3><p>以信心和公平流程处理困难对话。</p><span class="learn-more">了解更多 &rarr;</span></div></a>';
-    html += '<a class="service-card" href="#workplace"><div class="card-icon-area" style="background:url(../assets/images/33_HRHome04_Workplace.png) center/cover no-repeat;height:140px"></div><div class="card-body"><h3>职场文化与风险</h3><p>打造安全、尊重、有韧性的工作场所。</p><span class="learn-more">了解更多 &rarr;</span></div></a>';
-    html += '<a class="service-card" href="#recruitment"><div class="card-icon-area" style="background:url(../assets/images/33_HRHome05_Recruitment.png) center/cover no-repeat;height:140px"></div><div class="card-body"><h3>招聘与留人</h3><p>帮助您吸引、入职和留住合适的人才。</p><span class="learn-more">了解更多 &rarr;</span></div></a>';
-    html += '<a class="service-card" href="#bilingual"><div class="card-icon-area" style="background:url(../assets/images/33_HRHome06_Bilingual.png) center/cover no-repeat;height:140px"></div><div class="card-body"><h3>双语HR</h3><p>帮助您的工作场所跨语言保持一致。</p><span class="learn-more">了解更多 &rarr;</span></div></a>';
-    html += '</div></div></section>';
-    return html;
-  }
-
-  function renderCompliance() {
-    return serviceDetailPage({
-      label: 'HR咨询',
-      title: '人力合规基础',
-      subtitle: '自信地建立您的HR基础',
-      accordions: ['雇佣协议审查', '工作场所政策制定', '薪资与假期合规', '入职系统', '承包商与雇员评估', '记录保存与合规检查'],
-      sidebar: ['实际合规', '及时了解', '综合支持']
-    });
-  }
-
-  function renderPeople() {
-    return serviceDetailPage({
-      label: 'HR咨询',
-      title: '人员管理支持',
-      subtitle: '以信心处理困难对话',
-      accordions: ['绩效管理', '纪律程序指导', '重组支持', '终止指导', '文档与记录保存', '沟通与协商规划'],
-      sidebar: ['公平流程支持', '清晰文档', '综合法律通道']
-    });
-  }
-
-  function renderWorkplace() {
-    return serviceDetailPage({
-      label: 'HR咨询',
-      title: '职场文化与风险',
-      subtitle: '打造安全、尊重、有韧性的工作场所',
-      accordions: ['反霸凌与骚扰政策', '投诉与调查支持', '心理社会风险评估', '幸福感与参与度策略', '管理者培训指导', '职场行为框架'],
-      sidebar: ['文化清晰', '风险感知支持', '早期干预']
-    });
-  }
-
-  function renderRecruitment() {
-    return serviceDetailPage({
-      label: 'HR咨询',
-      title: '招聘与留人',
-      subtitle: '帮助您吸引、入职和留住合适的人才',
-      accordions: ['招聘流程设计', '工作权利检查', '入职培训', '留人与参与度审查', '能力与发展规划', '岗位与职位描述支持'],
-      sidebar: ['更智慧的招聘', '更好的入职', '留人重点']
-    });
-  }
-
-  function renderBilingual() {
-    return serviceDetailPage({
-      label: 'HR咨询',
-      title: '双语HR支持',
-      subtitle: '帮助您的工作场所保持一致',
-      accordions: ['双语雇佣文件', '员工沟通支持', '跨文化职场指导', '中资企业支持', '双语HR表格与政策', '与法律团队协调'],
-      sidebar: ['清晰沟通', '文化理解', '无缝法律衔接']
-    });
-  }
-
-  /* ─── ROUTER ─── */
-  const routes = {
-    'home': renderHome,
-    'compliance': renderCompliance,
-    'people': renderPeople,
-    'workplace': renderWorkplace,
-    'recruitment': renderRecruitment,
-    'bilingual': renderBilingual
-  };
-
-  function navigate() {
-    const hash = location.hash.slice(1) || 'home';
-    const render = routes[hash] || renderHome;
-    document.getElementById('app').innerHTML = render();
-    window.scrollTo(0, 0);
-    initAccordions();
-  }
-
-  function initAccordions() {
-    document.querySelectorAll('.accordion-header').forEach(function(header) {
-      header.addEventListener('click', function() {
-        this.parentElement.classList.toggle('open');
-      });
-    });
-  }
-
-  window.addEventListener('hashchange', navigate);
-  window.addEventListener('DOMContentLoaded', navigate);
-  navigate();
-
-  var navEl = document.querySelector('nav');
-  window.addEventListener('scroll', function() {
-    navEl.classList.toggle('scrolled', window.scrollY > 60);
+function initReveal() {
+  document.querySelectorAll('.reveal').forEach(function(el) {
+    new IntersectionObserver(function(entries, obs) {
+      entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, {threshold: 0.1}).observe(el);
   });
+}
+
+/* ─── INIT ─── */
+window.addEventListener('hashchange', render);
+render();
+
 })();
 </script>
+
 <script src="/components/chatbot.js"></script>
 <script>renderChatbot({lang:"zh"})</script>
 </body>

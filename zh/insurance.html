@@ -25,106 +25,211 @@
 <script src="/components/footer.js"></script>
 <script>renderFooter({lang:"zh"})</script>
 
+<script src="/components/section-header.js"></script>
 <script>
 (function(){
 
-  function heroBanner(label, title, subtitle, extraClass) {
-    return '<div class="hero-banner' + (extraClass ? ' ' + extraClass : '') + '" style="min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;background:url(../assets/images/29_InsuranceHome01_FirstSight.png) center/cover no-repeat"><div class="hero-label">' + label + '</div><h1>' + title + '</h1><p class="hero-sub">' + subtitle + '</p></div>';
+/* ─── DATA ─── */
+
+const servicePages = {
+  'car': {
+    img: '../assets/images/30_InsuranceSubHome01_Car.png',
+    title: '车险',
+    heroSub: '为日常出行提供可靠保障',
+    backHash: '#home',
+    backText: '返回保险服务',
+    intro: '车险不仅仅是拥有一份保单；您需要合适的保障、清晰了解义务，并对理赔时能够获得赔付充满信心。德扬帮助客户在新西兰办理车辆保险，并避免导致拒赔或意外费用的常见陷阱。',
+    accordions: [
+      { title: '保单比较与选择', desc: '综合比较全险、第三方火险与盗窃险及仅第三方责任险，根据您的车辆价值和预算匹配最佳方案。' },
+      { title: '约定价值 vs 市场价值', desc: '确保为您的车辆设定合适价值，避免续保或全损时出现意外。' },
+      { title: '免赔额策略', desc: '解释不同免赔额（标准、年轻驾驶员或玻璃）如何影响保费和理赔时的自付费用。' },
+      { title: '告知义务与资格审查', desc: '协助您履行告知义务，包括车辆改装、驾驶记录和驾照要求（特别针对海外驾照持有者和移民）。' },
+      { title: '车辆用途评估', desc: '确保保单正确反映车辆用途，无论是私人、商业还是网约车和快递服务。' },
+      { title: '理赔证据支持', desc: '提供事故现场的证据收集清单，确保理赔流程顺利。' }
+    ],
+    sidebar: [
+      { title: '保单清晰', desc: '我们根据您的车辆和预算匹配保障方案。' },
+      { title: '告知指导', desc: '协助处理驾驶记录、改装和资格问题。' },
+      { title: '理赔就绪', desc: '实用指导，确保事故记录完整。' }
+    ]
+  },
+  'house': {
+    img: '../assets/images/31_InsuranceSubHome02_House.png',
+    title: '房险',
+    heroSub: '守护家中最重要的一切',
+    backHash: '#home',
+    backText: '返回保险服务',
+    intro: '房产通常是客户最大的财务投资。保护它需要的不只是标准保单；还需要了解重建成本、除外责任和房产特定风险。德扬帮助首次购房者和投资者确保房屋保险计算准确并得到主动管理。',
+    accordions: [
+      { title: '重建保额准确性', desc: '使用当前建筑成本数据帮助确定正确的重建价值，防止保额不足风险。' },
+      { title: '渐进损害与维护', desc: '清楚解释突发意外损坏与排除的渐进损坏（如隐蔽渗漏）之间的区别，助您管理房产风险。' },
+      { title: '空置物业保障', desc: '就旅行或过渡期房屋空置期间的保单要求提供建议，确保保障持续有效。' },
+      { title: '居家办公咨询', desc: '确保房屋保险涵盖您在家中进行的任何商业或专业活动。' },
+      { title: '装修及合同工程', desc: '在房屋进行结构改动或重大装修期间协助衔接保障缺口。' },
+      { title: '房东保障', desc: '为投资者提供定期检查义务合规指导和租客相关风险保护。' }
+    ],
+    sidebar: [
+      { title: '重建信心', desc: '使用当前建筑成本数据提供指导。' },
+      { title: '风险意识', desc: '清楚解释除外责任和房产特定问题。' },
+      { title: '实际保障', desc: '为空置房屋、装修和房东风险提供支持。' }
+    ]
+  },
+  'life-health': {
+    img: '../assets/images/32_InsuranceSubHome03_Life.png',
+    title: '人寿、健康及商业保险',
+    heroSub: '为生命、健康和商业提供清晰指导',
+    backHash: '#home',
+    backText: '返回保险服务',
+    intro: '突发疾病、受伤或关键人员流失都可能打乱家庭或企业的正常运作。德扬帮助客户建立安全网，保护收入、健康和长期目标，保障方案与更广泛的法律和财务规划相对齐。',
+    accordions: [
+      { title: '人寿保险', desc: '提供一次性赔付，确保您的亲人在经济上得到保障，遗产得到保护。' },
+      { title: '健康与医疗保障', desc: '确保及时获得私人专科护理和手术，避免公立系统长时间等待。' },
+      { title: '重大疾病保险', desc: '在确诊严重疾病（如癌症或中风）时提供财务支持，让您专注于康复而不必担心账单负担。' },
+      { title: '收入保护与房贷还款', desc: '在您无法工作时保障您履行最重要的财务承诺的能力。' },
+      { title: '商业与责任保险', desc: '保护您的企业免受公共责任、职业赔偿风险和关键人员流失的影响。' },
+      { title: '团体保险计划', desc: '为企业量身定制健康和寿险福利，保护和留住最宝贵的资产——员工。' }
+    ],
+    sidebar: [
+      { title: '综合规划', desc: '保障方案与商业和个人目标对齐。' },
+      { title: '更广保障', desc: '涵盖寿险、健康、收入和商业风险。' },
+      { title: '未来安全', desc: '旨在保护家庭、企业和遗产。' }
+    ]
+  }
+};
+
+/* ─── RENDER FUNCTIONS ─── */
+
+function renderHome() {
+  return `
+    <div class="hero-banner hero-glow" style="min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;background:url('../assets/images/29_InsuranceHome01_FirstSight.png') center/cover no-repeat">
+      <p class="breadcrumb"><a href="consulting.html">咨询服务</a> &gt; 保险</p>
+      <h1>保险服务</h1>
+      <p class="hero-sub">以专业守护您的未来</p>
+    </div>
+
+    <section class="bg-cream reveal">
+      <div class="container">
+        ${sectionAbout('关于我们的保险业务', '生活和商业建立在"假如"之上。在德扬，我们帮助您在问题出现之前就做好应对准备。我们不仅仅是安排保单——我们提供清晰的指导，确保您的资产、家庭和未来得到正确的保障。与法律和会计团队并肩协作，我们提供整合的保险支持方案。')}
+      </div>
+    </section>
+
+    <section class="bg-white reveal">
+      <div class="container">
+        ${sectionHeader('我们的服务', '专业领域')}
+        <div class="cards-grid">
+          <a class="service-card" href="#car">
+            <div class="card-icon-area" style="background:url('../assets/images/29_InsuranceHome02_Car.png') center/cover no-repeat;height:140px"></div>
+            <div class="card-body">
+              <h3>车险</h3>
+              <p>让您放心驾驶，为出行提供专业保障指导。</p>
+              <span class="learn-more">了解更多 &rarr;</span>
+            </div>
+          </a>
+          <a class="service-card" href="#house">
+            <div class="card-icon-area" style="background:url('../assets/images/29_InsuranceHome03_House.png') center/cover no-repeat;height:140px"></div>
+            <div class="card-body">
+              <h3>房险</h3>
+              <p>以专业前瞻性保护您的家园安全。</p>
+              <span class="learn-more">了解更多 &rarr;</span>
+            </div>
+          </a>
+          <a class="service-card" href="#life-health">
+            <div class="card-icon-area" style="background:url('../assets/images/29_InsuranceHome04_Life.png') center/cover no-repeat;height:140px"></div>
+            <div class="card-body">
+              <h3>人寿、健康及商业保险</h3>
+              <p>为不确定性做好规划，确保生活变化时安全不变。</p>
+              <span class="learn-more">了解更多 &rarr;</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+function serviceDetailPage(opts) {
+  const itemsHtml = opts.accordions.map(item => `
+    <div class="service-item">
+      <div class="service-item-icon">●</div>
+      <div><h4>${item.title}</h4><p>${item.desc}</p></div>
+    </div>
+  `).join('');
+
+  const sidebarHtml = opts.sidebar.map(s => `
+    <div class="why-item">
+      <h4>${s.title}</h4>
+      <p>${s.desc}</p>
+    </div>
+  `).join('');
+
+  return `
+    <div style="min-height:100vh;display:flex;flex-direction:column">
+      <div class="hero-banner" style="padding:100px 5% 30px;flex-shrink:0">
+        <div class="breadcrumb"><a href="consulting.html">咨询服务</a> &gt; <a href="#home">保险</a> &gt; ${opts.title}</div>
+        <h1>${opts.title}</h1>
+        ${opts.heroSub ? `<p class="hero-sub">${opts.heroSub}</p>` : ''}
+      </div>
+      ${opts.img ? `<div style="flex:1;background:url('${opts.img}') center/cover no-repeat;min-height:200px"></div>` : ''}
+    </div>
+
+    <section>
+      <div class="container">
+        <a class="back-link" href="${opts.backHash}">${opts.backText}</a>
+        <div class="two-col">
+          <div class="main-content">
+            <h2 style="font-size:1.4rem;font-weight:700;color:var(--blue);margin-bottom:12px">${opts.title}</h2>
+            <p style="font-size:.92rem;color:var(--charcoal);line-height:1.85;margin-bottom:24px">${opts.intro}</p>
+            <p style="font-size:.82rem;font-weight:700;color:var(--charcoal);margin-bottom:16px">我们的 ${opts.title} 服务包括：</p>
+            <div class="service-items-grid">
+              ${itemsHtml}
+            </div>
+          </div>
+          <div class="sidebar">
+            <div class="sidebar-card">
+              <h3>为什么选择德扬</h3>
+              ${sidebarHtml}
+            </div>
+            <a href="contact.html#book" class="cta-btn primary" style="width:100%;display:block;text-align:center;margin-top:20px">预约咨询</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+/* ─── ROUTER ─── */
+
+function render() {
+  const hash = location.hash.slice(1) || 'home';
+  const app = document.getElementById('app');
+
+  if (hash === 'home' || hash === '') {
+    app.innerHTML = renderHome();
+  } else if (servicePages[hash]) {
+    app.innerHTML = serviceDetailPage(servicePages[hash]);
+  } else {
+    app.innerHTML = renderHome();
   }
 
-  function serviceDetailPage(opts) {
-    var html = '<div class="hero-banner" style="min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;background:url(../assets/images/29_InsuranceHome01_FirstSight.png) center/cover no-repeat"><div class="hero-label">' + (opts.label || 'INSURANCE') + '</div><h1>' + opts.title + '</h1><p class="hero-sub">' + opts.subtitle + '</p></div>';
-    html += '<section><div class="container">';
-    html += '<a class="back-link" href="#home">返回保险服务</a>';
-    html += '<div class="two-col"><div class="main-content">';
-    opts.accordions.forEach(function(acc) {
-      html += '<div class="accordion"><div class="accordion-header">' + acc + '</div><div class="accordion-body"><p>我们的团队在此领域提供专业指导和实际支持，与法律和会计专业人士协作，为您量身定制综合解决方案。</p></div></div>';
-    });
-    html += '</div><div class="sidebar"><div class="sidebar-card"><h3>为什么选择德扬</h3>';
-    opts.sidebar.forEach(function(item) {
-      html += '<div class="why-item"><h4>' + item + '</h4><p>来自经验丰富团队的实际综合支持。</p></div>';
-    });
-    html += '</div><div class="sidebar-card"><a href="contact.html" class="cta-btn" style="width:100%">预约咨询</a></div></div></div></div></section>';
-    return html;
-  }
+  window.scrollTo(0, 0);
+  initReveal();
+}
 
-  function renderHome() {
-    var html = heroBanner('INSURANCE', '保险服务', '以专业守护您的未来', 'hero-glow');
-    html += '<section><div class="container">';
-    html += '<a class="back-link" href="consulting.html">返回咨询服务</a>';
-    html += '<div class="about-text"><p>生活和商业建立在"假如"之上。在德扬，我们帮助您在问题出现之前就做好应对准备。我们不仅仅是安排保单——我们提供清晰的指导，确保您的资产、家庭和未来得到正确的保障。</p></div>';
-    html += '<div class="cards-grid mt-32">';
-    html += '<a class="service-card" href="#car"><div class="card-icon-area" style="background:url(../assets/images/29_InsuranceHome02_Car.png) center/cover no-repeat;height:140px"></div><div class="card-body"><h3>车险</h3><p>让您放心驾驶，为出行提供专业保障指导。</p><span class="learn-more">了解更多 &rarr;</span></div></a>';
-    html += '<a class="service-card" href="#house"><div class="card-icon-area" style="background:url(../assets/images/29_InsuranceHome03_House.png) center/cover no-repeat;height:140px"></div><div class="card-body"><h3>房险</h3><p>以专业前瞻性保护您的家园安全。</p><span class="learn-more">了解更多 &rarr;</span></div></a>';
-    html += '<a class="service-card" href="#life-health"><div class="card-icon-area" style="background:url(../assets/images/29_InsuranceHome04_Life.png) center/cover no-repeat;height:140px"></div><div class="card-body"><h3>人寿、健康及商业保险</h3><p>为不确定性做好规划，确保生活变化时安全不变。</p><span class="learn-more">了解更多 &rarr;</span></div></a>';
-    html += '</div></div></section>';
-    return html;
-  }
-
-  function renderCar() {
-    return serviceDetailPage({
-      label: '保险',
-      title: '车险',
-      subtitle: '为日常出行提供可靠保障',
-      accordions: ['保单比较与选择', '约定价值 vs 市场价值', '免赔额策略', '告知义务与资格审查', '车辆用途评估', '理赔证据支持'],
-      sidebar: ['保单清晰', '告知指导', '理赔就绪']
-    });
-  }
-
-  function renderHouse() {
-    return serviceDetailPage({
-      label: '保险',
-      title: '房险',
-      subtitle: '守护家中最重要的一切',
-      accordions: ['重建保额准确性', '渐进损害与维护', '空置物业保障', '居家办公咨询', '装修及合同工程', '房东保障'],
-      sidebar: ['重建信心', '风险意识', '实际保障']
-    });
-  }
-
-  function renderLifeHealth() {
-    return serviceDetailPage({
-      label: '保险',
-      title: '人寿、健康及商业保险',
-      subtitle: '为生命、健康和商业提供清晰指导',
-      accordions: ['人寿保险', '健康与医疗保障', '重大疾病保险', '收入保护与房贷还款', '商业与责任保险', '团体保险计划'],
-      sidebar: ['综合规划', '更广保障', '未来安全']
-    });
-  }
-
-  /* ─── ROUTER ─── */
-  const routes = {
-    'home': renderHome,
-    'car': renderCar,
-    'house': renderHouse,
-    'life-health': renderLifeHealth
-  };
-
-  function navigate() {
-    const hash = location.hash.slice(1) || 'home';
-    const render = routes[hash] || renderHome;
-    document.getElementById('app').innerHTML = render();
-    window.scrollTo(0, 0);
-    initAccordions();
-  }
-
-  function initAccordions() {
-    document.querySelectorAll('.accordion-header').forEach(function(header) {
-      header.addEventListener('click', function() {
-        this.parentElement.classList.toggle('open');
-      });
-    });
-  }
-
-  window.addEventListener('hashchange', navigate);
-  window.addEventListener('DOMContentLoaded', navigate);
-  navigate();
-
-  var navEl = document.querySelector('nav');
-  window.addEventListener('scroll', function() {
-    navEl.classList.toggle('scrolled', window.scrollY > 60);
+function initReveal() {
+  document.querySelectorAll('.reveal').forEach(function(el) {
+    new IntersectionObserver(function(entries, obs) {
+      entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, {threshold: 0.1}).observe(el);
   });
+}
+
+/* ─── INIT ─── */
+window.addEventListener('hashchange', render);
+render();
+
 })();
 </script>
+
 <script src="/components/chatbot.js"></script>
 <script>renderChatbot({lang:"zh"})</script>
 </body>

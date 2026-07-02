@@ -25,118 +25,240 @@
 <script src="/components/footer.js"></script>
 <script>renderFooter({lang:"zh"})</script>
 
+<script src="/components/section-header.js"></script>
 <script>
 (function(){
 
-  function heroBanner(label, title, subtitle, extraClass) {
-    return '<div class="hero-banner' + (extraClass ? ' ' + extraClass : '') + '" style="min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;background:url(../assets/images/39_ImmigrationHome01_FirstSight.png) center/cover no-repeat"><div class="hero-label">' + label + '</div><h1>' + title + '</h1><p class="hero-sub">' + subtitle + '</p></div>';
+/* ─── DATA ─── */
+
+const servicePages = {
+  'pathway': {
+    img: '../assets/images/40_ImmigrationSubhome01_PathwayV2.png',
+    title: '路径支持',
+    heroSub: '从一开始就做好准备，充满信心',
+    backHash: '#home',
+    backText: '返回移民咨询',
+    intro: '每一段移民旅程都始于一个问题：哪条路径适合我？面对访客、学生、工作、伴侣、居民及特殊目的签证类别，很多人在流程开始之前就感到迷茫。德扬帮助您收集正确的背景信息、整理个人档案，并为与我们的持牌移民顾问或律师进行有针对性的沟通做好准备。',
+    accordions: [
+      { title: '个人家庭及移民背景收集', desc: '帮助您整理关键的个人、家庭、旅行、移民及定居信息，让顾问从一开始就能清楚了解您的情况。' },
+      { title: '教育与就业档案整理', desc: '汇总您的教育背景、学历资格、工作经验、技能及职业规划，为潜在移民路径的清晰评估提供支持。' },
+      { title: '初步签证路径准备', desc: '帮助您了解可能适用于您情况的主要签证类别，并为与持牌移民顾问的讨论准备关键问题。' },
+      { title: '初始文件与证据清单', desc: '准备初始清单，包括身份证明文件、学历证书、就业记录、关系证明、财务信息及其他支持材料。' },
+      { title: '咨询简报准备', desc: '将您的背景、目标、关键问题及现有文件整理成清晰的咨询简报，以便我们的移民顾问或律师高效审查您的事务。' },
+      { title: '内部转介至移民律师', desc: '在需要法律建议、资格评估或正式签证申请支持时，为您对接我们的持牌移民顾问或移民律师。' }
+    ],
+    sidebar: [
+      { title: '清晰起点', desc: '我们在正式咨询开始前帮助整理您的情况。' },
+      { title: '综合团队', desc: '咨询与法律支持在同一屋檐下协同工作。' },
+      { title: '减少困惑', desc: '您以结构、清晰和正确的下一步开始。' }
+    ]
+  },
+  'application': {
+    img: '../assets/images/41_ImmigrationSubhome02_Preparation.png',
+    title: '申请准备',
+    heroSub: '以最佳状态提交您的申请',
+    backHash: '#home',
+    backText: '返回移民咨询',
+    intro: '签证延误和拒签最常见的原因之一是文件不完整、不一致或呈现不佳。德扬与您并肩协作，仔细准备申请的每个部分，确保您的档案清晰、完整并准备好提交。我们的咨询团队支持实务准备工作，帮助您的案件自我证明。',
+    accordions: [
+      { title: '文件准备与组织', desc: '帮助您收集、分类、标注和整理所需的申请文件，确保您的档案清晰、完整且易于顾问或决策者查阅。' },
+      { title: '辅助文件格式与质量审查', desc: '审查支持文件的格式、可读性、翻译质量、认证要求、文件名及呈现方式，减少被要求补充材料的可能。' },
+      { title: '财务证据准备', desc: '帮助您整理银行对账单、收入记录、担保证据、资金说明及其他财务文件，以支持申请的财务要求。' },
+      { title: '健康与品格文件协调', desc: '协助您协调体检、无犯罪记录证明、身份记录及相关支持文件，满足健康和品格评估要求。' },
+      { title: '所有记录一致性审查', desc: '核对申请表、护照、就业记录、教育文件、财务证据及以往签证记录中的关键细节，在提交前识别不一致之处。' },
+      { title: '最终文件就绪与提交准备', desc: '审查申请材料的完整性、结构、文件顺序及呈现方式，确保档案准备好供顾问最终审查和提交。' }
+    ],
+    sidebar: [
+      { title: '清晰文件', desc: '每份文件都经过结构化整理和精心准备。' },
+      { title: '质量控制', desc: '我们交叉核对细节，降低风险并避免不一致。' },
+      { title: '提交就绪', desc: '您的申请材料已组织妥当，可顺利推进。' }
+    ]
+  },
+  'relationship': {
+    img: '../assets/images/42_ImmigrationSubhome03_Relationship%26EmploymentV2.png',
+    title: '关系与就业证据',
+    heroSub: '清晰地呈现您的故事',
+    backHash: '#home',
+    backText: '返回移民咨询',
+    intro: '某些签证类别需要的不仅仅是文书——它们需要您故事的真实证明。无论申请基于伴侣关系、工作邀约还是两者兼有，德扬帮助您清晰、有说服力地组织证据。我们支持客户和雇主准备关系记录、就业文件及符合新西兰移民局期望的支持材料。',
+    accordions: [
+      { title: '关系时间线准备', desc: '帮助您整理关系的关键阶段，包括相识时间、关系发展、重要里程碑、同居时期及未来规划。' },
+      { title: '同居与共享记录', desc: '协助您收集和呈现同居及共同生活的证据，如租房记录、账单、联名账户、通信记录、照片及他人证明。' },
+      { title: '分居期间说明', desc: '帮助您为分居时期准备清晰的解释和支持证据，包括旅行、工作、学习、家庭义务、签证问题或其他情况。' },
+      { title: '就业文件支持', desc: '协助员工和雇主整理工作邀约、雇佣协议、职位描述、雇主信、工资单、税务记录及其他工作相关证据。' },
+      { title: '认证与岗位要求检查', desc: '帮助雇主和申请人识别关键就业相关要求，包括雇主认证状态、职位详情、薪资标准、工作条件及招聘义务。' },
+      { title: '学历与经验匹配', desc: '帮助您展示学历、工作经验、技能及专业背景如何与所考虑的职位或签证路径相匹配。' }
+    ],
+    sidebar: [
+      { title: '真实证据', desc: '我们以清晰可信的方式呈现您的真实故事。' },
+      { title: '申请人与雇主支持', desc: '在就业证据重要时，我们与双方协作。' },
+      { title: '更紧密对齐', desc: '支持性细节被组织得与签证要求高度匹配。' }
+    ]
+  },
+  'timeline': {
+    img: '../assets/images/43_ImmigrationSubhome04_TimelineV2.png',
+    title: '时间线与流程管理',
+    heroSub: '让您的事务按计划推进',
+    backHash: '#home',
+    backText: '返回移民咨询',
+    intro: '移民申请并非孤立发生。签证到期日、处理时间、工作开始日期、学校入学和个人截止日常常交织在一起。德扬帮助从头到尾规划流程、追踪关键日期并协调实务步骤，确保没有任何事项被仓促、遗漏或允许失效。',
+    accordions: [
+      { title: '端到端申请时间线规划', desc: '规划从初始准备到最终提交的完整申请流程，确保每个阶段都被清晰规划并按正确顺序完成。' },
+      { title: '关键日期与截止日映射', desc: '识别重要日期、所需行动、文件时间节点及决策点，帮助您保持条理并避免临时压力。' },
+      { title: '签证到期与续签追踪', desc: '帮助您监控签证到期日、续签窗口、过渡步骤及相关时间安排，确保移民事务不会意外失效。' },
+      { title: '处理时间监控', desc: '跟踪公布的处理时间指引、申请进度及实际时间安排，以便您围绕预期等待期做好规划。' },
+      { title: '围绕截止日的协调', desc: '将移民准备工作与就业开始日期、学校入学、旅行计划、家庭安排及其他重要个人或商业里程碑对齐。' },
+      { title: '无缝移交至移民法律团队', desc: '将您的时间线、文件、关键日期及背景信息整理妥当，以便顺利移交至我们的持牌移民顾问或移民律师。' }
+    ],
+    sidebar: [
+      { title: '不错过任何日期', desc: '我们追踪关键里程碑，确保您的档案保持在正轨上。' },
+      { title: '无缝内部移交', desc: '您的咨询档案在需要时顺畅移交至我们的法律团队。' },
+      { title: '安心', desc: '在整个过程中，您始终保持知情、有条理和按时推进。' }
+    ]
+  }
+};
+
+/* ─── RENDER FUNCTIONS ─── */
+
+function renderHome() {
+  return `
+    <div class="hero-banner hero-glow" style="min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;background:url('../assets/images/39_ImmigrationHome01_FirstSight.png') center/cover no-repeat">
+      <p class="breadcrumb"><a href="consulting.html">咨询服务</a> &gt; 移民咨询</p>
+      <h1>移民咨询</h1>
+      <p class="hero-sub">高效实现您的移民路径</p>
+    </div>
+
+    <section class="bg-cream reveal">
+      <div class="container">
+        ${sectionAbout('关于我们的移民咨询业务', '移民咨询与移民法律在德扬携手并进。我们的咨询团队负责实务和组织方面——文件准备、档案管理、证据收集和时间线协调——以便当您的事务被转介给我们的持牌移民顾问或律师时，一切清晰、完整并准备就绪。')}
+      </div>
+    </section>
+
+    <section class="bg-white reveal">
+      <div class="container">
+        ${sectionHeader('我们的服务', '专业领域')}
+        <div class="cards-grid">
+          <a class="service-card" href="#pathway">
+            <div class="card-icon-area" style="background:url('../assets/images/39_ImmigrationHome02_Pathway.png') center/cover no-repeat;height:140px"></div>
+            <div class="card-body">
+              <h3>路径支持</h3>
+              <p>从一开始就做好准备，充满信心。</p>
+              <span class="learn-more">了解更多 &rarr;</span>
+            </div>
+          </a>
+          <a class="service-card" href="#application">
+            <div class="card-icon-area" style="background:url('../assets/images/39_ImmigrationHome03_Preparation.png') center/cover no-repeat;height:140px"></div>
+            <div class="card-body">
+              <h3>申请准备</h3>
+              <p>以最佳状态提交您的申请。</p>
+              <span class="learn-more">了解更多 &rarr;</span>
+            </div>
+          </a>
+          <a class="service-card" href="#relationship">
+            <div class="card-icon-area" style="background:url('../assets/images/39_ImmigrationHome04_Relationship%26Employment.png') center/cover no-repeat;height:140px"></div>
+            <div class="card-body">
+              <h3>关系与就业证据</h3>
+              <p>清晰地呈现您的故事。</p>
+              <span class="learn-more">了解更多 &rarr;</span>
+            </div>
+          </a>
+          <a class="service-card" href="#timeline">
+            <div class="card-icon-area" style="background:url('../assets/images/39_ImmigrationHome05_Timeline.png') center/cover no-repeat;height:140px"></div>
+            <div class="card-body">
+              <h3>时间线与流程</h3>
+              <p>让您的事务按计划推进。</p>
+              <span class="learn-more">了解更多 &rarr;</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+function serviceDetailPage(opts) {
+  const itemsHtml = opts.accordions.map(item => `
+    <div class="service-item">
+      <div class="service-item-icon">●</div>
+      <div><h4>${item.title}</h4><p>${item.desc}</p></div>
+    </div>
+  `).join('');
+
+  const sidebarHtml = opts.sidebar.map(s => `
+    <div class="why-item">
+      <h4>${s.title}</h4>
+      <p>${s.desc}</p>
+    </div>
+  `).join('');
+
+  return `
+    <div style="min-height:100vh;display:flex;flex-direction:column">
+      <div class="hero-banner" style="padding:100px 5% 30px;flex-shrink:0">
+        <div class="breadcrumb"><a href="consulting.html">咨询服务</a> &gt; <a href="#home">移民咨询</a> &gt; ${opts.title}</div>
+        <h1>${opts.title}</h1>
+        ${opts.heroSub ? `<p class="hero-sub">${opts.heroSub}</p>` : ''}
+      </div>
+      ${opts.img ? `<div style="flex:1;background:url('${opts.img}') center/cover no-repeat;min-height:200px"></div>` : ''}
+    </div>
+
+    <section>
+      <div class="container">
+        <a class="back-link" href="${opts.backHash}">${opts.backText}</a>
+        <div class="two-col">
+          <div class="main-content">
+            <h2 style="font-size:1.4rem;font-weight:700;color:var(--blue);margin-bottom:12px">${opts.title}</h2>
+            <p style="font-size:.92rem;color:var(--charcoal);line-height:1.85;margin-bottom:24px">${opts.intro}</p>
+            <p style="font-size:.82rem;font-weight:700;color:var(--charcoal);margin-bottom:16px">我们的 ${opts.title} 服务包括：</p>
+            <div class="service-items-grid">
+              ${itemsHtml}
+            </div>
+          </div>
+          <div class="sidebar">
+            <div class="sidebar-card">
+              <h3>为什么选择德扬</h3>
+              ${sidebarHtml}
+            </div>
+            <a href="contact.html#book" class="cta-btn primary" style="width:100%;display:block;text-align:center;margin-top:20px">预约咨询</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+/* ─── ROUTER ─── */
+
+function render() {
+  const hash = location.hash.slice(1) || 'home';
+  const app = document.getElementById('app');
+
+  if (hash === 'home' || hash === '') {
+    app.innerHTML = renderHome();
+  } else if (servicePages[hash]) {
+    app.innerHTML = serviceDetailPage(servicePages[hash]);
+  } else {
+    app.innerHTML = renderHome();
   }
 
-  function serviceDetailPage(opts) {
-    var html = '<div class="hero-banner" style="min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;background:url(../assets/images/39_ImmigrationHome01_FirstSight.png) center/cover no-repeat"><div class="hero-label">' + (opts.label || 'IMMIGRATION') + '</div><h1>' + opts.title + '</h1><p class="hero-sub">' + opts.subtitle + '</p></div>';
-    html += '<section><div class="container">';
-    html += '<a class="back-link" href="#home">返回移民咨询</a>';
-    html += '<div class="two-col"><div class="main-content">';
-    opts.accordions.forEach(function(acc) {
-      html += '<div class="accordion"><div class="accordion-header">' + acc + '</div><div class="accordion-body"><p>我们的团队在此领域提供专业指导和实际支持，与移民律师协作，确保您的准备工作全面周到。</p></div></div>';
-    });
-    html += '</div><div class="sidebar"><div class="sidebar-card"><h3>为什么选择德扬</h3>';
-    opts.sidebar.forEach(function(item) {
-      html += '<div class="why-item"><h4>' + item + '</h4><p>来自经验丰富团队的实际综合支持。</p></div>';
-    });
-    html += '</div><div class="sidebar-card"><a href="contact.html" class="cta-btn" style="width:100%">预约咨询</a></div></div></div></div></section>';
-    return html;
-  }
+  window.scrollTo(0, 0);
+  initReveal();
+}
 
-  function renderHome() {
-    var html = heroBanner('IMMIGRATION', '移民咨询', '高效实现您的移民路径', 'hero-glow');
-    html += '<section><div class="container">';
-    html += '<a class="back-link" href="consulting.html">返回咨询服务</a>';
-    html += '<div class="about-text"><p>我们的移民咨询团队帮助您清晰地准备、组织和呈现您的移民事务。我们与Bird &amp; Yang的移民律师协作，确保您的准备工作全面，向法律支持的过渡顺畅无缝。</p></div>';
-    html += '<div class="cards-grid mt-32">';
-    html += '<a class="service-card" href="#pathway"><div class="card-icon-area" style="background:url(../assets/images/39_ImmigrationHome02_Pathway.png) center/cover no-repeat;height:140px"></div><div class="card-body"><h3>路径支持</h3><p>从一开始就做好准备，充满信心。</p><span class="learn-more">了解更多 &rarr;</span></div></a>';
-    html += '<a class="service-card" href="#application"><div class="card-icon-area" style="background:url(../assets/images/39_ImmigrationHome03_Preparation.png) center/cover no-repeat;height:140px"></div><div class="card-body"><h3>申请准备</h3><p>以最佳状态提交您的申请。</p><span class="learn-more">了解更多 &rarr;</span></div></a>';
-    html += '<a class="service-card" href="#relationship"><div class="card-icon-area" style="background:url(../assets/images/39_ImmigrationHome04_Relationship%26Employment.png) center/cover no-repeat;height:140px"></div><div class="card-body"><h3>关系与就业证据</h3><p>清晰地呈现您的故事。</p><span class="learn-more">了解更多 &rarr;</span></div></a>';
-    html += '<a class="service-card" href="#timeline"><div class="card-icon-area" style="background:url(../assets/images/39_ImmigrationHome05_Timeline.png) center/cover no-repeat;height:140px"></div><div class="card-body"><h3>时间线与流程</h3><p>让您的事务按计划推进。</p><span class="learn-more">了解更多 &rarr;</span></div></a>';
-    html += '</div></div></section>';
-    return html;
-  }
-
-  function renderPathway() {
-    return serviceDetailPage({
-      label: '移民咨询',
-      title: '路径支持',
-      subtitle: '帮助您选择正确的移民路径',
-      accordions: ['个人家庭及移民背景收集', '教育与就业档案整理', '初步签证路径准备', '初始文件与证据清单', '咨询简报准备', '内部转介至移民律师'],
-      sidebar: ['清晰起点', '综合团队', '减少困惑']
-    });
-  }
-
-  function renderApplication() {
-    return serviceDetailPage({
-      label: '移民咨询',
-      title: '申请准备',
-      subtitle: '清晰高效地组织材料',
-      accordions: ['文件准备与组织', '辅助文件格式与质量审查', '财务证据准备', '健康与品格文件协调', '所有记录一致性审查', '最终文件就绪与提交准备'],
-      sidebar: ['清晰文件', '质量控制', '提交就绪']
-    });
-  }
-
-  function renderRelationship() {
-    return serviceDetailPage({
-      label: '移民咨询',
-      title: '关系与就业证据',
-      subtitle: '用心和清晰帮助您整理证据',
-      accordions: ['关系时间线准备', '同居与共享记录', '分居期间说明', '就业文件支持', '认证与岗位要求检查', '学历与经验匹配'],
-      sidebar: ['真实证据', '申请人与雇主支持', '更紧密对齐']
-    });
-  }
-
-  function renderTimeline() {
-    return serviceDetailPage({
-      label: '移民咨询',
-      title: '时间线与流程管理',
-      subtitle: '让您的事务按计划推进',
-      accordions: ['端到端申请时间线规划', '关键日期与截止日映射', '签证到期与续签追踪', '处理时间监控', '围绕截止日的协调', '无缝移交至移民法律团队'],
-      sidebar: ['不错过任何日期', '无缝内部移交', '安心']
-    });
-  }
-
-  /* ─── ROUTER ─── */
-  const routes = {
-    'home': renderHome,
-    'pathway': renderPathway,
-    'application': renderApplication,
-    'relationship': renderRelationship,
-    'timeline': renderTimeline
-  };
-
-  function navigate() {
-    const hash = location.hash.slice(1) || 'home';
-    const render = routes[hash] || renderHome;
-    document.getElementById('app').innerHTML = render();
-    window.scrollTo(0, 0);
-    initAccordions();
-  }
-
-  function initAccordions() {
-    document.querySelectorAll('.accordion-header').forEach(function(header) {
-      header.addEventListener('click', function() {
-        this.parentElement.classList.toggle('open');
-      });
-    });
-  }
-
-  window.addEventListener('hashchange', navigate);
-  window.addEventListener('DOMContentLoaded', navigate);
-  navigate();
-
-  var navEl = document.querySelector('nav');
-  window.addEventListener('scroll', function() {
-    navEl.classList.toggle('scrolled', window.scrollY > 60);
+function initReveal() {
+  document.querySelectorAll('.reveal').forEach(function(el) {
+    new IntersectionObserver(function(entries, obs) {
+      entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, {threshold: 0.1}).observe(el);
   });
+}
+
+/* ─── INIT ─── */
+window.addEventListener('hashchange', render);
+render();
+
 })();
 </script>
+
 <script src="/components/chatbot.js"></script>
 <script>renderChatbot({lang:"zh"})</script>
 </body>
