@@ -107,7 +107,7 @@ function serviceDetail(opts){
     if(typeof w === 'string') { whyHTML += '<div class="why-item">'+w+'</div>'; }
     else { whyHTML += '<div class="why-item"><h4>'+w.title+'</h4><p>'+w.desc+'</p></div>'; }
   });
-  return '<div style="min-height:100vh;display:flex;flex-direction:column"><div class="hero-banner" style="padding:100px 5% 30px;flex-shrink:0"><div class="breadcrumb"><a href="#home">ACCOUNTING</a> &rsaquo; '+opts.title+'</div><h1>'+opts.title+'</h1>'+(opts.subtitle?'<p class="hero-sub">'+opts.subtitle+'</p>':'')+'</div>'
+  return '<div style="min-height:100vh;display:flex;flex-direction:column"><div class="hero-banner" style="padding:100px 5% 30px;flex-shrink:0"><div class="breadcrumb"><a href="#home">ACCOUNTING SERVICES</a> &rsaquo; '+opts.title+'</div><h1>'+opts.title+'</h1>'+(opts.subtitle?'<p class="hero-sub">'+opts.subtitle+'</p>':'')+'</div>'
     + (opts.img ? '<div style="flex:1;background:url('+opts.img+') center/cover no-repeat;min-height:200px"></div>' : '')
     + '</div>'
     + '<section class="container"><a href="#home" class="back-link">&larr; Back to Accounting Services</a>'
@@ -187,8 +187,8 @@ function pageTaxation(){
     subtitle: 'Clear Tax Guidance for Compliance and Planning',
     intro: 'Tax obligations affect business income, GST, trust distributions, and international investments. Bird &amp; Yang manages compliance carefully and identifies forward-looking tax planning opportunities to help you minimise tax and support your long-term goals.',
     accordions: [
-      {title:'Income tax returns', desc:'Preparation and filing for individuals, companies, trusts, partnerships, look-through companies (LTCs), and Maori authorities.'},
-      {title:'GST returns', desc:'Preparation and filing across two-monthly, six-monthly, or annual periods, including advice on registration thresholds and input tax claims.'},
+      {title:'Income tax returns', desc:'Assistance with preparing and filing income tax returns for individuals, companies, trusts, partnerships, look-through companies (LTCs), and Māori authorities.'},
+      {title:'GST returns', desc:'Assistance with preparing and filing GST returns for monthly, two-monthly, six-monthly, or annual filing periods, with clear advice on GST registration thresholds, input tax claims, and relevant adjustments.'},
       {title:'Fringe Benefit Tax (FBT)', desc:'Calculations, quarterly returns, and advice on minimising FBT exposure on employee benefits.'},
       {title:'Tax planning &amp; structuring', desc:'Proactive advice on entity structures, income splitting, timing strategies, and minimising tax liability within legal frameworks.'},
       {title:'IRD liaison &amp; audit support', desc:'Managing correspondence with the Inland Revenue Department, representing you in tax audits, and navigating dispute resolution processes.'},
@@ -213,7 +213,7 @@ function pageBudgetForecast(){
     img: 'assets/images/20_AccSubHome03_Budget%26Forecast.png',
     title: 'BUDGET &amp; FORECAST',
     subtitle: 'Plan Ahead with Clarity, Grow with Confidence',
-    intro: 'Bird &amp; Yang helps clients set financial targets, model scenarios, track performance, and make confident decisions about investment, scaling, and margin protection; budgets and forecasts are practical, relevant, and regularly refreshed.',
+    intro: 'Budgeting and forecasting are more than financial exercises. They are practical tools for planning ahead, managing risk, and making better business decisions.</p><p>Bird &amp; Yang helps clients set financial goals, build budget models, test different scenarios, and track actual performance against expectations. With an understanding of data, systems, business operations, and risk management, we support clients in making clearer, better-informed decisions around investment, expansion, cost control, and profit protection.</p><p>Our budgeting and forecasting services are designed to be practical, relevant, and regularly updated, so financial planning can support both day-to-day management and long-term growth.',
     accordions: [
       {title:'Annual and multi-year budgets', desc:'Developed in close alignment with your strategic objectives and operational realities.'},
       {title:'Rolling forecasts', desc:'Quarterly refresh cycles that adapt to changing market conditions, seasonal patterns, and business developments.'},
@@ -223,9 +223,9 @@ function pageBudgetForecast(){
       {title:'Break-even analysis', desc:'Understanding the minimum revenue required to cover costs, supporting pricing and volume decisions.'}
     ],
     sidebar: [
-      {title:'Practical planning', desc:'Budgets aligned with strategy and daily operations.'},
-      {title:'Scenario clarity', desc:'Stress-testing for best, base, and worst cases.'},
-      {title:'Performance visibility', desc:'Clear dashboards and variance tracking.'}
+      {title:'Business-Linked Planning', desc:'We connect budgets with business strategy, daily operations, and cash flow needs.'},
+      {title:'Clear Scenario Analysis', desc:'We test base, upside, and stress scenarios to help clients understand potential financial outcomes.'},
+      {title:'Ongoing Performance Tracking', desc:'We use system data, dashboards, and variance analysis to help clients identify issues early and adjust direction when needed.'}
     ]
   });
 }
@@ -248,9 +248,9 @@ function pageCashFlow(){
       {title:'Banking relationship support', desc:'Assisting with overdraft facilities, trade finance, invoice factoring, and preparing financial information for your bank.'}
     ],
     sidebar: [
-      {title:'Liquidity discipline', desc:'We help identify cash pressure before it becomes a crisis.'},
-      {title:'Working capital focus', desc:'Practical support across debtors, creditors, and inventory.'},
-      {title:'Bank-ready support', desc:'Clear information for overdrafts, finance, and funding discussions.'}
+      {title:'Cash Flow Early Warning', desc:'We help clients identify cash pressure before it becomes a business risk.'},
+      {title:'Working Capital Focus', desc:'We provide practical analysis and guidance around receivables, payables, inventory, and payment timing.'},
+      {title:'Funding-Ready Information', desc:'We prepare clear, evidence-based financial information for overdrafts, lending, funding, and bank discussions.'}
     ]
   });
 }
@@ -263,7 +263,7 @@ function pageBusinessPlans(){
     img: 'assets/images/22_AccSubHome05_BusinessPlanV2.png',
     title: 'BUSINESS PLANS',
     subtitle: 'From Vision to Plan, From Plan to Progress',
-    intro: 'Starting a business requires more than courage. Bird &amp; Yang helps clients test ideas, choose the right structure, prepare funding-ready documentation, and build practical plans grounded in research, numbers, and risks.',
+    intro: 'Starting or growing a business requires more than ideas and courage. It also requires clear commercial logic, the right structure, and a practical path forward.</p><p>Bird &amp; Yang helps clients test business ideas, clarify business models, choose appropriate structures, and prepare business plans for banks, investors, or internal management. We combine research, data, financial modelling, and risk judgement to help turn vision into a clearer, more workable action plan.',
     accordions: [
       {title:'Start-up feasibility analysis', desc:'Market research, competitive positioning, and financial viability assessments to test whether your idea can become a sustainable business.'},
       {title:'Business plan documentation', desc:'Executive summary, market analysis, operations plan, and financial projections prepared to a standard that meets bank and investor expectations.'},
@@ -272,9 +272,9 @@ function pageBusinessPlans(){
       {title:'Expansion &amp; growth planning', desc:'Scaling strategies, new market entry assessments, and acquisition planning for businesses ready to take the next step.'}
     ],
     sidebar: [
-      {title:'Funding-ready planning', desc:'Clear plans prepared for banks, investors, and growth.'},
-      {title:'Commercial realism', desc:'Research, risks, and numbers tested carefully.'},
-      {title:'Structure with purpose', desc:'Guidance on the right business vehicle from the start.'}
+      {title:'Funding-Ready Planning', desc:'Prepare clear, data-supported business plans for banks, investors, and growth discussions.'},
+      {title:'Practical Commercial Judgement', desc:'Use market research, financial numbers, and risk factors to test business ideas and execution pathways.'},
+      {title:'Structure with Purpose', desc:'Consider business vehicles, tax implications, risk boundaries, and long-term direction from the outset.'}
     ]
   });
 }
@@ -287,7 +287,7 @@ function pageAssetManagement(){
     img: 'assets/images/23_AccSubHome06_Asset.png',
     title: 'ASSET MANAGEMENT',
     subtitle: 'See the Whole Picture, Manage Value Better',
-    intro: 'Assets represent years of hard work and careful planning. Bird &amp; Yang helps clients track, monitor, and optimise their asset base, coordinating with the legal team where ownership structures, insurance, and risk mitigation intersect.',
+    intro: 'Assets are more than balance sheet numbers. They reflect years of accumulation, ownership arrangements, and risk responsibilities.</p><p>Bird &amp; Yang helps clients build a clearer view of their asset base, track asset records, value movements, related costs, and long-term arrangements, while connecting accounting and legal perspectives around ownership structure, tax treatment, insurance coverage, and risk management.</p><p>Our asset management support focuses on clear records, ongoing tracking, and risk awareness, helping clients manage existing assets and long-term accumulated value with better information.',
     accordions: [
       {title:'Fixed asset register maintenance', desc:'Depreciation schedules (diminishing value and straight-line methods), impairment reviews, and disposal tracking under NZ IAS 16.'},
       {title:'Property portfolio management', desc:'Rental income tracking, expense allocation, return-on-investment analysis, and ring-fencing rental loss compliance.'},
@@ -296,9 +296,9 @@ function pageAssetManagement(){
       {title:'Asset protection strategies', desc:'Working alongside our legal team to structure ownership through trusts, companies, or other entities for risk mitigation and succession planning.'}
     ],
     sidebar: [
-      {title:'Strategic oversight', desc:'Better visibility across business and personal assets.'},
-      {title:'Protection and performance', desc:'Advice that balances value growth with risk management.'},
-      {title:'Integrated coordination', desc:'Accounting insight supported by legal structuring.'}
+      {title:'Clear Asset Visibility', desc:'We help clients improve visibility over business and personal assets.'},
+      {title:'Value and Risk Awareness', desc:'We provide practical support around asset value tracking, cost management, and risk control.'},
+      {title:'Integrated Structural Support', desc:'We connect accounting, tax, and legal structure perspectives to support long-term asset arrangements.'}
     ]
   });
 }
@@ -311,7 +311,7 @@ function pageTrustAccounting(){
     img: 'assets/images/24_AccSubHome07_Trust.png',
     title: 'TRUST ACCOUNTING',
     subtitle: 'Managing Trusts with Care, Clarity, and Accountability',
-    intro: 'Trusts remain important for asset protection, estate planning, and intergenerational wealth transfer. Bird &amp; Yang provides trust accounting and compliance support, coordinating closely with the legal team under the Trusts Act 2019.',
+    intro: 'Trust matters often involve asset holding, family arrangements, estate planning, and intergenerational succession. Clear accounting records and compliance management are an important foundation for trustees in carrying out their responsibilities.</p><p>Bird &amp; Yang provides trust accounting, record-keeping, distribution support, and compliance assistance in line with relevant New Zealand trust law and tax requirements. By connecting accounting, tax, and legal perspectives, we help clients manage trust matters more clearly, understand relevant responsibilities, and keep structure and ongoing administration aligned.',
     accordions: [
       {title:'Trust financial statements', desc:'Annual accounts preparation in compliance with the Trusts Act 2019 and applicable financial reporting standards.'},
       {title:'Trust tax returns', desc:'IR6 filing, beneficiary income allocation, trustee income calculations, and compliance with the current trust tax rate (39%).'},
@@ -321,9 +321,9 @@ function pageTrustAccounting(){
       {title:'Trust &amp; legal coordination', desc:'Working seamlessly with our legal team on trust variations, new settlements, vesting, and winding up.'}
     ],
     sidebar: [
-      {title:'Trust compliance clarity', desc:'Support under the Trusts Act 2019 and current tax rules.'},
-      {title:'Tax-efficient planning', desc:'Practical guidance for distributions and trustee income.'},
-      {title:'Legal-accounting coordination', desc:'Integrated trust support across structure and compliance.'}
+      {title:'Clear Trust Records', desc:'We assist with trust accounts, transaction records, distribution information, and supporting documentation.'},
+      {title:'Careful Tax Treatment', desc:'We provide practical support for trust income, trustee income, beneficiary distributions, and related tax matters.'},
+      {title:'Legal and Accounting Alignment', desc:'We connect trust structure, compliance requirements, and accounting records to support more effective trust administration.'}
     ]
   });
 }
