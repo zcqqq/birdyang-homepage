@@ -56,7 +56,7 @@ TEAM_PROFILES = {
     photo: '../assets/team/aimee-yang.png',
     bio: 'Aimee Yang 是一位富有远见的企业家、商业顾问、投资人以及有执照的移民顾问。',
     expertise: ['企业咨询与上市', '房地产开发与管理', '税务规划', '零售、物流与人工智能', '跨境投资与移民法'],
-    summary: 'Aimee Yang 是一位富有远见的企业家、商业顾问、投资人以及有执照的移民顾问。她拥有在新西兰和中国创办并管理成功的房地产和零售企业、领导物流公司、监管投资基金以及在房地产市场拥有二十年经验的非凡履历，她了解企业的运作方式，以及企业如何实现发展、融资和合规。在德扬，Aimee 领导咨询业务，为寻求可靠、经验丰富且具有商业意识指导的客户提供移民咨询、人力资源、保险、商业咨询、投资管理及国际房地产服务。',
+    summary: 'Aimee Yang 是一位富有远见的企业家、商业顾问、投资人以及有执照的移民顾问。她拥有在新西兰和中国创办并管理成功的房地产和零售企业、领导物流公司、监管投资基金以及在房地产市场拥有二十年经验的非凡履历，她了解企业的运作方式，以及企业如何实现发展、融资和合规。在德扬，Aimee 领导咨询服务，为寻求可靠、经验丰富且具有商业意识指导的客户提供移民咨询、人力资源、保险、商业咨询、投资管理及国际房地产服务。',
     highlights: [
       { title: '房地产投资人', desc: '在两个房地产市场拥有超过二十年的投资经验。' },
       { title: '企业创始人', desc: '创立并成功退出零售、物流及其他企业。' },
@@ -92,7 +92,7 @@ TEAM_PROFILES = {
     photo: '../assets/team/rockie-wei.png',
     bio: 'Rockie Wei 拥有超过十年的行政管理和客户服务经验，为法律与商业咨询运营带来严谨和温暖。',
     expertise: ['客户服务与协调', '法律行政支持', '商业运营', '账户与发票管理', '团队组织'],
-    summary: 'Rockie Wei 拥有超过十年的行政管理和客户服务经验，为法律与商业咨询运营带来严谨和温暖。她管理咨询业务的日常行政工作，处理客户沟通，确保运作顺利。她的商业管理背景和实际经验意味着她理解客户的需求，并能为我们的咨询、法律与会计团队的顺畅协调提供支持。',
+    summary: 'Rockie Wei 拥有超过十年的行政管理和客户服务经验，为法律与商业咨询运营带来严谨和温暖。她管理咨询服务的日常行政工作，处理客户沟通，确保运作顺利。她的商业管理背景和实际经验意味着她理解客户的需求，并能为我们的咨询、法律与会计团队的顺畅协调提供支持。',
     highlights: [
       { title: '行政严谨', desc: '处理客户沟通、账户、发票及团队协调。' },
       { title: '商业洞察', desc: '商业管理背景带来对客户需求的实际理解。' },
@@ -113,12 +113,12 @@ function renderHome() {
   return `
   <div class="hero-banner hero-glow" style="min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;background:url(../assets/images/28_ConsultingHome01_FirstSight.png) center/cover no-repeat">
     <h1>咨询服务</h1>
-    <p class="hero-sub">以信心助您稳步前行</p>
+    <p class="hero-sub">专业协同，行稳致远</p>
   </div>
 
   <section class="bg-cream reveal">
     <div class="container">
-      ${sectionAbout('关于我们的咨询业务', '在德扬，我们为个人、家庭和企业在移民、人力资源、保险及商务方面提供实际咨询支持。我们的目标是帮助您了解选项、管理风险，并充满信心地向前迈进。与我们的法律和会计团队协作，提供将专业知识与现实需求相连接的综合指导。')}
+      ${sectionAbout('关于我们的咨询服务', '在德扬，咨询服务连接保险、人力资源、移民及商业事务中的实际需求。我们为个人、家庭与企业提供清晰、务实的咨询支持，协助客户了解选项、管理风险，并以更有把握的方式推进下一步。')}
     </div>
   </section>
 
@@ -130,7 +130,7 @@ function renderHome() {
           <div class="card-icon-area" style="background:url(../assets/images/28_ConsultingHome02_Insurance.png) center/cover no-repeat;height:140px"></div>
           <div class="card-body">
             <h3>保险</h3>
-            <p>以专业守护您的未来</p>
+            <p>清晰规划保障，稳妥管理风险</p>
             <span class="learn-more">了解更多 &rarr;</span>
           </div>
         </a>
@@ -138,7 +138,7 @@ function renderHome() {
           <div class="card-icon-area" style="background:url(../assets/images/28_ConsultingHome03_HR.png) center/cover no-repeat;height:140px"></div>
           <div class="card-body">
             <h3>人力资源咨询</h3>
-            <p>以资源支持您的成功</p>
+            <p>完善人事制度，助力企业稳健发展</p>
             <span class="learn-more">了解更多 &rarr;</span>
           </div>
         </a>
@@ -146,7 +146,7 @@ function renderHome() {
           <div class="card-icon-area" style="background:url(../assets/images/28_ConsultingHome04_Immigration.png) center/cover no-repeat;height:140px"></div>
           <div class="card-body">
             <h3>移民咨询</h3>
-            <p>高效实现您的移民路径</p>
+            <p>有序准备材料，稳步推进您的移民路径</p>
             <span class="learn-more">了解更多 &rarr;</span>
           </div>
         </a>
