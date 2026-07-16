@@ -40,6 +40,10 @@ nav .nav-extras .lang-toggle a{color:rgba(255,255,255,.7);text-decoration:none;t
 nav .nav-extras .lang-toggle a.active-lang{color:var(--white);font-weight:600}
 nav .nav-extras .lang-toggle a:hover{color:var(--gold-light)}
 
+/* Chinese nav font-size fix — CJK characters need larger size for legibility */
+:lang(zh-Hans) nav .nav-links a{font-size:.85rem;letter-spacing:.05em}
+:lang(zh-Hans) .mobile-menu a{font-size:1.2rem;letter-spacing:.05em}
+
 @media(max-width:768px){
   nav .nav-links{display:none}
   nav .nav-extras{display:none}
