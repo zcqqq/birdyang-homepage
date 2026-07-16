@@ -85,7 +85,7 @@ section,.section{padding:60px 5%}
 .sidebar{position:sticky;top:100px;align-self:start}
 
 /* ABOUT TEXT */
-.about-text{max-width:800px;margin:0 auto;font-size:.9rem;color:var(--charcoal);line-height:1.85;text-align:center}
+.about-text{max-width:800px;margin:0 auto;font-size:.9rem;color:var(--charcoal);line-height:1.85;text-align:left}
 .about-text p+p{margin-top:16px}
 
 /* SERVICE CARDS GRID */
