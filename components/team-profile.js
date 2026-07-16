@@ -64,16 +64,16 @@ var TEAM_PROFILES = {
     name: 'Cici Du',
     role: 'Registered Legal Executive',
     photo: 'assets/team/cici-du.png',
-    bio: "Cici Du is a Registered Legal Executive at Bird & Yang, bringing over 8 years of experience in the legal industry. She advises and supports clients on a wide range of matters, with a focus on property transactions, settlements, and legal support across property, family, and commercial matters. Cici is known for her attention to detail, practical approach, and commitment to delivering smooth and efficient outcomes for her clients.",
+    bio: "Cici Du is a Registered Legal Executive at Bird & Yang with over 8 years of experience in the legal industry. She provides support across a range of legal matters, with a focus on conveyancing, property transactions, development projects, family law and commercial matters. Cici is familiar with relevant processes and works with lawyers and the wider team to help matters progress steadily and appropriately.",
     expertise: ['Conveyancing', 'Property Transactions', 'Development Projects', 'Commercial Matters', 'Family Law'],
-    summary: "Cici has over 8 years of experience providing legal support and advice across a range of matters, with a focus on property, family, and commercial law. She holds a Bachelor of Laws (LLB) from the University of Newcastle Upon Tyne, UK, and a Bachelor of Arts from the University of Sydney. Cici is a qualified Registered Legal Executive having completed the Legal Executive Diploma at Open Polytechnic of New Zealand. She is committed to delivering high-quality, client-focused service and ensuring clear communication and efficient outcomes in every matter she handles.",
+    summary: "Cici has over 8 years of experience in the legal industry, supporting a broad range of matters with a focus on conveyancing, family law and commercial matters. She has substantial experience in property transactions, including large-scale development projects as well as residential and commercial conveyancing. Her work includes reviewing agreements for sale and purchase, assisting with complex settlement arrangements, and liaising with lenders and relevant parties. In addition to property matters, Cici has experience in family law, including support with relationship property matters and sensitive legal processes. She also provides practical assistance with commercial transactions and related documentation.",
     highlights: [
-      { title: "8+ years' experience", desc: 'Extensive experience in property transactions, settlements, and legal support.' },
-      { title: 'Smooth transactions', desc: 'Detail-oriented and efficient in delivering seamless outcomes for clients.' },
-      { title: 'Client-focused support', desc: 'Dedicated to providing practical advice and exceptional service.' }
+      { title: "Over 8 Years' Experience", desc: 'Experienced in supporting conveyancing, family law and commercial matters within the legal industry.' },
+      { title: 'Key Milestone Follow-up', desc: 'Familiar with property transaction and conveyancing processes.' },
+      { title: 'Coordination with Multiple Parties', desc: 'Able to assist clients, lawyers, lenders and relevant parties to stay aligned and help matters move towards completion.' }
     ],
     contact: {
-      qualifications: ['LLB — University of Newcastle Upon Tyne, UK', 'BA — University of Sydney, Australia', 'Legal Executive Diploma — Open Polytechnic of New Zealand'],
+      qualifications: ['Master of Electronic and Electrical Engineering — Newcastle University, United Kingdom', 'Master of IT and IT Management — The University of Sydney, Australia', 'Legal Executive Course — Open Polytechnic of New Zealand'],
       phone: '+64 21 114 2806',
       email: 'cici@birdyang.co.nz'
     }
