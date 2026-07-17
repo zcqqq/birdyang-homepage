@@ -113,7 +113,9 @@ function serviceDetail(opts){
     + '<section class="container"><a href="#home" class="back-link">Back to Accounting Services</a>'
     + '<div class="two-col"><div class="main-content">'
     + '<h2 style="font-size:1.4rem;font-weight:700;color:var(--blue);margin-bottom:12px">'+opts.title+'</h2>'
-    + '<p style="font-size:.92rem;color:var(--charcoal);line-height:1.85;margin-bottom:24px">'+opts.intro+'</p>'
+    + opts.intro.split('</p><p>').map(function(p){
+        return '<p style="font-size:.92rem;color:var(--charcoal);line-height:1.85;margin-bottom:24px">'+p+'</p>';
+      }).join('')
     + '<p style="font-size:.82rem;font-weight:700;color:var(--charcoal);margin-bottom:16px">Our services include:</p>'
     + '<div class="service-items-grid">'+itemsHTML+'</div>'
     + '</div><aside class="sidebar"><div class="sidebar-card">'

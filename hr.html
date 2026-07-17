@@ -92,7 +92,7 @@ const servicePages = {
     sidebar: [
       { title: 'Clear Culture Standards', desc: 'Practical policies and behavioural standards that support respectful, compliant, and consistent workplace conduct.' },
       { title: 'Timely Risk Identification', desc: 'We help businesses identify bullying, harassment, conflict, burnout, and psychosocial risks early.' },
-      { title: 'Early intervention', desc: 'We help leaders recognise issues and respond appropriately.' }
+      { title: 'Early Intervention Support', desc: 'We help leaders recognise issues and respond appropriately.' }
     ]
   },
   'recruitment': {
@@ -112,9 +112,9 @@ const servicePages = {
       { title: 'Role and job description support', desc: 'helping you create clear and practical job descriptions that define duties, reporting lines, required skills, performance expectations, and employment conditions.' }
     ],
     sidebar: [
-      { title: 'Clear Recruitment Processes', desc: 'Structured support from role design, candidate screening, and interview processes through to hiring decisions.' },
-      { title: 'Stronger Onboarding', desc: 'We help businesses build clearer induction arrangements, improving the new employee experience during the first week, first month, and probation period.' },
-      { title: 'Retention focus', desc: 'Practical strategies to help good people stay.' }
+      { title: 'Clear Recruitment Processes', desc: 'Structured support from role design and candidate screening to interview processes.' },
+      { title: 'Organised Onboarding', desc: 'Helping businesses create clearer onboarding arrangements and improve the first-week, first-month, and probation experience.' },
+      { title: 'Practical Retention Strategies', desc: 'Practical guidance around communication, feedback, development opportunities, and team stability.' }
     ]
   },
   'bilingual': {
@@ -123,7 +123,7 @@ const servicePages = {
     heroSub: 'Helping Your Workplace Stay on the Same Page',
     backHash: '#home',
     backText: 'BACK TO HR CONSULTING',
-    intro: 'In New Zealand, multilingual and cross-cultural workplaces are common. Employment agreements, workplace policies, management requirements, and important communications are only effective when both employees and employers clearly understand them. Bird &amp; Yang provides HR support in English, Mandarin, and Cantonese, helping employers communicate key HR information more clearly, reduce misunderstandings caused by language or cultural differences, and manage their teams with greater confidence. When matters require employment legal advice, dispute resolution, or formal processes, our HR consulting team works alongside Bird &amp; Yang bilingual employment lawyers to provide more complete professional support.',
+    intro: 'Multilingual and cross-cultural workplaces are common in New Zealand. Employment agreements, workplace policies, management expectations, and important communications are most effective when both employees and management clearly understand them.</p><p>Bird &amp; Yang provides HR support in English, Mandarin, and Cantonese, helping employers communicate key HR information more clearly, reduce misunderstandings caused by language or cultural differences, and manage their teams with greater clarity.</p><p>Where a matter involves employment law advice, dispute support, or formal processes, our HR consulting team can work alongside Bird &amp; Yang’s bilingual employment lawyers to provide more complete professional support.',
     accordions: [
       { title: 'Bilingual employment documents', desc: 'employment agreements, workplace policies, and HR forms prepared in both English and Chinese, ensuring clarity for all parties.' },
       { title: 'Employee communication support', desc: 'helping you communicate workplace expectations, policy changes, and important information to employees in their first language.' },
@@ -135,7 +135,7 @@ const servicePages = {
     sidebar: [
       { title: 'Clear and Consistent Communication', desc: 'Support with communicating employment agreements, HR policies, and key workplace information across languages.' },
       { title: 'Cultural Understanding Support', desc: 'Practical communication support across language, cultural background, and New Zealand workplace expectations.' },
-      { title: 'Seamless legal connection', desc: 'Bilingual HR consulting linked with bilingual legal support.' }
+      { title: 'HR and Legal Alignment', desc: 'Connecting bilingual HR consulting with bilingual employment legal support when needed.' }
     ]
   }
 };
@@ -237,7 +237,7 @@ function serviceDetailPage(opts) {
         <div class="two-col">
           <div class="main-content">
             <h2 style="font-size:1.4rem;font-weight:700;color:var(--blue);margin-bottom:12px">${opts.title}</h2>
-            <p style="font-size:.92rem;color:var(--charcoal);line-height:1.85;margin-bottom:24px">${opts.intro}</p>
+            <p style="font-size:.92rem;color:var(--charcoal);line-height:1.85;margin-bottom:24px">${opts.intro.split('</p><p>').map(function(p){ return p; }).join('</p><p style="font-size:.92rem;color:var(--charcoal);line-height:1.85;margin-bottom:24px">')}</p>
             <p style="font-size:.82rem;font-weight:700;color:var(--charcoal);margin-bottom:16px">OUR ${opts.title} SERVICES INCLUDE:</p>
             <div class="service-items-grid">
               ${itemsHtml}

@@ -38,7 +38,7 @@ const servicePages = {
     heroSub: 'Driving with Clarity and Confidence',
     backHash: '#home',
     backText: 'BACK TO INSURANCE',
-    intro: 'Car insurance is more than purchasing a policy. It is about choosing cover that suits your vehicle, understanding your obligations, and feeling confident that claims will be handled fairly when needed. Bird &amp; Yang helps clients in New Zealand select appropriate vehicle insurance, understand the differences between coverage levels, common exclusions, and factors that may affect claims — so they can avoid underinsurance or claim disputes.',
+    intro: 'Car insurance is more than purchasing a policy. It is about choosing cover that suits your vehicle, driving needs, and budget, while clearly understanding policy obligations, disclosure requirements, and claim conditions.</p><p>Bird &amp; Yang helps clients understand and arrange vehicle insurance in New Zealand, identify common coverage gaps, and manage risk factors that may affect claims, including driving history, vehicle use, modifications, and policy terms. We provide clear and practical guidance so clients are better prepared for everyday driving and accident situations.',
     accordions: [
       { title: 'Policy comparison & selection', desc: 'comparing Comprehensive, Third Party Fire and Theft, and Third Party Only options to match your vehicle value and budget.' },
       { title: 'Agreed value vs market value', desc: 'ensuring you set an appropriate value for your car so there are no surprises at renewal or in the event of a total loss.' },
@@ -59,7 +59,7 @@ const servicePages = {
     heroSub: 'Protecting Your Home with Foresight',
     backHash: '#home',
     backText: 'BACK TO INSURANCE',
-    intro: 'A home is often a client\'s largest financial investment. Protecting it requires more than a standard policy; it requires understanding rebuild costs, exclusions, and property-specific risks. Bird & Yang helps first-home buyers and investors make sure their house insurance is calculated accurately and managed proactively.',
+    intro: 'Property is often one of the most important assets for individuals, families, and investors. Suitable home insurance is not only about purchasing a standard policy. It also requires an understanding of rebuild costs, coverage, exclusions, and property-specific risks.</p><p>Bird & Yang helps first-home buyers, property owners, and investors understand home insurance options in New Zealand and carefully consider factors such as rebuild value, property use, vacancy, renovations, and landlord-related risks. We provide clear and practical guidance so clients can manage their property insurance arrangements with better information.',
     accordions: [
       { title: 'Sum insured accuracy', desc: 'using current building cost data to help you determine the correct rebuild value, protecting you from the risk of under-insurance.' },
       { title: 'Gradual damage & maintenance', desc: 'clearly explaining the difference between sudden accidental damage and excluded gradual damage (like hidden leaks), so you can manage your property risk.' },
@@ -80,7 +80,7 @@ const servicePages = {
     heroSub: 'Planning for the Unexpected with Clarity',
     backHash: '#home',
     backText: 'BACK TO INSURANCE',
-    intro: 'Unexpected illness, injury, loss of income, or the loss of a key person can have a significant impact on family life, financial arrangements, and business operations. Bird &amp; Yang helps clients understand different options across life, health, income protection, and business insurance. We provide clear and practical protection planning support based on family responsibilities, income sources, business structures, and long-term goals. We focus on aligning insurance arrangements with broader legal, accounting, and financial planning, helping clients manage risk with better information and prepare more carefully for their families, businesses, and long-term objectives.',
+    intro: 'Unexpected illness, injury, loss of income, or the loss of a key person can have a significant impact on family life, financial arrangements, and business operations.</p><p>Bird &amp; Yang helps clients understand different options across life, health, income protection, and business insurance. We provide clear and practical protection planning support based on family responsibilities, income sources, business structures, and long-term goals.</p><p>We focus on aligning insurance arrangements with broader legal, accounting, and financial planning, helping clients manage risk with better information and prepare more carefully for their families, businesses, and long-term objectives.',
     accordions: [
       { title: 'Life insurance', desc: 'providing a lump-sum payment to ensure your loved ones are financially secure and your legacy is protected.' },
       { title: 'Health & medical cover', desc: 'ensuring prompt access to private specialist care and surgeries, avoiding long wait times in the public system.' },
@@ -178,7 +178,7 @@ function serviceDetailPage(opts) {
         <div class="two-col">
           <div class="main-content">
             <h2 style="font-size:1.4rem;font-weight:700;color:var(--blue);margin-bottom:12px">${opts.title}</h2>
-            <p style="font-size:.92rem;color:var(--charcoal);line-height:1.85;margin-bottom:24px">${opts.intro}</p>
+            <p style="font-size:.92rem;color:var(--charcoal);line-height:1.85;margin-bottom:24px">${opts.intro.split('</p><p>').map(function(p){ return p; }).join('</p><p style="font-size:.92rem;color:var(--charcoal);line-height:1.85;margin-bottom:24px">')}</p>
             <p style="font-size:.82rem;font-weight:700;color:var(--charcoal);margin-bottom:16px">OUR ${opts.title} SERVICES INCLUDE:</p>
             <div class="service-items-grid">
               ${itemsHtml}
