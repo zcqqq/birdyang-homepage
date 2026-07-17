@@ -38,7 +38,7 @@ const TEAM_PROFILES_ZH = {
     photo: '../assets/team/marshall-bird.png',
     bio: 'Marshall Bird 是德扬合伙人，在移民、商业、房地产法及投资领域拥有丰富经验，专业背景横跨美国与新西兰。他为个人、企业家和企业客户提供战略性、务实的法律建议，帮助客户应对复杂问题，并为长期发展建立稳健基础。',
     expertise: ['移民', '商业法', '房地产', '投资', '创新商业融资', '创业'],
-    summary: 'Marshall 拥有美国密歇根大学法学硕士学位和新西兰奥克兰大学法学学士学位。他在移民、商业、房地产法和投资领域拥有美国和新西兰的丰富经验。Marshall 曾在加利福尼亚州比佛利山庄担任律师，就商业收购、创业和移民事务提供建议。他的文章曾发表于《综艺》和《好莱坞报道》。他创立了新西兰律师事务所，并在融资、创业、媒体制作和出版领域拥有丰富的实际经验。',
+    summary: 'Marshall 拥有美国密歇根大学法学硕士学位和新西兰奥克兰大学法学学士学位。他在移民、商业、房地产法和投资领域拥有美国和新西兰的丰富经验。Marshall 曾在加利福尼亚州比佛利山庄担任律师，就商业收购、创业和移民事务提供建议。他的文章曾发表于Variety 和 The Hollywood Reporter。他创立了新西兰律师事务所，并在融资、创业、媒体制作和出版领域拥有丰富的实际经验。',
     highlights: [
       { title: '美国与新西兰法律洞察', desc: '在两个市场拥有深厚的跨境经验。' },
       { title: '商业与移民经验', desc: '为创业、投资与签证事务提供务实指导。' },
@@ -423,9 +423,9 @@ const servicePages = {
       { title: '跨境交易', desc: '与中国法律顾问就双边事务进行协调' }
     ],
     sidebar: [
-      { title: '多语言团队', desc: '跨文化理解' },
-      { title: '跨文化理解', desc: '整合专业支持' },
-      { title: '整合支持', desc: '在移民、房产、商业和信托方面提供连接指导。' }
+      { title: '多语言沟通', desc: '以英语、普通话及粤语协助客户清晰理解、顺畅沟通。' },
+      { title: '跨文化理解', desc: '结合新西兰本地规则与中国客户实际需求，提供更贴近处境的建议。' },
+      { title: '整合专业支持', desc: '衔接移民、房产、商业、信托与财税事务，协助客户稳妥推进跨境安排。' }
     ]
   }
 };
@@ -527,7 +527,7 @@ function renderServiceDetail(key) {
           <div class="main-content">
             <h2 style="font-size:1.4rem;font-weight:700;color:var(--blue);margin-bottom:12px">${page.title}</h2>
             <p style="font-size:.92rem;color:var(--charcoal);line-height:1.85;margin-bottom:32px">${page.intro}</p>
-            <p style="font-size:.82rem;font-weight:700;color:var(--charcoal);margin-bottom:16px">我们的${page.breadcrumb}服务包括：</p>
+            <p style="font-size:.82rem;font-weight:700;color:var(--charcoal);margin-bottom:16px">我们的服务包括：</p>
             <div class="service-items-grid">
               ${itemsHtml}
             </div>
