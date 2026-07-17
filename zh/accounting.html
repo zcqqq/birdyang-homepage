@@ -122,9 +122,9 @@ function route(){
     case 'business-plans': html = pageBusinessPlans(); break;
     case 'asset-management': html = pageAssetManagement(); break;
     case 'trust-accounting': html = pageTrustAccounting(); break;
-    case 'team/heather-chao': html = renderTeamProfileHTML('heather-chao', {backHash:'#team', backText:'返回我们的团队', imgBase:'../'}); break;
-    case 'team/ming-lu': html = renderTeamProfileHTML('ming-lu', {backHash:'#team', backText:'返回我们的团队', imgBase:'../'}); break;
-    case 'team/ally-liao': html = renderTeamProfileHTML('ally-liao', {backHash:'#team', backText:'返回我们的团队', imgBase:'../'}); break;
+    case 'team/heather-chao': html = renderTeamProfileHTML('heather-chao', {backHash:'#team', backText:'返回我们的团队', imgBase:'../', labels:{summary:'个人简介', expertise:'专业领域', education:'教育背景', highlights:'个人亮点', book:'预约咨询'}}); break;
+    case 'team/ming-lu': html = renderTeamProfileHTML('ming-lu', {backHash:'#team', backText:'返回我们的团队', imgBase:'../', labels:{summary:'个人简介', expertise:'专业领域', education:'教育背景', highlights:'个人亮点', book:'预约咨询'}}); break;
+    case 'team/ally-liao': html = renderTeamProfileHTML('ally-liao', {backHash:'#team', backText:'返回我们的团队', imgBase:'../', labels:{summary:'个人简介', expertise:'专业领域', education:'教育背景', highlights:'个人亮点', book:'预约咨询'}}); break;
     case 'team':
       html = pageHome();
       document.getElementById('app').innerHTML = html;

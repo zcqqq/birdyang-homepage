@@ -171,6 +171,12 @@ function renderTeamProfileHTML(id, opts) {
   var imgBase = opts.imgBase || '';
   var backHash = opts.backHash || '#home';
   var backText = opts.backText || 'BACK TO OUR TEAM';
+  var L = opts.labels || {};
+  var labelEducation = L.education != null ? L.education : 'EDUCATION BACKGROUND';
+  var labelSummary = L.summary != null ? L.summary : 'PROFILE SUMMARY';
+  var labelExpertise = L.expertise != null ? L.expertise : 'AREAS OF EXPERTISE';
+  var labelHighlights = L.highlights != null ? L.highlights : 'PROFILE HIGHLIGHTS';
+  var labelBook = L.book != null ? L.book : 'BOOK A CONSULTATION';
 
   var highlightsHTML = profile.highlights.map(function(h) {
     return '<div class="highlight"><h4><img src="' + imgBase + 'assets/icons/icon_star.png" style="width:16px;height:16px;vertical-align:middle;margin-right:6px">' + h.title + '</h4><p>' + h.desc + '</p></div>';
@@ -182,7 +188,7 @@ function renderTeamProfileHTML(id, opts) {
 
   var qualificationsHTML = '';
   if (profile.contact.qualifications && profile.contact.qualifications.length) {
-    qualificationsHTML = '<h3>EDUCATION BACKGROUND</h3><ul style="list-style:none;padding:0;font-size:.85rem;color:var(--charcoal);line-height:2">' +
+    qualificationsHTML = '<h3>' + labelEducation + '</h3><ul style="list-style:none;padding:0;font-size:.85rem;color:var(--charcoal);line-height:2">' +
       profile.contact.qualifications.map(function(q) { return '<li>' + q + '</li>'; }).join('') + '</ul>';
   }
 
@@ -204,19 +210,19 @@ function renderTeamProfileHTML(id, opts) {
         '</div>' +
       '</div>' +
       '<div class="profile-summary-section" style="margin-top:32px;margin-bottom:32px">' +
-        '<h3 style="font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:12px">PROFILE SUMMARY</h3>' +
+        '<h3 style="font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:12px">' + labelSummary + '</h3>' +
         '<p style="font-size:.85rem;color:var(--charcoal);line-height:1.85">' + profile.summary + '</p>' +
       '</div>' +
       '<div class="profile-body">' +
         '<div class="profile-main">' +
-          '<h3>AREAS OF EXPERTISE</h3>' +
+          '<h3>' + labelExpertise + '</h3>' +
           '<div class="expertise-badges">' + expertiseHTML + '</div>' +
           qualificationsHTML +
         '</div>' +
         '<div class="profile-sidebar">' +
-          '<h3>PROFILE HIGHLIGHTS</h3>' +
+          '<h3>' + labelHighlights + '</h3>' +
           '<div class="profile-highlights">' + highlightsHTML + '</div>' +
-          '<a href="contact.html#book" class="cta-btn primary" style="width:100%;display:block;text-align:center;margin-top:20px">BOOK A CONSULTATION</a>' +
+          '<a href="contact.html#book" class="cta-btn primary" style="width:100%;display:block;text-align:center;margin-top:20px">' + labelBook + '</a>' +
           '<div class="profile-contact" style="margin-top:16px">' +
             '<p><a href="tel:' + profile.contact.phone.replace(/\s/g, '') + '">' + profile.contact.phone + '</a></p>' +
             '<p><a href="mailto:' + profile.contact.email + '">' + profile.contact.email + '</a></p>' +
