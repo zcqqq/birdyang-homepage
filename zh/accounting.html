@@ -48,65 +48,6 @@
 <script src="/components/section-header.js"></script>
 <script src="/components/team-profile.js"></script>
 <script>
-// Override team profiles with Chinese data
-TEAM_PROFILES = {
-  'heather-chao': {
-    name: 'Heather Chao',
-    role: '特许会计师（CA）',
-    photo: '../assets/team/heather-chao.png',
-    bio: 'Heather Chao 是特许会计师，在会计和商业咨询方面拥有超过20年的经验。',
-    expertise: ['中小企业会计', '现金流管理', 'IRD 谈判', '制度与流程设计', 'MYOB、Xero 及 ERP 系统'],
-    summary: 'Heather 持有特许会计师资格，拥有跨行业二十余年的会计和商业咨询经验。她提供端到端的会计及咨询服务，帮助客户提升财务清晰度、加强内部控制，系统合理地作出决策。Heather 与企业主和管理团队紧密合作，简化流程、实施合适系统，并以务实、商业导向的建议支持企业成长。',
-    highlights: [
-      { title: '20年以上经验', desc: '在多个行业和企业类型中积累了丰富的财税知识。' },
-      { title: '成长与变革顾问', desc: '帮助企业扩展、适应并改善财务绩效。' },
-      { title: '系统专家', desc: '在 MYOB、Xero 和 ERP 系统实施方面提供务实支持。' }
-    ],
-    contact: {
-      qualifications: ['特许会计师（CA）'],
-      phone: '+64 21 284 3737',
-      email: 'heather@birdyang.co.nz'
-    }
-  },
-  'ming-lu': {
-    name: 'Ming Lu',
-    role: '信托与财务经理（中国注册会计师）',
-    photo: '../assets/team/ming-lu.png',
-    bio: 'Ming Lu 是德扬的信托与财务经理，在会计、审计、财务和企业管理方面拥有深厚背景。',
-    expertise: ['会计与审计支持', '财务咨询', '企业融资', '尽职调查', '投资与经济管理'],
-    summary: 'Ming Lu 拥有投资经济管理学士学位，是中国注册会计师，持有证券、基金和期货资格。她在大连环宇联合会计师事务所拥有多年经验，从助理晋升为合伙人。她进行过审计、评估工作、财务咨询、运营指导和审查，并担任大连市科技局财务审查专家和辽宁省注册会计师协会兼职检查员。她后来在长江证券股份有限公司从事企业融资工作。她强大的会计、财务和企业管理背景使她能够以洞察力和精确性支持客户。',
-    highlights: [
-      { title: '深厚的会计背景', desc: '在审计和财务咨询方面拥有多年经验。' },
-      { title: '监管审查经验', desc: '参与公共和专业审查工作。' },
-      { title: '企业融资洞察', desc: '在投资尽职调查和融资服务方面拥有经验。' }
-    ],
-    contact: {
-      qualifications: ['投资经济管理学士', '中国注册会计师；证券、基金、期货资格'],
-      phone: '+64 9 590 0943',
-      email: 'ming@birdyang.co.nz'
-    }
-  },
-  'ally-liao': {
-    name: 'Ally Liao',
-    role: 'MBA，特许会计师候选人（CA Candidate）',
-    photo: '../assets/team/ally-liao.png',
-    bio: 'Ally Liao 为德扬的会计与商业咨询业务提供支持。她结合扎实的会计知识、商业分析能力及项目执行经验，协助客户从数字、系统、商业与风险角度理解问题，并推动相关事务稳妥落地。',
-    expertise: ['会计与行政支持', 'GST 与 IRD 合规', '财务数据整理与分析', '商业咨询支持', 'Xero 与 MYOB', '商业流程与系统视角', '跨境商业理解'],
-    summary: 'Ally 在新西兰梅西大学完成 MPA（CA）学位，并已完成 CA 课程考试要求。她同时持有复旦大学 MBA 学位及厦门大学广告学学士学位。</p><p>在加入德扬之前，Ally 在中国拥有私募股权投资、商业项目评估、广告策划及创业经验，曾创立并运营一家上海餐饮品牌逾十年。相关经历使她能够从财务数据、商业模式、运营系统与风险管理等多个角度理解企业问题。</p><p>在德扬，Ally 参与会计合规、财务分析、业务流程及公司架构等相关工作。她注重将财务信息与更广泛的商业判断相结合，协助客户更清晰地理解经营状况、识别风险与机会，并以更有依据的方式作出决策。',
-    highlights: [
-      { title: '会计专业素养', desc: '具备扎实的会计知识，能够支持 GST、IRD 合规及日常账务相关事务。' },
-      { title: '商业判断力', desc: '拥有私募股权、项目评估及长期创业运营经验，理解数字背后的商业逻辑。' },
-      { title: '战略视角', desc: '能够结合数据、流程、系统与风险因素，协助客户看清问题并稳妥推进下一步。' }
-    ],
-    contact: {
-      qualifications: ['MPA（CA）— 梅西大学', 'MBA — 复旦大学', '广告学学士 — 厦门大学', '基金从业资格（中国）'],
-      phone: '+64 9 217 6231',
-      email: 'ally@birdyang.co.nz'
-    }
-  }
-};
-</script>
-<script>
 (function(){
 
 /* ─── Hash Router ─── */
@@ -122,9 +63,9 @@ function route(){
     case 'business-plans': html = pageBusinessPlans(); break;
     case 'asset-management': html = pageAssetManagement(); break;
     case 'trust-accounting': html = pageTrustAccounting(); break;
-    case 'team/heather-chao': html = renderTeamProfileHTML('heather-chao', {backHash:'#team', backText:'返回我们的团队', imgBase:'../', labels:{summary:'个人简介', expertise:'专业领域', education:'教育背景', highlights:'个人亮点', book:'预约咨询'}}); break;
-    case 'team/ming-lu': html = renderTeamProfileHTML('ming-lu', {backHash:'#team', backText:'返回我们的团队', imgBase:'../', labels:{summary:'个人简介', expertise:'专业领域', education:'教育背景', highlights:'个人亮点', book:'预约咨询'}}); break;
-    case 'team/ally-liao': html = renderTeamProfileHTML('ally-liao', {backHash:'#team', backText:'返回我们的团队', imgBase:'../', labels:{summary:'个人简介', expertise:'专业领域', education:'教育背景', highlights:'个人亮点', book:'预约咨询'}}); break;
+    case 'team/heather-chao': html = renderTeamProfileHTML('heather-chao', {lang:'zh', backHash:'#team', backText:'返回我们的团队', imgBase:'../'}); break;
+    case 'team/ming-lu': html = renderTeamProfileHTML('ming-lu', {lang:'zh', backHash:'#team', backText:'返回我们的团队', imgBase:'../'}); break;
+    case 'team/ally-liao': html = renderTeamProfileHTML('ally-liao', {lang:'zh', backHash:'#team', backText:'返回我们的团队', imgBase:'../'}); break;
     case 'team':
       html = pageHome();
       document.getElementById('app').innerHTML = html;

@@ -24,233 +24,9 @@ body{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans S
 <main id="app"></main>
 
 <script src="/components/section-header.js"></script>
+<script src="/components/team-profile.js"></script>
 <script>
 (function() {
-
-/* ═══════════════════════════════════════════
-   TEAM DATA (Chinese)
-   ═══════════════════════════════════════════ */
-
-const TEAM_PROFILES_ZH = {
-  'marshall-bird': {
-    name: 'Marshall Bird',
-    role: '合伙人 / 大律师',
-    photo: '../assets/team/marshall-bird.png',
-    bio: 'Marshall Bird 是德扬合伙人，在移民、商业、房地产法及投资领域拥有丰富经验，专业背景横跨美国与新西兰。他为个人、企业家和企业客户提供战略性、务实的法律建议，帮助客户应对复杂问题，并为长期发展建立稳健基础。',
-    expertise: ['移民', '商业法', '房地产', '投资', '创新商业融资', '创业'],
-    summary: 'Marshall 拥有美国密歇根大学法学硕士学位和新西兰奥克兰大学法学学士学位。他在移民、商业、房地产法和投资领域拥有美国和新西兰的丰富经验。Marshall 曾在加利福尼亚州比佛利山庄担任律师，就商业收购、创业和移民事务提供建议。他的文章曾发表于Variety 和 The Hollywood Reporter。他创立了新西兰律师事务所，并在融资、创业、媒体制作和出版领域拥有丰富的实际经验。',
-    highlights: [
-      { title: '美国与新西兰法律洞察', desc: '在两个市场拥有深厚的跨境经验。' },
-      { title: '商业与移民经验', desc: '为创业、投资与签证事务提供务实指导。' },
-      { title: '创始人视角', desc: '在创业、金融和媒体领域拥有丰富的实际运营经验。' }
-    ],
-    contact: {
-      qualifications: ['法学硕士 — 美国密歇根大学', '法学学士 — 新西兰奥克兰大学'],
-      phone: '+64 9 369 5989',
-      email: 'marshall@marshallbird.com'
-    }
-  },
-  'aimee-yang': {
-    name: 'Aimee Yang',
-    role: '合伙人 / 大律师',
-    photo: '../assets/team/aimee-yang.png',
-    bio: 'Aimee Yang 是德扬的合伙人，主管商业与房地产法律服务。她就商业结构、公司法、房地产开发、租赁和广泛的商业事务提供建议，提供务实、商业化的解决方案，帮助客户实现目标。',
-    expertise: ['公司与商业法', '房地产', '融资', '移民', '商业诉讼', '海外投资'],
-    summary: 'Aimee 拥有新西兰奥克兰大学商业学士和法学学士学位，以及中国南京财经大学管理学学士学位。她主管商业与房地产法律服务，就商业结构、公司法、房地产开发、租赁和商业事务提供建议。Aimee 此前曾在香港一家领先的国际律师事务所的公司与金融团队工作，就公开发售和并购提供建议。她是企业和私人客户的值得信赖的顾问，专注于房地产、海外投资、诉讼、居留和商业/投资签证。Aimee 精通普通话和粤语，支持跨文化沟通。',
-    highlights: [
-      { title: '商业与房地产领导力', desc: '在日常事务及复杂交易中拥有广泛经验。' },
-      { title: '跨境金融经验', desc: '具有香港公司与金融法律工作背景。' },
-      { title: '多语言客户服务', desc: '精通普通话和粤语，支持跨文化沟通。' }
-    ],
-    contact: {
-      qualifications: ['商业学士、法学学士 — 新西兰奥克兰大学', '管理学学士 — 中国南京财经大学'],
-      phone: '+64 9 590 0944',
-      email: 'aimee@birdyang.co.nz'
-    }
-  },
-  'julia-huang': {
-    name: 'Julia Huang',
-    role: '大律师 / 高级律师',
-    photo: '../assets/team/julia-huang.png',
-    bio: 'Julia Huang 是一名新西兰大律师和高级律师，拥有跨境法律背景，执业范围涵盖公司与商业法、房地产法、移民法、家庭法及雇佣法。她精通英语和普通话，以全球视野和以客户为中心的方法提供务实、战略性的法律解决方案。',
-    expertise: ['公司与商业法', '房地产', '移民', '家庭法', '雇佣法'],
-    summary: 'Julia 拥有伦敦政治经济学院（LSE）法学硕士学位和奥克兰理工大学法学学士学位，并曾在北京大学学习。她曾在中国从事商业法律工作，之后成为新西兰持牌移民顾问并创立移民咨询业务。随后她在新西兰完成第二个法学学士学位，并成为新西兰大律师和律师。她现执业范围涵盖公司与商业法、房地产法、移民法、家庭法及雇佣法。Julia 精通英语和普通话，为客户事务带来扎实的跨境视角。',
-    highlights: [
-      { title: '国际法律教育', desc: '拥有北京大学、奥克兰理工大学和伦敦政治经济学院的学术背景。' },
-      { title: '跨境法律经验', desc: '在中国和新西兰均拥有专业经验。' },
-      { title: '以客户为中心的多面手', desc: '在商业与个人法律事务方面拥有广泛执业范围。' }
-    ],
-    contact: {
-      qualifications: ['法学硕士 — 伦敦政治经济学院（LSE）', '法学学士 — 奥克兰理工大学；北京大学'],
-      phone: '+64 21 1059 862',
-      email: 'julia@birdyang.co.nz'
-    }
-  },
-  'cici-du': {
-    name: 'Cici Du',
-    role: '注册法律行政官',
-    photo: '../assets/team/cici-du.png',
-    bio: 'Cici Du 是德扬的注册法律行政官，在法律行业拥有超过8年经验。她为客户提供多领域法律事务支持，重点涉及房地产交割、房地产交易、开发项目、家庭法及商业事务相关事项。Cici 熟悉相关事务流程，能够在律师及团队协作下，协助相关事项稳妥推进。',
-    expertise: ['产权转让', '房地产交易', '开发项目', '商业事务', '家庭法'],
-    summary: 'Cici 拥有超过8年的法律行业经验，为多领域法律事务提供支持，重点包括房地产交割、家庭法及商业事务。她在房地产交易方面具有丰富经验，曾参与大型开发项目，也协助处理个人住宅及商业物业交割事项，包括买卖协议审阅、复杂交割安排、与贷款机构及相关方沟通等工作。除房地产事务外，Cici 亦具备家庭法相关经验，包括协助处理关系财产事项，并在较为敏感的法律程序中提供专业支持。她同时为商业交易及相关文件准备提供实务协助。',
-    highlights: [
-      { title: '8年以上经验', desc: '在房地产交割、家庭法及商业事务支持方面拥有多年法律行业经验。' },
-      { title: '关键节点跟进', desc: '熟悉房地产交易及交割流程。' },
-      { title: '多方沟通协调', desc: '能够协助客户、律师、贷款机构及相关方保持配合，推动事项完成。' }
-    ],
-    contact: {
-      qualifications: ['电子电气工程硕士 — 英国纽卡斯尔大学信息技术与信息技术管理硕士 — 澳大利亚悉尼大学法律行政官法律行政官课程 — 新西兰开放理工学院', '文学学士 — 澳大利亚悉尼大学', '法律行政文凭 — 新西兰开放理工学院'],
-      phone: '+64 21 114 2806',
-      email: 'cici@birdyang.co.nz'
-    }
-  },
-  'rockie-wei': {
-    name: 'Rockie Wei',
-    role: '法律行政官 / 保险顾问',
-    photo: '../assets/team/rockie-wei.png',
-    bio: 'Rockie Wei 是德扬的法律行政官和保险顾问，拥有扎实的商业背景和以客户为先的服务理念。他在房地产交易、贷款相关事务和保险解决方案方面提供务实支持，帮助个人和企业以更清晰、更安心的方式处理相关需求。',
-    expertise: ['房地产交易', '贷款相关事务', '客户服务', '汽车保险', '房屋保险'],
-    summary: 'Rockie 拥有国际贸易和商业学士学位。加入德扬前，他曾在新西兰经营企业，通过领导力、运营管理和以客户为中心的方法推动团队与业务发展。自2023年加入德扬以来，Rockie 将商业洞察和细致服务带入保险业务，并持有汽车和房屋保险相关资格。',
-    highlights: [
-      { title: '企业主视角', desc: '以实际经营经验理解客户需求并提供务实方案。' },
-      { title: '房地产与贷款支持', desc: '在房地产交易和贷款相关事务方面提供可靠协助。' },
-      { title: '汽车与房屋保险资格', desc: '持有相关保险资格，提供专业保险支持。' }
-    ],
-    contact: {
-      qualifications: ['国际贸易和商业学士'],
-      phone: '+64 9 590 0948',
-      email: 'rockie@birdyang.co.nz'
-    }
-  },
-  'ming-lu': {
-    name: 'Ming Lu',
-    role: '信托与财务经理（中国注册会计师）',
-    photo: '../assets/team/ming-lu.png',
-    bio: 'Ming Lu 是德扬的信托与财务经理，在会计、审计、财务和企业管理方面拥有深厚背景。',
-    expertise: ['会计与审计支持', '财务咨询', '企业融资', '尽职调查', '投资与经济管理'],
-    summary: 'Ming Lu 拥有投资经济管理学士学位，是中国注册会计师，并持有证券、基金和期货资格。她曾在大连环宇联合会计师事务所工作多年，从助理成长为合伙人，参与审计、评估、财务咨询、运营指导和审查工作，并担任大连市科技局财务审查专家及辽宁省注册会计师协会兼职检查员。其后，她在长江证券股份有限公司从事企业融资工作。扎实的会计、财务和企业管理背景，使她能够以专业洞察和严谨判断支持客户事务。',
-    highlights: [
-      { title: '深厚会计背景', desc: '在审计和财务咨询方面拥有多年经验。' },
-      { title: '监管审查经验', desc: '参与公共及专业审查工作。' },
-      { title: '企业融资洞察', desc: '具备投资尽职调查与融资服务经验。' }
-    ],
-    contact: {
-      qualifications: ['投资经济管理学士', '中国注册会计师； 证券、基金、期货资格'],
-      phone: '+64 9 590 0943',
-      email: 'ming@birdyang.co.nz'
-    }
-  },
-  'heather-chao': {
-    name: 'Heather Chao',
-    role: '特许会计师（CA）',
-    photo: '../assets/team/heather-chao.png',
-    bio: 'Heather Chao 是特许会计师，在会计和商业咨询方面拥有超过20年的经验。她与中小企业和成长型企业合作，提供推动绩效、提高效率和支持可持续增长的务实财务解决方案。',
-    expertise: ['中小企业会计', '现金流管理', 'IRD谈判', '制度与流程', 'MYOB、Xero及ERP系统'],
-    summary: 'Heather 持有特许会计师资格，在广泛的行业拥有超过20年的经验。她提供端到端的会计和咨询服务，帮助客户提高财务清晰度、加强控制并做出自信决策。Heather 与企业主和管理团队紧密合作，简化流程、实施正确的系统，并通过务实、以商业为重点的建议支持业务增长。',
-    highlights: [
-      { title: '20年以上经验', desc: '在广泛的行业和企业类型方面拥有深厚专业知识。' },
-      { title: '成长与变革顾问', desc: '帮助企业扩展、适应和改善财务绩效。' },
-      { title: '系统专家', desc: '在MYOB、Xero和ERP系统实施方面提供务实支持。' }
-    ],
-    contact: {
-      qualifications: ['特许会计师（CA）'],
-      phone: '+64 21 284 3737',
-      email: 'heather@birdyang.co.nz'
-    }
-  },
-  'ally-liao': {
-    name: 'Ally Liao',
-    role: 'MBA，特许会计师候选人',
-    photo: '../assets/team/ally-liao.png',
-    bio: 'Ally Liao 以扎实的会计知识、商业洞察力和执行力支持德扬的会计与商业咨询业务。',
-    expertise: ['会计行政', 'GST与IRD合规', '商业咨询支持', 'Xero与MYOB', '跨境商业视角'],
-    summary: 'Ally 在梅西大学完成了MPA(CA)学位，并持有复旦大学MBA学位。她此前在中国拥有私募股权投资、商业项目、广告策划和创业经验，包括创立一家在上海运营超过10年的餐饮品牌。在德扬，Ally 以分析性、有条理和以商业意识的方式支持会计和咨询相关工作。她的背景使她能够将财务信息与更广泛的商业考虑联系起来，帮助客户更好地理解自己的处境、改善决策并自信前行。',
-    highlights: [
-      { title: '会计专业素养', desc: '在会计行政和合规方面拥有扎实基础。' },
-      { title: '商业判断力', desc: '拥有私募股权和创业背景。' },
-      { title: '战略视角', desc: 'MBA级别的战略分析和商业咨询能力。' }
-    ],
-    contact: {
-      qualifications: ['MPA(CA) — 梅西大学', 'MBA — 复旦大学', '广告学士学位 — 厦门大学', '基金资格'],
-      phone: '+64 9 590 0944',
-      email: 'ally@birdyang.co.nz'
-    }
-  }
-};
-
-function renderTeamGrid(memberIds, opts) {
-  opts = opts || {};
-  var cards = memberIds.map(function(id) {
-    var p = TEAM_PROFILES_ZH[id];
-    if (!p) return '';
-    var href = (opts.hashPrefix || '#team/') + id;
-    return '<a class="team-card" href="' + href + '"><img src="' + (opts.imgBase || '') + p.photo + '" alt="' + p.name + '"><h4>' + p.name + '</h4><p>' + p.role + '</p></a>';
-  }).join('');
-  return sectionHeader('我们的团队', '专业团队') + '<div class="team-grid">' + cards + '</div>';
-}
-
-function renderTeamProfileHTML(id, opts) {
-  opts = opts || {};
-  var profile = TEAM_PROFILES_ZH[id];
-  if (!profile) return null;
-
-  var imgBase = opts.imgBase || '';
-  var backHash = opts.backHash || '#home';
-  var backText = opts.backText || '返回我们的团队';
-
-  var highlightsHTML = profile.highlights.map(function(h) {
-    return '<div class="highlight"><h4><img src="' + imgBase + '../assets/icons/icon_star.png" style="width:16px;height:16px;vertical-align:middle;margin-right:6px">' + h.title + '</h4><p>' + h.desc + '</p></div>';
-  }).join('');
-
-  var expertiseHTML = profile.expertise.map(function(e) {
-    return '<span>' + e + '</span>';
-  }).join('');
-
-  var qualificationsHTML = '';
-  if (profile.contact.qualifications && profile.contact.qualifications.length) {
-    qualificationsHTML = '<h3>教育背景</h3><ul style="list-style:none;padding:0;font-size:.85rem;color:var(--charcoal);line-height:2">' +
-      profile.contact.qualifications.map(function(q) { return '<li>' + q + '</li>'; }).join('') + '</ul>';
-  }
-
-  return '<div class="hero-banner team-hero" style="background:url(\'' + imgBase + '../assets/images/11_Team_memberPageV7.png\') center/cover no-repeat">' +
-      '<p class="breadcrumb">我们的团队</p>' +
-      '<h1>' + profile.name + '</h1>' +
-      '<p class="hero-sub">' + profile.role + '</p>' +
-    '</div>' +
-    '<section><div class="container">' +
-      '<a class="back-link" href="' + backHash + '">' + backText + '</a>' +
-      '<div class="profile-top">' +
-        '<div class="profile-photo-col">' +
-          '<img class="profile-photo" src="' + profile.photo + '" alt="' + profile.name + '" style="border-radius:8px;width:200px;height:auto;border:none">' +
-        '</div>' +
-        '<div>' +
-          '<h2 class="profile-name">' + profile.name + '</h2>' +
-          '<p class="profile-role">' + profile.role + '</p>' +
-          '<p class="profile-bio">' + profile.bio + '</p>' +
-        '</div>' +
-      '</div>' +
-      '<div class="profile-summary-section" style="margin-top:32px;margin-bottom:32px">' +
-        '<h3 style="font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:12px">个人简介</h3>' +
-        '<p style="font-size:.85rem;color:var(--charcoal);line-height:1.85">' + profile.summary + '</p>' +
-      '</div>' +
-      '<div class="profile-body">' +
-        '<div class="profile-main">' +
-          '<h3>专业领域</h3>' +
-          '<div class="expertise-badges">' + expertiseHTML + '</div>' +
-          qualificationsHTML +
-        '</div>' +
-        '<div class="profile-sidebar">' +
-          '<h3>个人亮点</h3>' +
-          '<div class="profile-highlights">' + highlightsHTML + '</div>' +
-          '<a href="contact.html#book" class="cta-btn primary" style="width:100%;display:block;text-align:center;margin-top:20px">预约咨询</a>' +
-          '<div class="profile-contact" style="margin-top:16px">' +
-            '<p><a href="tel:' + profile.contact.phone.replace(/\s/g, '') + '">' + profile.contact.phone + '</a></p>' +
-            '<p><a href="mailto:' + profile.contact.email + '">' + profile.contact.email + '</a></p>' +
-          '</div>' +
-        '</div>' +
-      '</div>' +
-    '</div></section>';
-}
 
 /* ═══════════════════════════════════════════
    DATA
@@ -467,7 +243,7 @@ function renderHome() {
 
     <section class="bg-cream">
       <div class="container">
-        ${renderTeamGrid(['marshall-bird','aimee-yang','julia-huang','cici-du','rockie-wei','ming-lu'], {imgBase:'../'})}
+        ${renderTeamGrid(['marshall-bird','aimee-yang','julia-huang','cici-du','rockie-wei','ming-lu'], {lang:'zh', imgBase:'../'})}
       </div>
     </section>
   `;
@@ -709,7 +485,7 @@ function renderBusinessInvestor() {
 }
 
 function renderTeamProfile(id) {
-  return renderTeamProfileHTML(id, {backHash: '#team', backText: '返回我们的团队', imgBase: '../'}) || renderHome();
+  return renderTeamProfileHTML(id, {lang:'zh', backHash: '#team', backText: '返回我们的团队', imgBase: '../'}) || renderHome();
 }
 
 /* ═══════════════════════════════════════════

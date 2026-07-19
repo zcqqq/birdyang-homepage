@@ -48,65 +48,6 @@
 <script src="/components/section-header.js"></script>
 <script src="/components/team-profile.js"></script>
 <script>
-// Override team profiles with Chinese data
-TEAM_PROFILES = {
-  'aimee-yang': {
-    name: 'Aimee Yang',
-    role: '合伙人，商业顾问',
-    photo: '../assets/team/aimee-yang.png',
-    bio: 'Aimee Yang 是一位富有远见的企业家、商业顾问、投资人以及有执照的移民顾问。',
-    expertise: ['企业咨询与上市', '房地产开发与管理', '税务规划', '零售、物流与人工智能', '跨境投资与移民法'],
-    summary: 'Aimee Yang 是一位富有远见的企业家、商业顾问、投资人以及有执照的移民顾问。她拥有在新西兰和中国创办并管理成功的房地产和零售企业、领导物流公司、监管投资基金以及在房地产市场拥有二十年经验的非凡履历，她了解企业的运作方式，以及企业如何实现发展、融资和合规。在德扬，Aimee 领导咨询服务，为寻求可靠、经验丰富且具有商业意识指导的客户提供移民咨询、人力资源、保险、商业咨询、投资管理及国际房地产服务。',
-    highlights: [
-      { title: '房地产投资人', desc: '在两个房地产市场拥有超过二十年的投资经验。' },
-      { title: '企业创始人', desc: '创立并成功退出零售、物流及其他企业。' },
-      { title: '持牌移民顾问', desc: '在新西兰、澳大利亚和英国的移民法方面拥有资质。' }
-    ],
-    contact: {
-      qualifications: ['商业学士', '文学学士', '持牌移民顾问（IAA-新西兰；MARA-澳大利亚；OISC-英国）'],
-      phone: '+64 9 590 0944',
-      email: 'aimee@birdyang.co.nz'
-    }
-  },
-  'julia-huang': {
-    name: 'Julia Huang',
-    role: '执业律师，新西兰大律师',
-    photo: '../assets/team/julia-huang.png',
-    bio: 'Julia Huang 是一位在顶级律所执业十年以上的新西兰出庭律师和诉讼律师。',
-    expertise: ['商业与公司法', '财产法与信托', '争议解决与诉讼', '移民法', '产权转让与商业交易'],
-    summary: 'Julia Huang 是一位在顶级律所执业十年以上的新西兰出庭律师和诉讼律师。她处理高价值的商业纠纷、复杂的商业交易以及个人法律事务，以清晰、冷静和战略性的敏锐度处理各种复杂程度的事务。她保持着高水平的专业标准，以能力、正直和对客户事务的真正关心而赢得了良好声誉。',
-    highlights: [
-      { title: '十年出庭律师经验', desc: '在顶级律所处理复杂诉讼与商业交易。' },
-      { title: '全面法律服务', desc: '涵盖商业、财产、信托、移民与个人法律事务。' },
-      { title: '战略思维', desc: '以冷静、清晰的判断力处理复杂局面。' }
-    ],
-    contact: {
-      qualifications: ['法学学士', '法学硕士', '新西兰出庭律师', '新西兰律师协会会员'],
-      phone: '+64 21 1059 862',
-      email: 'julia@birdyang.co.nz'
-    }
-  },
-  'rockie-wei': {
-    name: 'Rockie Wei',
-    role: '法律行政官与保险顾问',
-    photo: '../assets/team/rockie-wei.png',
-    bio: 'Rockie Wei 拥有超过十年的行政管理和客户服务经验，为法律与商业咨询运营带来严谨和温暖。',
-    expertise: ['客户服务与协调', '法律行政支持', '商业运营', '账户与发票管理', '团队组织'],
-    summary: 'Rockie Wei 拥有超过十年的行政管理和客户服务经验，为法律与商业咨询运营带来严谨和温暖。她管理咨询服务的日常行政工作，处理客户沟通，确保运作顺利。她的商业管理背景和实际经验意味着她理解客户的需求，并能为我们的咨询、法律与会计团队的顺畅协调提供支持。',
-    highlights: [
-      { title: '行政严谨', desc: '处理客户沟通、账户、发票及团队协调。' },
-      { title: '商业洞察', desc: '商业管理背景带来对客户需求的实际理解。' },
-      { title: '客户服务', desc: '以温暖、专业的态度支持客户咨询需求。' }
-    ],
-    contact: {
-      qualifications: ['商业管理学士'],
-      phone: '+64 9 590 0948',
-      email: 'rockie@birdyang.co.nz'
-    }
-  }
-};
-</script>
-<script>
 (function(){
 
 function renderHome() {
@@ -156,7 +97,7 @@ function renderHome() {
 
   <section class="bg-cream reveal">
     <div class="container">
-      ${renderTeamGrid(['aimee-yang','julia-huang','rockie-wei'], {imgBase:'../'})}
+      ${renderTeamGrid(['aimee-yang','julia-huang','rockie-wei'], {lang:'zh', imgBase:'../'})}
     </div>
   </section>
   `;
@@ -168,7 +109,7 @@ function render() {
 
   if (hash.indexOf('team/') === 0) {
     var id = hash.slice(5);
-    var html = renderTeamProfileHTML(id, { backHash: '#team', backText: '返回我们的团队', imgBase: '../' });
+    var html = renderTeamProfileHTML(id, { lang:'zh', backHash: '#team', backText: '返回我们的团队', imgBase: '../' });
     app.innerHTML = html || renderHome();
     window.scrollTo(0, 0);
   } else if (hash === 'team') {
