@@ -156,7 +156,7 @@ var TEAM_PROFILES_ZH = {
   }
 };
 
-// Original English team profiles
+TEAM_PROFILES = {
   'marshall-bird': {
     name: 'Marshall Bird',
     role: 'Partner',
