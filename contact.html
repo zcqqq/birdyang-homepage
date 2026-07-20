@@ -145,7 +145,7 @@ function renderHome() {
       '</div>' +
     '</section>' +
 
-    '<section class="section bg-white">' +
+    '<section class="section bg-white" id="message">' +
       '<div class="container">' +
         '<p class="section-label">SEND US A MESSAGE</p>' +
         '<div class="two-col mt-32">' +
@@ -279,7 +279,7 @@ function renderBook() {
               '<div class="why-item"><h4>Choose the right team</h4><p>Select your service area so we can connect you with the right professionals.</p></div>' +
               '<div class="why-item"><h4>Flexible options</h4><p>In person, phone, or video consultations available.</p></div>' +
               '<div class="why-item"><h4>What to expect</h4><p>We will confirm your appointment and outline any preparation needed.</p></div>' +
-              '<div class="why-item"><h4>General enquiries</h4><p><a href="#home" style="color:var(--gold)">Send us a message</a> for general questions.</p></div>' +
+              '<div class="why-item"><h4>General enquiries</h4><p><a href="#message" style="color:var(--gold)">Send us a message</a> for general questions.</p></div>' +
             '</div>' +
             '<div class="sidebar-card">' +
               '<h3>OFFICE INFORMATION</h3>' +
@@ -308,10 +308,18 @@ function route() {
     case 'book': app.innerHTML = renderBook(); break;
     default: app.innerHTML = renderHome(); break;
   }
-  window.scrollTo(0, 0);
   bindForms();
   bindTabs();
   revealElements();
+  if (hash && hash !== 'home' && hash !== 'book') {
+    setTimeout(function() {
+      var el = document.getElementById(hash);
+      if (el) { el.scrollIntoView({behavior:'smooth', block:'start'}); }
+      else { window.scrollTo(0, 0); }
+    }, 50);
+  } else {
+    window.scrollTo(0, 0);
+  }
 }
 
 /* ─── FORM HANDLING ─── */
