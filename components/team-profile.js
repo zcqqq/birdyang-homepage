@@ -16,7 +16,7 @@ var TEAM_PROFILES_ZH = {
     photo: 'assets/team/marshall-bird.png',
     bio: 'Marshall Bird 是德扬合伙人，在移民、商业、房地产法及投资领域拥有丰富经验，专业背景横跨美国与新西兰。他为个人、企业家和企业客户提供战略性、务实的法律建议，帮助客户应对复杂问题，并为长期发展建立稳健基础。',
     expertise: ['移民', '商业法', '房地产', '投资', '创新商业融资', '创业'],
-    summary: 'Marshall 拥有美国密歇根大学法学硕士学位和新西兰奥克兰大学法学学士学位。他在移民、商业、房地产法和投资领域拥有美国和新西兰的丰富经验。Marshall 曾在加利福尼亚州比佛利山庄担任律师，就商业收购、创业和移民事务提供建议。他的文章曾发表于Variety 和 The Hollywood Reporter。他创立了新西兰律师事务所，并在融资、创业、媒体制作和出版领域拥有丰富的实际经验。',
+    summary: 'Marshall 拥有美国密歇根大学法学硕士学位和新西兰奥克兰大学法学学士学位。他在移民、商业、房地产法和投资领域拥有美国和新西兰的丰富经验。Marshall 曾在加利福尼亚州比佛利山庄担任律师，就商业收购、创业和移民事务提供建议。他的文章曾发表于 Variety 和 The Hollywood Reporter。Marshall 创立了新西兰律师事务所，并在融资、创业、媒体制作和出版领域拥有丰富的实践经验。',
     highlights: [
       { title: '美国与新西兰法律洞察', desc: '在两个市场拥有深厚的跨境经验。' },
       { title: '商业与移民经验', desc: '为创业、投资与签证事务提供务实指导。' },
@@ -144,13 +144,13 @@ var TEAM_PROFILES_ZH = {
     expertise: ['会计行政', 'GST与IRD合规', '商业咨询支持', 'Xero与MYOB', '跨境商业视角'],
     summary: 'Ally 在梅西大学完成了MPA(CA)学位，并持有复旦大学MBA学位。她此前在中国拥有私募股权投资、商业项目、广告策划和创业经验，包括创立一家在上海运营超过10年的餐饮品牌。在德扬，Ally 以分析性、有条理和以商业意识的方式支持会计和咨询相关工作。她的背景使她能够将财务信息与更广泛的商业考虑联系起来，帮助客户更好地理解自己的处境、改善决策并自信前行。',
     highlights: [
-      { title: '会计专业素养', desc: '在会计行政和合规方面拥有扎实基础。' },
-      { title: '商业判断力', desc: '拥有私募股权和创业背景。' },
-      { title: '战略视角', desc: 'MBA级别的战略分析和商业咨询能力。' }
+      { title: '会计与合规基础', desc: '具备扎实的会计知识，能够支持 GST、IRD 合规及日常账务相关事务。' },
+      { title: '商业判断与执行经验', desc: '拥有私募股权、项目评估及长期创业运营经验，理解数字背后的商业逻辑。' },
+      { title: '系统与风险视角', desc: '能够结合数据、流程、系统与风险因素，协助客户看清问题并稳妥推进下一步。' }
     ],
     contact: {
-      qualifications: ['MPA(CA) — 梅西大学', 'MBA — 复旦大学', '广告学士学位 — 厦门大学', '基金资格'],
-      phone: '+64 9 590 0944',
+      qualifications: ['MPA（CA）— 梅西大学', 'MBA — 复旦大学', '广告学学士 — 厦门大学', '基金从业资格（中国）'],
+      phone: '+64 9 217 6231',
       email: 'ally@birdyang.co.nz'
     }
   }
@@ -297,7 +297,7 @@ TEAM_PROFILES = {
     ],
     contact: {
       qualifications: ['MPA(CA) — Massey University', 'MBA — Fudan University', 'Bachelor\'s Degree in Advertising – Xiamen University, China', 'Funds qualification'],
-      phone: '+64 9 590 0944',
+      phone: '+64 9 217 6231',
       email: 'ally@birdyang.co.nz'
     }
   }
