@@ -45,7 +45,7 @@ function renderHome() {
         '<p class="section-label">我们的部门</p>' +
         '<div class="divisions-grid mt-24">' +
           '<div class="division-card reveal">' +
-            '<h3>法务服务</h3>' +
+            '<h3>法律服务</h3>' +
             '<p>legal@birdyang.co.nz<br>+64 9 217 6231</p>' +
             '<a href="legal.html">查看服务 &rarr;</a>' +
           '</div>' +
@@ -150,7 +150,7 @@ function renderHome() {
       '</div>' +
     '</section>' +
 
-    '<section class="section bg-white">' +
+    '<section class="section bg-white" id="message">' +
       '<div class="container">' +
         '<p class="section-label">发送信息</p>' +
         '<div class="two-col mt-32">' +
@@ -286,7 +286,7 @@ function renderBook() {
               '<div class="why-item"><h4>选择合适的团队</h4><p>选择您的服务领域，我们将为您对接合适的专业人员。</p></div>' +
               '<div class="why-item"><h4>灵活选择</h4><p>可选择面谈、电话或视频咨询。</p></div>' +
               '<div class="why-item"><h4>预期流程</h4><p>我们将确认您的预约并说明需要准备的资料。</p></div>' +
-              '<div class="why-item"><h4>一般咨询</h4><p><a href="#home" style="color:var(--gold)">发送信息</a>进行一般性问题咨询。</p></div>' +
+              '<div class="why-item"><h4>一般咨询</h4><p><a href="#message" style="color:var(--gold)">发送信息</a>进行一般性问题咨询。</p></div>' +
             '</div>' +
             '<div class="sidebar-card">' +
               '<h3>办公信息</h3>' +
@@ -315,10 +315,18 @@ function route() {
     case 'book': app.innerHTML = renderBook(); break;
     default: app.innerHTML = renderHome(); break;
   }
-  window.scrollTo(0, 0);
   bindForms();
   bindTabs();
   revealElements();
+  if (hash && hash !== 'home' && hash !== 'book') {
+    setTimeout(function() {
+      var el = document.getElementById(hash);
+      if (el) { el.scrollIntoView({behavior:'smooth', block:'start'}); }
+      else { window.scrollTo(0, 0); }
+    }, 50);
+  } else {
+    window.scrollTo(0, 0);
+  }
 }
 
 /* ─── FORM HANDLING ─── */
