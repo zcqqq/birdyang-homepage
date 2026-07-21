@@ -63,9 +63,9 @@ function route(){
     case 'business-plans': html = pageBusinessPlans(); break;
     case 'asset-management': html = pageAssetManagement(); break;
     case 'trust-accounting': html = pageTrustAccounting(); break;
-    case 'team/heather-chao': html = renderTeamProfileHTML('heather-chao', {lang:'zh', backHash:'#team', backText:'返回我们的团队', imgBase:'../'}); break;
-    case 'team/ming-lu': html = renderTeamProfileHTML('ming-lu', {lang:'zh', backHash:'#team', backText:'返回我们的团队', imgBase:'../'}); break;
-    case 'team/ally-liao': html = renderTeamProfileHTML('ally-liao', {lang:'zh', backHash:'#team', backText:'返回我们的团队', imgBase:'../'}); break;
+    case 'team/heather-chao': html = renderTeamProfileHTML('heather-chao', {lang:'zh', backHash:'#team', backText:'返回关于我们', imgBase:'../'}); break;
+    case 'team/ming-lu': html = renderTeamProfileHTML('ming-lu', {lang:'zh', backHash:'#team', backText:'返回关于我们', imgBase:'../'}); break;
+    case 'team/ally-liao': html = renderTeamProfileHTML('ally-liao', {lang:'zh', backHash:'#team', backText:'返回关于我们', imgBase:'../'}); break;
     case 'team':
       html = pageHome();
       document.getElementById('app').innerHTML = html;

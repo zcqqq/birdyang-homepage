@@ -109,7 +109,7 @@ function render() {
 
   if (hash.indexOf('team/') === 0) {
     var id = hash.slice(5);
-    var html = renderTeamProfileHTML(id, { lang:'zh', backHash: '#team', backText: '返回我们的团队', imgBase: '../' });
+    var html = renderTeamProfileHTML(id, { lang:'zh', backHash: '#team', backText: '返回关于我们', imgBase: '../' });
     app.innerHTML = html || renderHome();
     window.scrollTo(0, 0);
   } else if (hash === 'team') {

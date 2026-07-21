@@ -138,11 +138,11 @@ var TEAM_PROFILES_ZH = {
   },
   'ally-liao': {
     name: 'Ally Liao',
-    role: 'MBA，特许会计师候选人',
+    role: 'MBA，特许会计师候选人（CA Candidate）',
     photo: 'assets/team/ally-liao.png',
-    bio: 'Ally Liao 以扎实的会计知识、商业洞察力和执行力支持德扬的会计与商业咨询业务。',
+    bio: 'Ally Liao 为德扬的会计与商业咨询业务提供支持。她结合扎实的会计知识、商业分析能力及项目执行经验，协助客户从数字、系统、商业与风险角度理解问题，并推动相关事务稳妥落地。',
     expertise: ['会计行政', 'GST与IRD合规', '商业咨询支持', 'Xero与MYOB', '跨境商业视角'],
-    summary: 'Ally 在梅西大学完成了MPA(CA)学位，并持有复旦大学MBA学位。她此前在中国拥有私募股权投资、商业项目、广告策划和创业经验，包括创立一家在上海运营超过10年的餐饮品牌。在德扬，Ally 以分析性、有条理和以商业意识的方式支持会计和咨询相关工作。她的背景使她能够将财务信息与更广泛的商业考虑联系起来，帮助客户更好地理解自己的处境、改善决策并自信前行。',
+    summary: 'Ally 在新西兰梅西大学完成 MPA（CA）学位，并已完成 CA 课程考试要求。她同时持有复旦大学 MBA 学位及厦门大学广告学学士学位。</p><p>在加入德扬之前，Ally 在中国拥有私募股权投资、商业项目评估、广告策划及创业经验，曾创立并运营一家上海餐饮品牌逾十年。相关经历使她能够从财务数据、商业模式、运营系统与风险管理等多个角度理解企业问题。</p><p>在德扬，Ally 参与会计合规、财务分析、业务流程及公司架构等相关工作。她注重将财务信息与更广泛的商业判断相结合，协助客户更清晰地理解经营状况、识别风险与机会，并以更有依据的方式作出决策。',
     highlights: [
       { title: '会计与合规基础', desc: '具备扎实的会计知识，能够支持 GST、IRD 合规及日常账务相关事务。' },
       { title: '商业判断与执行经验', desc: '拥有私募股权、项目评估及长期创业运营经验，理解数字背后的商业逻辑。' },
@@ -313,7 +313,7 @@ function renderTeamGrid(memberIds, opts) {
     var href = (opts.hashPrefix || '#team/') + id;
     return '<a class="team-card" href="' + href + '"><img src="' + (opts.imgBase || '') + p.photo + '" alt="' + p.name + '"><h4>' + p.name + '</h4><p>' + p.role + '</p></a>';
   }).join('');
-  var label = isZh ? '我们的团队' : 'OUR TEAM';
+  var label = isZh ? '关于我们' : 'OUR TEAM';
   var title = isZh ? '专业团队' : 'Meet the Team';
   return sectionHeader(label, title) + '<div class="team-grid">' + cards + '</div>';
 }
@@ -327,7 +327,7 @@ function renderTeamProfileHTML(id, opts) {
 
   var imgBase = opts.imgBase || '';
   var backHash = opts.backHash || '#home';
-  var backText = opts.backText || (isZh ? '返回我们的团队' : 'BACK TO OUR TEAM');
+  var backText = opts.backText || (isZh ? '返回关于我们' : 'BACK TO OUR TEAM');
   var L = opts.labels || {};
   var labelEducation = L.education != null ? L.education : (isZh ? '教育背景' : 'EDUCATION BACKGROUND');
   var labelSummary = L.summary != null ? L.summary : (isZh ? '个人简介' : 'PROFILE SUMMARY');
@@ -350,7 +350,7 @@ function renderTeamProfileHTML(id, opts) {
   }
 
   return '<div class="hero-banner team-hero" style="background:url(\'' + imgBase + 'assets/images/11_Team_memberPageV7.png\') center/cover no-repeat">' +
-      '<p class="breadcrumb">' + (isZh ? '我们的团队' : 'OUR TEAM') + '</p>' +
+      '<p class="breadcrumb">' + (isZh ? '关于我们' : 'OUR TEAM') + '</p>' +
       '<h1>' + profile.name + '</h1>' +
       '<p class="hero-sub">' + profile.role + '</p>' +
     '</div>' +
