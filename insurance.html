@@ -36,7 +36,7 @@ const servicePages = {
     img: 'assets/images/30_InsuranceSubHome01_Car.png',
     title: 'CAR INSURANCE',
     heroSub: 'Driving with Clarity and Confidence',
-    backHash: '#home',
+    backHash: '#services',
     backText: 'BACK TO INSURANCE',
     intro: 'Car insurance is more than purchasing a policy. It is about choosing cover that suits your vehicle, driving needs, and budget, while clearly understanding policy obligations, disclosure requirements, and claim conditions.</p><p>Bird &amp; Yang helps clients understand and arrange vehicle insurance in New Zealand, identify common coverage gaps, and manage risk factors that may affect claims, including driving history, vehicle use, modifications, and policy terms. We provide clear and practical guidance so clients are better prepared for everyday driving and accident situations.',
     accordions: [
@@ -57,7 +57,7 @@ const servicePages = {
     img: 'assets/images/31_InsuranceSubHome02_House.png',
     title: 'HOUSE INSURANCE',
     heroSub: 'Protecting Your Home with Foresight',
-    backHash: '#home',
+    backHash: '#services',
     backText: 'BACK TO INSURANCE',
     intro: 'Property is often one of the most important assets for individuals, families, and investors. Suitable home insurance is not only about purchasing a standard policy. It also requires an understanding of rebuild costs, coverage, exclusions, and property-specific risks.</p><p>Bird & Yang helps first-home buyers, property owners, and investors understand home insurance options in New Zealand and carefully consider factors such as rebuild value, property use, vacancy, renovations, and landlord-related risks. We provide clear and practical guidance so clients can manage their property insurance arrangements with better information.',
     accordions: [
@@ -78,7 +78,7 @@ const servicePages = {
     img: 'assets/images/32_InsuranceSubHome03_Life.png',
     title: 'LIFE, HEALTH & BUSINESS INSURANCE',
     heroSub: 'Planning for the Unexpected with Clarity',
-    backHash: '#home',
+    backHash: '#services',
     backText: 'BACK TO INSURANCE',
     intro: 'Unexpected illness, injury, loss of income, or the loss of a key person can have a significant impact on family life, financial arrangements, and business operations.</p><p>Bird &amp; Yang helps clients understand different options across life, health, income protection, and business insurance. We provide clear and practical protection planning support based on family responsibilities, income sources, business structures, and long-term goals.</p><p>We focus on aligning insurance arrangements with broader legal, accounting, and financial planning, helping clients manage risk with better information and prepare more carefully for their families, businesses, and long-term objectives.',
     accordions: [
@@ -113,7 +113,7 @@ function renderHome() {
       </div>
     </section>
 
-    <section class="bg-white reveal">
+    <section class="bg-white reveal" id="services">
       <div class="container">
         ${sectionHeader('WHAT WE DO', 'Our Expertise')}
         <div class="cards-grid">
@@ -165,7 +165,7 @@ function serviceDetailPage(opts) {
   return `
     <div style="min-height:100vh;display:flex;flex-direction:column">
       <div class="hero-banner" style="padding:100px 5% 30px;flex-shrink:0">
-        <div class="breadcrumb"><a href="consulting.html">CONSULTING</a> &gt; <a href="#home">INSURANCE</a> &gt; ${opts.title}</div>
+        <div class="breadcrumb"><a href="consulting.html">CONSULTING</a> &gt; <a href="#services">INSURANCE</a> &gt; ${opts.title}</div>
         <h1>${opts.title}</h1>
         ${opts.heroSub ? `<p class="hero-sub">${opts.heroSub}</p>` : ''}
       </div>
@@ -205,13 +205,18 @@ function render() {
 
   if (hash === 'home' || hash === '') {
     app.innerHTML = renderHome();
+    window.scrollTo(0, 0);
+  } else if (hash === 'services') {
+    app.innerHTML = renderHome();
+    setTimeout(function(){ var el = document.getElementById('services'); if (el) { var nav = document.querySelector('nav'); var navH = nav ? nav.offsetHeight : 76; var t = el.getBoundingClientRect().top + window.scrollY - navH - 20; window.scrollTo({ top: t, behavior: 'smooth' }); } else { window.scrollTo(0, 0); } }, 50);
   } else if (servicePages[hash]) {
     app.innerHTML = serviceDetailPage(servicePages[hash]);
+    window.scrollTo(0, 0);
   } else {
     app.innerHTML = renderHome();
+    window.scrollTo(0, 0);
   }
 
-  window.scrollTo(0, 0);
   initReveal();
 }
 

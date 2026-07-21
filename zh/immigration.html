@@ -36,7 +36,7 @@ const servicePages = {
     img: '../assets/images/40_ImmigrationSubhome01_PathwayV2.png',
     title: '路径支持',
     heroSub: '明晰移民方向，选择合适路径',
-    backHash: '#home',
+    backHash: '#services',
     backText: '返回移民咨询',
     intro: '每一段移民旅程，往往都始于一个重要问题：我的情况适合从哪里开始？面对访客签证、学生签证、工作签证、伴侣签证、居民签证及特殊目的签证等不同类别，许多客户在正式开始前就会感到信息复杂、方向不清。德扬协助客户收集基础背景信息、整理个人档案、梳理关键问题，并为后续与持牌移民顾问或律师进行更有针对性的沟通做好准备。我们的目标是帮助客户从一开始就以更清晰、更有条理的方式理解自身处境，并稳妥推进下一步。',
     accordions: [
@@ -57,7 +57,7 @@ const servicePages = {
     img: '../assets/images/41_ImmigrationSubhome02_Preparation.png',
     title: '申请准备',
     heroSub: '条理清晰，稳妥备齐申请材料',
-    backHash: '#home',
+    backHash: '#services',
     backText: '返回移民咨询',
     intro: '签证申请通常涉及大量文件、个人信息、时间线及支持证据。若材料不完整、信息不一致或呈现方式不清晰，都可能增加补件、延误或进一步审查的风险。德扬协助客户整理申请材料、核对关键信息、归类支持文件，并以更清晰、有序的方式准备申请档案。我们的咨询团队专注于实务准备与文件组织，帮助申请材料更完整、更一致，也更便于后续由持牌移民顾问或律师审阅、提交或提供专业意见。',
     accordions: [
@@ -78,7 +78,7 @@ const servicePages = {
     img: '../assets/images/42_ImmigrationSubhome03_Relationship%26EmploymentV2.png',
     title: '关系与就业证据',
     heroSub: '审慎清晰, 有序呈现关系与雇佣证据',
-    backHash: '#home',
+    backHash: '#services',
     backText: '返回移民咨询',
     intro: '某些签证类别需要的不只是表格和基础文件，更需要真实、可信且逻辑清晰的支持证据。无论申请基于伴侣关系、工作邀约，或两者兼有，证据的一致性、完整性和呈现方式都十分重要。德扬协助申请人及雇主整理关系记录、雇佣文件、沟通资料、时间线及其他支持材料，使相关证据更清晰、更有条理，也更便于后续由持牌移民顾问或律师审阅、提交或提供专业意见。我们的咨询团队注重证据的真实性、连贯性与文件结构，帮助客户以审慎、可信的方式呈现自身情况。',
     accordions: [
@@ -99,7 +99,7 @@ const servicePages = {
     img: '../assets/images/43_ImmigrationSubhome04_TimelineV2.png',
     title: '时间线与流程管理',
     heroSub: '步骤清晰，及时指引，稳启新旅程',
-    backHash: '#home',
+    backHash: '#services',
     backText: '返回移民咨询',
     intro: '移民事务通常不是单一事件，而是由多个关键日期和实际步骤共同组成。签证到期日、审理时间、工作开始日期、学校入学安排、体检或无犯罪记录文件有效期，以及个人或家庭计划，往往需要同步考虑。德扬协助客户梳理整体时间线、追踪关键节点、协调资料准备进度，并以更有序的方式推进实务步骤。我们的目标是帮助客户减少仓促处理、资料遗漏或时间安排失误的风险，使整个过程更加清晰、可控。当事项需要个性化移民建议、法律意见或正式代理时，我们可协助将已整理的档案、时间线及支持材料，清晰衔接至相关持牌顾问、律师或合资格专业人士，帮助客户更有序地推进移民旅程。',
     accordions: [
@@ -134,7 +134,7 @@ function renderHome() {
       </div>
     </section>
 
-    <section class="bg-white reveal">
+    <section class="bg-white reveal" id="services">
       <div class="container">
         ${sectionHeader('我们的服务', '专业领域')}
         <div class="cards-grid">
@@ -194,7 +194,7 @@ function serviceDetailPage(opts) {
   return `
     <div style="min-height:100vh;display:flex;flex-direction:column">
       <div class="hero-banner" style="padding:100px 5% 30px;flex-shrink:0">
-        <div class="breadcrumb"><a href="consulting.html">咨询服务</a> &gt; <a href="#home">移民咨询</a> &gt; ${opts.title}</div>
+        <div class="breadcrumb"><a href="consulting.html">咨询服务</a> &gt; <a href="#services">移民咨询</a> &gt; ${opts.title}</div>
         <h1>${opts.title}</h1>
         ${opts.heroSub ? `<p class="hero-sub">${opts.heroSub}</p>` : ''}
       </div>
@@ -234,13 +234,18 @@ function render() {
 
   if (hash === 'home' || hash === '') {
     app.innerHTML = renderHome();
+    window.scrollTo(0, 0);
+  } else if (hash === 'services') {
+    app.innerHTML = renderHome();
+    setTimeout(function(){ var el = document.getElementById('services'); if (el) { var nav = document.querySelector('nav'); var navH = nav ? nav.offsetHeight : 76; var t = el.getBoundingClientRect().top + window.scrollY - navH - 20; window.scrollTo({ top: t, behavior: 'smooth' }); } else { window.scrollTo(0, 0); } }, 50);
   } else if (servicePages[hash]) {
     app.innerHTML = serviceDetailPage(servicePages[hash]);
+    window.scrollTo(0, 0);
   } else {
     app.innerHTML = renderHome();
+    window.scrollTo(0, 0);
   }
 
-  window.scrollTo(0, 0);
   initReveal();
 }
 

@@ -36,7 +36,7 @@ const servicePages = {
     img: '../assets/images/34_HRSubhome01_HRCompliance.png',
     title: '人力合规基础',
     heroSub: '夯实人事基础，守护团队稳步前行',
-    backHash: '#home',
+    backHash: '#services',
     backText: '返回人力资源咨询',
     intro: '在新西兰，良好的雇佣关系始于清晰、稳妥的人力资源基础。雇佣协议、最低工资、假期与休假权利、薪资准确性、记录保存及公平程序，都是企业日常管理中不可忽视的重要环节。德扬协助企业审查并完善 HR 基础文件与日常流程，使相关制度更清晰、实用，并能更好支持企业管理需要。当事项涉及雇佣法律意见或争议处理时，我们的人力资源咨询团队可与德扬雇佣律师协同，为客户提供更完整的支持。',
     accordions: [
@@ -57,7 +57,7 @@ const servicePages = {
     img: '../assets/images/35_HRSubhome02_PeopleManagement.png',
     title: '人员管理支持',
     heroSub: '提升沟通效能，稳固团队发展',
-    backHash: '#home',
+    backHash: '#services',
     backText: '返回人力资源咨询',
     intro: '绩效问题、纪律事项、岗位调整、组织重组及雇佣关系终止，往往是企业管理中最敏感、也最需要谨慎处理的情形。德扬为雇主提供务实的人力资源咨询支持，协助企业在清晰沟通、公平程序和完整记录的基础上，稳妥处理人员管理中的复杂问题。我们重视程序、文件与沟通的一致性，帮助企业在日常管理与关键决策中降低风险、保持清晰。当相关事项涉及雇佣法律意见、争议处理或法律代理时，我们的人力资源咨询团队可与德扬专注于雇佣领域的律师协同合作，为客户提供更完整、更连贯的支持。',
     accordions: [
@@ -78,7 +78,7 @@ const servicePages = {
     img: '../assets/images/36_HRSubhome03_Workplace.png',
     title: '职场文化与风险',
     heroSub: '共建安全尊重的职场，降低团队管理风险',
-    backHash: '#home',
+    backHash: '#services',
     backText: '返回人力资源咨询',
     intro: '职场文化不仅影响员工士气，也直接关系到企业的管理风险与长期稳定。欺凌、骚扰、冲突、倦怠、沟通不畅及心理社会风险，都可能影响团队表现，并使企业面临更复杂的管理与合规问题。德扬协助企业通过清晰政策、风险审查、管理层指导及早期干预，建设更安全、更健康、更有韧性的工作环境。我们帮助企业看清潜在问题，完善应对流程，并在需要时衔接 HR 咨询与雇佣法律支持。',
     accordions: [
@@ -100,7 +100,7 @@ const servicePages = {
     imgPosition: 'center top',
     title: '招聘与留人',
     heroSub: '识别出色人才，搭建融入与留任路径',
-    backHash: '#home',
+    backHash: '#services',
     backText: '返回人力资源咨询',
     intro: '找到合适的人才只是第一步，帮助他们顺利融入并长期留下，才是团队稳定发展的关键。从职位设计、招聘流程、工作权利检查，到入职安排、试用期管理及留任策略，每一个环节都会影响员工体验与团队稳定性。德扬协助企业建立公平、清晰且实用的招聘与人员支持流程，帮助雇主作出更有依据的用人决策，并为团队长期发展打下更稳固的基础。',
     accordions: [
@@ -121,7 +121,7 @@ const servicePages = {
     img: '../assets/images/38_HRSubhome05_Bilingual.png',
     title: '双语HR支持',
     heroSub: '促进双语沟通，保持团队理解一致',
-    backHash: '#home',
+    backHash: '#services',
     backText: '返回人力资源咨询',
     intro: '在新西兰，多语言和跨文化工作环境十分常见。雇佣协议、职场政策、管理要求及重要沟通，只有在员工与管理层都清楚理解时，才能真正发挥作用。德扬提供英语、普通话及粤语 HR 支持，协助雇主更清晰地传达关键 HR 信息，减少因语言或文化差异造成的误解，并支持企业更稳妥地管理团队。当事项涉及雇佣法律意见、争议处理或正式程序时，我们的人力资源咨询团队可与德扬双语雇佣律师协同，为客户提供更完整的专业支持。',
     accordions: [
@@ -156,7 +156,7 @@ function renderHome() {
       </div>
     </section>
 
-    <section class="bg-white reveal">
+    <section class="bg-white reveal" id="services">
       <div class="container">
         ${sectionHeader('我们的服务', '专业领域')}
         <div class="cards-grid">
@@ -226,7 +226,7 @@ function serviceDetailPage(opts) {
   return `
     <div style="min-height:100vh;display:flex;flex-direction:column">
       <div class="hero-banner" style="padding:100px 5% 30px;flex-shrink:0">
-        <div class="breadcrumb"><a href="consulting.html">咨询服务</a> &gt; <a href="#home">人力资源咨询</a> &gt; ${opts.title}</div>
+        <div class="breadcrumb"><a href="consulting.html">咨询服务</a> &gt; <a href="#services">人力资源咨询</a> &gt; ${opts.title}</div>
         <h1>${opts.title}</h1>
         ${opts.heroSub ? `<p class="hero-sub">${opts.heroSub}</p>` : ''}
       </div>
@@ -266,13 +266,18 @@ function render() {
 
   if (hash === 'home' || hash === '') {
     app.innerHTML = renderHome();
+    window.scrollTo(0, 0);
+  } else if (hash === 'services') {
+    app.innerHTML = renderHome();
+    setTimeout(function(){ var el = document.getElementById('services'); if (el) { var nav = document.querySelector('nav'); var navH = nav ? nav.offsetHeight : 76; var t = el.getBoundingClientRect().top + window.scrollY - navH - 20; window.scrollTo({ top: t, behavior: 'smooth' }); } else { window.scrollTo(0, 0); } }, 50);
   } else if (servicePages[hash]) {
     app.innerHTML = serviceDetailPage(servicePages[hash]);
+    window.scrollTo(0, 0);
   } else {
     app.innerHTML = renderHome();
+    window.scrollTo(0, 0);
   }
 
-  window.scrollTo(0, 0);
   initReveal();
 }
 

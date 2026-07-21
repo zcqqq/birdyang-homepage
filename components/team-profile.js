@@ -141,7 +141,7 @@ var TEAM_PROFILES_ZH = {
     role: 'MBA，特许会计师候选人（CA Candidate）',
     photo: 'assets/team/ally-liao.png',
     bio: 'Ally Liao 为德扬的会计与商业咨询业务提供支持。她结合扎实的会计知识、商业分析能力及项目执行经验，协助客户从数字、系统、商业与风险角度理解问题，并推动相关事务稳妥落地。',
-    expertise: ['会计行政', 'GST与IRD合规', '商业咨询支持', 'Xero与MYOB', '跨境商业视角'],
+    expertise: ['会计与行政支持', 'GST与IRD合规', '财务数据整理与分析', '商业咨询支持', 'Xero与MYOB', '商业流程与系统视角', '跨境商业视角'],
     summary: 'Ally 在新西兰梅西大学完成 MPA（CA）学位，并已完成 CA 课程考试要求。她同时持有复旦大学 MBA 学位及厦门大学广告学学士学位。</p><p>在加入德扬之前，Ally 在中国拥有私募股权投资、商业项目评估、广告策划及创业经验，曾创立并运营一家上海餐饮品牌逾十年。相关经历使她能够从财务数据、商业模式、运营系统与风险管理等多个角度理解企业问题。</p><p>在德扬，Ally 参与会计合规、财务分析、业务流程及公司架构等相关工作。她注重将财务信息与更广泛的商业判断相结合，协助客户更清晰地理解经营状况、识别风险与机会，并以更有依据的方式作出决策。',
     highlights: [
       { title: '会计与合规基础', desc: '具备扎实的会计知识，能够支持 GST、IRD 合规及日常账务相关事务。' },
@@ -150,7 +150,7 @@ var TEAM_PROFILES_ZH = {
     ],
     contact: {
       qualifications: ['MPA（CA）— 梅西大学', 'MBA — 复旦大学', '广告学学士 — 厦门大学', '基金从业资格（中国）'],
-      phone: '+64 9 217 6231',
+      phone: '+64 21 183 8625',
       email: 'ally@birdyang.co.nz'
     }
   }
@@ -297,7 +297,7 @@ TEAM_PROFILES = {
     ],
     contact: {
       qualifications: ['MPA(CA) — Massey University', 'MBA — Fudan University', 'Bachelor\'s Degree in Advertising – Xiamen University, China', 'Funds qualification'],
-      phone: '+64 9 217 6231',
+      phone: '+64 21 183 8625',
       email: 'ally@birdyang.co.nz'
     }
   }

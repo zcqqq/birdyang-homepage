@@ -36,7 +36,7 @@ const servicePages = {
     img: '../assets/images/30_InsuranceSubHome01_Car.png',
     title: '车险',
     heroSub: '可靠出行保障，安心往来日常',
-    backHash: '#home',
+    backHash: '#services',
     backText: '返回保险服务',
     intro: '车辆保险不只是购买一份保单，更需要理解保障范围、义务要求及理赔条件，才能在需要时获得应有的支持。德扬协助客户在新西兰选择合适的车辆保险，帮助客户理解不同保障层级的差异、常见除外责任及可能影响理赔的注意事项，从而避免保障不足或理赔受阻的情况。',
     accordions: [
@@ -57,7 +57,7 @@ const servicePages = {
     img: '../assets/images/31_InsuranceSubHome02_House.png',
     title: '房险',
     heroSub: '守护家庭资产，妥善管理住宅风险',
-    backHash: '#home',
+    backHash: '#services',
     backText: '返回保险服务',
     intro: '房产往往是个人或家庭最重要的财务投资之一。妥善保护房产，不仅需要选择合适的保单，更需要理解重建成本、保单除外责任及房产特定风险。德扬协助首次购房者、房产投资者及业主审阅房屋保险安排，关注保额是否充分、保障范围是否合适，并在房产状况发生变化时提供调整建议。',
     accordions: [
@@ -78,7 +78,7 @@ const servicePages = {
     img: '../assets/images/32_InsuranceSubHome03_Life.png',
     title: '人寿、健康及商业保险',
     heroSub: '清晰保障规划，守护人生、健康与事业',
-    backHash: '#home',
+    backHash: '#services',
     backText: '返回保险服务',
     intro: '突发疾病、意外伤害、收入中断或关键人员流失，都可能对家庭生活、财务安排及企业运作造成重大影响。德扬协助客户理解人寿、健康、收入保障及商业保险等不同选择，并根据家庭责任、收入来源、企业结构及长期规划，提供清晰、务实的保障规划支持。我们注重将保险安排与更广泛的法律、会计及财务规划相衔接，帮助客户更有依据地管理风险，并为家庭、事业及长期目标做好更稳妥的准备。',
     accordions: [
@@ -113,7 +113,7 @@ function renderHome() {
       </div>
     </section>
 
-    <section class="bg-white reveal">
+    <section class="bg-white reveal" id="services">
       <div class="container">
         ${sectionHeader('我们的服务', '专业领域')}
         <div class="cards-grid">
@@ -165,7 +165,7 @@ function serviceDetailPage(opts) {
   return `
     <div style="min-height:100vh;display:flex;flex-direction:column">
       <div class="hero-banner" style="padding:100px 5% 30px;flex-shrink:0">
-        <div class="breadcrumb"><a href="consulting.html">咨询服务</a> &gt; <a href="#home">保险</a> &gt; ${opts.title}</div>
+        <div class="breadcrumb"><a href="consulting.html">咨询服务</a> &gt; <a href="#services">保险</a> &gt; ${opts.title}</div>
         <h1>${opts.title}</h1>
         ${opts.heroSub ? `<p class="hero-sub">${opts.heroSub}</p>` : ''}
       </div>
@@ -205,13 +205,18 @@ function render() {
 
   if (hash === 'home' || hash === '') {
     app.innerHTML = renderHome();
+    window.scrollTo(0, 0);
+  } else if (hash === 'services') {
+    app.innerHTML = renderHome();
+    setTimeout(function(){ var el = document.getElementById('services'); if (el) { var nav = document.querySelector('nav'); var navH = nav ? nav.offsetHeight : 76; var t = el.getBoundingClientRect().top + window.scrollY - navH - 20; window.scrollTo({ top: t, behavior: 'smooth' }); } else { window.scrollTo(0, 0); } }, 50);
   } else if (servicePages[hash]) {
     app.innerHTML = serviceDetailPage(servicePages[hash]);
+    window.scrollTo(0, 0);
   } else {
     app.innerHTML = renderHome();
+    window.scrollTo(0, 0);
   }
 
-  window.scrollTo(0, 0);
   initReveal();
 }
 

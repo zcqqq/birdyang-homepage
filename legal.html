@@ -249,7 +249,7 @@ function renderHome() {
       </div>
     </section>
 
-    <section class="bg-white">
+    <section class="bg-white" id="services">
       <div class="container">
         ${sectionHeader('WHAT WE DO', 'Our Expertise')}
         <div class="cards-grid">
@@ -315,7 +315,7 @@ function renderServiceDetail(key) {
   return `
     <div style="min-height:100vh;display:flex;flex-direction:column">
       <div class="hero-banner" style="padding:100px 5% 30px;flex-shrink:0">
-        <div class="breadcrumb"><a href="#home">LEGAL SERVICES</a> &gt; ${page.breadcrumb}</div>
+        <div class="breadcrumb"><a href="#services">LEGAL SERVICES</a> &gt; ${page.breadcrumb}</div>
         <h1>${page.title}</h1>
         ${page.subtitle ? `<p class="hero-sub">${page.subtitle}</p>` : ''}
       </div>
@@ -324,7 +324,7 @@ function renderServiceDetail(key) {
 
     <section>
       <div class="container">
-        <a class="back-link" href="#home">BACK TO LEGAL SERVICES</a>
+        <a class="back-link" href="#services">BACK TO LEGAL SERVICES</a>
         <div class="two-col">
           <div class="main-content">
             <h2 style="font-size:1.4rem;font-weight:700;color:var(--blue);margin-bottom:12px">${page.title}</h2>
@@ -356,7 +356,7 @@ function renderBusinessInvestor() {
   return `
     <div style="min-height:100vh;display:flex;flex-direction:column">
       <div class="hero-banner" style="padding:100px 5% 30px;flex-shrink:0">
-        <div class="breadcrumb"><a href="#home">LEGAL SERVICES</a> &gt; <a href="#immigration">IMMIGRATION</a> &gt; BUSINESS &amp; INVESTOR VISAS</div>
+        <div class="breadcrumb"><a href="#services">LEGAL SERVICES</a> &gt; <a href="#immigration">IMMIGRATION</a> &gt; BUSINESS &amp; INVESTOR VISAS</div>
         <h1>BUSINESS &amp; INVESTOR VISAS</h1>
         <p class="hero-sub">Invest with Confidence, Move Forward with Clarity</p>
       </div>
@@ -527,6 +527,9 @@ function render() {
   if (route === 'home') {
     app.innerHTML = renderHome();
     window.scrollTo(0, 0);
+  } else if (route === 'services') {
+    app.innerHTML = renderHome();
+    setTimeout(function(){ var el = document.getElementById('services'); if (el) { var nav = document.querySelector('nav'); var navH = nav ? nav.offsetHeight : 76; var t = el.getBoundingClientRect().top + window.scrollY - navH - 20; window.scrollTo({ top: t, behavior: 'smooth' }); } else { window.scrollTo(0, 0); } }, 50);
   } else if (route === 'team') {
     app.innerHTML = renderHome();
     setTimeout(function(){ var g = document.querySelector('.team-grid'); if (g) { var nav = document.querySelector('nav'); var navH = nav ? nav.offsetHeight : 76; var sec = g.closest('section'); var t = (sec || g).getBoundingClientRect().top + window.scrollY - navH - 20; window.scrollTo({ top: t, behavior: 'smooth' }); } }, 50);

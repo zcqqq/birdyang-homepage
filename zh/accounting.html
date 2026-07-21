@@ -66,6 +66,11 @@ function route(){
     case 'team/heather-chao': html = renderTeamProfileHTML('heather-chao', {lang:'zh', backHash:'#team', backText:'返回关于我们', imgBase:'../'}); break;
     case 'team/ming-lu': html = renderTeamProfileHTML('ming-lu', {lang:'zh', backHash:'#team', backText:'返回关于我们', imgBase:'../'}); break;
     case 'team/ally-liao': html = renderTeamProfileHTML('ally-liao', {lang:'zh', backHash:'#team', backText:'返回关于我们', imgBase:'../'}); break;
+    case 'services':
+      html = pageHome();
+      document.getElementById('app').innerHTML = html;
+      setTimeout(function(){ var el = document.getElementById('services'); if (el) { var nav = document.querySelector('nav'); var navH = nav ? nav.offsetHeight : 76; var t = el.getBoundingClientRect().top + window.scrollY - navH - 20; window.scrollTo({ top: t, behavior: 'smooth' }); } else { window.scrollTo(0, 0); } }, 50);
+      initReveal(); return;
     case 'team':
       html = pageHome();
       document.getElementById('app').innerHTML = html;
@@ -119,10 +124,10 @@ function serviceDetail(opts){
     if(typeof w === 'string') { whyHTML += '<div class="why-item">'+w+'</div>'; }
     else { whyHTML += '<div class="why-item"><h4>'+w.title+'</h4><p>'+w.desc+'</p></div>'; }
   });
-  return '<div style="min-height:100vh;display:flex;flex-direction:column"><div class="hero-banner" style="padding:100px 5% 30px;flex-shrink:0"><div class="breadcrumb"><a href="#home">会计服务</a> &rsaquo; '+opts.title+'</div><h1>'+opts.title+'</h1>'+(opts.subtitle?'<p class="hero-sub">'+opts.subtitle+'</p>':'')+'</div>'
+  return '<div style="min-height:100vh;display:flex;flex-direction:column"><div class="hero-banner" style="padding:100px 5% 30px;flex-shrink:0"><div class="breadcrumb"><a href="#services">会计服务</a> &rsaquo; '+opts.title+'</div><h1>'+opts.title+'</h1>'+(opts.subtitle?'<p class="hero-sub">'+opts.subtitle+'</p>':'')+'</div>'
     + (opts.img ? '<div style="flex:1;background:url('+opts.img+') center/cover no-repeat;min-height:200px"></div>' : '')
     + '</div>'
-    + '<section class="container"><a href="#home" class="back-link">返回会计服务</a>'
+    + '<section class="container"><a href="#services" class="back-link">返回会计服务</a>'
     + '<div class="two-col"><div class="main-content">'
     + '<h2 style="font-size:1.4rem;font-weight:700;color:var(--blue);margin-bottom:12px">'+opts.title+'</h2>'
     + '<p style="font-size:.92rem;color:var(--charcoal);line-height:1.85;margin-bottom:24px">'+opts.intro+'</p>'
@@ -142,7 +147,7 @@ function pageHome(){
 
   + '<section class="container bg-white reveal">'+sectionAbout('关于我们的会计服务','清晰的数字，不只是合规记录，更是理解业务、管理风险与支持决策的基础。</p><p>在德扬，我们以专业会计服务为起点，结合对数据、系统、商业运营与风险管理的理解，协助客户看清财务状况、发现经营问题、识别潜在机会，并作出更有依据的长期决策。</p><p>我们不仅处理账务、税务与合规事项，更关注数字背后的业务逻辑、流程效率与风险信号。依托与法务及咨询团队的协同，德扬为企业、家庭与长期规划提供更完整、更稳健的整合财务支持。')+'</section>'
 
-  + '<section class="container bg-cream reveal">'+sectionHeader('我们的服务','专业领域')+'<div class="cards-grid">'
+  + '<section class="container bg-cream reveal" id="services">'+sectionHeader('我们的服务','专业领域')+'<div class="cards-grid">'
 
   + serviceCard('年度 / 月度账目','不只是完成账目，更帮助客户读懂数字背后的经营状况、系统问题与潜在风险','#annual-accounts','../assets/images/17_AccountingHome02_Annual%26Monthly.png')
   + serviceCard('税务','在合规申报的基础上，协助客户管理税务复杂性，并作出更审慎的长期安排','#taxation','../assets/images/17_AccountingHome03_Taxation.png')

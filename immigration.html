@@ -36,7 +36,7 @@ const servicePages = {
     img: 'assets/images/40_ImmigrationSubhome01_PathwayV2.png',
     title: 'PATHWAY SUPPORT',
     heroSub: 'Prepared, Informed, and Confident from the Start',
-    backHash: '#home',
+    backHash: '#services',
     backText: 'BACK TO IMMIGRATION CONSULTING',
     intro: 'Every immigration journey often begins with an important question: where should I start, given my circumstances? With visitor, student, work, partnership, residence, and special-purpose visa categories, it is easy to feel overwhelmed by complex information and unclear direction. Bird &amp; Yang helps clients gather background information, organise their personal profile, identify key questions, and prepare for more focused discussions with Licensed Immigration Advisers or lawyers. Our aim is to help clients understand their situation more clearly and move forward in a more structured way from the very beginning.',
     accordions: [
@@ -57,7 +57,7 @@ const servicePages = {
     img: 'assets/images/41_ImmigrationSubhome02_Preparation.png',
     title: 'APPLICATION PREPARATION',
     heroSub: 'Putting Your Best Case Forward',
-    backHash: '#home',
+    backHash: '#services',
     backText: 'BACK TO IMMIGRATION CONSULTING',
     intro: 'One of the most common reasons for visa delays and declines is documentation that is incomplete, inconsistent, or poorly presented. Bird & Yang works alongside you to prepare every part of the application carefully, so your file is clear, complete, and ready for submission. Our consulting team supports the practical preparation work that helps your case speak for itself.',
     accordions: [
@@ -78,7 +78,7 @@ const servicePages = {
     img: 'assets/images/42_ImmigrationSubhome03_Relationship%26EmploymentV2.png',
     title: 'RELATIONSHIP & EMPLOYMENT EVIDENCE',
     heroSub: 'Presenting Your Story with Clarity',
-    backHash: '#home',
+    backHash: '#services',
     backText: 'BACK TO IMMIGRATION CONSULTING',
     intro: 'Some visa categories require more than paperwork — they require proof of your story. Whether the application is based on a partnership, a job offer, or both, Bird & Yang helps organise the evidence clearly and convincingly. We support clients and employers in preparing relationship records, employment documents, and supporting materials that align with Immigration New Zealand expectations.',
     accordions: [
@@ -99,7 +99,7 @@ const servicePages = {
     img: 'assets/images/43_ImmigrationSubhome04_TimelineV2.png',
     title: 'TIMELINE & PROCESS MANAGEMENT',
     heroSub: 'Keeping Your Matter on Schedule',
-    backHash: '#home',
+    backHash: '#services',
     backText: 'BACK TO IMMIGRATION CONSULTING',
     intro: 'Immigration applications do not happen in isolation. Visa expiry dates, processing times, job start dates, school enrolments, and personal deadlines often intersect. Bird & Yang helps map the process from end to end, track key dates, and coordinate the practical steps so nothing is rushed, overlooked, or allowed to lapse.',
     accordions: [
@@ -134,7 +134,7 @@ function renderHome() {
       </div>
     </section>
 
-    <section class="bg-white reveal">
+    <section class="bg-white reveal" id="services">
       <div class="container">
         ${sectionHeader('WHAT WE DO', 'Our Expertise')}
         <div class="cards-grid">
@@ -194,7 +194,7 @@ function serviceDetailPage(opts) {
   return `
     <div style="min-height:100vh;display:flex;flex-direction:column">
       <div class="hero-banner" style="padding:100px 5% 30px;flex-shrink:0">
-        <div class="breadcrumb"><a href="consulting.html">CONSULTING</a> &gt; <a href="#home">IMMIGRATION</a> &gt; ${opts.title}</div>
+        <div class="breadcrumb"><a href="consulting.html">CONSULTING</a> &gt; <a href="#services">IMMIGRATION</a> &gt; ${opts.title}</div>
         <h1>${opts.title}</h1>
         ${opts.heroSub ? `<p class="hero-sub">${opts.heroSub}</p>` : ''}
       </div>
@@ -234,13 +234,18 @@ function render() {
 
   if (hash === 'home' || hash === '') {
     app.innerHTML = renderHome();
+    window.scrollTo(0, 0);
+  } else if (hash === 'services') {
+    app.innerHTML = renderHome();
+    setTimeout(function(){ var el = document.getElementById('services'); if (el) { var nav = document.querySelector('nav'); var navH = nav ? nav.offsetHeight : 76; var t = el.getBoundingClientRect().top + window.scrollY - navH - 20; window.scrollTo({ top: t, behavior: 'smooth' }); } else { window.scrollTo(0, 0); } }, 50);
   } else if (servicePages[hash]) {
     app.innerHTML = serviceDetailPage(servicePages[hash]);
+    window.scrollTo(0, 0);
   } else {
     app.innerHTML = renderHome();
+    window.scrollTo(0, 0);
   }
 
-  window.scrollTo(0, 0);
   initReveal();
 }
 

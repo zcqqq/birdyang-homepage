@@ -36,7 +36,7 @@ const servicePages = {
     img: 'assets/images/34_HRSubhome01_HRCompliance.png',
     title: 'HR COMPLIANCE',
     heroSub: 'Building Your HR Foundations with Confidence',
-    backHash: '#home',
+    backHash: '#services',
     backText: 'BACK TO HR CONSULTING',
     intro: 'In New Zealand, sound employment relationships start with clear, well-structured HR foundations. Employment agreements, minimum wage, Holidays Act entitlements, payroll accuracy, record-keeping, and fair process are all important parts of everyday people management. Bird &amp; Yang helps businesses review and strengthen their HR foundations and day-to-day processes, making compliance clearer and more practical. When matters require employment legal advice or dispute resolution, our HR consulting team works alongside Bird &amp; Yang employment lawyers to provide more complete support.',
     accordions: [
@@ -57,7 +57,7 @@ const servicePages = {
     img: 'assets/images/35_HRSubhome02_PeopleManagement.png',
     title: 'PEOPLE MANAGEMENT',
     heroSub: 'Handling Hard Conversations with Confidence',
-    backHash: '#home',
+    backHash: '#services',
     backText: 'BACK TO HR CONSULTING',
     intro: 'Performance concerns, disciplinary matters, role changes, restructuring, and employment endings are often the most sensitive and challenging aspects of people management. Bird &amp; Yang provides practical HR guidance to help employers navigate these situations with clear communication, fair process, and careful documentation. We focus on consistency, paperwork, and communication, helping businesses manage difficult decisions with greater clarity and reduced risk. When matters require employment legal advice or representation, our HR consulting team works alongside Bird &amp; Yang employment lawyers to provide more complete support.',
     accordions: [
@@ -78,7 +78,7 @@ const servicePages = {
     img: 'assets/images/36_HRSubhome03_Workplace.png',
     title: 'WORKPLACE CULTURE & RISK',
     heroSub: 'Building Safe, Respectful, and Resilient Workplaces',
-    backHash: '#home',
+    backHash: '#services',
     backText: 'BACK TO HR CONSULTING',
     intro: 'Workplace culture affects more than morale. It is closely connected to management risk and long-term business stability. Bullying, harassment, conflict, burnout, poor communication, and psychosocial risks can affect team performance and expose a business to complex compliance and management challenges. Bird &amp; Yang helps businesses build safer, healthier, and more resilient workplaces through clear policies, risk reviews, management guidance, and early intervention. We help businesses identify potential issues, improve response processes, and connect HR consulting with employment law support when needed.',
     accordions: [
@@ -100,7 +100,7 @@ const servicePages = {
     imgPosition: 'center top',
     title: 'RECRUITMENT & RETENTION',
     heroSub: 'Helping You Attract, Onboard, and Keep the Right People',
-    backHash: '#home',
+    backHash: '#services',
     backText: 'BACK TO HR CONSULTING',
     intro: 'Finding the right people is only the first step. Helping them settle in and stay is what builds a stable, capable team. From role design, recruitment processes, and right-to-work checks, through to induction, probation management, and retention strategy, every stage shapes the employee experience and team stability. Bird &amp; Yang helps businesses build fair, clear, and practical recruitment and people support processes, helping employers make better-informed hiring decisions and create stronger foundations for long-term team development.',
     accordions: [
@@ -121,7 +121,7 @@ const servicePages = {
     img: 'assets/images/38_HRSubhome05_Bilingual.png',
     title: 'BILINGUAL HR',
     heroSub: 'Helping Your Workplace Stay on the Same Page',
-    backHash: '#home',
+    backHash: '#services',
     backText: 'BACK TO HR CONSULTING',
     intro: 'Multilingual and cross-cultural workplaces are common in New Zealand. Employment agreements, workplace policies, management expectations, and important communications are most effective when both employees and management clearly understand them.</p><p>Bird &amp; Yang provides HR support in English, Mandarin, and Cantonese, helping employers communicate key HR information more clearly, reduce misunderstandings caused by language or cultural differences, and manage their teams with greater clarity.</p><p>Where a matter involves employment law advice, dispute support, or formal processes, our HR consulting team can work alongside Bird &amp; Yang’s bilingual employment lawyers to provide more complete professional support.',
     accordions: [
@@ -156,7 +156,7 @@ function renderHome() {
       </div>
     </section>
 
-    <section class="bg-white reveal">
+    <section class="bg-white reveal" id="services">
       <div class="container">
         ${sectionHeader('WHAT WE DO', 'Our Expertise')}
         <div class="cards-grid">
@@ -224,7 +224,7 @@ function serviceDetailPage(opts) {
   return `
     <div style="min-height:100vh;display:flex;flex-direction:column">
       <div class="hero-banner" style="padding:100px 5% 30px;flex-shrink:0">
-        <div class="breadcrumb"><a href="consulting.html">CONSULTING</a> &gt; <a href="#home">HR CONSULTING</a> &gt; ${opts.title}</div>
+        <div class="breadcrumb"><a href="consulting.html">CONSULTING</a> &gt; <a href="#services">HR CONSULTING</a> &gt; ${opts.title}</div>
         <h1>${opts.title}</h1>
         ${opts.heroSub ? `<p class="hero-sub">${opts.heroSub}</p>` : ''}
       </div>
@@ -264,13 +264,18 @@ function render() {
 
   if (hash === 'home' || hash === '') {
     app.innerHTML = renderHome();
+    window.scrollTo(0, 0);
+  } else if (hash === 'services') {
+    app.innerHTML = renderHome();
+    setTimeout(function(){ var el = document.getElementById('services'); if (el) { var nav = document.querySelector('nav'); var navH = nav ? nav.offsetHeight : 76; var t = el.getBoundingClientRect().top + window.scrollY - navH - 20; window.scrollTo({ top: t, behavior: 'smooth' }); } else { window.scrollTo(0, 0); } }, 50);
   } else if (servicePages[hash]) {
     app.innerHTML = serviceDetailPage(servicePages[hash]);
+    window.scrollTo(0, 0);
   } else {
     app.innerHTML = renderHome();
+    window.scrollTo(0, 0);
   }
 
-  window.scrollTo(0, 0);
   initReveal();
 }
 

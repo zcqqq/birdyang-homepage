@@ -41,6 +41,11 @@ function route(){
     case 'team/heather-chao': html = renderTeamProfileHTML('heather-chao', {backHash:'#team', backText:'BACK TO OUR TEAM'}); break;
     case 'team/ming-lu': html = renderTeamProfileHTML('ming-lu', {backHash:'#team', backText:'BACK TO OUR TEAM'}); break;
     case 'team/ally-liao': html = renderTeamProfileHTML('ally-liao', {backHash:'#team', backText:'BACK TO OUR TEAM'}); break;
+    case 'services':
+      html = pageHome();
+      document.getElementById('app').innerHTML = html;
+      setTimeout(function(){ var el = document.getElementById('services'); if (el) { var nav = document.querySelector('nav'); var navH = nav ? nav.offsetHeight : 76; var t = el.getBoundingClientRect().top + window.scrollY - navH - 20; window.scrollTo({ top: t, behavior: 'smooth' }); } else { window.scrollTo(0, 0); } }, 50);
+      initAccordions(); initReveal(); return;
     case 'team':
       html = pageHome();
       document.getElementById('app').innerHTML = html;
@@ -107,10 +112,10 @@ function serviceDetail(opts){
     if(typeof w === 'string') { whyHTML += '<div class="why-item">'+w+'</div>'; }
     else { whyHTML += '<div class="why-item"><h4>'+w.title+'</h4><p>'+w.desc+'</p></div>'; }
   });
-  return '<div style="min-height:100vh;display:flex;flex-direction:column"><div class="hero-banner" style="padding:100px 5% 30px;flex-shrink:0"><div class="breadcrumb"><a href="#home">ACCOUNTING SERVICES</a> &rsaquo; '+opts.title+'</div><h1>'+opts.title+'</h1>'+(opts.subtitle?'<p class="hero-sub">'+opts.subtitle+'</p>':'')+'</div>'
+  return '<div style="min-height:100vh;display:flex;flex-direction:column"><div class="hero-banner" style="padding:100px 5% 30px;flex-shrink:0"><div class="breadcrumb"><a href="#services">ACCOUNTING SERVICES</a> &rsaquo; '+opts.title+'</div><h1>'+opts.title+'</h1>'+(opts.subtitle?'<p class="hero-sub">'+opts.subtitle+'</p>':'')+'</div>'
     + (opts.img ? '<div style="flex:1;background:url('+opts.img+') center/cover no-repeat;min-height:200px"></div>' : '')
     + '</div>'
-    + '<section class="container"><a href="#home" class="back-link">Back to Accounting Services</a>'
+    + '<section class="container"><a href="#services" class="back-link">Back to Accounting Services</a>'
     + '<div class="two-col"><div class="main-content">'
     + '<h2 style="font-size:1.4rem;font-weight:700;color:var(--blue);margin-bottom:12px">'+opts.title+'</h2>'
     + opts.intro.split('</p><p>').map(function(p){
@@ -134,7 +139,7 @@ function pageHome(){
 
   + '<section class="container bg-white reveal">'+sectionAbout('ABOUT OUR ACCOUNTING PRACTICE','Behind every successful business is a clear set of numbers. At Bird &amp; Yang, we go beyond compliance — we help you understand your financial position, make informed decisions, and build wealth with confidence. Working alongside our legal team, we provide integrated advice that sees the full picture of your business and personal finances.')+'</section>'
 
-  + '<section class="container bg-cream reveal">'+sectionHeader('WHAT WE DO','Our Expertise')+'<div class="cards-grid">'
+  + '<section class="container bg-cream reveal" id="services">'+sectionHeader('WHAT WE DO','Our Expertise')+'<div class="cards-grid">'
 
   + serviceCard('Annual / Monthly Accounts','We prepare your numbers with precision and explain them with clarity &mdash; so you can make your decisions with confidence.','#annual-accounts','assets/images/17_AccountingHome02_Annual%26Monthly.png')
   + serviceCard('Taxation','We navigate the complexity so you don\'t have to &mdash; keeping you compliant, efficient, and always a step ahead.','#taxation','assets/images/17_AccountingHome03_Taxation.png')

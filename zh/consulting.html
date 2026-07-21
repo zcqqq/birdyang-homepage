@@ -63,9 +63,9 @@ function renderHome() {
     </div>
   </section>
 
-  <section class="bg-white reveal">
+  <section class="bg-white reveal" id="services">
     <div class="container">
-      ${sectionHeader('我们的专业', '服务领域')}
+      ${sectionHeader('我们的服务', '专业领域')}
       <div class="cards-grid">
         <a class="service-card" href="insurance.html">
           <div class="card-icon-area" style="background:url(../assets/images/28_ConsultingHome02_Insurance.png) center/cover no-repeat;height:140px"></div>
@@ -109,9 +109,12 @@ function render() {
 
   if (hash.indexOf('team/') === 0) {
     var id = hash.slice(5);
-    var html = renderTeamProfileHTML(id, { lang:'zh', backHash: '#team', backText: '返回关于我们', imgBase: '../' });
+    var html = renderTeamProfileHTML(id, { lang:'zh', backHash: '#services', backText: '返回关于我们', imgBase: '../' });
     app.innerHTML = html || renderHome();
     window.scrollTo(0, 0);
+  } else if (hash === 'services') {
+    app.innerHTML = renderHome();
+    setTimeout(function(){ var el = document.getElementById('services'); if (el) { var nav = document.querySelector('nav'); var navH = nav ? nav.offsetHeight : 76; var t = el.getBoundingClientRect().top + window.scrollY - navH - 20; window.scrollTo({ top: t, behavior: 'smooth' }); } else { window.scrollTo(0, 0); } }, 50);
   } else if (hash === 'team') {
     app.innerHTML = renderHome();
     setTimeout(function(){ var g = document.querySelector('.team-grid'); if (g) { var nav = document.querySelector('nav'); var navH = nav ? nav.offsetHeight : 76; var sec = g.closest('section'); var t = (sec || g).getBoundingClientRect().top + window.scrollY - navH - 20; window.scrollTo({ top: t, behavior: 'smooth' }); } }, 50);
