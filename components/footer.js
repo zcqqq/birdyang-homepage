@@ -20,7 +20,7 @@ function renderFooter(opts) {
   } else {
     brand = 'BIRD &amp; YANG';
     tagline = 'Together for Growth';
-    subline = '融汇法税财保，守护安居乐业';
+    subline = '';
     navTitle = 'Navigation';
     navLinks = '<a href="' + pages.home + '">Home</a><a href="' + pages.legal + '">Legal</a><a href="' + pages.accounting + '">Accounting</a><a href="' + pages.consulting + '">Consulting</a><a href="' + pages.why + '">Why Bird &amp; Yang</a><a href="' + pages.contact + '">Contact</a>';
     contactTitle = 'Contact';
@@ -33,7 +33,7 @@ function renderFooter(opts) {
     '<footer>' +
       '<div class="footer-grid">' +
         '<div class="footer-col">' +
-          '<img src="' + (isZh ? '../' : '') + 'assets/icons/Logo_new.png" alt="Bird &amp; Yang" style="height:40px;margin-bottom:12px">' +
+          '<img src="' + (isZh ? '../' : '') + 'assets/icons/Logo_0722.png" alt="Bird &amp; Yang" style="height:40px;margin-bottom:12px">' +
           '<p>' + tagline + '</p>' +
           '<p style="margin-top:6px;font-size:.75rem">' + subline + '</p>' +
         '</div>' +
