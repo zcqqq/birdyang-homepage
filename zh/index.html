@@ -57,9 +57,9 @@ body{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans S
 @media(max-width:768px){
   #hero{
     min-height:0;
-    height:clamp(360px,62svh,430px);
+    height:250px;
     box-sizing:border-box;
-    padding:64px 0 20px;
+    padding:56px 0 10px;
     align-items:flex-start;
   }
   #hero .hero-bg{object-position:50% 0}
@@ -69,19 +69,21 @@ body{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans S
     left:0;
     right:0;
     bottom:0;
-    height:56px;
-    background:linear-gradient(to bottom,rgba(7,14,26,0),rgba(7,14,26,.28));
+    height:20px;
+    background:var(--cream);
     pointer-events:none;
     z-index:1;
   }
   .hero-content{
-    margin-top:clamp(78px,17svh,120px);
+    margin-top:20px;
     padding-inline:18px;
   }
+  .hero-content h1{font-size:clamp(1.9rem,8vw,2.6rem);letter-spacing:.14em}
+  .hero-content .gold-glow{font-size:13px!important;margin-top:6px!important;line-height:1.35}
+  #about{padding-top:36px}
 }
 @media(max-width:600px){
   .hero-content h1{font-size:1.7rem;letter-spacing:.14em}
-  .hero-content .gold-glow{font-size:14px!important;margin-top:14px!important;line-height:1.5}
 }
 #about{background:var(--cream);text-align:center;padding:80px 5%}
 .about-text{max-width:800px;margin:0 auto;font-size:.9rem;color:var(--charcoal);line-height:1.85}
@@ -128,7 +130,10 @@ nav .nav-extras .lang-toggle a.active-lang{color:var(--white);font-weight:600}
 
 <!-- HERO -->
 <section id="hero">
-  <img class="hero-bg" src="../assets/images/01_Home01_FirstSightV3_Chn.png" alt="Bird & Yang">
+  <picture>
+    <source media="(max-width: 768px)" srcset="../assets/images/01_Home01_FirstSightV3_Chn_mobile_top.png">
+    <img class="hero-bg" src="../assets/images/01_Home01_FirstSightV3_Chn.png" alt="Bird & Yang">
+  </picture>
   <div class="hero-content">
     <h1>德 扬</h1>
     <p class="gold-glow" style="font-size:15.2px;color:var(--white);font-weight:700;margin-top:20px;letter-spacing:.02em">融汇法税财保，守护安居乐业</p>

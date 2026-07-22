@@ -101,9 +101,9 @@ nav .nav-extras .lang-toggle a:hover{color:var(--gold-light)}
 @media(max-width:768px){
   #hero{
     min-height:0;
-    height:clamp(360px,62svh,430px);
+    height:250px;
     box-sizing:border-box;
-    padding:64px 0 20px;
+    padding:56px 0 10px;
     align-items:flex-start;
   }
   #hero .hero-bg{object-position:50% 0}
@@ -113,19 +113,21 @@ nav .nav-extras .lang-toggle a:hover{color:var(--gold-light)}
     left:0;
     right:0;
     bottom:0;
-    height:56px;
-    background:linear-gradient(to bottom,rgba(7,14,26,0),rgba(7,14,26,.28));
+    height:20px;
+    background:var(--cream);
     pointer-events:none;
     z-index:1;
   }
   .hero-content{
-    margin-top:clamp(78px,17svh,120px);
+    margin-top:20px;
     padding-inline:18px;
   }
+  .hero-content h1{font-size:clamp(1.9rem,8vw,2.6rem);letter-spacing:.08em}
+  .hero-content .gold-glow{font-size:13px!important;margin-top:6px!important;line-height:1.35}
+  #about{padding-top:36px}
 }
 @media(max-width:600px){
   .hero-content h1{font-size:1.7rem;letter-spacing:.08em}
-  .hero-content .gold-glow{font-size:14px!important;margin-top:16px!important;line-height:1.5}
 }
 
 /* SECTIONS */
@@ -202,7 +204,10 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.7);padding:60px 5% 24
 
 <!-- HERO -->
 <section id="hero">
-  <img class="hero-bg" src="assets/images/01_Home01_FirstSightV3.png" alt="Bird & Yang — Integrated Legal, Accounting & Consulting">
+  <picture>
+    <source media="(max-width: 768px)" srcset="assets/images/01_Home01_FirstSightV3_mobile_top.png">
+    <img class="hero-bg" src="assets/images/01_Home01_FirstSightV3.png" alt="Bird & Yang — Integrated Legal, Accounting & Consulting">
+  </picture>
   <div class="hero-content">
     <h1>BIRD &amp; YANG</h1>
     <p class="gold-glow" style="font-size:15.2px;color:var(--white);font-weight:700;margin-top:40px;letter-spacing:.02em">Integrated in Expertise, Together for Growth</p>
