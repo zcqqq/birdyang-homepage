@@ -33,7 +33,7 @@ function renderFooter(opts) {
     '<footer>' +
       '<div class="footer-grid">' +
         '<div class="footer-col">' +
-          '<img src="' + (isZh ? '../' : '') + 'assets/icons/Logo_0722.png" alt="Bird &amp; Yang" style="height:88px;margin-bottom:12px">' +
+          '<img src="' + (isZh ? '../' : '') + 'assets/icons/Logo_0722.png" alt="Bird &amp; Yang" style="height:40px;margin-bottom:12px">' +
           '<p>' + tagline + '</p>' +
           '<p style="margin-top:6px;font-size:.75rem">' + subline + '</p>' +
         '</div>' +
